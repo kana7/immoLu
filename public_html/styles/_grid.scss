@@ -1,0 +1,542 @@
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+// mapping des noms de classe avec leur attribut css
+$space-prefixes : (
+p  : padding,
+pt : padding-top,
+pr : padding-right,
+pb : padding-bottom,
+pl : padding-left,
+m  : margin,
+mt : margin-top,
+mr : margin-right,
+mb : margin-bottom,
+ml : margin-left,
+) !default;
+
+// tableau de valeurs des margins et paddings
+$space-values : (
+0,
+5,
+10,
+15,
+20,
+30,
+40,
+50
+) !default;
+
+// change these values if its not imported into bootstrap
+$grid-breakpoints: (
+phone: 0,
+// Small screen / phone
+tab: $tab,
+// Medium screen / tablet
+desk: $desk,
+// Large screen / desktop
+lgdesk: $lgdesk
+// Extra large screen / wide desktop
+) !default;
+
+$breakpoints : $grid-breakpoints;
+
+
+// main function definition
+@mixin make-space($values, $prefixes, $breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    // if xs value = 0, set it global without media queries
+    @if($breakpoint-value == 0) {
+      @each $attr-short, $attr-long in $prefixes {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+            #{$attr-long}: #{$value + px !important};
+          }
+        }
+      }
+    }
+    // breakpoint values that not equal to 0
+    @else {
+      @media screen and (min-width: $breakpoint-value + px) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $value in $values {
+            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+              #{$attr-long}: #{$value + px !important};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-space($space-values, $space-prefixes, $breakpoints);
+
+// GRID classes
+// --------------------------------------------------
+/*Definition container de taille fixe*/
+@include viewport(min, $min: 365){
+    .container{
+        @include container(324);
+    }
+}
+@include viewport(min, $min: 680){
+    .container{
+        @include container(648);
+    }
+}
+@include viewport(min, $min: 992){
+    .container{
+        @include container(960);
+    }
+}
+@include viewport(min, $min: 1172){
+    .container{
+        @include container(1140);
+    }
+}
+@include viewport(min, $min: 1312){
+    .container{
+        @include container(1280);
+    }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/*container prenant toute la largeur de l'ecran*/
+.container-fluid {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: ($gridGutterWidth/2);
+    padding-right: ($gridGutterWidth/2);
+}
+
+/*Container de ligne*/
+.row{
+    margin-left: -($gridGutterWidth/2);
+    margin-right: -($gridGutterWidth/2);
+
+}
+
+/*Definition des colonnes*/
+.phone-auto, .tab-auto, .desk-auto, .lgdesk-auto, .phone-0, .tab-0, .desk-0, .lgdesk-0, .phone-1, .tab-1, .desk-1, .lgdesk-1, .phone-2, .tab-2, .desk-2, .lgdesk-2, .phone-3, .tab-3, .desk-3, .lgdesk-3, .phone-4, .tab-4, .desk-4, .lgdesk-4, .phone-5, .tab-5, .desk-5, .lgdesk-5, .phone-6, .tab-6, .desk-6, .lgdesk-6, .phone-7, .tab-7, .desk-7, .lgdesk-7, .phone-8, .tab-8, .desk-8, .lgdesk-8, .phone-9, .tab-9, .desk-9, .lgdesk-9, .phone-10, .tab-10, .desk-10, .lgdesk-10, .phone-11, .tab-11, .desk-11, .lgdesk-11, .phone-12, .tab-12, .desk-12, .lgdesk-12 {
+    position: relative;
+    min-height: 1px;
+}
+
+.phone-auto, .phone-0, .phone-1, .phone-2, .phone-3, .phone-4, .phone-5, .phone-6, .phone-7, .phone-8, .phone-9, .phone-10, .phone-11, .phone-12 {
+    float: left;
+}
+
+/*Telephone*/
+
+@for $i from $gridColumns through 0 {
+    .phone-#{$i}{ width:  getColumnWidth($i);}
+}
+.phone-auto{
+    width: auto;
+}
+
+/*Deplacement vers la gauche: telephone*/
+@for $i from $gridColumns through 1 {
+    .phone-pull-#{$i}{ right:  getColumnWidth($i);}
+}
+.phone-pull-0 {
+    right: auto !important;
+}
+
+/*Deplacement vers la droite: telephone*/
+@for $i from $gridColumns through 1 {
+    .phone-push-#{$i}{ left:  getColumnWidth($i);}
+}
+.phone-pull-0 {
+    right: auto !important;
+}
+
+/*marge vers la gauche telephone*/
+@for $i from $gridColumns through 0 {
+    .phone-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+}
+
+/*marge vers la droite telephone*/
+@for $i from $gridColumns through 0 {
+    .phone-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+}
+
+/*Colonnes pour tablette*/
+@include media(tab){
+    .tab-auto, .tab-0, .tab-1, .tab-2, .tab-3, .tab-4, .tab-5, .tab-6, .tab-7, .tab-8, .tab-9, .tab-10, .tab-11, .tab-12 {
+        float: left;
+    }
+    @for $i from $gridColumns through 0 {
+        .tab-#{$i}{ width:  getColumnWidth($i);}
+    }
+    .tab-auto{
+        width: auto;
+    }
+    /*Deplacement vers la gauche: tablette*/
+    @for $i from $gridColumns through 1 {
+        .tab-pull-#{$i}{ right:  getColumnWidth($i) !important;}
+    }
+    .tab-pull-0 {
+        right: auto !important;
+    }
+    /*Deplacement vers la droite: tablette*/
+    @for $i from $gridColumns through 1 {
+        .tab-push-#{$i}{ left:  getColumnWidth($i) !important;}
+    }
+    .tab-pull-0 {
+        right: auto !important;
+    }
+
+    /*marge vers la gauche tablette*/
+    @for $i from $gridColumns through 0 {
+        .tab-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+    }
+
+    /*marge vers la droite tablette*/
+    @for $i from $gridColumns through 0 {
+        .tab-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+    }
+}
+
+/*Colonnes pour desktop*/
+@include media(desk){
+    .desk-auto, .desk-0, .desk-1, .desk-2, .desk-3, .desk-4, .desk-5, .desk-6, .desk-7, .desk-8, .desk-9, .desk-10, .desk-11, .desk-12 {
+        float: left;
+    }
+    @for $i from $gridColumns through 0 {
+        .desk-#{$i}{ width:  getColumnWidth($i);}
+    }
+    .desk-auto{
+        width: auto;
+    }
+    /*Deplacement vers la gauche: desktop*/
+    @for $i from $gridColumns through 1 {
+        .desk-pull-#{$i}{ right:  getColumnWidth($i) !important;}
+    }
+    .desk-pull-0 {
+        right: auto !important;
+    }
+    /*Deplacement vers la droite: desktop*/
+    @for $i from $gridColumns through 1 {
+        .desk-push-#{$i}{ left:  getColumnWidth($i) !important;}
+    }
+    .desk-pull-0 {
+        right: auto !important;
+    }
+
+    /*marge vers la gauche desktop*/
+    @for $i from $gridColumns through 0 {
+        .desk-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+    }
+
+    /*marge vers la droite desktop*/
+    @for $i from $gridColumns through 0 {
+        .desk-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+    }
+}
+
+/*Colonnes pour large desktop*/
+@include media(lgdesk){
+    .lgdesk-auto, .lgdesk-0, .lgdesk-1, .lgdesk-2, .lgdesk-3, .lgdesk-4, .lgdesk-5, .lgdesk-6, .lgdesk-7, .lgdesk-8, .lgdesk-9, .lgdesk-10, .lgdesk-11, .lgdesk-12 {
+        float: left;
+    }
+    @for $i from $gridColumns through 0 {
+        .lgdesk-#{$i}{ width:  getColumnWidth($i);}
+    }
+    .lgdesk-auto{
+        width: auto;
+    }
+    /*Deplacement vers la gauche: large desktop*/
+    @for $i from $gridColumns through 1 {
+        .lgdesk-pull-#{$i}{ right:  getColumnWidth($i) !important;}
+    }
+    .lgdesk-pull-0 {
+        right: auto !important;
+    }
+    /*Deplacement vers la droite: large desktop*/
+    @for $i from $gridColumns through 1 {
+        .lgdesk-push-#{$i}{ left:  getColumnWidth($i) !important;}
+    }
+    .lgdesk-pull-0 {
+        right: auto !important;
+    }
+
+    /*marge vers la gauche large desktop*/
+    @for $i from $gridColumns through 0 {
+        .lgdesk-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+    }
+    /*marge vers la droite large desktop*/
+    @for $i from $gridColumns through 0 {
+        .lgdesk-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+    }
+}
+.container,.clearfix,.container-fluid,.row{
+    @include clearfix;
+}
+.center-block{
+    @include center-block();
+}
+.pull-right{
+    float: right !important;
+}
+.pull-left{
+    float: left !important;
+}
+.hidden{
+    display: none !important;
+}
+.display {
+    display: block !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+.affix {
+    position: fixed;
+}
+@-ms-viewport {
+    width: device-width;
+}
+.display-phone,
+.display-tab,
+.display-desk,
+.display-lgdesk {
+    display: none !important;
+}
+.display-phone-block,
+.display-phone-inline,
+.display-phone-inline-block,
+.display-tab-block,
+.display-tab-inline,
+.display-tab-inline-block,
+.display-desk-block,
+.display-desk-inline,
+.display-desk-inline-block,
+.display-lgdesk-block,
+.display-lgdesk-inline,
+.display-lgdesk-inline-block {
+    display: none !important;
+}
+@include media(phone){
+    .display-phone {
+        display: block !important;
+    }
+    table.display-phone {
+        display: table;
+    }
+    tr.display-phone {
+        display: table-row !important;
+    }
+    th.display-phone,
+    td.display-phone {
+        display: table-cell !important;
+    }
+    .display-phone-block {
+        display: block !important;
+    }
+    .display-phone-inline {
+        display: inline !important;
+    }
+    .display-phone-inline-block {
+        display: inline-block !important;
+    }
+    .hidden-phone {
+        display: none !important;
+    }
+}
+
+/*Classes permettant d'afficher un bloc uniquement en resolution tablette*/
+@include viewport(range, $min: $tab, $max: $desk - 1){
+    .display-tab {
+        display: block !important;
+    }
+    table.display-tab {
+        display: table;
+    }
+    tr.display-tab {
+        display: table-row !important;
+    }
+    th.display-tab,
+    td.display-tab {
+        display: table-cell !important;
+    }
+    .display-tab-block {
+        display: block !important;
+    }
+    .display-tab-inline {
+        display: inline !important;
+    }
+    .display-tab-inline-block {
+        display: inline-block !important;
+    }
+    .hidden-tab {
+        display: none !important;
+    }
+}
+/*Classes permettant d'afficher un bloc uniquement en resolution desktop*/
+@include viewport(range, $min: $desk, $max: $lgdesk - 1){
+    .display-desk {
+        display: block !important;
+    }
+    table.display-desk {
+        display: table;
+    }
+    tr.display-desk {
+        display: table-row !important;
+    }
+    th.display-desk,
+    td.display-desk {
+        display: table-cell !important;
+    }
+    .display-desk-block {
+        display: block !important;
+    }
+    .display-desk-inline {
+        display: inline !important;
+    }
+    .display-desk-inline-block {
+        display: inline-block !important;
+    }
+    .hidden-desk {
+        display: none !important;
+    }
+}
+/*Classes permettant d'afficher un bloc uniquement en haute resolution*/
+@include viewport(min, $min: $lgdesk){
+    .display-lgdesk {
+        display: block !important;
+    }
+    table.display-lgdesk {
+        display: table;
+    }
+    tr.display-lgdesk {
+        display: table-row !important;
+    }
+    th.display-lgdesk,
+    td.display-lgdesk {
+        display: table-cell !important;
+    }
+    .display-lgdesk-block {
+        display: block !important;
+    }
+    .display-lgdesk-inline {
+        display: inline !important;
+    }
+    .display-lgdesk-inline-block {
+        display: inline-block !important;
+    }
+    .hidden-lgdesk {
+        display: none !important;
+    }
+}
+
+/*Afficher et cacher bloc lors d'un print*/
+.display-print {
+    display: none !important;
+}
+@media print {
+    .display-print {
+        display: block !important;
+    }
+    table.display-print {
+        display: table;
+    }
+    tr.display-print {
+        display: table-row !important;
+    }
+    th.display-print,
+    td.display-print {
+        display: table-cell !important;
+    }
+}
+.display-print-block {
+    display: none !important;
+}
+@media print {
+    .display-print-block {
+        display: block !important;
+    }
+}
+.display-print-inline {
+    display: none !important;
+}
+@media print {
+    .display-print-inline {
+        display: inline !important;
+    }
+}
+.display-print-inline-block {
+    display: none !important;
+}
+@media print {
+    .display-print-inline-block {
+        display: inline-block !important;
+    }
+}
+@media print {
+    .hidden-print {
+        display: none !important;
+    }
+}
+
+.align{
+    display: flex;
+    &.row{
+        flex-direction: row;
+    }
+    &.row-inverse{
+        flex-direction: row-reverse;
+    }
+    &.column{
+        flex-direction: column;
+    }
+    &.column-reverse{
+        flex-direction: column-reverse;
+    }
+    &.wrap{
+        flex-wrap: wrap;
+    }
+    &.left{
+        justify-content: flex-start;
+    }
+    &.center{
+        justify-content: center;
+    }
+    &.right{
+        justify-content: flex-end;
+    }
+    &.spread{
+        justify-content: space-around;
+    }
+    &.split{
+        justify-content: space-between;
+    }
+    &.top{
+        align-items: flex-start;
+    }
+    &.middle{
+        align-items: center;
+    }
+    &.bottom{
+        align-items: flex-end;
+    }
+    &.stretch{
+        align-items: stretch;
+    }
+}

@@ -1,0 +1,186 @@
+@import "_normalize.scss";
+@import "_grid.scss";
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    @include base-style;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $blue;
+    font-weight: 300;
+}
+
+a{
+    display: block; 
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, li{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+hr{
+    border-color: lighten($grey, 8%);
+}
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "internetbusiness";
+  src:url("../../fonts/internetbusiness.eot");
+  src:url("../../fonts/internetbusiness.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/internetbusiness.woff") format("woff"),
+    url("../../fonts/internetbusiness.ttf") format("truetype"),
+    url("../../fonts/internetbusiness.svg#internetbusiness") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "internetbusiness" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "internetbusiness" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-account-icone:before {
+  content: "\61";
+}
+.icon-x-icone:before {
+  content: "\62";
+}
+.icon-arobase:before {
+  content: "\63";
+}
+.icon-backup:before {
+  content: "\64";
+}
+.icon-bluechameleoni:before {
+  content: "\65";
+}
+.icon-call-me:before {
+  content: "\66";
+}
+.icon-check-ico:before {
+  content: "\67";
+}
+.icon-clock-icone:before {
+  content: "\68";
+}
+.icon-cloudphone:before {
+  content: "\69";
+}
+.icon-confidentiality:before {
+  content: "\6a";
+}
+.icon-devis:before {
+  content: "\6b";
+}
+.icon-double-arrow:before {
+  content: "\6c";
+}
+.icon-doc:before {
+  content: "\6d";
+}
+.icon-download-ico:before {
+  content: "\6e";
+}
+.icon-lolcloud:before {
+  content: "\6f";
+}
+.icon-linkedin:before {
+  content: "\70";
+}
+.icon-light:before {
+  content: "\71";
+}
+.icon-internet-ico:before {
+  content: "\72";
+}
+.icon-interrogation:before {
+  content: "\73";
+}
+.icon-infini:before {
+  content: "\74";
+}
+.icon-icone-lol:before {
+  content: "\75";
+}
+.icon-graphic:before {
+  content: "\76";
+}
+.icon-gestion:before {
+  content: "\77";
+}
+.icon-flash:before {
+  content: "\78";
+}
+.icon-euro:before {
+  content: "\79";
+}
+.icon-facebook:before {
+  content: "\7a";
+}
+.icon-economy:before {
+  content: "\41";
+}
+.icon-menu-icone:before {
+  content: "\42";
+}
+.icon-mobile-ico:before {
+  content: "\43";
+}
+.icon-phone-icone:before {
+  content: "\44";
+}
+.icon-priority:before {
+  content: "\45";
+}
+.icon-right-arrow:before {
+  content: "\46";
+}
+.icon-shield:before {
+  content: "\47";
+}
+.icon-telephonie-ico:before {
+  content: "\48";
+}
+.icon-tools:before {
+  content: "\49";
+}
+.icon-wifi:before {
+  content: "\4a";
+}
+.icon-www:before {
+  content: "\4b";
+}

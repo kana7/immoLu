@@ -1,0 +1,21 @@
+// HEADER
+//------------------------------------------------------------------------------
+
+header{
+    .header-upper, .header-bottom{
+        display: block;
+        position: relative;
+    }
+    .header-upper{
+        background-color: $blue;
+        color: $white;
+    }
+    .header-upper-nav{
+        display: inline-block;
+        position: relative;
+    }
+    .header-bottom{
+        background-color: $white;
+        color: $blue;
+    }
+}

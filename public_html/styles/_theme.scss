@@ -1,0 +1,51 @@
+// COLOR Variables
+// --------------------------------------------------
+$blue: #004994;
+$orange: #e75e0a;
+$green: #e3eee3;
+$dark-grey: #818181;
+$grey: #c0c0c0;
+$light-grey: #f8f8f8;
+$light-blue: #f2f6fa;
+$footer-grey: #676767;
+$white: #fff;
+$black: #000;
+$section-black: #07040D;
+// UI Variables
+// --------------------------------------------------
+$border-radius: 5px;
+
+// FONT Variables
+// --------------------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic);
+
+$font-stack: 'Open Sans', sans-serif;
+$font-size: 10pt;
+$base-line-height: 1;
+
+// TRANSITION Variables
+// --------------------------------------------------
+$transitionUi: background .4s ease-in-out, border .4s ease-in-out, color .4s ease-in-out;
+
+// GRID Variables
+// --------------------------------------------------
+//main queries
+$phone: 671 !default;
+$tab: 672 !default;
+$desk: 1056 !default;
+$lgdesk: 1302 !default;
+
+// Default grid
+// -------------------------
+$gridColumns:             12 !default;
+$gridColumnWidth:         60px !default;
+$gridGutterWidth:         20px !default;
+$gridRowWidth:            $gridColumns*($gridColumnWidth+$gridGutterWidth);
+
+// Fluid grid
+// -------------------------
+$fluidGridColumnWidth:    percentage(($gridColumnWidth+$gridGutterWidth)/$gridRowWidth);
+
+@function getColumnWidth($columnNumber){
+    @return $columnNumber*$fluidGridColumnWidth;
+}
