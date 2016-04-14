@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Immmo.lu</title>
+        <title>Immo.lu</title>
         <meta charset="UTF-8">
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="styles/css/main.css"></script>
+        <link rel="stylesheet" href="styles/css/vendor/flickity.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
     </head>
     <body>
         <header>
             <div class="header-upper">
                 <div class="container">
                     <div class="row">
-                        <nav class="header-upper-nav">
+                        <nav class="header-upper-nav left">
                             <ul>
                                 <li><a href="#">Biens à vendre</a></li>
                                 <li><a href="#">Bien à louer</a></li>
@@ -21,7 +23,7 @@
                                 <li><a href="#">Commerces</a></li>
                             </ul>
                         </nav>
-                        <nav class="header-upper-nav">
+                        <nav class="header-upper-nav right">
                             <ul>
                                 <li><a href="#">FR</a></li>
                                 <li><a href="#">EN</a></li>
@@ -46,19 +48,47 @@
                         <div class="logo"></div>
                         <nav>
                             <ul>
-                            <li><a href="#">Acheter</a></li>
-                            <li><a href="#">Louer</a></li>
-                            <li><a href="#">Neuf</a></li>
-                            <li><a href="#">Colocation</a></li>
-                            <li><a href="#">Commerces</a></li>
+                                <li><a href="#">Acheter</a></li>
+                                <li><a href="#">Louer</a></li>
+                                <li><a href="#">Neuf</a></li>
+                                <li><a href="#">Colocation</a></li>
+                                <li><a href="#">Commerces</a></li>
                             </ul>
                         </nav>
-                        <button class="btn-orange"><span class="icon-home"></span> Publier une annonce</button>
+                        <a class="btn-orange"><span class="icon-home"></span> Publier une annonce</a>
                     </div>
                 </div>
             </div>
         </header>
-        <section></section>
+        <section class="search-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="search-box">
+                        <h2>Quel est votre futur bien ?</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ads-une">
+            <div class="container">
+                <div class="row">
+                    <h2>Bien immobiler à la une !</h2>
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="phone-10">
+                        <h2>À propos de immo.lu : </h2>
+                        <div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer></footer>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
