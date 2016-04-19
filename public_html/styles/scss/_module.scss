@@ -40,6 +40,21 @@ h2{
 section{
     padding: 30px 0;
 }
+.absolute-vertical-align-middle
+{
+    @include vertical-align-middle(absolute);
+}
+.vertical-align-middle{
+    @include vertical-align-middle();
+}
+.disable-vertical-align-middle{
+    @include disable-vertical-align();
+}
+.display-flex-align-middle{
+    display: flex; /* contexte sur le parent */
+    flex-direction: row; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
 // HEADER
 //------------------------------------------------------------------------------
 
@@ -149,6 +164,7 @@ footer{
 
 footer .footer-links{
     font-size: 12px;
+    margin: auto;
     h3{
         margin: 0 0 15px;
         color: $orange;

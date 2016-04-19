@@ -2459,9 +2459,9 @@ hr {
   border-color: #d4d4d4; }
 
 @font-face {
-  font-family: "internetbusiness";
-  src: url("../../fonts/internetbusiness.eot");
-  src: url("../../fonts/internetbusiness.eot?#iefix") format("embedded-opentype"), url("../../fonts/internetbusiness.woff") format("woff"), url("../../fonts/internetbusiness.ttf") format("truetype"), url("../../fonts/internetbusiness.svg#internetbusiness") format("svg");
+  font-family: "immo-icons";
+  src: url("../../fonts/immo-icons.eot");
+  src: url("../../fonts/immo-icons.eot?#iefix") format("embedded-opentype"), url("../../fonts/immo-icons.woff") format("woff"), url("../../fonts/immo-icons.ttf") format("truetype"), url("../../fonts/immo-icons.svg#immo-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [data-icon]:before {
@@ -2630,6 +2630,37 @@ h2 {
 section {
   padding: 30px 0; }
 
+.absolute-vertical-align-middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.vertical-align-middle {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.disable-vertical-align-middle {
+  top: auto;
+  transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+.display-flex-align-middle {
+  display: flex;
+  /* contexte sur le parent */
+  flex-direction: row;
+  /* direction d'affichage verticale */
+  justify-content: center;
+  /* alignement vertical */ }
+
 header .header-upper, header .header-bottom {
   display: block;
   position: relative; }
@@ -2720,7 +2751,8 @@ footer {
   background-position: right bottom; }
 
 footer .footer-links {
-  font-size: 12px; }
+  font-size: 12px;
+  margin: auto; }
   footer .footer-links h3 {
     margin: 0 0 15px;
     color: #e75e0a;
