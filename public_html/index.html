@@ -15,18 +15,23 @@
             <div class="header-upper">
                 <div class="container">
                     <div class="row">
-                        <nav class="header-upper-nav left">
+                        <nav class="header-upper-nav left phone-6">
                             <ul>
                                 <li><a href="#">Biens à vendre</a></li>
+                                <li class="separator">|</li>
                                 <li><a href="#">Bien à louer</a></li>
+                                <li class="separator">|</li>
                                 <li><a href="#">Bien neufs</a></li>
+                                <li class="separator">|</li>
                                 <li><a href="#">Commerces</a></li>
                             </ul>
                         </nav>
-                        <nav class="header-upper-nav right">
+                        <nav id="language-selection" class="header-upper-nav right phone-6">
                             <ul>
-                                <li><a href="#">FR</a></li>
+                                <li class="active"><a href="#">FR</a></li>
+                                <li class="separator">|</li>
                                 <li><a href="#">EN</a></li>
+                                <li class="separator">|</li>
                                 <li><a href="#">DE</a></li>
                             </ul>
                         </nav>
@@ -36,8 +41,7 @@
             <div class="header-bottom">
                 <div class="container">
                     <div class="row">
-                        <p>Bienvenue chez vous</p>
-                        <nav>
+                        <nav class="pull-left">
                             <ul>
                                 <li><a href="#">Se connecter</a></li>
                                 <li><a href="#">S'inscrire gratuitement</a></li>
@@ -45,7 +49,9 @@
                         </nav>
                     </div>
                     <div class="row">
-                        <div class="logo"></div>
+                        <div class="logo">
+                            <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                        </div>
                         <nav>
                             <ul>
                                 <li><a href="#">Acheter</a></li>
@@ -55,7 +61,7 @@
                                 <li><a href="#">Commerces</a></li>
                             </ul>
                         </nav>
-                        <a class="btn-orange"><span class="icon-home"></span> Publier une annonce</a>
+                        <a class="btn-orange">Publier une annonce</a>
                     </div>
                 </div>
             </div>
@@ -63,9 +69,46 @@
         <section class="search-banner">
             <div class="container">
                 <div class="row">
-                    <div class="search-box">
-                        <h2>Quel est votre futur bien ?</h2>
-                        
+                    <div class="search-banner-box">
+                        <h2>Quel est votre future bien ?</h2>
+                        <div class="phone-10">
+                            <div class="input-group phone-12">
+                                <select name="" id=""></select>
+                                <input type="text" />
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Type de bien</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Surface (min.)</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Budget (min.)</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">État du bien</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Pays</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Nombre de chambres (min.)</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <div class="input-group phone-3">
+                                <label for="">Budget (max.)</label>
+                                <select name="" id=""></select>
+                            </div>
+                            <input type="submit" class="btn-orange phone-3" value="Rechercher"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,7 +116,13 @@
         <section class="ads-une">
             <div class="container">
                 <div class="row">
-                    <h2>Bien immobiler à la une !</h2>
+                    <h2>Bien immobiler <span class="orange">à la une</span> !</h2>
+                </div>
+                <div class="row">
+                    <div class="immo-main-gallery">
+                        <div class="gallery-cell"></div>
+                        <div class="gallery-cell"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -81,16 +130,61 @@
             <div class="container">
                 <div class="row">
                     <div class="phone-10">
-                        <h2>À propos de immo.lu : </h2>
+                        <h2>À propos de immo<span class="orange">.lu</span> : </h2>
                         <div>
-                            <p></p>
+                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eros sapien, finibus non dolor in, suscipit finibus orci. Vivamus in tincidunt lorem. Etiam venenatis mattis euismod. Maecenas fringilla cursus porta. Mauris velit justo, ullamcorper id nulla eget, imperdiet aliquet dolor. Nam ut egestas ligula. Suspendisse fermentum blandit ex eu iaculis. Vivamus nisi elit, eleifend id lorem eget, facilisis bibendum massa. Duis in mi ut eros efficitur malesuada egestas at mauris. Donec fringilla consectetur nunc sed ultrices. </p>
+                            <p>Aenean odio sapien, dictum in enim at, tempor cursus nisi. Nam faucibus a lorem ac vulputate. Vestibulum eleifend leo ut congue ullamcorper. Vivamus nec nibh ornare, suscipit enim consectetur, condimentum ipsum. Mauris quis tortor nisi. Suspendisse id mi dapibus purus tincidunt finibus sed id leo. Sed id tellus massa. Donec tristique consectetur urna. Duis tincidunt imperdiet magna, nec sodales quam pretium et. Vivamus facilisis metus enim, vel viverra quam hendrerit nec. Sed consectetur, sem quis laoreet placerat, lectus augue dapibus ligula, in laoreet nibh dui nec ligula. Cras cursus id magna eget venenatis. </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer></footer>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="desk-4">
+                        <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                        <img src="images/Img/Mockup.png" alt="" />
+                    </div>
+                    <div class="desk-4">
+                        <div class="footer-links">
+                            <h3>Recherche d'immobilier en vente</h3>
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Appartement au Luxembourg</a></li>
+                                    <li><a href="#">Maisons au Luxembourg</a></li>
+                                    <li><a href="#">Maisons à Kirchberg</a></li>
+                                    <li><a href="#">Maisons à Strassen</a></li>
+                                    <li><a href="#">Maisons à Leudelange</a></li>
+                                    <li><a href="#">Maisons à Hollerich</a></li>
+                                    <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                    <li><a href="#">Maisons à Basharage</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="desk-4">
+                        <div class="footer-links">
+                            <h3>Recherche d'immobilier en location</h3>
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Appartement au Luxembourg</a></li>
+                                    <li><a href="#">Maisons au Luxembourg</a></li>
+                                    <li><a href="#">Maisons à Kirchberg</a></li>
+                                    <li><a href="#">Maisons à Strassen</a></li>
+                                    <li><a href="#">Maisons à Leudelange</a></li>
+                                    <li><a href="#">Maisons à Hollerich</a></li>
+                                    <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                    <li><a href="#">Maisons à Basharage</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/flickity.pkgd.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
     </body>
 </html>

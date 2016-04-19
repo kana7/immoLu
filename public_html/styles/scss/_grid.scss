@@ -1,8 +1,8 @@
 .row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
 }
 
 // mapping des noms de classe avec leur attribut css
@@ -48,30 +48,30 @@ $breakpoints : $grid-breakpoints;
 
 // main function definition
 @mixin make-space($values, $prefixes, $breakpoints) {
-  @each $breakpoint-name, $breakpoint-value in $breakpoints {
-    // if xs value = 0, set it global without media queries
-    @if($breakpoint-value == 0) {
-      @each $attr-short, $attr-long in $prefixes {
-        @each $value in $values {
-          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-            #{$attr-long}: #{$value + px !important};
-          }
-        }
-      }
-    }
-    // breakpoint values that not equal to 0
-    @else {
-      @media screen and (min-width: $breakpoint-value + px) {
-        @each $attr-short, $attr-long in $prefixes {
-          @each $value in $values {
-            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-              #{$attr-long}: #{$value + px !important};
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        // if xs value = 0, set it global without media queries
+        @if($breakpoint-value == 0) {
+            @each $attr-short, $attr-long in $prefixes {
+                @each $value in $values {
+                    .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+                        #{$attr-long}: #{$value + px !important};
+                    }
+                }
             }
-          }
         }
-      }
+        // breakpoint values that not equal to 0
+        @else {
+            @media screen and (min-width: $breakpoint-value + px) {
+                @each $attr-short, $attr-long in $prefixes {
+                    @each $value in $values {
+                        .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+                            #{$attr-long}: #{$value + px !important};
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }
 
 @include make-space($space-values, $space-prefixes, $breakpoints);
@@ -79,34 +79,43 @@ $breakpoints : $grid-breakpoints;
 // GRID classes
 // --------------------------------------------------
 /*Definition container de taille fixe*/
-@include viewport(min, $min: 365){
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: ($gridGutterWidth/2);
+    padding-left: ($gridGutterWidth/2);
+    height: 100%;
+}
+@include media(phone){
     .container{
-        @include container(324);
+        width: 320px;
+        padding: 0 14px;
     }
 }
-@include viewport(min, $min: 680){
+@include media(tab){
     .container{
-        @include container(648);
+        width: 640px;
     }
 }
-@include viewport(min, $min: 992){
+@include media(desk){
     .container{
-        @include container(960);
+        width: 1024px;
     }
 }
-@include viewport(min, $min: 1172){
+@include media(lgdesk){
     .container{
-        @include container(1140);
+        width: 1280px;
     }
 }
-@include viewport(min, $min: 1312){
+@include viewport(min, $min: 1400){
     .container{
-        @include container(1280);
+        width: 1344px;
     }
 }
 
 *{
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*container prenant toute la largeur de l'ecran*/
@@ -120,6 +129,7 @@ $breakpoints : $grid-breakpoints;
 
 /*Container de ligne*/
 .row{
+    position: relative;
     margin-left: -($gridGutterWidth/2);
     margin-right: -($gridGutterWidth/2);
 
@@ -280,6 +290,7 @@ $breakpoints : $grid-breakpoints;
     }
 }
 .container,.clearfix,.container-fluid,.row{
+    position: relative;
     @include clearfix;
 }
 .center-block{
