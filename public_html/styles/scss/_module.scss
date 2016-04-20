@@ -8,7 +8,7 @@ svg:not(:root) {
 }
 
 // COLOR CLASS
-// --------------------------------------------------
+// -----------------------------------------------------------------------------
 .orange
 {
     color: $orange !important;
@@ -35,7 +35,7 @@ h2{
     font-weight: 600;
 }
 
-// CONTAINER
+// LAYOUT
 //------------------------------------------------------------------------------
 section{
     padding: 30px 0;
@@ -55,6 +55,10 @@ section{
     flex-direction: row; /* direction d'affichage verticale */
     justify-content: center; /* alignement vertical */
 }
+
+.item-spread{
+    @include spread-element();
+}
 // HEADER
 //------------------------------------------------------------------------------
 
@@ -66,11 +70,14 @@ header{
     .header-upper{
         background-color: $blue;
         color: $white;
+        height: 31px;
+    }
+    .header-bottom{
+        padding: 25px 0;
     }
     .header-upper-nav{
         display: inline-block;
         position: relative;
-        height: 31px;
     }
     .header-bottom{
         background-color: $white;
@@ -111,6 +118,57 @@ header{
             color: rgba(255, 255, 255, 0.1) !important;
         }
     }
+    .login-nav{
+        text-align: right;
+        ul{
+            display: block;
+            color: $blue;
+            font-size: 1.05em;
+            font-weight: 400;
+        }
+        li{
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            @include transition($transitionUi);
+            &:not(:last-child){margin-right: 30px;}
+            &:hover{
+                color: $orange;
+            }
+            a{line-height: 20px;}
+        }
+    }
+    #header-bottom-main{
+        height: 55px;
+    }
+    .main-nav, .logo{
+        display: inline-block;
+    }
+    .logo{
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+    }
+    .main-nav{
+        position: relative;
+        font-size: 1.35em;
+        font-weight: 600;
+        margin-left: 65px;
+        li{
+            display: inline-block;
+            text-align: center;
+            line-height: normal;
+            @include transition($transitionUi);
+            padding: 0 25px;
+            &:hover{
+                color: $orange;
+            }
+            &.active{
+                color: $orange;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 //SEARCH BANNER
 //------------------------------------------------------------------------------
@@ -118,7 +176,7 @@ header{
 .search-banner{
     position: relative;
     display: block;
-    height: 350px;
+    height: 430px;
     background-image: url(../../images/Img/homepage/search-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -131,14 +189,14 @@ header{
     display: block;
     width: 100%;
     @include vertical-align-middle(absolute);
-    padding: 10px 5px;
+    padding: 15px 20px 5px;
     background-color: $white;
     border-radius: $border-radius - 2;
     h2{
         position: absolute;
         display: block;
         margin: 0;
-        bottom: 30px;
+        top: -35px;
         color: $white;
     }
 }
@@ -184,7 +242,7 @@ footer .footer-links{
     }
 }
 // BUTTONS
-// --------------------------------------------------
+// -----------------------------------------------------------------------------
 
 @mixin btn{
     font-size: 15px;
@@ -232,4 +290,87 @@ footer .footer-links{
     &:hover:not([disabled]){
         background-color: lighten($orange, 5%);
     }
+}
+
+//INPUT
+//------------------------------------------------------------------------------
+
+label{
+    color: $blue;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.input-group{
+    display: block;
+    position: relative;
+    min-height: 67px;
+    margin-bottom: 15px;
+    label, label+*{
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    &.search-bar{
+        display: table;
+        height: 43px;
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+        min-height: auto;
+
+        .search-bar-select, .search-bar-input{
+            box-sizing: content-box;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+
+        }
+        .search-bar-select{
+            width: 110px;
+        }
+        select, input{
+            width: 100%;
+            height: 100%;
+        }
+        select{
+            border-radius: 4px 0 0 4px;
+        }
+        input{
+            border: 1px solid $grey;
+            border-radius: 0 4px 4px 0;
+            border-left: none;
+        }
+    }
+}
+input, select{padding-left: 15px;}
+select{
+    border-radius: 4px;
+    border: 1px solid $grey;
+    height: 43px;
+    background-color: $light-grey;
+    cursor: pointer;
+    color: $dark-grey;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding-right: 15px;
+}
+.radioboxes{
+    height: 43px;
+    line-height: 43px;
+    .radiobox{
+        label{color: $dark-grey;}
+        display: inline-block;
+        input{
+            margin-right: 7px;
+            position: relative;
+            top: 2px;
+        }
+        &:first-child{
+            margin-right: 15px;
+        }
+    }
+}
+.radiobox{
+    input, label{display: inline;}
 }

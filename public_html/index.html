@@ -41,27 +41,31 @@
             <div class="header-bottom">
                 <div class="container">
                     <div class="row">
-                        <nav class="pull-right">
+                        <nav class="pull-right login-nav phone-6">
                             <ul>
-                                <li><a href="#">Se connecter</a></li>
+                                <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
                                 <li><a href="#">S'inscrire gratuitement</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="row">
-                        <div class="logo">
-                            <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                    <div id="header-bottom-main" class="row">
+                        <div style="height: 100%;" class="pull-left">
+                            <div class="logo">
+                                <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                            </div>
+                            <nav class="main-nav">
+                                <ul>
+                                    <li><a href="#">Acheter</a></li>
+                                    <li><a href="#">Louer</a></li>
+                                    <li><a href="#">Neuf</a></li>
+                                    <li><a href="#">Colocation</a></li>
+                                    <li><a href="#">Commerces</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <nav>
-                            <ul>
-                                <li><a href="#">Acheter</a></li>
-                                <li><a href="#">Louer</a></li>
-                                <li><a href="#">Neuf</a></li>
-                                <li><a href="#">Colocation</a></li>
-                                <li><a href="#">Commerces</a></li>
-                            </ul>
-                        </nav>
-                        <a class="btn-orange">Publier une annonce</a>
+                        <div style="position: absolute; right: 0; bottom: -14px;" class="pull-right">
+                            <a class="btn-orange">Publier une annonce</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,42 +76,89 @@
                     <div class="search-banner-box">
                         <h2>Quel est votre future bien ?</h2>
                         <div class="phone-10">
-                            <div class="input-group phone-12">
-                                <select name="" id=""></select>
-                                <input type="text" />
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Type de bien</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Surface (min.)</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Budget (min.)</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">État du bien</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
+                            <form action="">
+                                <div class="clearfix">
+                                    <div class="input-group search-bar">
+                                        <div class="search-bar-select">
+                                            <select name="" id="">
+                                                <option value="acheter">Acheter</option>
+                                                <option value="louer">Louer</option>
+                                            </select>
+                                        </div>
+                                        <div class="search-bar-input">
+                                            <div style="height: 41px;">
+                                                <input type="text" placeholder="Commune, Localité, Référence,..."/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Pays</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Nombre de chambres (min.)</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <div class="input-group phone-3">
-                                <label for="">Budget (max.)</label>
-                                <select name="" id=""></select>
-                            </div>
-                            <input type="submit" class="btn-orange phone-3" value="Rechercher"/>
+                                <div class="clearfix">
+                                    <div class="phone-3 phone-pr-15">
+                                        <div class="input-group">
+                                            <label for="">Type de bien</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                        <div class="input-group">
+                                            <label for="">Surface (min.)</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                        <div class="input-group">
+                                            <label for="">Budget (min.)</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pl-15">
+                                        <div class="input-group">
+                                            <label for="">État du bien</label>
+                                            <div class="radioboxes">
+                                                <div class="radiobox">
+                                                    <input id="ancien" type="radio" name="_etat" /><label for="ancien">ancien</label>
+                                                </div>
+                                                <div class="radiobox">
+                                                    <input id="neuf" type="radio"  name="_etat" /><label for="neuf">neuf</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pr-15">
+                                        <div class="input-group">
+                                            <label for="">Pays</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                        <div class="input-group">
+                                            <label for="">Nombre de chambres (min.)</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                        <div class="input-group">
+                                            <label for="">Budget (max.)</label>
+                                            <select name="" id="">
+                                                <option value="test">test</option>
+                                            </select>
+                                        </div>
+                                    </div><!--
+                                    --><div class="phone-3 phone-pl-15">
+                                        <input style="width: 100%; margin: 0; position: relative; top: 25px;" type="submit" class="btn-orange" value="Rechercher"/>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
