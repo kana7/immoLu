@@ -11,225 +11,314 @@
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
     </head>
     <body>
-        <header>
-            <div class="header-upper">
-                <div class="container">
-                    <div class="row">
-                        <nav class="header-upper-nav left phone-6">
-                            <ul>
-                                <li><a href="#">Biens à vendre</a></li>
-                                <li class="separator">|</li>
-                                <li><a href="#">Bien à louer</a></li>
-                                <li class="separator">|</li>
-                                <li><a href="#">Bien neufs</a></li>
-                                <li class="separator">|</li>
-                                <li><a href="#">Commerces</a></li>
-                            </ul>
-                        </nav>
-                        <nav id="language-selection" class="header-upper-nav right phone-6">
-                            <ul>
-                                <li class="active"><a href="#">FR</a></li>
-                                <li class="separator">|</li>
-                                <li><a href="#">EN</a></li>
-                                <li class="separator">|</li>
-                                <li><a href="#">DE</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="header-bottom">
-                <div class="container">
-                    <div class="row">
-                        <nav class="pull-right login-nav phone-6">
-                            <ul>
-                                <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
-                                <li><a href="#">S'inscrire gratuitement</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div id="header-bottom-main" class="row">
-                        <div style="height: 100%;" class="pull-left">
-                            <div class="logo">
-                                <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
-                            </div>
-                            <nav class="main-nav">
+        <nav class="mobile-side-menu">
+            <ul class="menu">
+                <li class="menu-item link"><a href="#">Accueil</a></li>
+                <li class="menu-item link"><a href="#">Acheter</a></li>
+                <li class="menu-item link"><a href="#">Louer</a></li>
+                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href="#">Colocation</a></li>
+                <li class="menu-item link"><a href="#">Commerces</a></li>
+            </ul>
+        </nav>
+        <div id="siteWrap">
+            <header>
+                <div class="header-upper">
+                    <div class="container">
+                        <div style="height: 100%;" class="row">
+                            <nav id="language-selection" class="header-upper-nav right phone-6">
                                 <ul>
-                                    <li><a href="#">Acheter</a></li>
-                                    <li><a href="#">Louer</a></li>
-                                    <li><a href="#">Neuf</a></li>
-                                    <li><a href="#">Colocation</a></li>
-                                    <li><a href="#">Commerces</a></li>
+                                    <li class="active"><a href="#">FR</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">EN</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">DE</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">PT</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <div style="position: absolute; right: 0; bottom: -14px;" class="pull-right">
-                            <a class="btn-orange">Publier une annonce</a>
+                    </div>
+                </div>
+                <div class="header-bottom mobile display-phone display-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="phone-6">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                            </div>
+                            <div class="phone-6">
+                                <div class="clearfix pull-right header-mobile-button">
+                                    <a href="#" class="btn-orange"><span class="icon-car"></span></a>
+                                    <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
+                                    <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <section class="search-banner">
-            <div class="container">
-                <div class="row">
-                    <div class="search-banner-box">
-                        <h2>Quel est votre future bien ?</h2>
+                <div class="header-bottom display-desk display-lgdesk">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="pull-right login-nav phone-6">
+                                <ul>
+                                    <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                    <li><a href="#">S'inscrire gratuitement</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="header-bottom-main" class="row">
+                            <div style="height: 100%;" class="pull-left">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li><a href="#">Acheter</a></li>
+                                        <li><a href="#">Louer</a></li>
+                                        <li><a href="#">Neuf</a></li>
+                                        <li><a href="#">Colocation</a></li>
+                                        <li><a href="#">Commerces</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
+                                <a class="btn-orange">Publier une annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="search-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="search-banner-box">
+                            <h2>Quel est votre future bien ?</h2>
+                            <div class="phone-10">
+                                <form action="">
+                                    <div class="clearfix">
+                                        <div class="input-group search-bar">
+                                            <div class="search-bar-select">
+                                                <select name="" id="">
+                                                    <option value="acheter">Acheter</option>
+                                                    <option value="louer">Louer</option>
+                                                </select>
+                                            </div>
+                                            <div class="search-bar-input">
+                                                <div style="height: 41px;">
+                                                    <input type="text" placeholder="Commune, Localité, Référence,..."/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class="phone-3 phone-pr-15">
+                                            <div class="input-group">
+                                                <label for="">Type de bien</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                            <div class="input-group">
+                                                <label for="">Surface (min.)</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                            <div class="input-group">
+                                                <label for="">Budget (min.)</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pl-15">
+                                            <div class="input-group">
+                                                <label for="">État du bien</label>
+                                                <div class="radioboxes">
+                                                    <div class="radiobox">
+                                                        <input id="ancien" type="radio" name="_etat" /><label for="ancien">ancien</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input id="neuf" type="radio"  name="_etat" /><label for="neuf">neuf</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pr-15">
+                                            <div class="input-group">
+                                                <label for="">Pays</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                            <div class="input-group">
+                                                <label for="">Nombre de chambres (min.)</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pr-15 phone-pl-15">
+                                            <div class="input-group">
+                                                <label for="">Budget (max.)</label>
+                                                <select name="" id="">
+                                                    <option value="test">test</option>
+                                                </select>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-3 phone-pl-15">
+                                            <input style="width: 100%; margin: 0; position: relative; top: 25px;" type="submit" class="btn-orange" value="Rechercher"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ads-une">
+                <div class="container">
+                    <div class="row">
+                        <h2>Bien immobiler <span class="orange">à la une</span> !</h2>
+                    </div>
+                    <div class="row">
+                        <div class="immo-main-gallery">
+                            <div class="gallery-cell">
+                                <div class="main-gallery immo-main-annonce">
+                                    <div class="data">
+                                        <div class="annonce-slider-item-img-container">
+                                            <div class="image-container">
+                                                <img class="img-annonce" src="images/Img/homepage/first-annonce.jpg" alt="MERCEDES - A 180 CDI">
+                                            </div>
+                                        </div>
+                                        <div class="info-container">
+                                            <div class="label">
+                                                <span class="location">LUXEMBOURG - WEIMERSKIRCH</span>
+                                                <span class="categorie">Maison jumelée 3 Chambres</span>
+                                            </div>
+                                            <div class="price">
+                                                825 000&nbsp;€
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta">
+                                        <div class="logo-container">
+                                            <img src="images/Img/homepage/logo1.png" alt="" />
+                                        </div>
+                                        <div class="address">
+                                            <p>30 rue des Romains</p>
+                                            <p>8041 Strassen</p>
+                                            <p>LUXEMBOURG</p>
+                                        </div>
+                                        <div class="phone-mb-20">
+                                            <a href="#" class="btn-grey"><span class="icon-phone"></span>telephone</a>
+                                            <a href="#" class="btn-grey"><span class="icon-email"></span>contact</a>
+                                        </div>
+                                        <a class="immo-link" href="#">Voir <span>23</span> annonces ></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-cell">
+                                <div class="main-gallery immo-main-annonce">
+                                    <div class="data">
+                                        <div class="annonce-slider-item-img-container">
+                                            <div class="image-container">
+                                                <img class="img-annonce" src="images/Img/homepage/second-annonce.jpg" alt="MERCEDES - A 180 CDI">
+                                            </div>
+                                        </div>
+                                        <div class="info-container">
+                                            <div class="label">
+                                                <span class="location">BIWER</span>
+                                                <span class="categorie">Appartement 2 Chambres</span>
+                                            </div>
+                                            <div class="price">
+                                                125 000 - 375 000&nbsp;€
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta">
+                                        <div class="logo-container">
+                                            <img src="images/Img/homepage/logo2.png" alt="" />
+                                        </div>
+                                        <div class="address">
+                                            <p>6 -78 Grand Rue</p>
+                                            <p>1660 Luxembourg-Centre</p>
+                                            <p>LUXEMBOURG</p>
+                                        </div>
+                                        <div class="phone-mb-20">
+                                            <a href="#" class="btn-grey"><span class="icon-phone"></span>telephone</a>
+                                            <a href="#" class="btn-grey"><span class="icon-email"></span>contact</a>
+                                        </div>
+                                        <a class="immo-link" href="#">Voir <span>23</span> annonces ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about-section">
+                <div class="container">
+                    <div class="row">
                         <div class="phone-10">
-                            <form action="">
-                                <div class="clearfix">
-                                    <div class="input-group search-bar">
-                                        <div class="search-bar-select">
-                                            <select name="" id="">
-                                                <option value="acheter">Acheter</option>
-                                                <option value="louer">Louer</option>
-                                            </select>
-                                        </div>
-                                        <div class="search-bar-input">
-                                            <div style="height: 41px;">
-                                                <input type="text" placeholder="Commune, Localité, Référence,..."/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix">
-                                    <div class="phone-3 phone-pr-15">
-                                        <div class="input-group">
-                                            <label for="">Type de bien</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
-                                        <div class="input-group">
-                                            <label for="">Surface (min.)</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
-                                        <div class="input-group">
-                                            <label for="">Budget (min.)</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pl-15">
-                                        <div class="input-group">
-                                            <label for="">État du bien</label>
-                                            <div class="radioboxes">
-                                                <div class="radiobox">
-                                                    <input id="ancien" type="radio" name="_etat" /><label for="ancien">ancien</label>
-                                                </div>
-                                                <div class="radiobox">
-                                                    <input id="neuf" type="radio"  name="_etat" /><label for="neuf">neuf</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pr-15">
-                                        <div class="input-group">
-                                            <label for="">Pays</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
-                                        <div class="input-group">
-                                            <label for="">Nombre de chambres (min.)</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pr-15 phone-pl-15">
-                                        <div class="input-group">
-                                            <label for="">Budget (max.)</label>
-                                            <select name="" id="">
-                                                <option value="test">test</option>
-                                            </select>
-                                        </div>
-                                    </div><!--
-                                    --><div class="phone-3 phone-pl-15">
-                                        <input style="width: 100%; margin: 0; position: relative; top: 25px;" type="submit" class="btn-orange" value="Rechercher"/>
-                                    </div>
-                                </div>
-                            </form>
+                            <h2>À propos de immo<span class="orange">.lu</span> : </h2>
+                            <div>
+                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eros sapien, finibus non dolor in, suscipit finibus orci. Vivamus in tincidunt lorem. Etiam venenatis mattis euismod. Maecenas fringilla cursus porta. Mauris velit justo, ullamcorper id nulla eget, imperdiet aliquet dolor. Nam ut egestas ligula. Suspendisse fermentum blandit ex eu iaculis. Vivamus nisi elit, eleifend id lorem eget, facilisis bibendum massa. Duis in mi ut eros efficitur malesuada egestas at mauris. Donec fringilla consectetur nunc sed ultrices. </p>
+                                <p>Aenean odio sapien, dictum in enim at, tempor cursus nisi. Nam faucibus a lorem ac vulputate. Vestibulum eleifend leo ut congue ullamcorper. Vivamus nec nibh ornare, suscipit enim consectetur, condimentum ipsum. Mauris quis tortor nisi. Suspendisse id mi dapibus purus tincidunt finibus sed id leo. Sed id tellus massa. Donec tristique consectetur urna. Duis tincidunt imperdiet magna, nec sodales quam pretium et. Vivamus facilisis metus enim, vel viverra quam hendrerit nec. Sed consectetur, sem quis laoreet placerat, lectus augue dapibus ligula, in laoreet nibh dui nec ligula. Cras cursus id magna eget venenatis. </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="ads-une">
-            <div class="container">
-                <div class="row">
-                    <h2>Bien immobiler <span class="orange">à la une</span> !</h2>
-                </div>
-                <div class="row">
-                    <div class="immo-main-gallery">
-                        <div class="gallery-cell"></div>
-                        <div class="gallery-cell"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="about-section">
-            <div class="container">
-                <div class="row">
-                    <div class="phone-10">
-                        <h2>À propos de immo<span class="orange">.lu</span> : </h2>
-                        <div>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer eros sapien, finibus non dolor in, suscipit finibus orci. Vivamus in tincidunt lorem. Etiam venenatis mattis euismod. Maecenas fringilla cursus porta. Mauris velit justo, ullamcorper id nulla eget, imperdiet aliquet dolor. Nam ut egestas ligula. Suspendisse fermentum blandit ex eu iaculis. Vivamus nisi elit, eleifend id lorem eget, facilisis bibendum massa. Duis in mi ut eros efficitur malesuada egestas at mauris. Donec fringilla consectetur nunc sed ultrices. </p>
-                            <p>Aenean odio sapien, dictum in enim at, tempor cursus nisi. Nam faucibus a lorem ac vulputate. Vestibulum eleifend leo ut congue ullamcorper. Vivamus nec nibh ornare, suscipit enim consectetur, condimentum ipsum. Mauris quis tortor nisi. Suspendisse id mi dapibus purus tincidunt finibus sed id leo. Sed id tellus massa. Donec tristique consectetur urna. Duis tincidunt imperdiet magna, nec sodales quam pretium et. Vivamus facilisis metus enim, vel viverra quam hendrerit nec. Sed consectetur, sem quis laoreet placerat, lectus augue dapibus ligula, in laoreet nibh dui nec ligula. Cras cursus id magna eget venenatis. </p>
+            </section>
+            <footer>
+                <div class="container">
+                    <div class="row display-flex-align-middle">
+                        <div class="footer-links desk-4">
+                            <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                            <img src="images/Img/Mockup.png" alt="" />
+                        </div>
+                        <div class="footer-links desk-4">
+                            <h3>Recherche d'immobilier en vente</h3>
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Appartement au Luxembourg</a></li>
+                                    <li><a href="#">Maisons au Luxembourg</a></li>
+                                    <li><a href="#">Maisons à Kirchberg</a></li>
+                                    <li><a href="#">Maisons à Strassen</a></li>
+                                    <li><a href="#">Maisons à Leudelange</a></li>
+                                    <li><a href="#">Maisons à Hollerich</a></li>
+                                    <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                    <li><a href="#">Maisons à Basharage</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer-links desk-4">
+                            <h3>Recherche d'immobilier en location</h3>
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Appartement au Luxembourg</a></li>
+                                    <li><a href="#">Maisons au Luxembourg</a></li>
+                                    <li><a href="#">Maisons à Kirchberg</a></li>
+                                    <li><a href="#">Maisons à Strassen</a></li>
+                                    <li><a href="#">Maisons à Leudelange</a></li>
+                                    <li><a href="#">Maisons à Hollerich</a></li>
+                                    <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                    <li><a href="#">Maisons à Basharage</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <footer>
-            <div class="container">
-                <div class="row display-flex-align-middle">
-                    <div class="footer-links desk-4">
-                        <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
-                        <img src="images/Img/Mockup.png" alt="" />
-                    </div>
-                    <div class="footer-links desk-4">
-                        <h3>Recherche d'immobilier en vente</h3>
-                        <nav>
-                            <ul>
-                                <li><a href="#">Appartement au Luxembourg</a></li>
-                                <li><a href="#">Maisons au Luxembourg</a></li>
-                                <li><a href="#">Maisons à Kirchberg</a></li>
-                                <li><a href="#">Maisons à Strassen</a></li>
-                                <li><a href="#">Maisons à Leudelange</a></li>
-                                <li><a href="#">Maisons à Hollerich</a></li>
-                                <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
-                                <li><a href="#">Maisons à Basharage</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="footer-links desk-4">
-                        <h3>Recherche d'immobilier en location</h3>
-                        <nav>
-                            <ul>
-                                <li><a href="#">Appartement au Luxembourg</a></li>
-                                <li><a href="#">Maisons au Luxembourg</a></li>
-                                <li><a href="#">Maisons à Kirchberg</a></li>
-                                <li><a href="#">Maisons à Strassen</a></li>
-                                <li><a href="#">Maisons à Leudelange</a></li>
-                                <li><a href="#">Maisons à Hollerich</a></li>
-                                <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
-                                <li><a href="#">Maisons à Basharage</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/flickity.pkgd.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>

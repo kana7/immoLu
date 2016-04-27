@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Immo.lu</title>
+        <meta charset="UTF-8">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/css/vendor/flickity.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-upper">
+                <div class="container">
+                    <div class="row">
+                        <nav id="language-selection" class="header-upper-nav right phone-6">
+                            <ul>
+                                <li class="active"><a href="#">FR</a></li>
+                                <li class="separator">|</li>
+                                <li><a href="#">EN</a></li>
+                                <li class="separator">|</li>
+                                <li><a href="#">DE</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <nav class="pull-right login-nav phone-6">
+                            <ul>
+                                <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                <li><a href="#">S'inscrire gratuitement</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="header-bottom-main" class="row">
+                        <div style="height: 100%;" class="pull-left">
+                            <div class="logo">
+                                <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                            </div>
+                            <nav class="main-nav">
+                                <ul>
+                                    <li><a href="#">Acheter</a></li>
+                                    <li><a href="#">Louer</a></li>
+                                    <li><a href="#">Neuf</a></li>
+                                    <li><a href="#">Colocation</a></li>
+                                    <li><a href="#">Commerces</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
+                            <a class="btn-orange">Publier une annonce</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="login" class="phone-mb-40 phone-pt-30 phone-pb-30">
+            <div class="clearfix phone-pl-30 phone-pr-30">
+                <div id="login-image" class="phone-mb-40"><img src="images/Img/Logo_Immo.lu.png" alt="Auto.lu" style="width: 100%; height: auto; position: relative;"></div>
+                <div id="login-error" class="hidden">Nom utilisateur ou mot de passe incorrect</div>
+                <form id="bazar_login_form" action="sql.exe?SqlDB=auto&amp;Sql=LoginClient_Login.phs" method="POST" name="bazar_login">
+                    <div class="input-group">
+                        <input type="text" name="_Username" value="" placeholder="Nom d'utilisateur">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="_Password" value="" placeholder="Mot de passe">
+                    </div>
+                    <input type="hidden" name="ErrorScript" value="ErrorAuto.phs&amp;m=19">
+                    <input type="hidden" name="NextScript" value="Auto.phs">
+                    <input type="hidden" name="_Login" value="1">
+                    <button class="btn-orange phone-mt-30" name="login_button" onclick="bazarLogin(event);">Connexion</button>
+                </form>
+                <div class="align-center phone-mt-30">
+                    <a class="login-link" href="sql.exe?SqlDB=auto&amp;Sql=PasswordAuto.phs&amp;action=1">Nom d'utilisateur/Mot de passe oublié?</a><br>
+                    <a class="login-link" href="sql.exe?SqlDB=auto&amp;Sql=Register.phs">Je n'ai pas encore de compte</a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row display-flex-align-middle">
+                    <div class="footer-links desk-4">
+                        <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                        <img src="images/Img/Mockup.png" alt="" />
+                    </div>
+                    <div class="footer-links desk-4">
+                        <h3>Recherche d'immobilier en vente</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Appartement au Luxembourg</a></li>
+                                <li><a href="#">Maisons au Luxembourg</a></li>
+                                <li><a href="#">Maisons à Kirchberg</a></li>
+                                <li><a href="#">Maisons à Strassen</a></li>
+                                <li><a href="#">Maisons à Leudelange</a></li>
+                                <li><a href="#">Maisons à Hollerich</a></li>
+                                <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                <li><a href="#">Maisons à Basharage</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-links desk-4">
+                        <h3>Recherche d'immobilier en location</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Appartement au Luxembourg</a></li>
+                                <li><a href="#">Maisons au Luxembourg</a></li>
+                                <li><a href="#">Maisons à Kirchberg</a></li>
+                                <li><a href="#">Maisons à Strassen</a></li>
+                                <li><a href="#">Maisons à Leudelange</a></li>
+                                <li><a href="#">Maisons à Hollerich</a></li>
+                                <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                <li><a href="#">Maisons à Basharage</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/flickity.pkgd.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+    </body>
+</html>

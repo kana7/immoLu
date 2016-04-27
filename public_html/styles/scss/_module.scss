@@ -35,7 +35,7 @@ h2{
     font-weight: 600;
 }
 
-// LAYOUT
+// LAYOUT/CONTAINER
 //------------------------------------------------------------------------------
 section{
     padding: 30px 0;
@@ -59,10 +59,149 @@ section{
 .item-spread{
     @include spread-element();
 }
+
+.img-annonce{
+    .fill-height{
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+    }
+    .fill-width{
+        height: auto;
+        max-height: 100%;
+        width: 100%;
+    }
+}
+
+// MENU MOBILE
+//------------------------------------------------------------------------------
+#siteWrap{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+
+    background-color: $white;
+    -webkit-transition: -webkit-transform 0.4s ease; /* Changed here */ 
+    -moz-transition: -moz-transform 0.4s ease;
+    -o-transition: -o-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    &.open{
+        @include transform(translateX(-247px));
+        border-right: 1px solid $light-grey;
+    }
+}
+
+//menu mobile
+.mobile-side-menu{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    //panneau base + sous-menu de liens glissants
+    .menu, .menu-links{
+        display: inline-block;
+        float: right;
+        width: 247px;
+        text-align: left;
+        .menu-item{
+            display: block;
+            position: relative;
+            color: #004994;
+            font-size: 14px;
+            font-weight: 600;
+            /* text-transform: uppercase; */
+            border-bottom: 1px solid #F3F3F3;
+            cursor: pointer;
+            .icon-right-arrow{
+                float: right;
+                margin: 0;
+                font-size: 10px;
+                position: relative;
+                top: 3px;
+            }
+            &:hover, &:active{
+                background-color: darken($light-grey, 1%);
+            }
+            &.link{
+                padding: 0;
+                a{
+                    display: block;
+                    padding: 16px 20px;
+                }
+            }
+        }
+        .sous-nav{
+            background-color: darken($light-grey, 6%);
+            .menu-item{
+                padding: 12px 20px;
+                text-align: left;
+                color: #696969;
+                font-size: 13px;
+                &.link{
+                    padding: 0;
+                    a{
+                        display: block;
+                        padding: 12px 20px;
+                    }
+                }
+            }
+        }
+    }
+    .menu>.menu-item, .menu-item.back{
+        padding: 16px 20px;
+    }
+    .menu-links{
+        a{
+            display: block;
+            padding: 16px 20px;
+        }
+    }
+    //layout des sous menus
+    .menu-links-wrapper{
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        right: -247px;
+        @include transform(translateX(0px));
+        -webkit-transition: -webkit-transform 0.4s ease; /* Changed here */ 
+        -moz-transition: -moz-transform 0.4s ease;
+        -o-transition: -o-transform 0.4s ease;
+        transition: transform 0.4s ease;
+        &.is-open{
+            @include transform(translateX(-247px));
+        }
+        .menu-item.back{
+            text-align: left;
+            color: $white;
+            background-color: $blue;
+            border-bottom: 2px solid $blue;
+            span{
+                float: left;
+                top: 1px;
+                margin-right: 5px;
+                @include transform(rotate(180deg));
+            }
+        }
+    }
+}
+
 // HEADER
 //------------------------------------------------------------------------------
 
 header{
+    @include box-shadow(0px 2px 20px -5px rgba(0,0,0,0.3));
     .header-upper, .header-bottom{
         display: block;
         position: relative;
@@ -70,10 +209,27 @@ header{
     .header-upper{
         background-color: $blue;
         color: $white;
-        height: 31px;
+        height: 35px;
     }
     .header-bottom{
-        padding: 25px 0;
+        padding: 15px 0;
+        &.mobile{
+            .btn-blue, .btn-orange, .btn-white{
+                display: inline;
+                width: 35px;
+                height: 35px;
+                line-height: 37px;
+                float: left;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 14px;
+                span{
+                    margin: 0;
+                }
+            }
+        }
     }
     .header-upper-nav{
         display: inline-block;
@@ -83,16 +239,29 @@ header{
         background-color: $white;
         color: $blue;
     }
+    .header-bottom.mobile .header-mobile-button{
+        .btn-blue, .btn-orange{
+            font-size: 13px;
+        }
+        .btn-white{
+            font-size: 16px;
+        }
+        a:not(:last-child){
+            margin-right: 10px;
+        }
+    }
     #language-selection{ 
         li{
             color: $white;
             opacity: 0.7;
+            font-size: 1.075em;
             &.active, &:hover{
                 opacity: 1;
             }
         }
     }
     .header-upper-nav{
+        height: 100%;
         &.left{
             float: left;
             text-align: left;
@@ -100,16 +269,17 @@ header{
         &.right{
             float: right;
             text-align: right;
-            ul{max-width: 110px;}
+            ul{max-width: 140px;}
         }
         ul{
             display: block;
+            height: 100%;
             @include spread-element(420px);
         }
         li{
             display: inline-block;
             text-align: center;
-            line-height: 28px; 
+            line-height: 35px; 
             &:hover{
                 text-decoration: underline;
             }
@@ -145,21 +315,19 @@ header{
         display: inline-block;
     }
     .logo{
-        height: 100%;
-        width: auto;
-        max-width: 100%;
+        height: auto;
+        width: 150px;
+        img{height: auto; width: 100%;}
     }
     .main-nav{
         position: relative;
         font-size: 1.35em;
         font-weight: 600;
-        margin-left: 65px;
         li{
             display: inline-block;
             text-align: center;
             line-height: normal;
             @include transition($transitionUi);
-            padding: 0 25px;
             &:hover{
                 color: $orange;
             }
@@ -201,23 +369,70 @@ header{
     }
 }
 
+// LOGIN
+// -----------------------------------------------------------------------------
+
+#login{
+    position: relative;
+    background-color: $white;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    text-align: center;
+    width: 310px;
+    margin: 0 auto;
+    margin-top: 3%;
+    .login-image{
+        width: 100%;
+        img{width: 100%; height: auto; max-width: 100%;}
+    }
+    .input-group{
+        min-height: auto;
+        margin: 0;
+        input{width: 100%;}
+        &:first-child{
+            margin-bottom: 15px;
+        }
+    }
+    .btn-orange{
+        width: 100%;
+        height: 40px;
+        line-height: 35px;
+        padding: 0;
+        font-size: 1.3em;
+    }
+    .login-link{
+        color: $blue;
+        line-height: 15px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
 // HOMEPAGE
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 .about-section{
-    h2{font-size: 1.35em;}
-    p{line-height: 18px;}
+    h2{font-size: 1.6em;}
+    p{
+        line-height: 20px;
+        font-size: 1.05em;
+    }
 }
 
 // FOOTER
 //------------------------------------------------------------------------------
 
 footer{
-    position: relative;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     padding: 30px 0;
     background-color: $blue;
     background-image: url(../../images/Img/BG_Ville.png);
     background-repeat: no-repeat;
     background-position: right bottom;
+    height: 280px;
+    width: 100%;
 }
 
 footer .footer-links{
@@ -269,6 +484,11 @@ footer .footer-links{
     z-index: 2;
 
     @include noselect();
+    *[class^="icon-"]{
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 1.5em;
+    }
     &:focus
         {
         outline: 0;
@@ -280,7 +500,9 @@ footer .footer-links{
     }
 }
 .btn-blue,
-.btn-orange
+.btn-orange,
+.btn-grey, 
+.btn-white
 {
     @include btn;
 }
@@ -290,6 +512,40 @@ footer .footer-links{
     &:hover:not([disabled]){
         background-color: lighten($orange, 5%);
     }
+}
+.btn-blue{
+    color: $white;
+    background-color: $blue;
+    &:hover:not([disabled]){
+        background-color: lighten($blue, 5%);
+    }
+}
+.btn-white{
+    color: $blue;
+    background-color: $white;
+    &:hover:not([disabled]){
+        background-color: $blue;
+        color: $white;
+    }
+}
+.btn-grey{
+    color: $white;
+    background-color: $btn-grey;
+    font-weight: 600;
+    padding: 10px 15px;
+    font-size: 1.05em;
+    text-transform: uppercase;
+    &:hover{
+        background-color: darken($btn-grey, 10%);
+    }
+}
+
+.immo-link{
+    color: $dark-grey;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 1.1em;
+    span{color: $orange; text-decoration: underline;}
 }
 
 //INPUT
@@ -355,6 +611,16 @@ select{
     font-size: 1.1em;
     padding-right: 15px;
 }
+input[type="text"], input[type="password"], textarea {
+    border-radius: 4px;
+    border: 1px solid $grey;
+    height: 43px;
+    background-color: $light-grey;
+    cursor: pointer;
+    color: $dark-grey;
+    font-weight: 600;
+    font-size: 1.1em;
+}
 .radioboxes{
     height: 43px;
     line-height: 43px;
@@ -373,4 +639,99 @@ select{
 }
 .radiobox{
     input, label{display: inline;}
+}
+
+//GALLERY CELL
+//----------------------------------------------------------------------------
+.immo-main-gallery{
+    .flickity-prev-next-button{
+        margin: 0 -40px;
+        background: none;
+    }
+    .flickity-prev-next-button:focus{
+        @include box-shadow(none);
+    }
+
+    .flickity-prev-next-button .arrow {
+        fill: $blue;
+    }
+    .flickity-prev-next-button.no-svg {
+        color: $blue;
+    }
+}
+
+.gallery-cell{width: 50%; padding: 0 20px;}
+.immo-main-annonce{
+    display: table;
+    width: 100%;
+    border: 1px solid $grey;
+    border-radius: $border-radius;
+    padding: 7px 0;
+
+    .data, .meta{
+        display: table-cell;
+        text-align: center;
+    }
+    .data{
+        vertical-align: top;
+        width: 65%;
+        border-right: 1px solid $grey;
+        padding: 0 5px;
+    }
+    .meta{
+        vertical-align: middle;
+        padding: 25px 20px;
+    }
+    .btn-grey{
+        width: 100%;
+        padding: 12px 15px;
+        padding-left: 25px;
+        *[class^="icon-"]{
+            @include vertical-align-middle(absolute);
+            left: 15px;
+            line-height: 17px;
+        }
+    }
+}
+.annonce-slider-item-img-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: $light-grey;
+    margin-bottom: 15px;
+}
+.image-container {
+    display: inline-block;
+    position: relative;
+    height: 265px;
+    width: 100%;
+    overflow: hidden;
+}
+.image-container .img-annonce {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+.info-container{
+    font-size: 1.3em;
+    line-height: 23px;
+    .label{span{display: block;}}
+    .price{
+        font-size: 1.6em;
+        font-weight: 600;
+        line-height: 40px;
+        color: $orange;
+    }
+}
+.logo-container{
+    height: 90px;
+    text-align: center;
+    img{ display: inline-block; height: 100%; width: auto; max-width: 100%;}
+}
+.address{
+    margin: 20px 0;
+    ;    p{margin: 0;line-height: 23px; font-size: 1.1em;}
 }

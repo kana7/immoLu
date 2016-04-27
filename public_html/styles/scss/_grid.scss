@@ -90,7 +90,7 @@ $breakpoints : $grid-breakpoints;
 @include media(phone){
     .container{
         width: 320px;
-        padding: 0 14px;
+        padding: 0 15px;
     }
 }
 @include media(tab){

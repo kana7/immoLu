@@ -1,6 +1,9 @@
 @import "_normalize.scss";
 @import "_grid.scss";
-
+html, body{
+    position: relative;
+    height: 100%;
+}
 body{
     width: 100%;
     overflow-x: hidden;
@@ -97,4 +100,13 @@ hr{
 }
 .icon-right-arrow:before {
   content: "\68";
+}
+.icon-menu-icone:before {
+  content: "\69";
+}
+.icon-x-icone:before {
+  content: "\6a";
+}
+.icon-account-icone:before {
+  content: "\6b";
 }
