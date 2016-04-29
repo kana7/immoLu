@@ -1,12 +1,12 @@
 $(function () {
     MenuMobile.init();
     resizeAllImages();
-    if ($('.annonce-entry').length > 0) {
+    if ($('.annonce-details-images-container').length > 0) {
         resizeImageDetail();
         $(window).on('load', function () {
-            resizeAnnonceDetail();
+            resizeImageDetail();
         });
-        $(window).resize(resizeAnnonceDetail);
+        $(window).resize(resizeImageDetail());
     }
 
     if ($('.main-gallery').length > 0 && jQuery().flickity) {
@@ -54,11 +54,15 @@ var resizeAllImages = function (callback) {
 };
 
 var resizeImageDetail = function () {
-    var $image = $('.annonce-entry-img>figure img');
-    var $imageSrc = $image.attr('src');
-    var image = new Image();
-    image.src = $imageSrc;
-    $image.addClass((image.width / image.height > 1) ? 'fill-width' : 'fill-height');
+    var $imageSrc;
+    var $image = $('.annonce-details-images-container .annonce-img');
+    var image;
+    $image.each(function () {
+        $imageSrc = $image.attr('src');
+        image = new Image();
+        image.src = $imageSrc;
+        $(this).addClass(((image.width / image.height) > 1) ? 'fill-width' : 'fill-height');
+    });
 };
 
 /* Module pour ajouter une image via input file */

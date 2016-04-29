@@ -2598,11 +2598,11 @@ section {
     display: inline-block !important;
     width: 100% !important; }
 
-.img-annonce .fill-height {
+.annonce-img .fill-height {
   width: auto;
   max-width: 100%;
   height: 100%; }
-.img-annonce .fill-width {
+.annonce-img .fill-width {
   height: auto;
   max-height: 100%;
   width: 100%; }
@@ -2848,6 +2848,7 @@ header {
   position: relative;
   display: block;
   height: 430px;
+  margin-top: -30px;
   background-image: url(../../images/Img/homepage/search-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
@@ -2929,9 +2930,25 @@ header {
   padding: 5px;
   margin-bottom: 20px; }
 
-#annonce-details-left .annonce-details-images-container, #annonce-details-left .annonce-details-thumbnails-container {
+#annonce-details-left .annonce-details-images-container {
+  display: table;
+  position: relative;
+  position: relative;
+  width: 100%;
+  z-index: 1; }
+#annonce-details-left .annonce-details-image-main, #annonce-details-left .annonce-details-thumbnails-container {
   display: block;
-  position: relative; }
+  width: 100%; }
+#annonce-details-left .annonce-details-thumbnails-container {
+  overflow: hidden;
+  overflow-x: scroll;
+  height: 150px; }
+  #annonce-details-left .annonce-details-thumbnails-container .gallery-cell {
+    display: inline;
+    width: 25%;
+    height: 100%; }
+  #annonce-details-left .annonce-details-thumbnails-container a, #annonce-details-left .annonce-details-thumbnails-container .annonce_entry_image_thumbnails_pic {
+    height: 100%; }
 
 #annonce-details-right {
   padding: 20px 5px; }
