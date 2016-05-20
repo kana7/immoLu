@@ -2553,6 +2553,9 @@ h2 {
   font-size: 1.8em;
   font-weight: 600; }
 
+.uppercase {
+  text-transform: uppercase; }
+
 section {
   padding: 30px 0; }
 
@@ -2927,7 +2930,6 @@ header {
   margin-bottom: 10px;
   background-color: #fff;
   border: 1px solid #dadada;
-  padding: 5px;
   margin-bottom: 20px; }
 
 #annonce-details-left .annonce-details-images-container {
@@ -2938,7 +2940,8 @@ header {
   z-index: 1; }
 #annonce-details-left .annonce-details-image-main, #annonce-details-left .annonce-details-thumbnails-container {
   display: block;
-  width: 100%; }
+  width: 100%;
+  margin: 0; }
 #annonce-details-left .annonce-details-thumbnails-container {
   overflow: hidden;
   overflow-x: scroll;
@@ -2989,7 +2992,8 @@ footer {
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 280px;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: -280px; }
 
 footer .footer-links {
   font-size: 12px;
@@ -3270,6 +3274,94 @@ input[type="text"], input[type="password"], textarea {
     margin: 0;
     line-height: 23px;
     font-size: 1.1em; }
+
+/*-------------------------------ANNONCE DETAILS------------------------------*/
+/*----------------------------------------------------------------------------*/
+#annonce-infos {
+  display: block;
+  position: relative;
+  padding: 0 15px; }
+
+.annonce-title {
+  margin: 10px 0;
+  font-size: 26px; }
+  .annonce-title h1 {
+    font-weight: 400;
+    font-size: inherit;
+    color: #4e4e4e;
+    margin: 0;
+    width: 100%;
+    line-height: 30px;
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/ }
+    .annonce-title h1 .location {
+      text-transform: uppercase; }
+  .annonce-title h1 + div {
+    margin-top: 8px; }
+  .annonce-title .annonce-price {
+    color: #e75e0a;
+    font-weight: 600;
+    font-size: 1em; }
+  .annonce-title .annonce-ref {
+    font-size: 0.75em; }
+
+.annonce-description, .infos-attributs {
+  color: #565656;
+  font-size: 1.02em;
+  line-height: 20px; }
+
+.annonce-description {
+  border-top: 1px solid rgba(86, 86, 86, 0.39);
+  border-bottom: 1px solid rgba(86, 86, 86, 0.39);
+  margin: 20px 0; }
+  .annonce-description p {
+    margin: 20px 0; }
+
+.infos-attributs {
+  position: relative;
+  margin-bottom: 20px; }
+  .infos-attributs .list {
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    background-color: #f3f3f3;
+    padding: 5px 15px; }
+    .infos-attributs .list:before {
+      content: "";
+      display: table; }
+    .infos-attributs .list:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .infos-attributs .list + .list {
+      margin-top: 10px; }
+    .infos-attributs .list h2 {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 5px; }
+    .infos-attributs .list li, .infos-attributs .list ul {
+      display: block; }
+    .infos-attributs .list li {
+      line-height: 21px; }
+      .infos-attributs .list li:before {
+        content: "";
+        display: table; }
+      .infos-attributs .list li:after {
+        content: "";
+        display: table;
+        clear: both; }
+    .infos-attributs .list .attr {
+      float: left; }
+    .infos-attributs .list .value {
+      float: right;
+      font-weight: 600; }
+    .infos-attributs .list img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px; }
 
 @media screen and (max-width: 1055px) {
   header .container {
