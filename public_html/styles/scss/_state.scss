@@ -1,10 +1,46 @@
-@include media(phone){}
-@include media(tab){}
+@include media(phone){
+    .annonce-title{
+        .annonce-price{font-size: 1.2em;}
+    }
+    .annonce-description p {
+        text-align: justify;
+        text-align-last: left;
+    }
+}
+@include media(tab){
+    .annonce-title{
+        font-size: 23px;
+        h1{
+            line-height: 27px;
+        }
+    }
+    .infos-attributs .list {
+        display: inline-block;
+        max-width: 250px;
+    }
+}
+@include viewport(range, $min: 672, $max: 1055){
+    .infos-attributs{
+        div[class^="phone-"]{
+            min-height: 77px;
+        }
+    }
+}
 @include viewport(max, $max: 1055){
     header{
         .container{
             width: 100%;
             padding: 0 30px;
+        }
+    }
+    #annonce-details-right{
+        max-width: 310px;
+        margin: 0 auto;
+    }
+    footer .footer-links{
+        text-align: center;
+        img{
+            margin: 0 auto;
         }
     }
 }
@@ -24,6 +60,13 @@
         margin-left: 25px;
         li{
             padding: 0 15px;
+        }
+    }
+    .annonce-title{
+        margin: 10px 0;
+        font-size: 26px;
+        h1{
+            line-height: 30px;
         }
     }
 }

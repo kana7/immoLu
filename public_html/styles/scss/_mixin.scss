@@ -1,310 +1,310 @@
 @mixin base-style(){
-  font-family: $font-stack;
-  font-size: $font-size;
-  color: $dark-grey;
-  line-height: $base-line-height;
+    font-family: $font-stack;
+    font-size: $font-size;
+    color: $dark-grey;
+    line-height: $base-line-height;
 }
 
 //queries for the grid
 @mixin media($media) {
-  @if $media == phone {
-    @media screen and (max-width: $phone + px) { @content; }
-  }
-  @else if $media == tab {
-    @media screen and (min-width: $tab + px) { @content; }
-  }
-  @else if $media == desk {
-    @media screen and (min-width: $desk + px) { @content; }
-  }
-  @else if $media == lgdesk {
-    @media screen and (min-width: $lgdesk + px) { @content; }
-  }
+    @if $media == phone {
+        @media screen and (max-width: $phone + px) { @content; }
+    }
+    @else if $media == tab {
+        @media screen and (min-width: $tab + px) { @content; }
+    }
+    @else if $media == desk {
+        @media screen and (min-width: $desk + px) { @content; }
+    }
+    @else if $media == lgdesk {
+        @media screen and (min-width: $lgdesk + px) { @content; }
+    }
 }
 @mixin viewport($media, $min: 0, $max: 0) {
-  @if $media == max {
-    @media screen and (max-width: $max + px) { @content; }
-  }
-  @else if $media == range {
-    @media screen and (min-width: $min + px) and (max-width: $max + px) { @content; }
-  }
-  @else if $media == min {
-    @media screen and (min-width: $min + px) { @content; }
-  }
+    @if $media == max {
+        @media screen and (max-width: $max + px) { @content; }
+    }
+    @else if $media == range {
+        @media screen and (min-width: $min + px) and (max-width: $max + px) { @content; }
+    }
+    @else if $media == min {
+        @media screen and (min-width: $min + px) { @content; }
+    }
 }
 
 @mixin bgfixed-effect($height) {
-  height: $height + px;
-  background-attachment: fixed;
-  background-position: top center;
-  background-size: cover;
+    height: $height + px;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
 }
 
 @mixin container-base{
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: ($gridGutterWidth/2);
-  padding-right: ($gridGutterWidth/2);
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: ($gridGutterWidth/2);
+    padding-right: ($gridGutterWidth/2);
 }
 
 @mixin container($containerWidth){
-  @include container-base;
-  width: #{$containerWidth}px;
+    @include container-base;
+    width: #{$containerWidth}px;
 }
 
 @mixin noselect(){
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @mixin transition($transition...) {
-  -moz-transition:    $transition;
-  -o-transition:      $transition;
-  -webkit-transition: $transition;
-  transition:         $transition;
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
 }
 
 @mixin noTransition(){
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
 }
 
 @mixin clearfix() {
-  &:before{
-    content: "";
-    display: table;
-  }
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &:before{
+        content: "";
+        display: table;
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 @mixin flexbox(){
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
 }
 
 @mixin center-block($blockWidth:""){
-  @if $blockWidth != "" {
-    width: $blockWidth;
-  }
-  display: block;
-  float: none !important;
-  margin-left: auto;
-  margin-right: auto;
+    @if $blockWidth != "" {
+        width: $blockWidth;
+    }
+    display: block;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 @mixin transform($parameter...){
-  transform: $parameter;
-  -webkit-transform: $parameter;
-  -ms-transform: $parameter;
-  -o-transform: $parameter;
+    transform: $parameter;
+    -webkit-transform: $parameter;
+    -ms-transform: $parameter;
+    -o-transform: $parameter;
 }
 
 @mixin absolute-center{
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 @mixin vertical-align-middle($position: relative){
-  position: $position;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 @mixin disable-vertical-align(){
-  top: auto;
-  transform: none;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
+    top: auto;
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
 }
 
 @mixin box-shadow($params...) {
-  -webkit-box-shadow: $params;
-  -moz-box-shadow: $params;
-  box-shadow: $params;
-  -o-box-shadow: $params;
-  -ms-box-shadow: $params;
+    -webkit-box-shadow: $params;
+    -moz-box-shadow: $params;
+    box-shadow: $params;
+    -o-box-shadow: $params;
+    -ms-box-shadow: $params;
 }
 
 @mixin button($color: $blue-primary, $text_color: $white-background) {
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font: 14px/100% Arial, Helvetica, sans-serif;
-  padding: .5em 2em .55em;
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
-  @include rounded();
-  @include box-shadow(0, 1px, 2px, $shadow-color);
-
-  color: $text_color !important;
-  font-weight: bold;
-  border: solid 1px darken($color, 18%);
-  background: $color;
-  @include gradient(saturate($color, 15%), darken($color, 15%));
-
-  &:hover {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
     text-decoration: none;
-    background: saturate($color, 10%);
-    @include gradient(saturate($color, 5%), darken($color, 5%));
-  }
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    @include rounded();
+    @include box-shadow(0, 1px, 2px, $shadow-color);
 
-  &:active {
-    position: relative;
-    top: 1px;
-    color: saturate($color, 15%);
-    @include gradient(saturate($color, 15%), lighten($color, 15%));
-  }
+    color: $text_color !important;
+    font-weight: bold;
+    border: solid 1px darken($color, 18%);
+    background: $color;
+    @include gradient(saturate($color, 15%), darken($color, 15%));
+
+    &:hover {
+        text-decoration: none;
+        background: saturate($color, 10%);
+        @include gradient(saturate($color, 5%), darken($color, 5%));
+    }
+
+    &:active {
+        position: relative;
+        top: 1px;
+        color: saturate($color, 15%);
+        @include gradient(saturate($color, 15%), lighten($color, 15%));
+    }
 }
 
 @mixin rounded($radius: $radius-size) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
 @mixin gradient($from, $to) {
-  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-  background: -moz-linear-gradient(top,  $from, $to);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+    background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background: -moz-linear-gradient(top,  $from, $to);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
 }
 
 @mixin card($depth) {
-  @if $depth < 1 {
-    box-shadow: none;
-  } @else if $depth > 5 {
-    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
-  } @else {
-    box-shadow: bottom-shadow($depth), top-shadow($depth);
-  }
+    @if $depth < 1 {
+        box-shadow: none;
+    } @else if $depth > 5 {
+        @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+    } @else {
+        box-shadow: bottom-shadow($depth), top-shadow($depth);
+    }
 }
 @function top-shadow($depth) {
-  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
-  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
-  $color: rgba($shadow-color, nth(.12 .16 .19 .25 .30, $depth));
+    $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+    $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+    $color: rgba($shadow-color, nth(.12 .16 .19 .25 .30, $depth));
 
-  @return 0 $primary-offset $blur $color;
+    @return 0 $primary-offset $blur $color;
 }
 @function bottom-shadow($depth) {
-  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
-  $blur: nth(1 3 3 5 6, $depth) * 4px;
-  $color: rgba($shadow-color, nth(.24 .23 .23 .22 .22, $depth));
+    $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+    $blur: nth(1 3 3 5 6, $depth) * 4px;
+    $color: rgba($shadow-color, nth(.24 .23 .23 .22 .22, $depth));
 
-  @return 0 $primary-offset $blur $color;
+    @return 0 $primary-offset $blur $color;
 }
 
 @mixin ellipsis($overflow: ellipsis){
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: $overflow; // values are: clip, ellipsis, or a string
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: $overflow; // values are: clip, ellipsis, or a string
 }
 
 @mixin box-emboss($opacity, $opacity2){
-  box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+    box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
 }
 
 @mixin letterpress($opacity){
-  text-shadow:white($opacity) 0 1px 0;
+    text-shadow:white($opacity) 0 1px 0;
 }
 
 @mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
-  background: {
-    image: url($imgpath);
-    position: $position;
-    repeat: $repeat;
-  }
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+    }
 }
 
 @mixin placeHolder{
-  &::-webkit-placeholder{@content}
-  &:-moz-placeholder{@content}
-  &:-ms-placeholder{@content}
+    &::-webkit-placeholder{@content}
+    &:-moz-placeholder{@content}
+    &:-ms-placeholder{@content}
 }
 
 @mixin display-flex-center(){
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 @mixin display-flex-spread(){
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 @mixin display-flex-spread-item {
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
 }
 
 @mixin overlay($bg-color : $black, $opacity : 0.5) {
-  position: relative;
-  &:before{
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    opacity: $opacity;
-    background-color: $bg-color;
-  }
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: $opacity;
+        background-color: $bg-color;
+    }
 }
 // Magic parallax mixins
 
@@ -317,39 +317,39 @@ $perspective  : $parallax-perspective,
 $element      : $parallax-element,
 $parallax-ios : $parallax-ios
 ) {
-  @if $element == "body" {
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
+    @if $element == "body" {
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
     }
-  }
-  #{$element} {
-    overflow: auto;
-    perspective: $perspective * 1px;
-    transform-style: preserve-3d;
-    // Allows for smooth scrolling but disables parallax effects.
-    @if $parallax-ios == false {
-      -webkit-overflow-scrolling: touch;
+    #{$element} {
+        overflow: auto;
+        perspective: $perspective * 1px;
+        transform-style: preserve-3d;
+        // Allows for smooth scrolling but disables parallax effects.
+        @if $parallax-ios == false {
+            -webkit-overflow-scrolling: touch;
+        }
+        // Preserve 3D
+        &, * {
+            transform-style: preserve-3d;
+        }
     }
-    // Preserve 3D
-    &, * {
-      transform-style: preserve-3d;
-    }
-  }
 }
 
 @mixin parallax(
 $distance    : 0,
 $perspective : $parallax-perspective
 ) {
-  transform:
-  translateZ($distance * $perspective * 1px)
-  scale(abs($distance - 1))
-  ;
-  z-index: $distance * 1000;
+    transform:
+        translateZ($distance * $perspective * 1px)
+        scale(abs($distance - 1))
+        ;
+    z-index: $distance * 1000;
 }
 
 // End of magic parallax mixins
@@ -365,4 +365,14 @@ $perspective : $parallax-perspective
         display: inline-block !important;
         width: 100% !important;
     }
+}
+
+@mixin pannel(){
+    display: block;
+    position: relative;
+    @include box-shadow(0 1.5px 4px rgba(180,180,180,.24),0 1.5px 6px rgba(180,180,180,.12));
+    border-radius: $border-radius;
+    background-color: $white;
+    border: 1px solid lighten($grey, 10%);
+    margin-bottom: 30px;
 }

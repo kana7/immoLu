@@ -39,6 +39,13 @@ h2{
     text-transform: uppercase;
 }
 
+.bold{
+    font-weight: 600;
+}
+.extra-bold{
+    font-weight: 800;
+}
+
 // LAYOUT/CONTAINER
 //------------------------------------------------------------------------------
 section{
@@ -74,6 +81,20 @@ section{
         height: auto;
         max-height: 100%;
         width: 100%;
+    }
+}
+.return, .result{
+    display: block;
+    font-size: 1.15em;
+    margin-bottom: 15px;
+}
+.return{
+    color: #004994;
+    font-weight: 600;
+    span[class^="icon-"]{
+        display: inline-block;
+        font-size: 0.55em;
+        padding-right: 5px;
     }
 }
 
@@ -201,11 +222,14 @@ section{
     }
 }
 
+header{
+    margin-bottom: 30px;
+}
+
 // HEADER
 //------------------------------------------------------------------------------
 
 header{
-    margin-bottom: 30px;
     @include box-shadow(0px 2px 20px -5px rgba(0,0,0,0.3));
     .header-upper, .header-bottom{
         display: block;
@@ -425,90 +449,15 @@ header{
     }
 }
 
-// DETAILS ANNONCE
-//------------------------------------------------------------------------------
-
-#annonce-details-left, #annonce-details-right{
-    display: block;
-    position: relative;
-    @include box-shadow(0 1.5px 4px rgba(180,180,180,.24),0 1.5px 6px rgba(180,180,180,.12));
-    border-radius: $border-radius;
-    margin-bottom: 10px;
-    background-color: $white;
-    border: 1px solid lighten($grey, 10%);
-    margin-bottom: 20px;
-}
-
-#annonce-details-left{
-    .annonce-details-images-container{
-        display: table;
-        position: relative;
-        position: relative;
-        width: 100%;
-        z-index: 1;
-    }
-    .annonce-details-image-main, .annonce-details-thumbnails-container{
-        display: block;
-        width: 100%;
-        margin: 0;
-    }
-    .annonce-details-thumbnails-container {
-        overflow: hidden;
-        overflow-x: scroll;
-        height: 150px;
-        .gallery-cell{
-            display: inline;
-            width: 25%;
-            height: 100%;
-        }
-        a, .annonce_entry_image_thumbnails_pic{height: 100%;}
-    }
-}
-
-
-#annonce-details-right{
-    padding: 20px 5px;
-    .annonce-details-user-container{
-        display: block;
-        max-width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        div{
-            display: inline-block;
-            width: 100%;
-        }
-    }
-    .logo{
-        img{
-            height: auto;
-            width: 100%;
-        }
-    }
-    .address{
-        margin: 10px 0;
-    }
-    .btn-blue{
-        text-transform: uppercase;
-        line-height: 40px;
-        padding: 0;
-        *[class^="icon-"]{
-            position: relative;
-            font-size: 1.3em;
-            top: 4px;
-            margin-right: 10px;
-        }
-    }
-    .annonce-buttons{
-        a:first-child{
-            margin-bottom: 10px;
-        }
-        a{width: 100%;}
-    }
-}
-
 // FOOTER
 //------------------------------------------------------------------------------
-
+.content:after{
+    content: "";
+    display: block;
+}
+footer, .content:after{
+    height: 300px;
+}
 footer{
     position: absolute;
     left: 0;
@@ -518,14 +467,18 @@ footer{
     background-image: url(../../images/Img/BG_Ville.png);
     background-repeat: no-repeat;
     background-position: right bottom;
-    height: 280px;
     width: 100%;
-    margin-bottom: -280px;
 }
 
 footer .footer-links{
     font-size: 12px;
     margin: auto;
+    p{
+        margin: 0;
+        margin-top: 5px;
+        color: $white;
+        font-size: 1.1em;
+    }
     h3{
         margin: 0 0 15px;
         color: $orange;
@@ -542,6 +495,9 @@ footer .footer-links{
     }
     li:hover{
         text-decoration: underline;
+    }
+    img{
+        display: block;
     }
 }
 // BUTTONS
@@ -702,12 +658,14 @@ select{
 input[type="text"], input[type="password"], textarea {
     border-radius: 4px;
     border: 1px solid $grey;
-    height: 43px;
     background-color: $light-grey;
     cursor: pointer;
     color: $dark-grey;
     font-weight: 600;
     font-size: 1.1em;
+}
+input[type="text"], input[type="password"]{
+    height: 43px;
 }
 .radioboxes{
     height: 43px;
@@ -727,6 +685,25 @@ input[type="text"], input[type="password"], textarea {
 }
 .radiobox{
     input, label{display: inline;}
+}
+
+#annonce-details-right{
+    input[type="text"], textarea{
+        height: 40px;
+        width: 100%;
+        padding: 0 10px;
+        font-weight: 400;
+    }
+    textarea{
+        height: 125px;
+        resize:vertical;
+        padding: 0 10px;
+        padding-top: 10px;
+    }
+    .group-input+.group-input{
+        margin-top: 5px;
+    }
+    p{text-align: left;}
 }
 
 //GALLERY CELL
@@ -821,12 +798,83 @@ input[type="text"], input[type="password"], textarea {
 }
 .address{
     margin: 20px 0;
-    p{margin: 0;line-height: 23px; font-size: 1.1em;}
+    p{margin: 0;line-height: 23px; font-size: 1.1em; text-align: center !important;}
 }
 
 
 /*-------------------------------ANNONCE DETAILS------------------------------*/
 /*----------------------------------------------------------------------------*/
+
+#annonce-details-left, #annonce-details-right, .pannel{
+    @include pannel;
+}
+
+#annonce-details-left{
+    .annonce-details-images-container{
+        display: table;
+        position: relative;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+    .annonce-details-image-main, .annonce-details-thumbnails-container{
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .annonce-details-thumbnails-container {
+        overflow: hidden;
+        overflow-x: scroll;
+        height: 150px;
+        .gallery-cell{
+            display: inline;
+            width: 25%;
+            height: 100%;
+        }
+        a, .annonce_entry_image_thumbnails_pic{height: 100%;}
+    }
+}
+
+.pannel{
+    padding: 20px 5px;
+    .annonce-details-user-container{
+        display: block;
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        div{
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    .logo{
+        img{
+            height: auto;
+            width: 100%;
+        }
+    }
+    .address{
+        margin: 10px 0;
+    }
+    .btn-blue{
+        text-transform: uppercase;
+        line-height: 40px;
+        padding: 0;
+        *[class^="icon-"]{
+            position: relative;
+            font-size: 1.3em;
+            top: 4px;
+            margin-right: 10px;
+        }
+    }
+    .annonce-buttons{
+        a:first-child{
+            margin-bottom: 10px;
+        }
+        a{width: 100%;}
+    }
+}
+
 #annonce-infos{
     display: block;
     position: relative;
@@ -835,14 +883,14 @@ input[type="text"], input[type="password"], textarea {
 
 .annonce-title{
     margin: 10px 0;
-    font-size: 26px;
+    font-size: 20px;
     h1{
         font-weight: 400;
         font-size: inherit; 
         color: darken($dark-grey, 20%); 
         margin: 0;
         width: 100%;
-        line-height: 30px;
+        line-height: 24px;
         /*white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;*/
@@ -860,8 +908,8 @@ input[type="text"], input[type="password"], textarea {
     line-height: 20px;
 }
 .annonce-description{
-    border-top: 1px solid rgba(86, 86, 86, 0.39);
-    border-bottom: 1px solid rgba(86, 86, 86, 0.39);
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
     margin: 20px 0;
     p{margin: 20px 0}
 }
@@ -869,11 +917,13 @@ input[type="text"], input[type="password"], textarea {
 .infos-attributs{
     position: relative;
     margin-bottom: 20px;
+    div[class^="phone-"], .pull-left{
+        margin-bottom: 5px;
+    }
     .list{
         display: inline-block;
         @include clearfix;
         width: 100%;
-        max-width: 250px;
         background-color: lighten($grey, 20%);
         padding: 5px 15px;
         &+.list{margin-top: 10px;}
@@ -894,6 +944,45 @@ input[type="text"], input[type="password"], textarea {
             max-width: 100%;
             height: auto;
             margin-top: 10px;
+        }
+    }
+}
+
+/*-------------------------------ANNONCES LISTS-------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+.pannel{
+    overflow: hidden;
+    .pannel-header{
+        display: block;
+        background-color: $blue;
+        margin: 0 -5px;
+        margin-top: -20px;
+        h3{
+            color: $white;
+            font-weight: 600;
+            font-size: 1.12em;
+            margin: 0;
+            padding: 10px 0;
+            padding-left: 10px;
+        }
+    }
+    .pannel-body{
+        margin-top: 10px;
+        padding: 0 15px;
+        input[type="text"], select{height: 35px;}
+        .input-group{min-height: auto; margin-bottom: 11px; &:last-child{margin-bottom: 0px;}}
+        label{margin-bottom: 9px;}
+        .input-group.range{
+            .input-group-container{display: table; width: 100%; border-collapse: collapse;}
+            .container-cell{
+                display: table-cell;
+                text-align: center;
+                select{width: 100%;}
+                &:nth-child(even){
+                    width: 15%;
+                }
+            }
         }
     }
 }
