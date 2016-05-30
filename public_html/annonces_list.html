@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </header>
-            <div id="content" class="content">
+            <div id="content" class="content list">
                 <div class="container">
                     <div class="row">
                         <div class="phone-12 desk-3 desk-pr-10">
@@ -101,84 +101,442 @@
                                     <a class="return" href="javascript:history.back(-1);"><span class="icon-left-arrow"></span>Retour vers l'accueil</a>
                                 </div>
                             </div>
-                            <div class="pannel">
-                                <div class="pannel-header">
-                                    <h3>Votre Recherche</h3>
+                            <div class="search-container">
+                                <div class="pannel">
+                                    <div class="pannel-header">
+                                        <h3>Votre Recherche</h3>
+                                    </div>
+                                    <div class="pannel-body">
+                                        <div class="input-group">
+                                            <label for="">Type(s) de bien</label>
+                                            <select name="" id="">
+                                                <option value="tous">Tous</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Localisation(s)</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Budget</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Surface</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Chambres</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button style="width: 100%; padding: 12px 15px; font-size: 1.3em;" class="btn-orange phone-mt-10">Rechercher</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="pannel-body">
-                                    <div class="input-group">
-                                        <label for="">Type(s) de bien</label>
-                                        <select name="" id="">
-                                            <option value="tous">Tous</option>
-                                        </select>
+                                <div class="pannel">
+                                    <div class="pannel-header">
+                                        <h3>Recherche détaillée</h3>
                                     </div>
-                                    <div class="input-group">
-                                        <label for="">Localisation(s)</label>
-                                        <input type="text" />
-                                    </div>
-                                    <div class="input-group range">
-                                        <label for="">Budget</label>
-                                        <div class="input-group-container">
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Min</option>
-                                                </select>
+                                    <div class="pannel-body">
+                                        <div class="input-group table checkbox">
+                                            <h4>Etat</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="new" type="checkbox"/><label for="new">neuf</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(12)</span>
+                                                </div>
                                             </div>
-                                            <div class="container-cell">à</div>
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Max</option>
-                                                </select>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="old" type="checkbox"/><label for="old">ancien</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(112)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table checkbox">
+                                            <h4>Option(s)</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="terrasse" type="checkbox"/><label for="terrasse">Terrasse/Balcon</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(11)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="jardin" type="checkbox"/><label for="jardin">Jardin</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(41)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="garage" type="checkbox"/><label for="garage">Garage</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(56)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="cave" type="checkbox"/><label for="cave">Cave</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(7)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="ce" type="checkbox"/><label for="ce">Cuisine équipée</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="cg" type="checkbox"/><label for="cg">Chauffage à gaz</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(22)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="sb" type="checkbox" /><label for="sb">Salle de bain</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table checkbox">
+                                            <h4>Classe(s) énergétique(s)</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="a" type="checkbox" name="" /><label for="a">A</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(11)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="b" type="checkbox" name="" /><label for="b">B</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(41)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="c" type="checkbox" name="" /><label for="c">C</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(56)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="d" type="checkbox" name="" /><label for="d">D</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(7)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="e" type="checkbox" /><label for="e">E</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="f" type="checkbox" /><label for="f">F</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(22)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="g" type="checkbox" /><label for="g">G</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="h" type="checkbox" /><label for="h">H</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(3)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="i" type="checkbox" /><label for="i">I</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(4)</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="input-group range">
-                                        <label for="">Surface</label>
-                                        <div class="input-group-container">
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Min</option>
-                                                </select>
-                                            </div>
-                                            <div class="container-cell">à</div>
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Max</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group range">
-                                        <label for="">Chambres</label>
-                                        <div class="input-group-container">
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Min</option>
-                                                </select>
-                                            </div>
-                                            <div class="container-cell">à</div>
-                                            <div class="container-cell">
-                                                <select name="" id="">
-                                                    <option value="default">Max</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pannel">
-                                <div class="pannel-header">
-                                    <h3>Recherche détaillée</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="phone-12 desk-9 desk-pl-10">
+                        <div id="annonce-list" class="phone-12 desk-9 desk-pl-10">
                             <div class="clearfix">
                                 <div class="phone-12">
                                     <span class="result">Résultats: <span class="orange bold">124 annonce(s)</span></span>
                                 </div>
                             </div>
-                            <div style="height: 600px;" class="pannel"></div>
+                            <div class="clearfix">
+                                <div class="search-result-entry">
+                                    <div style="background-color: #44cec3; color: white;" class="entry-header">
+                                        <h2 class="title"><span class="title">Maison individuelle 4 Chambres -</span> <span class="location">Soleuvre</span></h2>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li>
+                                                    <a href="#1">Ajouter au favoris</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#1">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#2">Téléphone</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#3">Toutes les annonces</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img src="http://i1.static.athome.eu/images/annonces2/image_/3a/1a/e3/d44738286b1748da40addadb2ca1211d4adfd55a_396x297.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327" />
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">2 490 000 €</div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Soleuvre</li>
+                                                        <li>65m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">6 <span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">3 <span class="icon-bath"></span></li>
+                                                        <li class="garages">1 <span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details"><li>Surface: +/- 330 m²</li><li>terrain: 7.57 ares</li><li>terrasse: 69.38m²</li></ul>
+                                                    <p class="description">
+                                                        LANGLAIS  &amp; LANGLAIS Real Estate vous proposent une magnifique maison  de maître de 330 mètres carrés habitables de style cottage moderniste entièrement rénovée et partiellement reconstruite à Sandweiler.
+
+                                                        Les finitions se veulent exceptionnelles tout en re...<a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li>
+                                                        <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="#">
+                                                        <img src="images/Img/langlais.png" alt="Luxembourg-Centre-ville" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry">
+                                    <div style="background-color:#D10623; color: white;" class="entry-header">
+                                        <h2 class="title"><span class="title">Maison 3 Chambres -</span> <span class="location">Pétange</span></h2>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li>
+                                                    <a href="#1">Ajouter au favoris</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#1">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#2">Téléphone</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#3">Toutes les annonces</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img src="http://i1.static.athome.eu/images/annonces2/image_/f1/a9/44/847b4ad30cb789f1b40eb87577036c6bf5ad14a7_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327" alt="Maison à vendre 3 Chambres à Pétange - Réf. 4495903" />
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">429 000 €</div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Petange</li>
+                                                        <li>120m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">3 <span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1 <span class="icon-bath"></span></li>
+                                                    </ul>
+                                                    <ul class="details"><li>Surface: +/- 120 m²</li><li>terrain: 1.35 ares</li></ul>
+                                                    <p class="description">
+                                                        Actuel immobilière sàrl de Lamadelaine, a sélectionné pour vous cette charmante maison sise au cœur de la ville de Pétange proche des transports en communs , des commerces et de toutes commodités . - elle se compose : au rez-de-chaussée : d‘un ... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li>
+                                                        <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="#">
+                                                        <img src="http://static.immotop.lu/files/logotypes/logo_2147483647_1310654594.jpg" alt="Luxembourg-Centre-ville" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry">
+                                    <div style="background-color:#fa8005; color: white;" class="entry-header">
+                                        <h2 class="title"><span class="title">Maison 4 Chambres -</span> <span class="location">Pétange</span></h2>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li>
+                                                    <a href="#1">Ajouter au favoris</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#1">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#2">Téléphone</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#3">Toutes les annonces</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327" alt="Maison à vendre 3 Chambres à Pétange - Réf. 4495903" />
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">699 900 €</div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Pétange</li>
+                                                        <li>150m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                    </ul>
+                                                    <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                    <p class="description">
+                                                        Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li>
+                                                        <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="#">
+                                                        <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

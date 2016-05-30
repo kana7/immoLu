@@ -31,6 +31,13 @@ $(function () {
             temp.init();
         });
     }
+    
+    if ($('.dropdown').length > 0){
+        $('.dropdown').each(function(){
+            temp = new dropDown($(this));
+            temp.init();
+        });
+    }
 
 });
 
@@ -219,6 +226,46 @@ var MenuMobile = (function () {
         init: init
     };
 })();
+
+var dropDown = function($element){
+    var $dropdownContainer = $element;
+    var $button = $dropdownContainer.find('button');
+    var $menu = $dropdownContainer.find('ul');
+    var $document = $('html');
+    var flag = '1';
+    
+    this.init = function(){
+        _bindEvents();
+    };
+    var _bindEvents = function(){
+        $button.on('click', function(){
+            _toggleDrop();
+        });
+        $document.on('click', function(){
+            if (flag!=='0'){
+                _closeDrop();
+            }else{
+                flag = '1';
+            }
+        });
+    };
+    var _toggleDrop = function(){
+        flag = '0';
+        if ($menu.hasClass('open')){
+            _closeDrop();
+        }else{
+            _openDrop();
+        }
+    };
+    var _openDrop = function(){
+        $button.addClass('active');
+        $menu.addClass('open');
+    };
+    var _closeDrop = function(){
+        $button.removeClass('active');
+        $menu.removeClass('open');
+    };
+};
 
 //size of viewport
 function viewport() {

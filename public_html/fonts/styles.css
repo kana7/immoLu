@@ -44,9 +44,6 @@
 .icon-bed:before {
   content: "\62";
 }
-.icon-car:before {
-  content: "\63";
-}
 .icon-email:before {
   content: "\64";
 }
@@ -73,4 +70,7 @@
 }
 .icon-left-arrow:before {
   content: "\6c";
+}
+.icon-car:before {
+  content: "\63";
 }
