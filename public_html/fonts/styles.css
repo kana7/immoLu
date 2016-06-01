@@ -74,3 +74,15 @@
 .icon-car:before {
   content: "\63";
 }
+.icon-pinterest-p:before {
+  content: "\6d";
+}
+.icon-twitter:before {
+  content: "\6e";
+}
+.icon-facebook:before {
+  content: "\6f";
+}
+.icon-google-plus:before {
+  content: "\70";
+}

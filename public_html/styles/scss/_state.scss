@@ -6,8 +6,34 @@
         text-align: justify;
         text-align-last: left;
     }
-    .infos-container-frame{
-        @include vertical-align-middle();
+    .search-result-entry:not(.minimized){
+        .infos-container-frame{
+            @include vertical-align-middle();
+        }
+    }
+    .search-result-entry.minimized{
+        .entry-body{
+            display: table;
+            border-collapse: separate;
+            .entry-body-row{display: table-row;}
+
+        }
+        .image-container, .infos-container, .agency-container{
+            display: table-cell;
+            position: relative;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .infos-container{width: 45%; padding: 10px 5px;}
+        .agency-container{
+            .agency-container-frame{width: 85%;}
+        }
+        .image-container{width: 25%;}
+        .image-container-frame{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     }
 }
 @include viewport(min, $min: 500){
@@ -42,15 +68,15 @@
                 font-size: 18px;
                 line-height: 25px;
             }
-            .menu-container{display: none;}
         }
+        .menu-container{display: none;}
         .entry-body{
             display: table;
             border-collapse: separate;
             .entry-body-row{display: table-row;}
         }
         .image-container, .infos-container, .agency-container{
-            display: table-cell;
+            display: table-cell !important;
             position: relative;
             vertical-align: middle;
             height: 100%;
@@ -61,9 +87,9 @@
             li{margin-bottom: 5px;}
         }
         .description{display: block;}
-        .image-container{width: 257px; float: none;}
+        .image-container{width: 257px !important; float: none !important;}
         .agency-container{
-            width: 175px;
+            width: 166px !important;
             .agency-container-frame{width: 85%;}
             .links li a {padding: 9px 16px;}
         }
@@ -71,7 +97,7 @@
             margin-bottom: 15px;
         }
 
-        .image-container{width: 220px;}
+        .image-container{width: 200px !important;}
         .image-container-frame{
             display: block;
             position: absolute;
@@ -83,10 +109,10 @@
         .infos-container, .agency-container{
             padding: 15px 20px;
         }
-        .infos-container{float: none;width: auto;}
+        .infos-container{float: none !important; width: auto !important;}
         .agency-container{
-            position: relative;
-            float: none;
+            position: relative !important;
+            float: none !important;
             .agency-container-frame{position: absolute; height: calc(100% - 117px);}
             .links{display: block; position: absolute;}
         }
@@ -103,7 +129,10 @@
                 }
             }
         }
-    } 
+    }
+    .agency-header{
+        max-width: none;
+    }
 }
 @include viewport(range, $min: 672, $max: 1055){
     .infos-attributs{
@@ -150,6 +179,14 @@
             margin: auto;
         }
     }
+    .agency-logo{
+        width: 85%;
+        max-width: 185px;
+    }
+    .btn-social-list{
+        display: block;
+        margin: 0 auto;
+    }
 }
 @include media(desk){
     header{
@@ -181,12 +218,34 @@
             margin-bottom: 5px;
             li{margin-bottom: 5px;}
         }
-        .image-container{width: 257px;}
+        .image-container{width: 257px !important;}
         .agency-container{
-            width: 175px;
+            width: 175px !important;
             .links li a {padding: 9px 16px;}
         }
     }
+    .agency-logo{
+        position: absolute;
+        top: -5px;
+        left: 5px;
+        width: 150px;
+        z-index: 1;
+    }
+    .agency-header{
+        width: 100%;
+        padding: 40px 0 0 125px;
+        p{margin: 10px 0;}
+        h1{text-align: left; font-size: 1.6em;}
+        .btn-blue{
+            display: inline-block;
+            font-size: 0.85em;
+            line-height: 25px;
+            height: auto;
+            padding: 5px 20px;
+            margin-bottom: 0;
+        }
+    }
+    .agency-header-container{padding: 5px;}
 }
 @include media(lgdesk){
     .main-nav{
@@ -203,14 +262,33 @@
         .icons{
             font-size: 1.7em;
         }
-        .image-container{width: 285px;}
+        .image-container{width: 285px !important;}
         .agency-container{
-            width: 200px;
-            .agency-container-frame{height: calc(100% - 135px);}
+            width: 200px !important;
+            .agency-container-frame{height: calc(100% - 135px); }
             .links li a {padding: 12px 16px;}
         }
         .details, .icons{
             margin-bottom: 15px;
         }
+    }
+    .agency-header{
+        padding: 50px 0 0 185px;
+        h1 {
+            text-align: left;
+            font-size: 1.8em;
+            margin: 15px 0;
+        }
+        .btn-blue{
+            padding: 4px 25px;
+        }
+    }
+    .agency-logo {
+        top: 10px;
+        left: 20px;
+        width: 200px;
+    }
+    .btn-list{
+        @include spread-element;
     }
 }
