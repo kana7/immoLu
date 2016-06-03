@@ -372,3 +372,20 @@ $perspective : $parallax-perspective
     border-radius: $border-radius;
     background-color: $white;
 }
+
+@mixin thumbnail(){
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    img {
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+    }
+}

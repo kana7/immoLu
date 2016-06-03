@@ -232,8 +232,10 @@
         z-index: 1;
     }
     .agency-header{
-        width: 100%;
         padding: 40px 0 0 125px;
+    }
+    .agency-header, .agency-entry{
+        width: 100%;
         p{margin: 10px 0;}
         h1{text-align: left; font-size: 1.6em;}
         .btn-blue{
@@ -274,6 +276,8 @@
     }
     .agency-header{
         padding: 50px 0 0 185px;
+    }
+    .agency-entry{
         h1 {
             text-align: left;
             font-size: 1.8em;
@@ -291,4 +295,5 @@
     .btn-list{
         @include spread-element;
     }
+    .search-result-entry .agency-container .links li a{font-size: 1.2em;}
 }

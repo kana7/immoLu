@@ -3312,7 +3312,6 @@ input[type="text"], input[type="password"] {
     color: #e75e0a; }
 
 .logo-container {
-  height: 90px;
   text-align: center; }
   .logo-container img {
     display: inline-block;
@@ -3339,6 +3338,9 @@ input[type="text"], input[type="password"] {
   border-radius: 4px;
   background-color: #fff;
   margin-bottom: 20px; }
+
+#annonce-details-left, #annonce-details-right {
+  border: 1px solid rgba(218, 218, 218, 0.6); }
 
 #annonce-details-left .annonce-details-images-container {
   display: table;
@@ -3368,7 +3370,8 @@ input[type="text"], input[type="password"] {
   margin: 0 auto; }
 
 .pannel, #annonce-details-right {
-  padding: 20px 5px; }
+  padding: 20px 5px;
+  border: 1px solid rgba(218, 218, 218, 0.6); }
   .pannel .annonce-details-user-container, #annonce-details-right .annonce-details-user-container {
     display: block;
     max-width: 80%;
@@ -3439,7 +3442,8 @@ input[type="text"], input[type="password"] {
 
 .infos-attributs {
   position: relative;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dadada; }
   .infos-attributs div[class^="phone-"], .infos-attributs .pull-left {
     margin-bottom: 5px; }
   .infos-attributs .list {
@@ -3559,8 +3563,7 @@ input[type="text"], input[type="password"] {
   -ms-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
   border-radius: 4px;
   background-color: #fff;
-  margin-bottom: 15px;
-  overflow: hidden; }
+  margin-bottom: 15px; }
   .search-result-entry > a {
     display: block;
     position: absolute;
@@ -3604,10 +3607,13 @@ input[type="text"], input[type="password"] {
       background-color: #fff;
       margin: 0;
       display: none;
-      top: 0;
+      top: 30px;
+      right: 2px;
+      width: 150px;
       z-index: 5;
       background-color: white;
-      padding: 0px 10px; }
+      padding: 0px 10px;
+      border: 1px solid rgba(218, 218, 218, 0.6); }
       .search-result-entry .menu-container .dropdown-links li {
         display: block;
         color: #a7a7a7;
@@ -3800,7 +3806,7 @@ input[type="text"], input[type="password"] {
         display: block; }
         .search-result-entry .agency-container .links li a {
           line-height: 20px;
-          font-size: 1em;
+          font-size: 0.99em;
           line-height: 20px;
           padding: 9px 16px; }
           .search-result-entry .agency-container .links li a:not(:last-child) {
@@ -3817,41 +3823,226 @@ input[type="text"], input[type="password"] {
       border-top: none; }
     .search-result-entry.no-agency .agency-container .links li:not(:first-child) {
       border-top: 1px solid rgba(218, 218, 218, 0.6); }
+  .search-result-entry.residence > .entry-body {
+    border-radius: 0; }
+  .search-result-entry.residence .details {
+    font-size: 1.2em;
+    margin-top: 5px;
+    display: block; }
+    .search-result-entry.residence .details li {
+      display: block; }
+  .search-result-entry.residence .immo-link {
+    font-size: 1.3em;
+    margin-bottom: 10px; }
+  .search-result-entry.residence .residence-list {
+    display: table;
+    width: 100%;
+    border-collapse: collapse; }
+  .search-result-entry.residence .residence-item {
+    display: table-row;
+    border: 1px solid rgba(218, 218, 218, 0.6); }
+    .search-result-entry.residence .residence-item:nth-child(even) {
+      background-color: whitesmoke; }
+    .search-result-entry.residence .residence-item .image, .search-result-entry.residence .residence-item .infos {
+      display: table-cell;
+      position: relative;
+      height: 100%; }
+    .search-result-entry.residence .residence-item .image {
+      width: 160px;
+      position: relative;
+      text-align: center;
+      overflow: hidden; }
+      .search-result-entry.residence .residence-item .image img {
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto; }
+    .search-result-entry.residence .residence-item .infos {
+      padding: 10px 15px;
+      font-size: 12px; }
+    .search-result-entry.residence .residence-item .title {
+      margin: 0;
+      font-size: 1.3em;
+      font-weight: 600; }
+    .search-result-entry.residence .residence-item .details {
+      font-size: 1em;
+      vertical-align: middle;
+      margin: 10px 0; }
+    .search-result-entry.residence .residence-item .icons {
+      font-size: 1.2em;
+      vertical-align: bottom;
+      margin: 0; }
+    .search-result-entry.residence .residence-item .price, .search-result-entry.residence .residence-item .immo-link {
+      position: absolute;
+      right: 15px; }
+    .search-result-entry.residence .residence-item .price {
+      font-size: 1.8em;
+      top: 10px; }
+    .search-result-entry.residence .residence-item .immo-link {
+      text-decoration: none;
+      font-size: 1em;
+      bottom: 10px;
+      font-style: italic;
+      font-weight: 600;
+      margin: 0; }
+      .search-result-entry.residence .residence-item .immo-link span {
+        position: relative;
+        top: 1px;
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.8em; }
+  .search-result-entry.residence .residence-footer {
+    display: block;
+    padding: 0 15px;
+    background-color: #e6e6e6; }
+    .search-result-entry.residence .residence-footer .immo-link {
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 35px; }
+      .search-result-entry.residence .residence-footer .immo-link, .search-result-entry.residence .residence-footer .immo-link span {
+        text-decoration: none; }
+      .search-result-entry.residence .residence-footer .immo-link span[class^='icon-'] {
+        position: relative;
+        top: 1px;
+        font-size: 0.6em;
+        color: inherit;
+        text-decoration: none; }
 
 /*-------------------------------AGENCY PANEL---------------------------------*/
 /*----------------------------------------------------------------------------*/
-.agency-header {
+.agency-header, .agency-entry {
   display: block;
   position: relative;
   border: 1px solid;
   font-size: 16px;
-  max-width: 320px;
-  width: 75%;
   margin: 0 auto;
   margin-bottom: 20px;
   overflow: hidden; }
-  .agency-header h1 {
+  .agency-header h1, .agency-entry h1 {
     color: #e75e0a;
     font-size: 1.3em;
     font-weight: 600;
     text-align: center; }
-  .agency-header p {
+  .agency-header p, .agency-entry p {
     font-size: 0.85em;
     line-height: 20px;
     text-align: justify;
     text-align-last: left; }
-  .agency-header .btn-blue {
+
+.agency-header {
+  max-width: 320px;
+  width: 75%; }
+
+.agency-entry {
+  -webkit-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+  -moz-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+  box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+  -o-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+  -ms-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 5px;
+  overflow: auto;
+  height: 225px;
+  max-height: 225px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid #e5e5e5; }
+  .agency-entry .entry-row {
+    display: table;
+    height: 100%;
+    border-collapse: collapse; }
+  .agency-entry .logo-container, .agency-entry .infos-container, .agency-entry .map-container {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    position: relative; }
+  .agency-entry .logo-container, .agency-entry .map-container {
+    width: 200px;
+    min-width: 200px; }
+  .agency-entry .map-container {
+    width: 250px;
+    min-width: 250px; }
+  .agency-entry .logo-container {
+    padding-left: 11px; }
+  .agency-entry .infos-container {
+    height: 100%;
+    width: 100%;
+    padding: 0 15px; }
+    .agency-entry .infos-container h2 {
+      margin: 0;
+      color: #686868;
+      font-weight: 400;
+      font-size: 1.4em;
+      text-transform: uppercase; }
+      .agency-entry .infos-container h2 .location {
+        text-transform: capitalize; }
+    .agency-entry .infos-container p {
+      margin: 25px 0;
+      font-size: 1em;
+      line-height: 20px; }
+  .agency-entry .map {
     display: block;
-    text-transform: uppercase;
-    height: 43px;
-    line-height: 43px;
-    padding: 0;
-    margin-bottom: 10px; }
-    .agency-header .btn-blue *[class^="icon-"] {
-      font-size: 1.05em;
-      position: relative;
-      top: 2px;
-      margin-right: 10px; }
+    min-height: 185px;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px; }
+  .agency-entry .agency-color {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 35%;
+    z-index: 0;
+    top: 0;
+    left: 0; }
+  .agency-entry .logo-frame {
+    -webkit-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+    -moz-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+    box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+    -o-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+    -ms-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
+    border-radius: 4px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    padding: 15px;
+    height: 185px;
+    width: 185px;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid #e5e5e5; }
+  .agency-entry .logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .agency-entry .logo img {
+      display: inline-block;
+      height: auto;
+      width: auto;
+      max-width: 100%; }
+
+.agency-entry .btn-blue, .agency-header .btn-blue {
+  display: block;
+  text-transform: uppercase;
+  height: 43px;
+  line-height: 43px;
+  padding: 0;
+  margin-bottom: 10px; }
+  .agency-entry .btn-blue *[class^="icon-"], .agency-header .btn-blue *[class^="icon-"] {
+    font-size: 1.05em;
+    position: relative;
+    top: 2px;
+    margin-right: 10px; }
 
 .agency-logo {
   display: block;
@@ -4158,14 +4349,16 @@ input[type="text"], input[type="password"] {
     z-index: 1; }
 
   .agency-header {
-    width: 100%;
     padding: 40px 0 0 125px; }
-    .agency-header p {
+
+  .agency-header, .agency-entry {
+    width: 100%; }
+    .agency-header p, .agency-entry p {
       margin: 10px 0; }
-    .agency-header h1 {
+    .agency-header h1, .agency-entry h1 {
       text-align: left;
       font-size: 1.6em; }
-    .agency-header .btn-blue {
+    .agency-header .btn-blue, .agency-entry .btn-blue {
       display: inline-block;
       font-size: 0.85em;
       line-height: 25px;
@@ -4199,12 +4392,13 @@ input[type="text"], input[type="password"] {
 
   .agency-header {
     padding: 50px 0 0 185px; }
-    .agency-header h1 {
-      text-align: left;
-      font-size: 1.8em;
-      margin: 15px 0; }
-    .agency-header .btn-blue {
-      padding: 4px 25px; }
+
+  .agency-entry h1 {
+    text-align: left;
+    font-size: 1.8em;
+    margin: 15px 0; }
+  .agency-entry .btn-blue {
+    padding: 4px 25px; }
 
   .agency-logo {
     top: 10px;
@@ -4220,6 +4414,9 @@ input[type="text"], input[type="password"] {
     .btn-list:after {
       content: '' !important;
       display: inline-block !important;
-      width: 100% !important; } }
+      width: 100% !important; }
+
+  .search-result-entry .agency-container .links li a {
+    font-size: 1.2em; } }
 
 /*# sourceMappingURL=main.css.map */
