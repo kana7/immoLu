@@ -38,6 +38,15 @@ $(function () {
             temp.init();
         });
     }
+    if($('.pannel.expand').length > 0){
+        $('.pannel.expand').each(function(){
+            temp = new expandPannel($(this));
+            temp.init();
+        });
+        if (viewport().width < 1056){
+            $('.pannel.expand').addClass('minimized');
+        }
+    };
 
 });
 
@@ -259,11 +268,44 @@ var dropDown = function($element){
     };
     var _openDrop = function(){
         $button.addClass('active');
+        $menu.animateCss('fadeIn');
         $menu.addClass('open');
     };
     var _closeDrop = function(){
         $button.removeClass('active');
         $menu.removeClass('open');
+    };
+};
+
+//permet d'étendre et de compresser les philtres sur la liste de la recherche
+var expandPannel = function($element){
+    var $pannel = $element;
+    var $btn = $pannel.find('.exp-btn');
+    var $pannelBody = $pannel.find('.pannel-body');
+    
+    this.init = function(){
+        _bindEvents();
+    };
+    var _bindEvents = function(){
+        $btn.on('click', function(){
+            _toggleExpand();
+        });
+    };
+    var _toggleExpand = function(){
+        if ($pannel.hasClass('minimized')){
+            _expand();
+        }else{
+            _compress();
+        }
+    };
+    var _expand = function(){
+        $pannel.removeClass('minimized');
+        $btn.removeClass('icon-expand').addClass('icon-compress');
+        $pannelBody.animateCss('fadeInDown');
+    };
+    var _compress = function(){
+        $pannel.addClass('minimized');
+        $btn.removeClass('icon-compress').addClass('icon-expand');
     };
 };
 
@@ -276,3 +318,12 @@ function viewport() {
     }
     return {width: e[ a + 'Width' ], height: e[ a + 'Height' ]};
 }
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});

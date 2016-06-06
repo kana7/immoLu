@@ -556,6 +556,7 @@ footer .footer-links{
 .btn-orange{
     color: $white;
     background-color: $orange;
+    padding: 8px 15px 7px;
     &:hover:not([disabled]){
         background-color: lighten($orange, 5%);
     }
@@ -825,7 +826,7 @@ input[type="text"], input[type="password"]{
 
 #annonce-details-left, #annonce-details-right, .pannel{
     @include pannel;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 #annonce-details-left, #annonce-details-right{
     border: 1px solid rgba(218, 218, 218, 0.6);
@@ -859,11 +860,10 @@ input[type="text"], input[type="password"]{
 .search-container{
     display: block;
     position: relative;
-    max-width: 320px;
-    margin: 0 auto;
 }
 .pannel, #annonce-details-right{
     padding: 20px 5px;
+    &:not(#annonce-details-right){padding-bottom: 0;}
     border: 1px solid rgba(218, 218, 218, 0.6);
     .annonce-details-user-container{
         display: block;
@@ -985,9 +985,11 @@ input[type="text"], input[type="password"]{
     overflow: hidden;
     .pannel-header{
         display: block;
+        position: relative;
         background-color: $blue;
         margin: 0 -5px;
         margin-top: -20px;
+        z-index: 1;
         h3{
             color: $white;
             font-weight: 600;
@@ -996,10 +998,33 @@ input[type="text"], input[type="password"]{
             padding: 10px 0;
             padding-left: 10px;
         }
+        .exp-btn{
+            display: block;
+            position: absolute;
+            height: 100%;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: none;
+            outline: 0;
+            padding: 0;
+            border: none;
+            color: white;
+            width: 34px;
+            font-size: 1.2em;
+            border-left: 1px solid darken($blue, 3%);
+            @include transition($transitionUi);
+            &:hover{
+                background-color: lighten($blue, 5%);
+            }
+        }
+    }
+    &.minimized .pannel-body{
+        display: none;
     }
     .pannel-body{
         margin-top: 10px;
-        padding: 0 15px;
+        padding: 0 15px 15px;
         input[type="text"], select{height: 35px;}
         .input-group{min-height: auto; margin-bottom: 11px; &:last-child{margin-bottom: 0px;}}
         label{margin-bottom: 9px;}
@@ -1085,6 +1110,8 @@ input[type="text"], input[type="password"]{
             background-color: white;
             padding: 0px 10px;
             border: 1px solid rgba(218, 218, 218, 0.6);
+            -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+            animation-duration: 0.5s;
             li{
                 display: block; 
                 color: darken($grey, 10%);
@@ -1100,6 +1127,7 @@ input[type="text"], input[type="password"]{
         display: block;
         position: relative;
         padding: 5px 15px;
+        border-radius: 4px 4px 0 0;
         .title{display: inline-block; margin: 0; font-size: 16px; line-height: 20px; color: white;}
         text-transform: uppercase;
         .location{text-transform: capitalize;}
@@ -1376,7 +1404,7 @@ input[type="text"], input[type="password"]{
     border: 1px solid;
     font-size: 16px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     overflow: hidden;
     h1{
         color: $orange;
@@ -1392,31 +1420,21 @@ input[type="text"], input[type="password"]{
     }
 }
 .agency-header{
-    max-width: 320px;
-    width: 75%;
+    width: 100%;
 }
 .agency-entry{
     @include pannel;
     padding: 5px;
     overflow: auto;
-    height: 225px;
-    max-height: 225px;
     display: block;
     border-radius: 2px;
     border: 1px solid #e5e5e5;
     .entry-row{
-        display: table;
         height: 100%;
-        border-collapse: collapse;
     }
     .logo-container, .infos-container, .map-container{
-        display: table-cell;
-        height: 100%;
-        vertical-align: middle;
         position: relative;
     }
-    .logo-container, .map-container{width: 200px; min-width: 200px;}
-    .map-container{width: 250px; min-width: 250px;}
     .logo-container{padding-left: 11px;}
     .infos-container{
         height: 100%;
@@ -1445,7 +1463,7 @@ input[type="text"], input[type="password"]{
         border-radius: 2px;
     }
     .agency-color{
-        display: block;
+        display: none;
         position: absolute;
         height: 100%;
         width: 35%;
@@ -1480,8 +1498,9 @@ input[type="text"], input[type="password"]{
         text-transform: uppercase;
         height: 43px;
         line-height: 43px;
-        padding: 0;
+        padding: 0px 5px;
         margin-bottom: 10px;
+        font-size: 0.90em;
         *[class^="icon-"]{font-size: 1.05em; position: relative; top: 2px; margin-right: 10px;}
     }
 }
@@ -1517,8 +1536,6 @@ input[type="text"], input[type="password"]{
 .address-box{
     display: block;
     position: relative;
-    width: 100%;
-    float: right;
     background-color: $light-grey;
     border: 1px solid $grey;
     p{padding: 5px 10px; margin: 0 !important; font-weight: 600; font-size: 0.8em;}

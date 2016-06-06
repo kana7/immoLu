@@ -20,6 +20,20 @@
         @media screen and (min-width: $lgdesk + px) { @content; }
     }
 }
+@mixin media-exclusive($media) {
+    @if $media == phone {
+        @media screen and (max-width: $phone + px) { @content; }
+    }
+    @else if $media == tab {
+        @media screen and (min-width: $tab + px) and (max-width: ($desk - 1) + px) { @content; }
+    }
+    @else if $media == desk {
+        @media screen and (min-width: $desk + px) and (max-width: ($lgdesk - 1) + px) { @content; }
+    }
+    @else if $media == lgdesk {
+        @media screen and (min-width: $lgdesk + px) { @content; }
+    }
+}
 @mixin viewport($media, $min: 0, $max: 0) {
     @if $media == max {
         @media screen and (max-width: $max + px) { @content; }

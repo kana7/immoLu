@@ -6,9 +6,7 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/css/vendor/photoswipe.css" />
-        <link rel="stylesheet" href="styles/css/vendor/default-skin/default-skin.css" />
-        <link rel="stylesheet" href="styles/css/vendor/pgwslider.min.css" />
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
         <link rel="stylesheet" href="styles/css/main.css" />
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
     </head>
@@ -122,7 +120,7 @@
                                                 <a href="#" class="google-plus"><span class="icon-google-plus"></span></a>
                                                 <a href="#" class="pinterest"><span class="icon-pinterest-p"></span></a>
                                             </div>
-                                            <div class="clearfix tab-mb-5 btn-list">
+                                            <div class="clearfix tab-mb-5 btn-list hidden display-desk display-lgdesk">
                                                 <a class="btn-blue"><span class="icon-email"></span>Contact</a>
                                                 <a class="btn-blue"><span class="icon-phone"></span>Téléphone</a>
                                                 <a class="btn-blue">Confier mon bien</a>
@@ -130,15 +128,23 @@
                                             </div>
                                         </div>
                                         <div class="phone-12 desk-4 lgdesk-3 desk-pl-20">
-                                            <div class="address-box">
-                                                <div style="background-color: #7C7C7C; height: 170px;" class="google-map"></div>
-                                                <div class="address-description">
-                                                    <p>
-                                                        2, place de Nancy<br/>
-                                                        L-2212 Luxembourg-Hollerich<br/>
-                                                        Luxembourg
-                                                    </p>
-                                                    <p class="clearfix"><span class="pull-left"><a href="#">Site web</a></span><span class="pull-right">Fax: 2799 0000 2</span></p>
+                                            <div class="clearfix tab-mb-5 btn-list hidden display-phone display-tab phone-12 tab-6 tab-pr-20">
+                                                <a class="btn-blue"><span class="icon-email"></span>Contact</a>
+                                                <a class="btn-blue"><span class="icon-phone"></span>Téléphone</a>
+                                                <a class="btn-blue">Confier mon bien</a>
+                                                <a class="btn-blue">Confier ma recherche</a>
+                                            </div>
+                                            <div class="phone-12 tab-6 desk-12 tab-pl-20 pull-right">
+                                                <div class="address-box">
+                                                    <div style="background-color: #7C7C7C; height: 170px;" class="google-map"></div>
+                                                    <div class="address-description">
+                                                        <p>
+                                                            2, place de Nancy<br/>
+                                                            L-2212 Luxembourg-Hollerich<br/>
+                                                            Luxembourg
+                                                        </p>
+                                                        <p class="clearfix"><span class="pull-left"><a href="#">Site web</a></span><span class="pull-right">Fax: 2799 0000 2</span></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,9 +156,10 @@
                     <div class="row">
                         <div class="phone-12 desk-3 desk-pr-10">
                             <div class="search-container">
-                                <div class="pannel">
+                                <div class="pannel expand">
                                     <div class="pannel-header">
                                         <h3>Affiner votre recherche</h3>
+                                        <button class="exp-btn icon-compress"></button>
                                     </div>
                                     <div class="pannel-body">
                                         <div class="input-group">
@@ -218,9 +225,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="pannel">
+                                <div class="pannel expand">
                                     <div class="pannel-header">
                                         <h3>Recherche détaillée</h3>
+                                        <button class="exp-btn icon-compress"></button>
                                     </div>
                                     <div class="pannel-body">
                                         <div class="input-group table checkbox">

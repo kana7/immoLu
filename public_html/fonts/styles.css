@@ -86,3 +86,15 @@
 .icon-google-plus:before {
   content: "\70";
 }
+.icon-angle-double-down:before {
+  content: "\72";
+}
+.icon-expand:before {
+  content: "\73";
+}
+.icon-compress:before {
+  content: "\74";
+}
+.icon-ellipsis-v:before {
+  content: "\75";
+}

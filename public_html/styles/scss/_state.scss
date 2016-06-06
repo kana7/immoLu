@@ -107,6 +107,7 @@
             left: 0;
         }
         .infos-container, .agency-container{
+            height: 125px;
             padding: 15px 20px;
         }
         .infos-container{float: none !important; width: auto !important;}
@@ -133,17 +134,35 @@
     .agency-header{
         max-width: none;
     }
+    .agency-entry{
+        .btn-list{
+            @include spread-element;
+        }
+    }
 }
-@include viewport(range, $min: 672, $max: 1055){
+@include media-exclusive(tab){
     .infos-attributs{
         div[class^="phone-"]{
             min-height: 77px;
         }
     }
 }
-@include viewport(min, $min: 839){
-    .search-result-entry{
-
+@include viewport(min, $min: 840){
+    .agency-entry{
+        height: 225px;
+        max-height: 225px;
+        .entry-row{
+            display: table;
+            border-collapse: collapse;
+        }
+        .logo-container, .infos-container, .map-container{
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+            position: relative;
+        }
+        .logo-container, .map-container{width: 200px; min-width: 200px;}
+        .map-container{width: 250px; min-width: 250px;}
     }
 }
 @include viewport(range, $max: 1055, $min: 855){
@@ -225,6 +244,7 @@
         }
     }
     .agency-logo{
+        display: block;
         position: absolute;
         top: -5px;
         left: 5px;
@@ -233,6 +253,14 @@
     }
     .agency-header{
         padding: 40px 0 0 125px;
+        .btn-blue{
+            padding: 5px 20px;
+        }
+    }
+    .agency-entry{
+        .btn-blue{
+            padding: 5px 10px;
+        }
     }
     .agency-header, .agency-entry{
         width: 100%;
@@ -243,11 +271,13 @@
             font-size: 0.85em;
             line-height: 25px;
             height: auto;
-            padding: 5px 20px;
             margin-bottom: 0;
         }
     }
     .agency-header-container{padding: 5px;}
+    #annonce-details-left, #annonce-details-right, .pannel, .agency-header, .agency-entry{
+        margin-bottom: 20px;
+    }
 }
 @include media(lgdesk){
     .main-nav{
@@ -282,9 +312,6 @@
             text-align: left;
             font-size: 1.8em;
             margin: 15px 0;
-        }
-        .btn-blue{
-            padding: 4px 25px;
         }
     }
     .agency-logo {
