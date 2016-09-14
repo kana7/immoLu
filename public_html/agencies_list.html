@@ -6,9 +6,7 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/css/vendor/photoswipe.css" />
-        <link rel="stylesheet" href="styles/css/vendor/default-skin/default-skin.css" />
-        <link rel="stylesheet" href="styles/css/vendor/pgwslider.min.css" />
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
         <link rel="stylesheet" href="styles/css/main.css" />
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
     </head>
@@ -19,8 +17,9 @@
                 <li class="menu-item link"><a href="#">Acheter</a></li>
                 <li class="menu-item link"><a href="#">Louer</a></li>
                 <li class="menu-item link"><a href="#">Neuf</a></li>
-                <li class="menu-item link"><a href="#">Colocation</a></li>
+                <li class="menu-item link"><a href="#">Agences</a></li>
                 <li class="menu-item link"><a href="#">Commerces</a></li>
+                <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
             </ul>
         </nav>
         <div id="siteWrap">
@@ -52,7 +51,6 @@
                             </div>
                             <div class="phone-6">
                                 <div class="clearfix pull-right header-mobile-button">
-                                    <a href="#" class="btn-orange"><span class="icon-car"></span></a>
                                     <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
                                     <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
                                 </div>
@@ -80,7 +78,7 @@
                                         <li><a href="#">Acheter</a></li>
                                         <li><a href="#">Louer</a></li>
                                         <li><a href="#">Neuf</a></li>
-                                        <li><a href="#">Colocation</a></li>
+                                        <li><a href="#">Agences</a></li>
                                         <li><a href="#">Commerces</a></li>
                                     </ul>
                                 </nav>
@@ -102,9 +100,10 @@
                                 </div>
                             </div>
                             <div class="search-container">
-                                <div class="pannel">
+                                <div class="pannel expand">
                                     <div class="pannel-header">
                                         <h3>Affiner votre recherche</h3>
+                                        <button class="exp-btn icon-compress"></button>
                                     </div>
                                     <div class="pannel-body">
                                         <div class="input-group">
@@ -116,7 +115,7 @@
                                             <input type="text" />
                                         </div>
                                         <div class="clearfix">
-                                            <button style="width: 100%; padding: 12px 15px; font-size: 1.3em;" class="btn-orange phone-mt-10">Actualiser la recherche</button>
+                                            <button style="width: 100%; padding: 12px 15px; font-size: 1.3em;" class="btn-orange phone-mt-10">Rechercher</button>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +128,15 @@
                                 </div>
                             </div>
                             <div class="clearfix">
-                                <div class="agency-entry">
+                                <div class="agency-entry" style="color: white;">
+                                    <div class="menu-container dropdown">
+                                        <button><span class="icon-menu-icone"></span></button>
+                                        <ul class="dropdown-links">
+                                            <li><a href="#">Voir tous les biens</a></li>
+                                            <li><a href="#">Téléphone</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">Afficher sur la carte</a></li>
+                                    </div>
                                     <div class="entry-row">
                                         <div class="logo-container">
                                             <div style="background-color: #19171A;" class="agency-color"></div>
@@ -150,6 +157,7 @@
                                                 <li><a class="btn-blue" href="#">Voir tous les biens</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-phone"></span> Téléphone</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-email"></span> Contact</a></li>
+                                                <li class="btn-map"><a class="btn-blue" href="#">Afficher sur la carte</a></li>
                                             </ul>
                                         </div>
                                         <div class="map-container">
@@ -157,7 +165,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="agency-entry">
+                                <div class="agency-entry" style="color: white;">
+                                    <div class="menu-container dropdown">
+                                        <button><span class="icon-menu-icone"></span></button>
+                                        <ul class="dropdown-links">
+                                            <li><a href="#">Voir tous les biens</a></li>
+                                            <li><a href="#">Téléphone</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">Afficher sur la carte</a></li>
+                                    </div>
                                     <div class="entry-row">
                                         <div class="logo-container">
                                             <div style="background-color: #E2017B;" class="agency-color"></div>
@@ -178,6 +194,7 @@
                                                 <li><a class="btn-blue" href="#">Voir tous les biens</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-phone"></span> Téléphone</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-email"></span> Contact</a></li>
+                                                <li class="btn-map"><a class="btn-blue" href="#">Afficher sur la carte</a></li>
                                             </ul>
                                         </div>
                                         <div class="map-container">
@@ -185,7 +202,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="agency-entry">
+                                <div class="agency-entry" style="color: white;">
+                                    <div class="menu-container dropdown">
+                                        <button><span class="icon-menu-icone"></span></button>
+                                        <ul class="dropdown-links">
+                                            <li><a href="#">Voir tous les biens</a></li>
+                                            <li><a href="#">Téléphone</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">Afficher sur la carte</a></li>
+                                    </div>
                                     <div class="entry-row">
                                         <div class="logo-container">
                                             <div style="background-color: #F78F1D;;" class="agency-color"></div>
@@ -206,6 +231,7 @@
                                                 <li><a class="btn-blue" href="#">Voir tous les biens</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-phone"></span> Téléphone</a></li>
                                                 <li><a class="btn-blue" href="#"><span  class="icon-email"></span> Contact</a></li>
+                                                <li class="btn-map"><a class="btn-blue" href="#">Afficher sur la carte</a></li>
                                             </ul>
                                         </div>
                                         <div class="map-container">

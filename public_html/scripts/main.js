@@ -18,10 +18,12 @@ $(function () {
             wrapAround: false,
             contain: true
         });
+        /*
         resizeSlider();
         $(window).resize(function () {
             resizeSlider();
         });
+        */
     }
 
     /* init modules pour uploader image */
@@ -45,6 +47,7 @@ $(function () {
         });
         if (viewport().width < 1056){
             $('.pannel.expand').addClass('minimized');
+            $('.pannel.expand').find('.exp-btn').removeClass('icon-compress').addClass('icon-expand');
         }
     };
 
@@ -236,6 +239,15 @@ var MenuMobile = (function () {
     };
 })();
 
+var checkboxList = function($element){
+    var element = $element;
+};
+checkboxList.prototype = {
+  init : function (){
+      
+  }
+};
+
 var dropDown = function($element){
     var $dropdownContainer = $element;
     var $button = $dropdownContainer.find('button');
@@ -307,6 +319,16 @@ var expandPannel = function($element){
         $pannel.addClass('minimized');
         $btn.removeClass('icon-compress').addClass('icon-expand');
     };
+};
+
+//Permet de manuellement "truncate" un text pour ajouter une ellipse
+var ellipsizeTextBox = function(element) {
+    var $el = $(element);
+    var wordArray = $el.innerHTML.split(' ');
+    while($el.scrollHeight > $el.offsetHeight) {
+        wordArray.pop();
+        $el.innerHTML = wordArray.join(' ') + '&hellip;';
+     }
 };
 
 //size of viewport

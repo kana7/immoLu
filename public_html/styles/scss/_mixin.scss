@@ -230,6 +230,30 @@
     text-overflow: $overflow; // values are: clip, ellipsis, or a string
 }
 
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount; 
+    text-align: justify;
+    padding-right: 1em;
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
 @mixin box-emboss($opacity, $opacity2){
     box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
 }

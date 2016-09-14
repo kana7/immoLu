@@ -2577,8 +2577,9 @@ svg:not(:root) {
 
 h2 {
   margin: 0 0 20px;
-  font-size: 1.8em;
-  font-weight: 600; }
+  font-size: 1.4em;
+  font-weight: 600;
+  text-align: center; }
 
 .uppercase {
   text-transform: uppercase; }
@@ -2712,6 +2713,11 @@ section {
       /* text-transform: uppercase; */
       border-bottom: 1px solid #F3F3F3;
       cursor: pointer; }
+      .mobile-side-menu .menu .menu-item.focus, .mobile-side-menu .menu-links .menu-item.focus {
+        color: white;
+        background-color: #004994; }
+        .mobile-side-menu .menu .menu-item.focus:hover, .mobile-side-menu .menu-links .menu-item.focus:hover {
+          background-color: #0062c7; }
       .mobile-side-menu .menu .menu-item .icon-right-arrow, .mobile-side-menu .menu-links .menu-item .icon-right-arrow {
         float: right;
         margin: 0;
@@ -2907,33 +2913,34 @@ header {
 .search-banner {
   position: relative;
   display: block;
-  height: 430px;
   margin-top: -30px;
   background-image: url(../../images/Img/homepage/search-banner.jpg);
   background-repeat: no-repeat;
-  background-size: cover; }
-  .search-banner .row {
-    height: 100%; }
+  background-size: cover;
+  padding: 60px 0 20px; }
 
 .search-banner-box {
   position: relative;
   display: block;
   width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding: 15px 20px 5px;
+  padding: 15px 20px;
   background-color: #fff;
   border-radius: 2px; }
+  .search-banner-box:before {
+    content: "";
+    display: table; }
+  .search-banner-box:after {
+    content: "";
+    display: table;
+    clear: both; }
   .search-banner-box h2 {
     position: absolute;
     display: block;
     margin: 0;
     top: -35px;
     color: #fff; }
+  .search-banner-box input[type="submit"] {
+    position: relative; }
 
 #login {
   position: relative;
@@ -2972,6 +2979,8 @@ header {
 .about-section h2 {
   font-size: 1.6em; }
 .about-section p {
+  text-align: justify;
+  text-align-last: center;
   line-height: 20px;
   font-size: 1.05em; }
 
@@ -3171,7 +3180,14 @@ label, .input-group h4 {
       box-sizing: content-box;
       display: table-cell;
       vertical-align: middle;
-      height: 100%; }
+      height: 100%;
+      /* firefox 19+ */ }
+      .input-group.search-bar .search-bar-select input[placeholder], .input-group.search-bar .search-bar-input input[placeholder] {
+        text-overflow: ellipsis; }
+      .input-group.search-bar .search-bar-select ::-moz-placeholder, .input-group.search-bar .search-bar-input ::-moz-placeholder {
+        text-overflow: ellipsis; }
+      .input-group.search-bar .search-bar-select input:-moz-placeholder, .input-group.search-bar .search-bar-input input:-moz-placeholder {
+        text-overflow: ellipsis; }
     .input-group.search-bar .search-bar-select {
       width: 110px; }
     .input-group.search-bar select, .input-group.search-bar input {
@@ -3185,7 +3201,7 @@ label, .input-group h4 {
       border-left: none; }
 
 input, select {
-  padding-left: 15px; }
+  padding-left: 10px; }
 
 select {
   border-radius: 4px;
@@ -3198,7 +3214,8 @@ select {
   font-size: 1.1em;
   padding-right: 15px; }
 
-input[type="text"], input[type="password"], textarea {
+input[type="text"], input[type="password"], textarea, .dropDownListResultBox {
+  display: block;
   border-radius: 4px;
   border: 1px solid #c0c0c0;
   background-color: #f8f8f8;
@@ -3209,6 +3226,9 @@ input[type="text"], input[type="password"], textarea {
 
 input[type="text"], input[type="password"] {
   height: 43px; }
+
+.dropDownListResultBox {
+  min-height: 43px; }
 
 .radioboxes {
   height: 43px;
@@ -3223,6 +3243,74 @@ input[type="text"], input[type="password"] {
       top: 2px; }
     .radioboxes .radiobox:first-child {
       margin-right: 15px; }
+
+.checkbox-list {
+  position: relative; }
+  .checkbox-list:before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 6px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 6px solid #818181;
+    z-index: 1; }
+  .checkbox-list .item {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #004994;
+    color: white;
+    font-size: 0.9em;
+    line-height: 20px;
+    font-weight: 400;
+    float: left;
+    overflow: hidden;
+    text-align: left;
+    margin: 0px 1px 2px 2px;
+    padding: 0 5px; }
+    .checkbox-list .item a {
+      display: inline-block;
+      padding-right: 2px;
+      float: right;
+      margin: 0px 0px 0px 5px; }
+    .checkbox-list .item span[class^="icon-"] {
+      font-size: 0.65em;
+      line-height: 18px; }
+  .checkbox-list .dropDownListResultBox {
+    position: relative;
+    padding: 5px; }
+    .checkbox-list .dropDownListResultBox:before {
+      content: "";
+      display: table; }
+    .checkbox-list .dropDownListResultBox:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .checkbox-list .dropDownList {
+    display: none;
+    max-height: 200px;
+    box-sizing: border-box;
+    margin-top: -5px;
+    position: absolute;
+    border-radius: 0px 0px 4px 4px;
+    width: 100%;
+    z-index: 5;
+    background-color: #f8f8f8;
+    padding: 10px 10px 5px;
+    border: 1px solid #c0c0c0;
+    border-top: none;
+    text-align: left;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
+    .checkbox-list .dropDownList.open {
+      display: block; }
+    .checkbox-list .dropDownList label {
+      font-size: 0.95em;
+      font-weight: 400;
+      margin-bottom: 5px;
+      cursor: pointer; }
+      .checkbox-list .dropDownList label input[type="checkbox"] {
+        margin-right: 5px; }
 
 .radiobox input, .radiobox label {
   display: inline; }
@@ -3257,26 +3345,66 @@ input[type="text"], input[type="password"] {
   color: #004994; }
 
 .gallery-cell {
-  width: 50%;
+  width: 100%;
   padding: 0 20px; }
 
 .immo-main-annonce {
-  display: table;
+  display: block;
   width: 100%;
+  min-height: 410px;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
-  padding: 7px 0; }
+  padding: 7px 0 7px; }
   .immo-main-annonce .data, .immo-main-annonce .meta {
-    display: table-cell;
+    display: block;
     text-align: center; }
   .immo-main-annonce .data {
     vertical-align: top;
-    width: 65%;
-    border-right: 1px solid #c0c0c0;
-    padding: 0 5px; }
+    width: 100%;
+    border-bottom: 1px solid #c0c0c0;
+    padding: 0 5px;
+    padding-bottom: 15px; }
   .immo-main-annonce .meta {
+    position: relative;
     vertical-align: middle;
     padding: 25px 20px; }
+    .immo-main-annonce .meta .meta-links {
+      display: none; }
+    .immo-main-annonce .meta .menu-container {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .immo-main-annonce .meta .menu-container button {
+        background: none;
+        border: none;
+        font-size: 2.5em; }
+      .immo-main-annonce .meta .menu-container .dropdown-links {
+        position: absolute;
+        margin: 0;
+        border-radius: 0 0 4px 0;
+        display: none;
+        top: 38px;
+        right: 0px;
+        width: 175px;
+        z-index: 5;
+        background-color: white;
+        padding: 0px 10px;
+        border: 1px solid #dadada;
+        text-align: right;
+        -webkit-animation-duration: 0.5s;
+        /* Chrome, Safari, Opera */
+        animation-duration: 0.5s; }
+        .immo-main-annonce .meta .menu-container .dropdown-links li {
+          display: block;
+          color: #a7a7a7;
+          font-size: 0.95em;
+          text-transform: lowercase; }
+          .immo-main-annonce .meta .menu-container .dropdown-links li:hover {
+            color: orange; }
+          .immo-main-annonce .meta .menu-container .dropdown-links li:not(:last-child) {
+            border-bottom: 1px solid #f3f3f3; }
+          .immo-main-annonce .meta .menu-container .dropdown-links li a {
+            padding: 8px 5px; }
   .immo-main-annonce .btn-grey {
     width: 100%;
     padding: 12px 15px;
@@ -3297,6 +3425,28 @@ input[type="text"], input[type="password"] {
   width: 100%;
   background-color: #f8f8f8;
   margin-bottom: 15px; }
+  .annonce-slider-item-img-container .image-container-frame {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+    .annonce-slider-item-img-container .image-container-frame img {
+      display: inline-block;
+      height: 100%;
+      width: auto;
+      position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto; }
+    .annonce-slider-item-img-container .image-container-frame img {
+      height: auto;
+      width: auto; }
 
 .image-container {
   display: inline-block;
@@ -3333,7 +3483,7 @@ input[type="text"], input[type="password"] {
     max-width: 100%; }
 
 .address {
-  margin: 20px 0; }
+  margin: 20px 0 0; }
   .address p {
     margin: 0;
     line-height: 23px;
@@ -3407,8 +3557,6 @@ input[type="text"], input[type="password"] {
       font-size: 1.3em;
       top: 4px;
       margin-right: 10px; }
-  .pannel .annonce-buttons a:first-child, #annonce-details-right .annonce-buttons a:first-child {
-    margin-bottom: 10px; }
   .pannel .annonce-buttons a, #annonce-details-right .annonce-buttons a {
     width: 100%; }
 
@@ -3546,6 +3694,8 @@ input[type="text"], input[type="password"] {
     padding: 0 15px 15px; }
     .pannel .pannel-body input[type="text"], .pannel .pannel-body select {
       height: 35px; }
+    .pannel .pannel-body .dropDownListResultBox {
+      min-height: 35px; }
     .pannel .pannel-body .input-group {
       min-height: auto;
       margin-bottom: 11px; }
@@ -3612,77 +3762,33 @@ input[type="text"], input[type="password"] {
     width: 100%;
     height: 100%; }
   .search-result-entry .entry-annonce-link {
-    display: inline;
+    display: none;
     color: #004994;
-    font-size: 1.05em;
-    font-weight: 600; }
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 10px; }
     .search-result-entry .entry-annonce-link:hover {
       text-decoration: underline;
       color: #006fe1; }
-  .search-result-entry .menu-container {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
-    z-index: 10; }
-    .search-result-entry .menu-container button {
-      display: inline-block;
-      background: none;
-      outline: 0;
-      border: none;
-      color: inherit;
-      font-size: 1.9em;
-      background-color: inherit; }
-    .search-result-entry .menu-container .dropdown-links {
-      position: absolute;
-      -webkit-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
-      -moz-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
-      box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
-      -o-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
-      -ms-box-shadow: 0 1.5px 4px rgba(180, 180, 180, 0.24), 0 1.5px 6px rgba(180, 180, 180, 0.12);
-      border-radius: 4px;
-      background-color: #fff;
-      margin: 0;
-      display: none;
-      top: 30px;
-      right: 2px;
-      width: 150px;
-      z-index: 5;
-      background-color: white;
-      padding: 0px 10px;
-      border: 1px solid rgba(218, 218, 218, 0.6);
-      -webkit-animation-duration: 0.5s;
-      /* Chrome, Safari, Opera */
-      animation-duration: 0.5s; }
-      .search-result-entry .menu-container .dropdown-links li {
-        display: block;
-        color: #a7a7a7;
-        font-size: 0.95em;
-        text-transform: lowercase; }
-        .search-result-entry .menu-container .dropdown-links li:hover {
-          color: orange; }
-        .search-result-entry .menu-container .dropdown-links li:not(:last-child) {
-          border-bottom: 1px solid #f3f3f3; }
-        .search-result-entry .menu-container .dropdown-links li a {
-          padding: 8px 5px; }
   .search-result-entry .entry-header {
     display: block;
     position: relative;
     padding: 5px 15px;
+    padding-left: 40px;
     border-radius: 4px 4px 0 0;
     text-transform: uppercase; }
     .search-result-entry .entry-header .title {
       display: inline-block;
       margin: 0;
-      font-size: 16px;
-      line-height: 20px;
-      color: white; }
+      font-size: 15px;
+      line-height: 18px;
+      color: white;
+      text-decoration: inherit; }
+    .search-result-entry .entry-header a:hover > .title {
+      text-decoration: underline; }
     .search-result-entry .entry-header .location {
+      display: none;
       text-transform: capitalize; }
-  .search-result-entry.minimized .entry-body {
-    border-radius: 4px !important;
-    border: 1px solid rgba(218, 218, 218, 0.6); }
   .search-result-entry .entry-body {
     font-size: 12px;
     overflow: hidden;
@@ -3704,8 +3810,16 @@ input[type="text"], input[type="password"] {
   .search-result-entry:not(.minimized) .entry-body-row {
     display: block;
     width: 100%; }
+  .search-result-entry.minimized .entry-body {
+    border-radius: 4px !important;
+    border: 1px solid rgba(218, 218, 218, 0.6); }
   .search-result-entry.minimized .infos-container .title {
-    display: none; }
+    display: block;
+    font-size: 1.15em; }
+    .search-result-entry.minimized .infos-container .title > .title, .search-result-entry.minimized .infos-container .title > .location {
+      display: inline; }
+  .search-result-entry.minimized .menu-container button {
+    background-color: rgba(255, 255, 255, 0.7); }
   .search-result-entry .image-container {
     background-color: #E6E5E3;
     overflow: hidden; }
@@ -3722,11 +3836,12 @@ input[type="text"], input[type="password"] {
   .search-result-entry:not(.minimized) .image-container {
     display: block;
     float: left;
-    width: 100%;
-    height: 225px; }
+    width: 100%; }
     .search-result-entry:not(.minimized) .image-container img {
       height: 100%;
       width: auto; }
+  .search-result-entry .details {
+    display: none; }
   .search-result-entry .mobile-details {
     display: block;
     margin-top: 5px; }
@@ -3735,7 +3850,7 @@ input[type="text"], input[type="password"] {
     .search-result-entry .mobile-details li {
       display: block;
       line-height: 20px;
-      font-size: 0.95em;
+      font-size: 1.15em;
       font-weight: 600; }
   .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
     height: 125px;
@@ -3746,7 +3861,7 @@ input[type="text"], input[type="password"] {
     float: left; }
   .search-result-entry .infos-container .title {
     font-size: 18px;
-    margin: 10px 0 8px; }
+    margin: 0; }
     .search-result-entry .infos-container .title .location {
       font-size: inherit; }
   .search-result-entry .price, .search-result-entry .details, .search-result-entry .icons {
@@ -3754,8 +3869,11 @@ input[type="text"], input[type="password"] {
   .search-result-entry .price {
     font-size: 1.6em;
     color: #e75e0a; }
+    .search-result-entry .price .upper, .search-result-entry .price .lower {
+      display: inline-block;
+      line-height: 22px; }
   .search-result-entry .icons {
-    font-size: 1.2em; }
+    font-size: 1.25em; }
     .search-result-entry .icons li:not(:last-child) {
       margin-right: 5px; }
     .search-result-entry .icons span[class^="icon-"] {
@@ -3769,8 +3887,6 @@ input[type="text"], input[type="password"] {
     .search-result-entry .icons .garages span[class^="icon-"] {
       top: 6px;
       font-size: 1.25em; }
-  .search-result-entry .details {
-    display: none; }
   .search-result-entry .image-container-frame {
     display: block;
     position: relative;
@@ -3784,16 +3900,37 @@ input[type="text"], input[type="password"] {
       display: table;
       clear: both; }
   .search-result-entry .description {
+    overflow: hidden;
+    position: relative;
+    line-height: 20px;
+    max-height: 60px;
+    text-align: justify;
+    padding-right: 1em;
     display: none;
     font-size: 1.1em;
     line-height: 20px;
     text-align: justify;
     text-align-last: left;
     margin: 0; }
+    .search-result-entry .description:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    .search-result-entry .description:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: white; }
   .search-result-entry:not(.minimized) .agency-container {
     display: inline-block;
     float: left;
-    width: 50%; }
+    width: 50%;
+    background-color: #F8F8F8;
+    border-left: 1px solid rgba(218, 218, 218, 0.6); }
   .search-result-entry:not(.minimized) .links-container {
     display: block;
     position: absolute;
@@ -3803,8 +3940,8 @@ input[type="text"], input[type="password"] {
     position: relative;
     top: 0;
     right: 0;
-    background-color: #F8F8F8;
-    border-left: 1px solid rgba(218, 218, 218, 0.6); }
+    background-color: #FFF;
+    border-left: 1px solid rgba(218, 218, 218, 0); }
     .search-result-entry .agency-container .btn-dropdown {
       display: block; }
     .search-result-entry .agency-container .links {
@@ -3819,7 +3956,7 @@ input[type="text"], input[type="password"] {
       width: 100%;
       max-width: 200px;
       height: 100%;
-      padding: 5px 0;
+      padding: 0;
       overflow: hidden; }
       .search-result-entry .agency-container .agency-container-frame a {
         display: block;
@@ -3850,13 +3987,20 @@ input[type="text"], input[type="password"] {
           line-height: 20px;
           font-size: 0.99em;
           line-height: 20px;
-          padding: 9px 16px; }
+          padding: 9px 16px;
+          background-color: inherit;
+          -moz-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+          -o-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+          -webkit-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+          transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out; }
           .search-result-entry .agency-container .links li a:not(:last-child) {
             margin-bottom: 5px; }
           .search-result-entry .agency-container .links li a span {
             margin-right: 4px;
             top: 1px;
             position: relative; }
+          .search-result-entry .agency-container .links li a:hover {
+            background-color: #ebebeb; }
   .search-result-entry.no-agency .agency-container .links {
     bottom: auto;
     top: 0;
@@ -3867,10 +4011,11 @@ input[type="text"], input[type="password"] {
       border-top: 1px solid rgba(218, 218, 218, 0.6); }
   .search-result-entry.residence > .entry-body {
     border-radius: 0; }
+  .search-result-entry.residence > .details {
+    display: none; }
   .search-result-entry.residence .details {
     font-size: 1.2em;
-    margin-top: 5px;
-    display: block; }
+    margin-top: 5px; }
     .search-result-entry.residence .details li {
       display: block; }
   .search-result-entry.residence .immo-link {
@@ -3879,7 +4024,8 @@ input[type="text"], input[type="password"] {
   .search-result-entry.residence .residence-list {
     display: table;
     width: 100%;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    margin-top: -1px; }
   .search-result-entry.residence .residence-item {
     display: table-row;
     border: 1px solid rgba(218, 218, 218, 0.6); }
@@ -3890,7 +4036,7 @@ input[type="text"], input[type="password"] {
       position: relative;
       height: 100%; }
     .search-result-entry.residence .residence-item .image {
-      width: 160px;
+      width: 110px;
       position: relative;
       text-align: center;
       overflow: hidden; }
@@ -3907,14 +4053,23 @@ input[type="text"], input[type="password"] {
     .search-result-entry.residence .residence-item .infos {
       padding: 10px 15px;
       font-size: 12px; }
+      .search-result-entry.residence .residence-item .infos > a:not(.immo-link) {
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1; }
     .search-result-entry.residence .residence-item .title {
-      margin: 0;
-      font-size: 1.3em;
-      font-weight: 600; }
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 5px 0; }
     .search-result-entry.residence .residence-item .details {
       font-size: 1em;
       vertical-align: middle;
-      margin: 10px 0; }
+      margin: 10px 0 5px; }
     .search-result-entry.residence .residence-item .icons {
       font-size: 1.2em;
       vertical-align: bottom;
@@ -3923,15 +4078,23 @@ input[type="text"], input[type="password"] {
       position: absolute;
       right: 15px; }
     .search-result-entry.residence .residence-item .price {
-      font-size: 1.8em;
+      font-size: 1.6em;
       top: 10px; }
     .search-result-entry.residence .residence-item .immo-link {
+      display: none;
       text-decoration: none;
       font-size: 1em;
       bottom: 10px;
       font-style: italic;
       font-weight: 600;
-      margin: 0; }
+      margin: 0;
+      -moz-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+      -o-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+      -webkit-transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+      transition: background 0.4s ease-in-out, border 0.4s ease-in-out, color 0.4s ease-in-out;
+      z-index: 2; }
+      .search-result-entry.residence .residence-item .immo-link:hover {
+        color: #4e4e4e; }
       .search-result-entry.residence .residence-item .immo-link span {
         position: relative;
         top: 1px;
@@ -3944,9 +4107,10 @@ input[type="text"], input[type="password"] {
     background-color: #e6e6e6; }
     .search-result-entry.residence .residence-footer .immo-link {
       margin: 0;
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: 600;
-      line-height: 35px; }
+      line-height: 35px;
+      height: 35px; }
       .search-result-entry.residence .residence-footer .immo-link, .search-result-entry.residence .residence-footer .immo-link span {
         text-decoration: none; }
       .search-result-entry.residence .residence-footer .immo-link span[class^='icon-'] {
@@ -3955,6 +4119,56 @@ input[type="text"], input[type="password"] {
         font-size: 0.6em;
         color: inherit;
         text-decoration: none; }
+
+.search-result-entry .menu-container, .agency-entry .menu-container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: right;
+  z-index: 10; }
+  .search-result-entry .menu-container button, .agency-entry .menu-container button {
+    display: inline-block;
+    background: none;
+    outline: 0;
+    border: none;
+    color: inherit;
+    font-size: 1.9em;
+    background-color: inherit;
+    height: 28px;
+    line-height: 28px; }
+    .search-result-entry .menu-container button span, .agency-entry .menu-container button span {
+      display: block; }
+  .search-result-entry .menu-container .dropdown-links, .agency-entry .menu-container .dropdown-links {
+    position: absolute;
+    margin: 0;
+    border-radius: 0 0 4px 0;
+    display: none;
+    top: 28px;
+    left: 0px;
+    width: 175px;
+    z-index: 5;
+    background-color: white;
+    padding: 0px 10px;
+    border: 1px solid #dadada;
+    text-align: left;
+    -webkit-animation-duration: 0.5s;
+    /* Chrome, Safari, Opera */
+    animation-duration: 0.5s; }
+    .search-result-entry .menu-container .dropdown-links li, .agency-entry .menu-container .dropdown-links li {
+      display: block;
+      color: #a7a7a7;
+      font-size: 0.95em;
+      text-transform: lowercase; }
+      .search-result-entry .menu-container .dropdown-links li:hover, .agency-entry .menu-container .dropdown-links li:hover {
+        color: orange; }
+      .search-result-entry .menu-container .dropdown-links li:not(:last-child), .agency-entry .menu-container .dropdown-links li:not(:last-child) {
+        border-bottom: 1px solid #f3f3f3; }
+      .search-result-entry .menu-container .dropdown-links li a, .agency-entry .menu-container .dropdown-links li a {
+        padding: 8px 5px; }
+
+.agency-entry .menu-container .dropdown-links {
+  top: 35px; }
 
 /*-------------------------------AGENCY PANEL---------------------------------*/
 /*----------------------------------------------------------------------------*/
@@ -3995,14 +4209,15 @@ input[type="text"], input[type="password"] {
   border: 1px solid #e5e5e5; }
   .agency-entry .entry-row {
     height: 100%; }
-  .agency-entry .logo-container, .agency-entry .infos-container, .agency-entry .map-container {
+  .agency-entry .infos-container, .agency-entry .map-container {
     position: relative; }
-  .agency-entry .logo-container {
-    padding-left: 11px; }
+  .agency-entry .map-container {
+    display: none; }
   .agency-entry .infos-container {
     height: 100%;
     width: 100%;
-    padding: 0 15px; }
+    padding: 0 15px;
+    text-align: center; }
     .agency-entry .infos-container h2 {
       margin: 0;
       color: #686868;
@@ -4012,9 +4227,29 @@ input[type="text"], input[type="password"] {
       .agency-entry .infos-container h2 .location {
         text-transform: capitalize; }
     .agency-entry .infos-container p {
-      margin: 25px 0;
+      color: #686868;
       font-size: 1em;
-      line-height: 20px; }
+      overflow: hidden;
+      position: relative;
+      line-height: 20px;
+      max-height: 60px;
+      text-align: justify;
+      padding-right: 1em;
+      text-align: center;
+      text-align-last: center; }
+      .agency-entry .infos-container p:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+      .agency-entry .infos-container p:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white; }
   .agency-entry .map {
     display: block;
     min-height: 185px;
@@ -4023,10 +4258,10 @@ input[type="text"], input[type="password"] {
     border: 1px solid #e5e5e5;
     border-radius: 2px; }
   .agency-entry .agency-color {
-    display: none;
+    display: block;
     position: absolute;
-    height: 100%;
-    width: 35%;
+    height: 35px;
+    width: 100%;
     z-index: 0;
     top: 0;
     left: 0; }
@@ -4041,8 +4276,6 @@ input[type="text"], input[type="password"] {
     display: block;
     position: relative;
     padding: 15px;
-    height: 185px;
-    width: 185px;
     margin: 0 auto;
     border-radius: 2px;
     border: 1px solid #e5e5e5; }
@@ -4058,15 +4291,16 @@ input[type="text"], input[type="password"] {
       height: auto;
       width: auto;
       max-width: 100%; }
+  .agency-entry .btn-list {
+    display: none; }
 
 .agency-entry .btn-blue, .agency-header .btn-blue {
   display: block;
   text-transform: uppercase;
-  height: 43px;
-  line-height: 43px;
+  height: 40px;
+  line-height: 40px;
   padding: 0px 5px;
-  margin-bottom: 10px;
-  font-size: 0.90em; }
+  font-size: 0.85em; }
   .agency-entry .btn-blue *[class^="icon-"], .agency-header .btn-blue *[class^="icon-"] {
     font-size: 1.05em;
     position: relative;
@@ -4193,22 +4427,52 @@ input[type="text"], input[type="password"] {
     border-collapse: separate; }
     .search-result-entry.minimized .entry-body .entry-body-row {
       display: table-row; }
-  .search-result-entry.minimized .image-container, .search-result-entry.minimized .infos-container, .search-result-entry.minimized .agency-container {
+  .search-result-entry.minimized .image-container {
     display: table-cell;
     position: relative;
     vertical-align: middle;
     height: 100%; }
   .search-result-entry.minimized .infos-container {
-    width: 45%;
-    padding: 10px 5px; }
-  .search-result-entry.minimized .agency-container .agency-container-frame {
-    width: 85%; }
+    display: block;
+    padding: 10px 15px; }
+    .search-result-entry.minimized .infos-container .price {
+      margin-bottom: 6px; }
+    .search-result-entry.minimized .infos-container .infos-container-frame > .title {
+      font-size: 1.05em;
+      line-height: 15px; }
+      .search-result-entry.minimized .infos-container .infos-container-frame > .title .location {
+        display: none; }
+  .search-result-entry.minimized .agency-container {
+    display: block;
+    height: 75px;
+    padding: 5px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f8f8f8; }
+    .search-result-entry.minimized .agency-container .agency-container-frame {
+      width: 85%; }
+  .search-result-entry.minimized.no-agency .infos-container {
+    width: 100%; }
+  .search-result-entry.minimized.no-agency .agency-container {
+    display: none; }
   .search-result-entry.minimized .image-container {
-    width: 25%; }
+    width: 50%; }
   .search-result-entry.minimized .image-container-frame {
     position: absolute;
     left: 0;
-    top: 0; } }
+    top: 0; }
+
+  .search-result-entry.residence .residence-item .price, .search-result-entry.residence .residence-item .immo-link {
+    position: relative;
+    top: auto;
+    right: auto; }
+
+  .search-result-entry.residence .entry-body-row .immo-link {
+    display: none; }
+
+  .agency-entry .logo-frame {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto 15px; } }
 @media screen and (min-width: 500px) {
   .search-result-entry .icons {
     font-size: 1.3em; }
@@ -4216,10 +4480,36 @@ input[type="text"], input[type="password"] {
       margin-right: 15px; }
   .search-result-entry .price {
     font-size: 1.9em;
-    margin-bottom: 5px; }
+    margin-bottom: 10px; }
   .search-result-entry .mobile-details li {
     font-size: 1.15em; } }
 @media screen and (min-width: 672px) {
+  h2 {
+    font-size: 1.6em;
+    text-align: left; }
+
+  .immo-main-annonce {
+    display: table;
+    min-height: 403px; }
+    .immo-main-annonce .data, .immo-main-annonce .meta {
+      display: table-cell; }
+    .immo-main-annonce .data {
+      width: 65%;
+      padding-bottom: 0;
+      border-bottom: none;
+      border-right: 1px solid #c0c0c0; }
+    .immo-main-annonce .meta .menu-container {
+      display: none; }
+    .immo-main-annonce .meta .meta-links {
+      display: block; }
+
+  .address {
+    margin: 20px 0; }
+
+  .about-section p {
+    text-align: justify;
+    text-align-last: left; }
+
   .annonce-title {
     font-size: 23px; }
     .annonce-title h1 {
@@ -4229,9 +4519,20 @@ input[type="text"], input[type="password"] {
     display: inline-block;
     max-width: 250px; }
 
-  .search-result-entry .entry-header .title {
-    font-size: 18px;
-    line-height: 25px; }
+  .search-banner-box input[type="submit"] {
+    top: 25px; }
+  .search-banner-box .clearfix .clearfix:last-child .input-group:nth-child(n+2) {
+    margin-bottom: 0; }
+
+  .search-result-entry .entry-header {
+    padding-left: 15px; }
+    .search-result-entry .entry-header .title {
+      font-size: 18px;
+      line-height: 25px; }
+    .search-result-entry .entry-header .location {
+      display: inline; }
+  .search-result-entry .entry-annonce-link {
+    display: block; }
   .search-result-entry .menu-container {
     display: none; }
   .search-result-entry .entry-body {
@@ -4260,11 +4561,12 @@ input[type="text"], input[type="password"] {
     .search-result-entry .agency-container .agency-container-frame {
       width: 85%; }
     .search-result-entry .agency-container .links li a {
-      padding: 9px 16px; }
+      padding: 9px 8px; }
   .search-result-entry .icons {
     margin-bottom: 15px; }
   .search-result-entry .image-container {
-    width: 200px !important; }
+    width: 200px !important;
+    height: auto; }
   .search-result-entry .image-container-frame {
     display: block;
     position: absolute;
@@ -4273,14 +4575,16 @@ input[type="text"], input[type="password"] {
     top: 0;
     left: 0; }
   .search-result-entry .infos-container, .search-result-entry .agency-container {
-    height: 125px;
+    height: 115px;
     padding: 15px 20px; }
   .search-result-entry .infos-container {
     float: none !important;
     width: auto !important; }
   .search-result-entry .agency-container {
     position: relative !important;
-    float: none !important; }
+    float: none !important;
+    background-color: #F8F8F8;
+    border-left: 1px solid rgba(218, 218, 218, 0.6); }
     .search-result-entry .agency-container .agency-container-frame {
       position: absolute;
       height: calc(100% - 117px); }
@@ -4291,6 +4595,8 @@ input[type="text"], input[type="password"] {
     display: block; }
   .search-result-entry .links {
     display: block; }
+  .search-result-entry .entry-annonce-link {
+    text-align: right; }
   .search-result-entry .details {
     display: block;
     font-size: 1.1em; }
@@ -4299,41 +4605,68 @@ input[type="text"], input[type="password"] {
       .search-result-entry .details li:not(:last-child) {
         margin-right: 14px;
         font-size: inherit; }
+  .search-result-entry.minimized .infos-container .title {
+    font-size: 1.25em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px; }
+  .search-result-entry.residence .details {
+    display: block;
+    margin: 12px 0; }
+  .search-result-entry.residence .residence-item .immo-link {
+    display: block; }
+  .search-result-entry.residence .residence-item .image {
+    width: 150px; }
+  .search-result-entry.residence .residence-item .title {
+    font-size: 1.4em;
+    margin: 0; }
+
+  .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
+    height: 207px; }
 
   .agency-header {
     max-width: none; }
 
+  .agency-entry .entry-row {
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed; }
+  .agency-entry .logo-container, .agency-entry .infos-container {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle; }
+  .agency-entry .logo-container {
+    position: relative;
+    width: 150px;
+    min-width: 150px; }
+  .agency-entry .logo-frame {
+    margin-left: 15px;
+    height: 150px;
+    width: 150px; }
+  .agency-entry .agency-color {
+    display: block; }
   .agency-entry .btn-list {
-    display: inline-block;
-    text-align: justify;
-    width: 100%;
-    max-width: none;
-    line-height: 0; }
-    .agency-entry .btn-list:after {
-      content: '' !important;
-      display: inline-block !important;
-      width: 100% !important; } }
+    display: block; }
+  .agency-entry .infos-container {
+    text-align: left; }
+    .agency-entry .infos-container p {
+      text-align: left;
+      text-align-last: left; }
+  .agency-entry .menu-container {
+    display: none; }
+  .agency-entry .agency-color {
+    height: 100%;
+    width: 50px;
+    z-index: 0;
+    top: 0;
+    left: 0; } }
 @media screen and (min-width: 672px) and (max-width: 1055px) {
   .infos-attributs div[class^="phone-"] {
-    min-height: 77px; } }
-@media screen and (min-width: 840px) {
-  .agency-entry {
-    height: 225px;
-    max-height: 225px; }
-    .agency-entry .entry-row {
-      display: table;
-      border-collapse: collapse; }
-    .agency-entry .logo-container, .agency-entry .infos-container, .agency-entry .map-container {
-      display: table-cell;
-      height: 100%;
-      vertical-align: middle;
-      position: relative; }
-    .agency-entry .logo-container, .agency-entry .map-container {
-      width: 200px;
-      min-width: 200px; }
-    .agency-entry .map-container {
-      width: 250px;
-      min-width: 250px; } }
+    min-height: 77px; }
+
+  .agency-entry .infos-container {
+    padding: 10px 15px; } }
 @media screen and (min-width: 855px) and (max-width: 1055px) {
   .search-result-entry .agency-container {
     width: 175px; }
@@ -4366,6 +4699,9 @@ input[type="text"], input[type="password"] {
     display: block;
     margin: 0 auto; } }
 @media screen and (min-width: 1056px) {
+  .gallery-cell {
+    width: 50%; }
+
   header .header-bottom {
     padding: 25px 0; }
   header .logo {
@@ -4380,6 +4716,23 @@ input[type="text"], input[type="password"] {
     margin-left: 25px; }
     .main-nav li {
       padding: 0 15px; }
+
+  .search-banner {
+    height: 430px; }
+    .search-banner .row {
+      height: 100%; }
+
+  .search-banner-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .search-banner-box input[type="submit"] {
+      top: 25px; }
+    .search-banner-box .clearfix .clearfix:last-child .input-group {
+      margin-bottom: 0; }
 
   .annonce-title {
     margin: 10px 0;
@@ -4411,8 +4764,45 @@ input[type="text"], input[type="password"] {
     .agency-header .btn-blue {
       padding: 5px 20px; }
 
-  .agency-entry .btn-blue {
-    padding: 5px 10px; }
+  .agency-entry {
+    height: 225px;
+    max-height: 225px; }
+    .agency-entry .btn-blue {
+      padding: 5px 10px; }
+    .agency-entry .btn-map {
+      display: none; }
+    .agency-entry .infos-container h2 {
+      font-size: 1.2em;
+      overflow: hidden;
+      position: relative;
+      line-height: 25px;
+      max-height: 25px;
+      text-align: justify;
+      padding-right: 1em; }
+      .agency-entry .infos-container h2:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+      .agency-entry .infos-container h2:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white; }
+    .agency-entry .infos-container p {
+      font-size: 0.85em; }
+    .agency-entry .logo-frame {
+      height: 150px;
+      width: 150px; }
+    .agency-entry .map-container {
+      display: table-cell;
+      height: 100%;
+      vertical-align: middle;
+      width: 200px;
+      min-width: 200px; }
 
   .agency-header, .agency-entry {
     width: 100%; }
@@ -4432,7 +4822,10 @@ input[type="text"], input[type="password"] {
     padding: 5px; }
 
   #annonce-details-left, #annonce-details-right, .pannel, .agency-header, .agency-entry {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
+    height: 226px; } }
 @media screen and (min-width: 1302px) {
   .main-nav {
     margin-left: 65px; }
@@ -4445,39 +4838,36 @@ input[type="text"], input[type="password"] {
   .search-result-entry .icons {
     font-size: 1.7em; }
   .search-result-entry .image-container {
-    width: 285px !important; }
+    width: 245px !important; }
   .search-result-entry .agency-container {
     width: 200px !important; }
     .search-result-entry .agency-container .agency-container-frame {
-      height: calc(100% - 135px); }
+      height: calc(100% - 111px); }
     .search-result-entry .agency-container .links li a {
-      padding: 12px 16px; }
+      padding: 8px 16px; }
   .search-result-entry .details, .search-result-entry .icons {
-    margin-bottom: 15px; }
+    margin-bottom: 8px; }
 
   .agency-header {
     padding: 50px 0 0 185px; }
 
-  .agency-entry h1 {
+  .agency-entry h2 {
     text-align: left;
     font-size: 1.8em;
     margin: 15px 0; }
+  .agency-entry .logo-frame {
+    height: 185px;
+    width: 185px; }
+  .agency-entry .map-container {
+    width: 250px;
+    min-width: 250px; }
+  .agency-entry .infos-container p {
+    margin: 25px 0; }
 
   .agency-logo {
     top: 10px;
     left: 20px;
     width: 200px; }
-
-  .btn-list {
-    display: inline-block;
-    text-align: justify;
-    width: 100%;
-    max-width: none;
-    line-height: 0; }
-    .btn-list:after {
-      content: '' !important;
-      display: inline-block !important;
-      width: 100% !important; }
 
   .search-result-entry .agency-container .links li a {
     font-size: 1.2em; } }

@@ -31,8 +31,9 @@ svg:not(:root) {
 //------------------------------------------------------------------------------
 h2{
     margin: 0 0 20px;
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 600;
+    text-align: center;
 }
 
 .uppercase{
@@ -144,6 +145,13 @@ section{
         width: 247px;
         text-align: left;
         .menu-item{
+            &.focus{
+                color: white;
+                background-color: $blue;
+                &:hover{
+                    background-color: lighten($blue, 10%);
+                }
+            }
             display: block;
             position: relative;
             color: #004994;
@@ -376,29 +384,29 @@ header{
 .search-banner{
     position: relative;
     display: block;
-    height: 430px;
     margin-top: -30px; 
     background-image: url(../../images/Img/homepage/search-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    .row{
-        height: 100%;
-    }
+    padding: 60px 0 20px;
 }
 .search-banner-box{
     position: relative;
     display: block;
     width: 100%;
-    @include vertical-align-middle(absolute);
-    padding: 15px 20px 5px;
+    padding: 15px 20px;
     background-color: $white;
     border-radius: $border-radius - 2;
+    @include clearfix;
     h2{
         position: absolute;
         display: block;
         margin: 0;
         top: -35px;
         color: $white;
+    }
+    input[type="submit"]{
+        position: relative;
     }
 }
 
@@ -447,6 +455,8 @@ header{
 .about-section{
     h2{font-size: 1.6em;}
     p{
+        text-align: justify;
+        text-align-last: center;
         line-height: 20px;
         font-size: 1.05em;
     }
@@ -644,7 +654,9 @@ label, .input-group h4{
             display: table-cell;
             vertical-align: middle;
             height: 100%;
-
+            input[placeholder] { text-overflow: ellipsis; }
+            ::-moz-placeholder { text-overflow: ellipsis; } /* firefox 19+ */
+            input:-moz-placeholder { text-overflow: ellipsis; }
         }
         .search-bar-select{
             width: 110px;
@@ -657,13 +669,13 @@ label, .input-group h4{
             border-radius: 4px 0 0 4px;
         }
         input{
-            border: 1px solid $grey;
+            border: 1px solid #c0c0c0;
             border-radius: 0 4px 4px 0;
             border-left: none;
         }
     }
 }
-input, select{padding-left: 15px;}
+input, select{padding-left: 10px;}
 select{
     border-radius: 4px;
     border: 1px solid $grey;
@@ -675,7 +687,8 @@ select{
     font-size: 1.1em;
     padding-right: 15px;
 }
-input[type="text"], input[type="password"], textarea {
+input[type="text"], input[type="password"], textarea, .dropDownListResultBox {
+    display: block;
     border-radius: 4px;
     border: 1px solid $grey;
     background-color: $light-grey;
@@ -687,6 +700,7 @@ input[type="text"], input[type="password"], textarea {
 input[type="text"], input[type="password"]{
     height: 43px;
 }
+.dropDownListResultBox{min-height: 43px;}
 .radioboxes{
     height: 43px;
     line-height: 43px;
@@ -700,6 +714,73 @@ input[type="text"], input[type="password"]{
         }
         &:first-child{
             margin-right: 15px;
+        }
+    }
+}
+.checkbox-list{
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 14px;
+        right: 6px;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 6px solid #818181;
+        z-index: 1;
+    }
+    .item{
+        display: inline-block;
+        border-radius: 4px;
+        background-color: $blue;
+        color: white;
+        font-size: 0.9em;
+        line-height: 20px;
+        font-weight: 400;
+        float: left;
+        overflow: hidden;
+        text-align: left;
+        margin: 0px 1px 2px 2px;
+        padding: 0 5px;
+        a{
+            display: inline-block; 
+            padding-right:2px;
+            float: right;
+            margin: 0px 0px 0px 5px;
+        }
+        span[class^="icon-"]{
+            font-size: 0.65em;
+            line-height: 18px;
+        }
+    }
+    .dropDownListResultBox{
+        position: relative;
+        padding: 5px;
+        @include clearfix;
+    }
+    .dropDownList{
+        display: none;
+        max-height: 200px;
+        box-sizing: border-box;
+        margin-top: -5px;
+        position: absolute;
+        border-radius: 0px 0px 4px 4px;
+        width: 100%;
+        z-index: 5;
+        background-color: #f8f8f8;
+        padding: 10px 10px 5px;
+        border: 1px solid #c0c0c0;
+        border-top: none;
+        text-align: left;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        &.open{display: block;}
+        label{
+            font-size: 0.95em;
+            font-weight: 400;
+            margin-bottom: 5px;
+            cursor: pointer;
+            input[type="checkbox"]{margin-right: 5px;}
         }
     }
 }
@@ -745,27 +826,67 @@ input[type="text"], input[type="password"]{
     }
 }
 
-.gallery-cell{width: 50%; padding: 0 20px;}
+.gallery-cell{width: 100%; padding: 0 20px;}
 .immo-main-annonce{
-    display: table;
+    display: block;
     width: 100%;
+    min-height: 410px;
     border: 1px solid $grey;
     border-radius: $border-radius;
-    padding: 7px 0;
+    padding: 7px 0 7px;
 
     .data, .meta{
-        display: table-cell;
+        display: block;
         text-align: center;
     }
     .data{
         vertical-align: top;
-        width: 65%;
-        border-right: 1px solid $grey;
+        width: 100%;
+        border-bottom: 1px solid $grey;
         padding: 0 5px;
+        padding-bottom: 15px;
     }
     .meta{
+        position: relative;
         vertical-align: middle;
         padding: 25px 20px;
+        .meta-links{display: none;}
+        .menu-container{
+            position: absolute;
+            top: 0;
+            right: 0;
+            button{
+                background: none;
+                border: none;
+                font-size: 2.5em;
+            }
+            .dropdown-links{
+                position: absolute;
+                margin: 0;
+                border-radius: 0 0 4px 0;
+                display: none;
+                top: 38px;
+                right: 0px;
+                width: 175px;
+                z-index: 5;
+                background-color: white;
+                padding: 0px 10px;
+                border: 1px solid rgba(218, 218, 218, 1);
+                text-align: right;
+                -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+                animation-duration: 0.5s;
+                li{
+                    display: block; 
+                    color: darken($grey, 10%);
+                    font-size: 0.95em;
+                    text-transform: lowercase;
+                    &:hover{color: orange;}
+                    &:not(:last-child){border-bottom: 1px solid lighten($grey, 20%);}
+                    a{padding: 8px 5px;}
+                }
+            }
+
+        }
     }
     .btn-grey{
         width: 100%;
@@ -784,6 +905,15 @@ input[type="text"], input[type="password"]{
     width: 100%;
     background-color: $light-grey;
     margin-bottom: 15px;
+    .image-container-frame{
+        @include thumbnail();
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        img{height: auto; width: auto;}
+    }
 }
 .image-container {
     display: inline-block;
@@ -816,7 +946,7 @@ input[type="text"], input[type="password"]{
     img{ display: inline-block; height: 100%; width: auto; max-width: 100%;}
 }
 .address{
-    margin: 20px 0;
+    margin: 20px 0 0;
     p{margin: 0;line-height: 23px; font-size: 1.1em; text-align: center !important;}
 }
 
@@ -896,9 +1026,6 @@ input[type="text"], input[type="password"]{
         }
     }
     .annonce-buttons{
-        a:first-child{
-            margin-bottom: 10px;
-        }
         a{width: 100%;}
     }
 }
@@ -1026,6 +1153,7 @@ input[type="text"], input[type="password"]{
         margin-top: 10px;
         padding: 0 15px 15px;
         input[type="text"], select{height: 35px;}
+        .dropDownListResultBox{min-height: 35px;}
         .input-group{min-height: auto; margin-bottom: 11px; &:last-child{margin-bottom: 0px;}}
         label{margin-bottom: 9px;}
         .input-group.table{
@@ -1071,70 +1199,32 @@ input[type="text"], input[type="password"]{
     position: relative;
     @include pannel;
     margin-bottom: 15px;
-    &>a{display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; }
+    &>a{display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%;}
     .entry-annonce-link{
-        display: inline;
+        display: none;
         color: $blue;
-        font-size: 1.05em;
+        font-size: 1.1em;
         font-weight: 600;
+        margin-top: 10px;
         &:hover{
             text-decoration: underline;
             color: lighten($blue, 15%);
-        }
-    }
-    .menu-container{
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: right;
-        z-index: 10;
-        button{
-            display: inline-block;
-            background: none;
-            outline: 0;
-            border: none;
-            color: inherit;
-            font-size: 1.9em;
-            background-color: inherit;
-        }
-        .dropdown-links{
-            position: absolute;
-            @include pannel;
-            margin: 0;
-            display: none;
-            top: 30px;
-            right: 2px;
-            width: 150px;
-            z-index: 5;
-            background-color: white;
-            padding: 0px 10px;
-            border: 1px solid rgba(218, 218, 218, 0.6);
-            -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
-            animation-duration: 0.5s;
-            li{
-                display: block; 
-                color: darken($grey, 10%);
-                font-size: 0.95em;
-                text-transform: lowercase;
-                &:hover{color: orange;}
-                &:not(:last-child){border-bottom: 1px solid lighten($grey, 20%);}
-                a{padding: 8px 5px;}
-            }
         }
     }
     .entry-header{
         display: block;
         position: relative;
         padding: 5px 15px;
+        padding-left: 40px;
         border-radius: 4px 4px 0 0;
-        .title{display: inline-block; margin: 0; font-size: 16px; line-height: 20px; color: white;}
+        .title{display: inline-block; margin: 0; font-size: 15px; line-height: 18px; color: white; text-decoration: inherit;}
+        a:hover{&>.title{text-decoration: underline;}}
         text-transform: uppercase;
-        .location{text-transform: capitalize;}
+        .location{
+            display: none;
+            text-transform: capitalize;
+        }
     }
-    &.minimized{.entry-body{
-                    border-radius: 4px !important; border: 1px solid rgba(218,218,218,0.6);
-                }}
     .entry-body{font-size: 12px; overflow: hidden; width: 100%;}
     &:not(.minimized) .entry-body{
         display: block;
@@ -1146,7 +1236,19 @@ input[type="text"], input[type="password"]{
         @include clearfix;
     }
     &:not(.minimized) .entry-body-row{display: block; width: 100%;}
-    &.minimized{.infos-container{.title{display: none;}}}
+    &.minimized{
+        .entry-body{
+            border-radius: 4px !important; border: 1px solid rgba(218,218,218,0.6);
+        }
+        .infos-container{
+            .title{display: block; font-size: 1.15em; &>.title, &>.location{display: inline;}}
+        }
+        .menu-container{
+            button{
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
     .image-container{ 
         background-color: #E6E5E3;
         overflow: hidden;
@@ -1166,17 +1268,17 @@ input[type="text"], input[type="password"]{
         display: block;
         float: left;
         width: 100%;
-        height: 225px;
         img{
             height: 100%;
             width: auto;
         }
     }
+    .details{display: none;}
     .mobile-details{
         display: block;
         margin-top: 5px;
         .location{color: $blue;}
-        li{display: block; line-height: 20px;font-size: 0.95em; font-weight: 600;}
+        li{display: block; line-height: 20px;font-size: 1.15em; font-weight: 600;}
     }
     &:not(.minimized){
         .infos-container, .agency-container{
@@ -1190,7 +1292,7 @@ input[type="text"], input[type="password"]{
         }
     }
     .infos-container{
-        .title{font-size: 18px; margin: 10px 0 8px; .location{font-size: inherit;}}
+        .title{font-size: 18px; margin: 0; .location{font-size: inherit;}}
     }
     .price, .details, .icons{
         font-weight: 600;
@@ -1198,9 +1300,10 @@ input[type="text"], input[type="password"]{
     .price{
         font-size: 1.6em;
         color: $orange;
+        .upper, .lower{display: inline-block; line-height: 22px;}
     }
     .icons{
-        font-size: 1.2em;
+        font-size: 1.25em;
         li{&:not(:last-child){margin-right: 5px;}}
         span[class^="icon-"]{
             position: relative;
@@ -1217,7 +1320,6 @@ input[type="text"], input[type="password"]{
             span[class^="icon-"]{top: 6px;font-size: 1.25em;}
         }
     }
-    .details{display: none;}
     .image-container-frame{
         display: block;
         position: relative;
@@ -1226,6 +1328,7 @@ input[type="text"], input[type="password"]{
         @include clearfix;
     }
     .description{
+        @include multiLineEllipsis($lineHeight: 20px, $lineCount: 3);
         display: none;
         font-size: 1.1em;
         line-height: 20px;
@@ -1238,6 +1341,8 @@ input[type="text"], input[type="password"]{
             display: inline-block;
             float: left;
             width: 50%;
+            background-color: #F8F8F8;
+            border-left: 1px solid rgba(218,218,218,0.6);
         } 
         .links-container{
             display: block;
@@ -1252,8 +1357,8 @@ input[type="text"], input[type="password"]{
         right: 0;
         .btn-dropdown{display: block;}
         .links{display: block;}
-        background-color: #F8F8F8;
-        border-left: 1px solid rgba(218,218,218,0.6);
+        background-color: #FFF;
+        border-left: 1px solid rgba(218,218,218,0);
         .agency-container-frame{
             display: block;
             position: relative;
@@ -1264,7 +1369,7 @@ input[type="text"], input[type="password"]{
             width: 100%;
             max-width: 200px;
             height: 100%;
-            padding: 5px 0;
+            padding: 0;
             overflow: hidden;
             a{
                 display: block;
@@ -1300,6 +1405,11 @@ input[type="text"], input[type="password"]{
                         top: 1px;
                         position: relative;
                     }
+                    background-color: inherit;
+                    @include transition($transitionUi);
+                    &:hover{
+                        background-color: darken(#F8F8F8, 5%);
+                    }
                 }
             }
         }
@@ -1320,11 +1430,12 @@ input[type="text"], input[type="password"]{
     &.residence{
         &>.entry-body{
             border-radius: 0;
+            .immo-link{}
         }
+        &>.details{display: none;}
         .details{
             font-size: 1.2em;
             margin-top: 5px;
-            display: block;
             li{display: block;}
         }
         .immo-link{
@@ -1335,6 +1446,7 @@ input[type="text"], input[type="password"]{
             display: table;
             width: 100%;
             border-collapse: collapse;
+            margin-top: -1px;
         }
         .residence-item{
             display: table-row;
@@ -1346,25 +1458,44 @@ input[type="text"], input[type="password"]{
                 height: 100%;
             }
             .image{
-                width: 160px;
+                width: 110px;
                 @include thumbnail;
             }
-            .infos{padding: 10px 15px; font-size: 12px;}
-            .title{margin: 0; font-size: 1.3em; font-weight: 600;}
-            .details{font-size: 1em; vertical-align: middle; margin: 10px 0;}
+            .infos{
+                padding: 10px 15px;
+                font-size: 12px;
+                &>a:not(.immo-link){
+                    display: block;
+                    position: absolute;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                }
+            }
+            .title{font-size: 1.1em;; font-weight: 600; margin: 5px 0; }
+            .details{font-size: 1em; vertical-align: middle; margin: 10px 0 5px;}
             .icons{font-size: 1.2em; vertical-align: bottom; margin: 0;}
             .price, .immo-link{ position: absolute; right: 15px;}
             .price{
-                font-size: 1.8em;
+                font-size: 1.6em;
                 top: 10px;
             }
             .immo-link{
+                display: none;
                 text-decoration: none;
                 font-size: 1em;
                 bottom: 10px;
                 font-style: italic;
                 font-weight: 600;
                 margin: 0;
+                @include transition($transitionUi);
+                z-index: 2;
+                &:hover{
+                    color: darken($dark-grey, 20%);
+                }
                 span{
                     position: relative;
                     top: 1px;
@@ -1380,9 +1511,10 @@ input[type="text"], input[type="password"]{
             background-color: lighten($grey, 15%);
             .immo-link{
                 margin: 0;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 font-weight: 600;
                 line-height: 35px;
+                height: 35px;
                 &, span{text-decoration: none;}
                 span[class^='icon-']{
                     position: relative;
@@ -1392,6 +1524,60 @@ input[type="text"], input[type="password"]{
                     text-decoration: none;
                 }
             }
+        }
+    }
+}
+.search-result-entry, .agency-entry{
+    .menu-container{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: right;
+        z-index: 10;
+        button{
+            display: inline-block;
+            background: none;
+            outline: 0;
+            border: none;
+            color: inherit;
+            font-size: 1.9em;
+            background-color: inherit;
+            height: 28px;
+            line-height: 28px;
+            span{display: block;}
+        }
+        .dropdown-links{
+            position: absolute;
+            margin: 0;
+            border-radius: 0 0 4px 0;
+            display: none;
+            top: 28px;
+            left: 0px;
+            width: 175px;
+            z-index: 5;
+            background-color: white;
+            padding: 0px 10px;
+            border: 1px solid rgba(218, 218, 218, 1);
+            text-align: left;
+            -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+            animation-duration: 0.5s;
+            li{
+                display: block; 
+                color: darken($grey, 10%);
+                font-size: 0.95em;
+                text-transform: lowercase;
+                &:hover{color: orange;}
+                &:not(:last-child){border-bottom: 1px solid lighten($grey, 20%);}
+                a{padding: 8px 5px;}
+            }
+        }
+    }
+}
+.agency-entry{
+    .menu-container{
+        .dropdown-links{
+            top: 35px;
         }
     }
 }
@@ -1432,14 +1618,15 @@ input[type="text"], input[type="password"]{
     .entry-row{
         height: 100%;
     }
-    .logo-container, .infos-container, .map-container{
+    .infos-container, .map-container{
         position: relative;
     }
-    .logo-container{padding-left: 11px;}
+    .map-container{display: none;}
     .infos-container{
         height: 100%;
         width: 100%; 
         padding: 0 15px;
+        text-align: center;
         h2{
             margin: 0;
             color: darken($dark-grey, 10%);
@@ -1449,9 +1636,11 @@ input[type="text"], input[type="password"]{
             .location{text-transform: capitalize;}
         }
         p{
-            margin: 25px 0;
+            color: darken($dark-grey, 10%);
             font-size: 1em;
-            line-height: 20px;
+            @include multiLineEllipsis($lineHeight: 20px, $lineCount: 3, $bgColor: white);
+            text-align: center;
+            text-align-last: center;
         }
     }
     .map{
@@ -1463,10 +1652,10 @@ input[type="text"], input[type="password"]{
         border-radius: 2px;
     }
     .agency-color{
-        display: none;
+        display: block;
         position: absolute;
-        height: 100%;
-        width: 35%;
+        height: 35px;
+        width: 100%;
         z-index: 0;
         top: 0;
         left: 0;
@@ -1476,8 +1665,6 @@ input[type="text"], input[type="password"]{
         display: block;
         position: relative;
         padding: 15px;
-        height: 185px;
-        width: 185px;
         margin: 0 auto;
         border-radius: 2px;
         border: 1px solid #e5e5e5;
@@ -1491,16 +1678,18 @@ input[type="text"], input[type="password"]{
             max-width: 100%;
         }
     }
+    .btn-list{
+        display: none;
+    }
 }
 .agency-entry, .agency-header{
     .btn-blue{
         display: block;
         text-transform: uppercase;
-        height: 43px;
-        line-height: 43px;
+        height: 40px;
+        line-height: 40px;
         padding: 0px 5px;
-        margin-bottom: 10px;
-        font-size: 0.90em;
+        font-size: 0.85em;
         *[class^="icon-"]{font-size: 1.05em; position: relative; top: 2px; margin-right: 10px;}
     }
 }
