@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Immo.lu</title>
+        <meta charset="UTF-8">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/css/vendor/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+    </head>
+    <body>
+        <nav class="mobile-side-menu">
+            <ul class="menu">
+                <li class="menu-item link"><a href="#">Accueil</a></li>
+                <li class="menu-item link"><a href="#">Acheter</a></li>
+                <li class="menu-item link"><a href="#">Louer</a></li>
+                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href="#">Agences</a></li>
+                <li class="menu-item link"><a href="#">Commerces</a></li>
+                <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
+            </ul>
+        </nav>
+        <div id="siteWrap">
+            <header>
+                <div class="header-upper">
+                    <div class="container">
+                        <div style="height: 100%;" class="row">
+                            <nav id="language-selection" class="header-upper-nav right phone-6">
+                                <ul>
+                                    <li class="active"><a href="#">FR</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">EN</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">DE</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">PT</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom mobile display-phone display-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="phone-6">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                            </div>
+                            <div class="phone-6">
+                                <div class="clearfix pull-right header-mobile-button">
+                                    <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
+                                    <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom display-desk display-lgdesk">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="pull-right login-nav phone-6">
+                                <ul>
+                                    <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                    <li><a href="#">S'inscrire gratuitement</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="header-bottom-main" class="row">
+                            <div style="height: 100%;" class="pull-left">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li class="active"><a href="#">Annonces</a></li>
+                                        <li><a href="#">Profil</a></li>
+                                        <li><a href="#">Messages</a></li>
+                                        <li><a href="#">Aide</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
+                                <a class="btn-blue">Publier une annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="pro" class="content">
+                <div class="container">
+                    <div class="row phone-mb-15 table">
+                        <h1 style="width:100px;" class="table-cell">Annonces</h1><a href="#" class="btn-blue">Ajouter</a>
+                    </div>
+                    <div class="row">
+                        <div class="phone-12 phone-mb-20 desk-3 desk-pr-10">
+                            <ul class="nav-list">
+                                <li class="active"><a href="#"><span>Annonces en ligne</span><span>(14)</span></a></li>
+                                <li><a href="#"><span>Annonces hors-ligne</span><span>(1)</span></a></li>
+                                <li><a href="#"><span>Annonces archivées</span><span>(134)</span></a></li>
+                                <li><a href="#"><span>Annonces refusées</span><span>(0)</span></a></li>
+                                <li><a href="#"><span>Brouillons</span><span>(1)</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="phone-12 desk-9 desk-pl-10 phone-mb-20 desk-mb-0">
+                            <div class="search-banner-box">
+                                <div class="phone-12">
+                                    <form action="">
+                                        <div class="clearfix">
+                                            <div class="phone-12 tab-6 desk-4 tab-pr-10">
+                                                <div class="input-group">
+                                                    <label for="">Type(s) d'annonce</label>
+                                                    <select name="" id="">
+                                                        <option value="test">Type(s) d'annonce</option>
+                                                    </select>
+                                                </div>
+                                            </div><!--
+                                            --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                                <div class="input-group">
+                                                    <label for="">Type(s) de bien</label>
+                                                    <select name="" id="">
+                                                        <option value="test">Type(s) de bien</option>
+                                                    </select>
+                                                </div>
+                                            </div><!--
+                                            --><div class="phone-12 desk-4 desk-pl-10">
+                                                <div class="input-group table">
+                                                    <label for="">Prix</label>
+                                                    <div class="input-group-container">
+                                                        <div class="container-cell">
+                                                            <select name="" id="">
+                                                                <option value="default">Min</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="container-cell">à</div>
+                                                        <div class="container-cell">
+                                                            <select name="" id="">
+                                                                <option value="default">Max</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"><div class="phone-12 tab-6 desk-4 tab-pr-10 desk-pl-0">
+                                                <div class="input-group">
+                                                    <label for="">État du bien</label>
+                                                    <select name="" id="">
+                                                        <option value="test">Type(s) de bien</option>
+                                                    </select>
+                                                </div>
+                                            </div><!--
+                                            --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                                <div class="input-group">
+                                                    <label for="">Localisation(s)</label>
+                                                    <input type="text" placeholder="Ville, Commune, Région"/>
+                                                </div>
+                                            </div><!--
+                                            --><div class="phone-12 desk-4 desk-pl-10">
+                                                <div class="input-group table">
+                                                    <label for="">Surface</label>
+                                                    <div class="input-group-container">
+                                                        <div class="container-cell">
+                                                            <select name="" id="">
+                                                                <option value="default">Min</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="container-cell">à</div>
+                                                        <div class="container-cell">
+                                                            <select name="" id="">
+                                                                <option value="default">Max</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-12 tab-6 desk-4 tab-pr-10">
+                                            <div class="input-group table">
+                                                <label for="">Date d'insertion</label>
+                                                <div class="input-group-container">
+                                                    <div class="container-cell">
+                                                        <select name="" id="">
+                                                            <option value="default">Min</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="container-cell">à</div>
+                                                    <div class="container-cell">
+                                                        <select name="" id="">
+                                                            <option value="default">Max</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                            <div class="input-group table">
+                                                <label for="">Chambres</label>
+                                                <div class="input-group-container">
+                                                    <div class="container-cell">
+                                                        <select name="" id="">
+                                                            <option value="default">Min</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="container-cell">à</div>
+                                                    <div class="container-cell">
+                                                        <select name="" id="">
+                                                            <option value="default">Max</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--
+                                        --><div class="phone-12 tab-6 desk-4 desk-pl-10">
+                                            <div class="input-group">
+                                                <input type="submit" class="btn-orange" Value="Rechercher"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="clearfix">
+                            <table class="entry-table">
+                                <thead>
+                                    <tr>
+                                        <th id="select-all"></th>
+                                        <th>Photo</th>
+                                        <th>Localisation</th>
+                                        <th>Type</th>
+                                        <th>Prix</th>
+                                        <th>Surface</th>
+                                        <th>Chambres</th>
+                                        <th>Date d'insertion</th>
+                                        <th>Référence</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>A</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/second-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>C</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>D</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>F</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>A</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>C</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>D</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>F</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="images/Img/homepage/first-annonce.jpg" alt="" />
+                                            </div>
+                                        </td>
+                                        <td>Weiswampach</td>
+                                        <td>Appartement</td>
+                                        <td>825 000 €</td>
+                                        <td>180 m&sup2;</td>
+                                        <td>3</td>
+                                        <td>01/04/2016</td>
+                                        <td>2016040100241</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Visualiser</a></li>
+                                                    <li><a href="#">Modifier</a></li>
+                                                    <li><a href="#">Mettre hors ligne</a></li>
+                                                    <li><a href="#">Archiver</a></li>
+                                                    <li><a href="#">Supprimer</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row display-flex-align-middle">
+                            <div class="footer-links desk-4">
+                                <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                                <img src="images/Img/Mockup.png" alt="" />
+                                <p>Accessible sur desktop et mobile !</p>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en vente</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en location</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var table = $('.entry-table').DataTable({
+                    responsive: {
+                        details: {
+                            type: 'column',
+                            target: 'tr td:last-child'
+                        },
+                        breakpoints: [
+                            {name: 'desktop', width: Infinity},
+                            {name: 'tablet', width: 1302},
+                            {name: 'fablet', width: 1056},
+                            {name: 'phone', width: 671}
+                        ]
+                    },
+                    columns: [
+                        {responsivePriority: 0},
+                        {responsivePriority: 4},
+                        {responsivePriority: 1},
+                        {responsivePriority: 2},
+                        {responsivePriority: 3},
+                        {responsivePriority: 6}, //surface
+                        {responsivePriority: 5}, //chambres
+                        {responsivePriority: 8}, //date
+                        {responsivePriority: 7}, //ref
+                        {responsivePriority: 0},
+                        {responsivePriority: 0}
+                    ],
+                    columnDefs: [
+                        {
+                            className: 'control',
+                            orderable: false,
+                            targets: [10]
+                        },
+                        {
+                            orderable: false,
+                            className: 'select-checkbox',
+                            targets: [0]
+                        },
+                        {
+                            orderable: false,
+                            targets: [9]
+                        }
+                    ],
+                    select: {
+                        style: 'os',
+                        selector: 'td:not(:last-child)'
+                    },
+                    order: [[1, 'asc']],
+                    sDom: '<<"top"il><t><"bottom"Bp>>',
+                    language: {
+                        "info": "Annonces en ligne : <span class='orange extra-bold'>_TOTAL_ annonces</span>",
+                        "infoEmpty": "Annonces en ligne : <span class='orange extra-bold'>Aucune annonce</span>",
+                        "paginate": {
+                            "first": "Premier",
+                            "last": "Dernier",
+                            "next": "Suivant",
+                            "previous": "Précédent"
+                        },
+                        "lengthMenu": "_MENU_ annonces par page",
+                        "select": {
+                            "rows": {
+                                "_": "<span class='extra-bold'>%d</span> lignes sélectionnées",
+                                0: "<span class='extra-bold'>Shift+click</span> pour sélectionner plusieurs lignes",
+                                1: "<span class='extra-bold'>1</span> ligne sélectionnée"
+                            }
+                        },
+                        "zeroRecords": "Aucune annonce"
+                    },
+                    buttons: [
+                        {
+                            text: 'Supprimer',
+                            className: 'btn-blue',
+                            action: function () {
+                                var rows = table.rows('.selected').data().length;
+                                if (rows > 0) {
+                                    table.rows('.selected').remove().draw(false);
+                                    alert(rows + ' annonce(s) supprimée(s)');
+                                } else {
+                                    alert('Aucune ligne sélectionnée');
+                                }
+                            }
+                        },
+                        {
+                            text: 'Exporter annonces',
+                            className: 'btn-blue',
+                            action: function () {
+                                alert('TODO: export annonces');
+                            }
+                        }
+                    ]
+                });
+                $('#select-all').on('click', function () {
+                    if (!$(this).parent().hasClass('selected')) {
+                        $(this).parent().addClass('selected');
+                        table.rows({page: 'current'}).select();
+                    } else {
+                        $(this).parent().removeClass('selected');
+                        table.rows({page: 'current'}).deselect()();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

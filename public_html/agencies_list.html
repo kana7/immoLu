@@ -84,7 +84,7 @@
                                 </nav>
                             </div>
                             <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
-                                <a class="btn-orange">Publier une annonce</a>
+                                <a class="btn-blue">Publier une annonce</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                                             <input type="text" />
                                         </div>
                                         <div class="clearfix">
-                                            <button style="width: 100%; padding: 12px 15px; font-size: 1.3em;" class="btn-orange phone-mt-10">Rechercher</button>
+                                            <button style="width: 100%;" class="btn-orange phone-mt-10">Rechercher</button>
                                         </div>
                                     </div>
                                 </div>
@@ -239,6 +239,35 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="agency-entry minimized">
+                                    <div class="menu-container dropdown">
+                                        <button><span class="icon-menu-icone"></span></button>
+                                        <ul class="dropdown-links">
+                                            <li><a href="#">Voir tous les biens</a></li>
+                                            <li><a href="#">Téléphone</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                    </div>
+                                    <div class="entry-row">
+                                        <div class="infos-container">
+                                            <h2>Bricks - <span class="location">Steinfort</span></h2>
+                                            <p>
+                                                2, place Nancy<br/>
+                                                L-2212 Steinfort<br/>
+                                                Luxembourg
+                                            </p>
+                                        </div>
+                                        <div class="logo-container">
+                                            <div class="logo">
+                                                <img src="http://www.residence-trianon.lu/images/logo_bricks.png" />
+                                            </div>
+                                        </div>
+                                        <ul class="btn-list">
+                                            <li><a class="btn-blue" href="#"><span  class="icon-phone"></span> Téléphone</a></li>
+                                            <li><a class="btn-blue" href="#"><span  class="icon-email"></span> Contact</a></li>
+                                            <li><a class="btn-blue" href="#">Voir tous les biens</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -292,7 +321,7 @@
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript">
 
-            var map, map1, map2;
+            var map, map1, map2, map3;
             function initMap() {
                 var myOptions = {
                     center: {lat: -34.397, lng: 150.644},
@@ -301,6 +330,7 @@
                 map = new google.maps.Map(document.getElementById('map'), myOptions);
                 map1 = new google.maps.Map(document.getElementById('map1'), myOptions);
                 map2 = new google.maps.Map(document.getElementById('map2'), myOptions);
+                map3 = new google.maps.Map(document.getElementById('map3'), myOptions);
             }
 
         </script>

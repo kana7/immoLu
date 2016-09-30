@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Immo.lu</title>
+        <meta charset="UTF-8">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+    </head>
+    <body>
+        <nav class="mobile-side-menu">
+            <ul class="menu">
+                <li class="menu-item link"><a href="#">Accueil</a></li>
+                <li class="menu-item link"><a href="#">Acheter</a></li>
+                <li class="menu-item link"><a href="#">Louer</a></li>
+                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href="#">Agences</a></li>
+                <li class="menu-item link"><a href="#">Commerces</a></li>
+                <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
+            </ul>
+        </nav>
+        <div id="siteWrap">
+            <header>
+                <div class="header-upper">
+                    <div class="container">
+                        <div style="height: 100%;" class="row">
+                            <nav id="language-selection" class="header-upper-nav right phone-6">
+                                <ul>
+                                    <li class="active"><a href="#">FR</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">EN</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">DE</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">PT</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom mobile display-phone display-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="phone-6">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                            </div>
+                            <div class="phone-6">
+                                <div class="clearfix pull-right header-mobile-button">
+                                    <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
+                                    <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom display-desk display-lgdesk">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="pull-right login-nav phone-6">
+                                <ul>
+                                    <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                    <li><a href="#">S'inscrire gratuitement</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="header-bottom-main" class="row">
+                            <div style="height: 100%;" class="pull-left">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li><a href="#">Annonces</a></li>
+                                        <li><a href="#">Profil</a></li>
+                                        <li><a href="#">Messages</a></li>
+                                        <li><a href="#">Agences</a></li>
+                                        <li><a href="#">Commerces</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
+                                <a class="btn-blue">Publier une annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="content" class="content list">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="">Créer un compte</h1>
+                    </div>
+                    <form class="form" action="#">
+                        <div class="row">
+                            <div class="phone-12 tab-6 phone-mb-10 tab-mb-0 tab-pr-10">
+                                <div class="pannel">
+                                    <fieldset>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Nom de l'agence</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Numéro de TVA</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Personne de contact</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Logo</label>
+                                            <div class="input">
+                                                <label for="file-upload" class="file-upload btn-blue">
+                                                    Parcourir
+                                                    <input id="file-upload" type="file"/>
+                                                </label>
+                                                <div class="uploaded-img">
+                                                    <button class="delete-button" type="button"><span class="icon-x-icone"></span></button>
+                                                    <span class="file-name"></span>
+                                                    <img src="" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span id="tips1">Couleur préférée</span></label>
+                                            <div class="input">
+                                                <div class="table">
+                                                    <div class="color-container table-cell">
+                                                        <p id="rect" class="color-picker"></p>
+                                                    </div>
+                                                    <input class="table-cell jscolor {onFineChange:'update(this)'}" value="fff">
+                                                    <script>
+                                                        function update(jscolor) {
+                                                            // 'jscolor' instance can be used as a string
+                                                            document.getElementById('rect').style.backgroundColor = '#' + jscolor
+                                                        }
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Nom d'utilisateur</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Mot de passe</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Confirmer mot de passe</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group multiple-lines">
+                                            <label for="">Description</label>
+                                            <textarea></textarea>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="phone-12 tab-6 tab-pl-10">
+                                <div class="pannel">
+                                    <fieldset>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> E-mail</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for=""><span class="red">*</span> Numéro de téléphone</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Numéro de fax</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Masquer numéros sur le site</label>
+                                            <div class="input">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <div class="slider"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group multiple-lines">
+                                            <label for=""><span class="red">*</span> Adresse physique</label>
+                                            <textarea style="height: 100px;"></textarea>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Masquer adresse sur le site</label>
+                                            <div class="input">
+                                                <label class="switch">
+                                                    <input type="checkbox" checked>
+                                                    <div class="slider"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Lien Facebook</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Lien Twitter</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Lien Google+</label>
+                                            <input type="text">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Lien Printerest</label>
+                                            <input type="text">
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="phone-12 tab-6 tab-pr-10">
+                                <span class="foot-note red pull-right">* Champs obligatoires</span>
+                                <input type="submit" class="btn-orange" value="Créer le compte"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row display-flex-align-middle">
+                            <div class="footer-links desk-4">
+                                <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                                <img src="images/Img/Mockup.png" alt="" />
+                                <p>Accessible sur desktop et mobile !</p>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en vente</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en location</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/tooltip.js"></script>
+        <script type="text/javascript" src="scripts/vendor/jscolor.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#tips1').tooltip({
+                    message: "Couleur représentative de l'agence, utilisée lors de la mise en valeur des annonces."
+                });
+            });
+        </script>
+    </body>
+</html>

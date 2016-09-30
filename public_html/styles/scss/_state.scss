@@ -59,7 +59,7 @@
             .immo-link{display: none;}
         }
     }
-    .agency-entry{
+    .agency-entry:not(.minimized){
         .logo-frame{
             width: 150px;
             height: 150px;
@@ -89,12 +89,24 @@
     }
     .immo-main-annonce{
         display: table;
-        min-height: 403px;
-        .data, .meta{
+        &>a, .meta{
             display: table-cell;
         }
-        .data{width: 65%; padding-bottom: 0; border-bottom: none; border-right: 1px solid $grey;}
-        .meta{.menu-container{display: none;} .meta-links{display: block;}}
+        &>a{width: 60%; padding-bottom: 0; border-bottom: none;}
+        .data{border-bottom: none;}
+        .meta{
+            border-left: 1px solid rgba(218, 218, 218, 0.6);
+            .menu-container{display: none;}
+            .meta-links{
+                display: block;
+                position: absolute;
+                width: 70%;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                bottom: 10px;
+            }
+        }
     }
     .address{
         margin: 20px 0;
@@ -133,7 +145,7 @@
         .entry-annonce-link{display: block;}
         .menu-container{display: none;}
         .entry-body{
-            display: table;
+            display: table !important;
             border-collapse: separate;
             .entry-body-row{display: table-row;}
         }
@@ -174,7 +186,7 @@
             height: 115px;
             padding: 15px 20px;
         }
-        .infos-container{float: none !important; width: auto !important;}
+        .infos-container{float: none !important; width: calc(100% - 200px - 166px) !important;}
         .agency-container{
             position: relative !important;
             float: none !important;
@@ -234,6 +246,18 @@
         max-width: none;
     }
     .agency-entry{
+        &:not(.minimized){
+            .logo-frame{margin-left: 15px;}
+        }
+        &.minimized{
+            p{margin-bottom: 0;}
+            .btn-list{
+                display: table-cell;
+                vertical-align: middle;
+                padding-left: 40px;
+            }
+            .logo{height: auto;}
+        }
         .entry-row{
             display: table;
             border-collapse: collapse;
@@ -246,7 +270,6 @@
         }
         .logo-container{position: relative; width: 150px; min-width: 150px;}
         .logo-frame{
-            margin-left: 15px;
             height: 150px;
             width: 150px;
         }
@@ -270,6 +293,14 @@
             z-index: 0;
             top: 0;
             left: 0;
+        }
+    }
+    #pro{
+        .search-banner-box{
+            input[type="submit"]{top: 22px;}
+        }
+        .search-banner-box .input-group{
+            min-height: 70px;
         }
     }
 }
@@ -350,8 +381,8 @@
             height: 100%;
         }
     }
+    .search-banner .search-banner-box{@include vertical-align-middle(absolute);}
     .search-banner-box{
-        @include vertical-align-middle(absolute);
         input[type="submit"]{
             top: 25px;
         }
@@ -372,6 +403,9 @@
             li{margin-bottom: 5px;}
         }
         .image-container{width: 257px !important;}
+        .infos-container{
+            width: calc(100% - 257px - 175px) !important;
+        }
         .agency-container{
             width: 175px !important;
             .links li a {padding: 9px 16px;}
@@ -392,8 +426,20 @@
         }
     }
     .agency-entry{
-        height: 225px;
-        max-height: 225px;
+        &:not(.minimized){
+            height: 225px;
+            max-height: 225px;
+            .logo-frame{
+                height: 150px;
+                width: 150px;
+            }
+        }
+        &.minimized{
+            .logo-frame{
+                height: 100%;
+                width: 150px;
+            }
+        }
         .btn-blue{
             padding: 5px 10px;
         }
@@ -406,10 +452,6 @@
                 @include multiLineEllipsis($lineHeight: 25px, $lineCount: 1);
             }
             p{font-size: 0.85em;}
-        }
-        .logo-frame{
-            height: 150px;
-            width: 150px;
         }
         .map-container {
             display: table-cell;
@@ -438,6 +480,20 @@
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
         height: 226px;
     }
+
+    form.form{
+        .pannel{padding: 20px 40px !important;}
+        .input-group{
+            display:table;
+            width: 100%;
+            &>label, &>input, &>.input{display: table-cell; vertical-align: middle; width: auto;}
+            &>label{padding-right: 10px; width: 40%;}
+            &>input, &>.input{width: 100%;}
+            &.multiple-lines{
+                label{vertical-align: top;}
+            }
+        }
+    }
 }
 @include media(lgdesk){
     .main-nav{
@@ -455,6 +511,7 @@
             font-size: 1.7em;
         }
         .image-container{width: 245px !important;}
+        .infos-container{width: calc(100% - 245px - 200px) !important;}
         .agency-container{
             width: 200px !important;
             .agency-container-frame{height: calc(100% - 111px); }
@@ -481,8 +538,10 @@
             width: 250px;
             min-width: 250px;
         }
-        .infos-container p{
-            margin: 25px 0;
+        &:not(.minimized){
+            .infos-container p{
+                margin: 25px 0;
+            }
         }
     }
     .agency-logo {

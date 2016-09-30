@@ -19,11 +19,11 @@ $(function () {
             contain: true
         });
         /*
-        resizeSlider();
-        $(window).resize(function () {
-            resizeSlider();
-        });
-        */
+         resizeSlider();
+         $(window).resize(function () {
+         resizeSlider();
+         });
+         */
     }
 
     /* init modules pour uploader image */
@@ -33,23 +33,36 @@ $(function () {
             temp.init();
         });
     }
-    
-    if ($('.dropdown').length > 0){
-        $('.dropdown').each(function(){
+
+    if ($('.file-upload').length > 0) {
+        $('.file-upload').each(function () {
+            temp = new fileUpload($(this));
+            temp.init();
+        });
+    }
+    if ($('.dropdown').length > 0) {
+        $('.dropdown').each(function () {
             temp = new dropDown($(this));
             temp.init();
         });
     }
-    if($('.pannel.expand').length > 0){
-        $('.pannel.expand').each(function(){
+    if ($('.checkbox-list').length > 0) {
+        $('.checkbox-list').each(function () {
+            temp = new CheckboxList($(this));
+            temp.init();
+        });
+    }
+    if ($('.pannel.expand').length > 0) {
+        $('.pannel.expand').each(function () {
             temp = new expandPannel($(this));
             temp.init();
         });
-        if (viewport().width < 1056){
+        if (viewport().width < 1056) {
             $('.pannel.expand').addClass('minimized');
             $('.pannel.expand').find('.exp-btn').removeClass('icon-compress').addClass('icon-expand');
         }
-    };
+    }
+    ;
 
 });
 
@@ -82,82 +95,6 @@ var resizeImageDetail = function () {
         image.src = $imageSrc;
         $(this).addClass(((image.width / image.height) > 1) ? 'fill-width' : 'fill-height');
     });
-};
-
-/* Module pour ajouter une image via input file */
-var uploadFile = function (element) {
-    var $image = element;
-
-    //cache dom 
-    var $imageContainer = $image.parents('.add-annonce-image-container');
-    var $form = $('#add-annonce-form');
-    var $container = $imageContainer.parent();
-    var $deleteButton = $container.find('button');
-    var $browserInfo = $('#alert-browser');
-    var $status = $container.find('.upload-status');
-    var $filePath = $status.find('.image-path');
-    var $hiddenInput = $imageContainer.find('input[type="hidden"]');
-    var $inputFile = $container.find('input[type="file"]');
-    var $modifyButtons = $container.find('.image-buttons');
-
-    this.init = function () {
-        _bindEvents();
-    };
-
-    var _bindEvents = function () {
-        $image.on('click', _addImage.bind(this));
-        $inputFile.on('change', function () {
-            _renderImage(this);
-        });
-        $deleteButton.on('click', _deleteImage.bind(this));
-    };
-
-    var _addImage = function () {
-        $inputFile.click();
-    };
-
-    var _deleteImage = function () {
-        $image.find('img').removeClass("rotate0");
-        $image.find('img').removeClass("rotate90");
-        $image.find('img').removeClass("rotate180");
-        $image.find('img').removeClass("rotate270");
-        $image.removeClass('hidden');
-        $status.addClass('hidden');
-        $image.val('');
-        $filePath.text('');
-        $image.attr('src', "/images/add.png");
-        $inputFile.val('');
-        $hiddenInput.val(-1);
-        $deleteButton.addClass('hidden');
-        $modifyButtons.addClass('hidden');
-    };
-
-    var _renderImage = function (input) {
-        if (window.FileReader) {
-            console.log("The fileReader API is supported on this browser");
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $image.attr('src', e.target.result);
-                    $hiddenInput.val("notEmpty");
-                };
-
-                reader.readAsDataURL(input.files[0]);
-                $deleteButton.removeClass('hidden');
-                $modifyButtons.removeClass('hidden');
-            }
-        } else {
-            console.log("FileReader API not supported on this browser, use ajax instead");
-            var file_name = $inputFile.val().replace(/C:\\fakepath\\/i, '');
-            $filePath.text(file_name);
-            $hiddenInput.val($inputFile.val());
-            $image.addClass('hidden');
-            $status.removeClass('hidden');
-            $deleteButton.removeClass('hidden');
-            $browserInfo.removeClass('hidden');
-        }
-    };
 };
 
 // Permet d'ouvrir le menu de droite sur mobile
@@ -239,96 +176,195 @@ var MenuMobile = (function () {
     };
 })();
 
-var checkboxList = function($element){
-    var element = $element;
-};
-checkboxList.prototype = {
-  init : function (){
-      
-  }
+var CheckboxList = function ($element) {
+    this.$element = $element;
+    this.$dropdownListResultBox = this.$element.find('.dropDownListResultBox');
+    this.$dropdownList = this.$element.find('.dropDownList');
+    this.$labels = this.$dropdownList.find('label');
+    this.$checkboxes = this.$dropdownList.find('input[type="checkbox"]');
+    this.$items = this.$element.find('.item');
+    this.$closeIcons = this.$items.find('span.icon-x-icone');
 };
 
-var dropDown = function($element){
+CheckboxList.prototype = {
+    init: function () {
+        this.bindEvents.call(this);
+    },
+    bindEvents: function () {
+        var element = this;
+        element.$dropdownListResultBox.on('click', function (event) {
+            event.stopPropagation();
+            element.toggleDropdownList.call(element);
+        });
+        element.$checkboxes.on('click', function () {
+            element.updateResultBox.call(element, $(this));
+        });
+        element.$items.on('click', function () {
+            element.deleteItem.call(element, $(this));
+        });
+    },
+    updateResultBox: function ($checkbox) {
+        if ($checkbox.is(":checked")) {//if checked
+            this.printItem.call(this, $checkbox.attr('name'), $checkbox.parent().text());
+        } else {
+            this.deleteItem.call(this, this.$items.filter('[data-inputName="' + $checkbox.attr('name') + '"]'));
+        }
+
+    },
+    printItem: function (inputName, txt) {
+        var template = '<li data-inputName="' + inputName + '" class="item"><span class="icon-x-icone"></span>' + txt + '</li>';
+        this.$dropdownListResultBox.append(template);
+    },
+    deleteItem: function ($item) {
+        this.$checkboxes.filter('input[name="' + $item.attr('data-inputName') + '"]').attr('checked', false);
+        $item.remove();
+    },
+    toggleDropdownList: function () {
+        if (this.$dropdownList.hasClass('open')) {
+            this.closeDropdownList.call(this);
+        } else {
+            this.openDropdownList.call(this);
+        }
+    },
+    openDropdownList: function () {
+        this.$dropdownList.addClass('open');
+    },
+    closeDropdownList: function () {
+        this.$dropdownList.removeClass('open');
+    }
+};
+
+var dropDown = function ($element) {
     var $dropdownContainer = $element;
     var $button = $dropdownContainer.find('button');
     var $menu = $dropdownContainer.find('ul');
     var $document = $('html');
     var flag = '1';
-    
-    this.init = function(){
+
+    this.init = function () {
         _bindEvents();
     };
-    var _bindEvents = function(){
-        $button.on('click', function(){
+    var _bindEvents = function () {
+        $button.on('click', function () {
             _toggleDrop();
         });
-        $document.on('click', function(){
-            if (flag!=='0'){
+        $document.on('click', function () {
+            if (flag !== '0') {
                 _closeDrop();
-            }else{
+            } else {
                 flag = '1';
             }
         });
     };
-    var _toggleDrop = function(){
+    var _toggleDrop = function () {
         flag = '0';
-        if ($menu.hasClass('open')){
+        if ($menu.hasClass('open')) {
             _closeDrop();
-        }else{
+        } else {
             _openDrop();
         }
     };
-    var _openDrop = function(){
+    var _openDrop = function () {
         $button.addClass('active');
         $menu.animateCss('fadeIn');
         $menu.addClass('open');
     };
-    var _closeDrop = function(){
+    var _closeDrop = function () {
         $button.removeClass('active');
         $menu.removeClass('open');
     };
 };
 
+var fileUpload = function ($element) {
+    var $element = $element;
+    var $inputFile = $element.find('input');
+    var $imgContainer = $element.next('.uploaded-img');
+    var $image = $imgContainer.find('img');
+    var $fileName = $imgContainer.find('.file-name');
+    var $deleteButton = $imgContainer.find('.delete-button');
+
+    this.init = function () {
+        _bindEvents();
+    };
+
+    var _bindEvents = function () {
+        $inputFile.on('change', function () {
+            _renderImage(this);
+        });
+        $deleteButton.on('click', _deleteImage.bind(this));
+    };
+
+    var _deleteImage = function () {
+        $element.removeClass('uploaded');
+        $element.removeClass('not-fileReader');
+        $image.val('');
+        $inputFile.val('');
+    };
+
+    var _renderImage = function (input) {
+        if (window.FileReader) {
+            console.log("The fileReader API is supported on this browser");
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $image.attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        } else {
+            $element.addClass('not-fileReader');
+            console.log("FileReader API not supported on this browser.");
+            var file_name = $inputFile.val().replace(/C:\\fakepath\\/i, '');
+            $fileName.text(file_name);
+            $image.addClass('hidden');
+        }
+        $element.addClass('uploaded');
+    };
+};
+
+
 //permet d'étendre et de compresser les philtres sur la liste de la recherche
-var expandPannel = function($element){
+var expandPannel = function ($element) {
     var $pannel = $element;
     var $btn = $pannel.find('.exp-btn');
     var $pannelBody = $pannel.find('.pannel-body');
-    
-    this.init = function(){
+
+    this.init = function () {
         _bindEvents();
     };
-    var _bindEvents = function(){
-        $btn.on('click', function(){
+    var _bindEvents = function () {
+        $btn.on('click', function () {
             _toggleExpand();
         });
     };
-    var _toggleExpand = function(){
-        if ($pannel.hasClass('minimized')){
+    var _toggleExpand = function () {
+        if ($pannel.hasClass('minimized')) {
             _expand();
-        }else{
+        } else {
             _compress();
         }
     };
-    var _expand = function(){
+    var _expand = function () {
         $pannel.removeClass('minimized');
         $btn.removeClass('icon-expand').addClass('icon-compress');
         $pannelBody.animateCss('fadeInDown');
     };
-    var _compress = function(){
+    var _compress = function () {
         $pannel.addClass('minimized');
         $btn.removeClass('icon-compress').addClass('icon-expand');
     };
 };
 
 //Permet de manuellement "truncate" un text pour ajouter une ellipse
-var ellipsizeTextBox = function(element) {
+var ellipsizeTextBox = function (element) {
     var $el = $(element);
     var wordArray = $el.innerHTML.split(' ');
-    while($el.scrollHeight > $el.offsetHeight) {
+    while ($el.scrollHeight > $el.offsetHeight) {
         wordArray.pop();
         $el.innerHTML = wordArray.join(' ') + '&hellip;';
-     }
+    }
 };
 
 //size of viewport
@@ -344,8 +380,37 @@ function viewport() {
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+        $(this).addClass('animated ' + animationName).one(animationEnd, function () {
             $(this).removeClass('animated ' + animationName);
         });
     }
 });
+
+(function ($, window, document, undefined) {
+    $.fn.alignWidth = function (options)
+    {
+        var settings = {
+            iLimitWidth: false
+        };
+
+        if (options) {
+            $.extend(settings, options);
+        }
+
+        var iMaxWidth = 0;
+
+        this.each(function () {
+            if ($(this).width() > iMaxWidth) {
+                if (settings.iLimitWidth && iMaxWidth >= settings.iLimitWidth) {
+                    iMaxWidth = settings.iLimitWidth;
+                } else {
+                    iMaxWidth = $(this).width();
+                }
+            }
+        });
+
+        if (iMaxWidth > 0) {
+            this.width(iMaxWidth);
+        }
+    };
+})(jQuery, window, document);

@@ -7,6 +7,7 @@ html, body{
 body{
     width: 100%;
     overflow-x: hidden;
+    zoom: 0.9;
 }
 
 body{
@@ -35,6 +36,12 @@ ul, li{
 
 hr{
     border-color: lighten($grey, 8%);
+}
+input::-moz-focus-inner { 
+    border: 0; 
+    padding: 0; 
+    margin-top:-2px; 
+    margin-bottom: -2px; 
 }
 
 @charset "UTF-8";
@@ -136,4 +143,19 @@ hr{
 }
 .icon-ellipsis-v:before {
   content: "\75";
+}
+.icon-question-circle:before {
+  content: "\71";
+}
+.icon-sort-asc:before {
+  content: "\76";
+}
+.icon-sort-desc:before {
+  content: "\77";
+}
+.icon-sort:before {
+  content: "\78";
+}
+.icon-check-ico:before {
+  content: "\79";
 }
