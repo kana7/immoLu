@@ -56,6 +56,11 @@ h2{
     font-weight: 800;
 }
 
+.separator-line{
+    border-bottom: 1px solid #e1e1e1;
+    height: 1px;
+}
+
 // LAYOUT/CONTAINER
 //------------------------------------------------------------------------------
 section{
@@ -110,6 +115,13 @@ section{
         font-size: 0.55em;
         padding-right: 5px;
     }
+}
+.circle{
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
 }
 
 // MENU MOBILE
@@ -639,20 +651,21 @@ footer .footer-links{
     }
 }
 .btn-grey{
-    color: #808080;
-    border-color: #d6d6d6;
-    text-shadow: 0 2px #d6d6d6;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,d6d6d6+100 */
-    background: #e8e8e8; /* Old browsers */
-    background: -moz-linear-gradient(top,  #e8e8e8 0%, #d6d6d6 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #e8e8e8 0%,#d6d6d6 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #e8e8e8 0%,#d6d6d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
+    &,&:focus, &:active{
+        color: #808080;
+        border-color: #d6d6d6;
+        text-shadow: 0 2px #d6d6d6;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,d6d6d6+100 */
+        background: #e8e8e8; /* Old browsers */
+        background: -moz-linear-gradient(top,  #e8e8e8 0%, #d6d6d6 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #e8e8e8 0%,#d6d6d6 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #e8e8e8 0%,#d6d6d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
 
 
-    font-weight: 800;
-    font-size: 1.05em;
-    text-transform: capitalize;
+        font-weight: 800;
+        text-transform: capitalize;
+    }
     &:hover{
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
         background: #d6d6d6; /* Old browsers */
@@ -1853,9 +1866,25 @@ form.form{
         border: none;
         margin: 0;
         padding: 0;
+        legend{
+            color: $blue;
+            font-size: 21px;
+            font-weight: 600;
+            margin-left: -20px;
+            margin-bottom: 10px; 
+        }
     }
     textarea{resize: vertical; height: 250px; padding: 10px 0 0 10px; line-height: 20px;}
-    input[type="text"], input[type="password"], .jscolor{line-height: 35px;}
+    input[type="text"], input[type="password"], select, .jscolor{line-height: 35px;}
+    .input[data-unit]:after{
+        content: attr(data-unit);
+        right: -55px;
+        width: 50px;
+        @include vertical-align-middle(absolute);
+        font-size: 15px;
+    }
+    .input>*:not(.switch){width: 100%;}
+    select{height: 39px;}
     input:not([type="submit"]), textarea{color: $section-black;}
     .input-group{
         min-height: auto;
@@ -1869,6 +1898,7 @@ form.form{
         font-style: italic;
     }
 }
+p{font-size: 16px;}
 .foot-note{
     font-size: 14px;
     font-style: italic;
@@ -2515,3 +2545,53 @@ table.dataTable>tbody>tr.child ul li:first-child {
     padding-top: 0.5em;
 }
 table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before{line-height: 16px;}
+
+
+/*-------------------------------ADD ANNONCE----------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+#add-entry{
+    padding: 0;
+    margin-bottom: 20px;
+    #step-list{
+        position: relative;
+        background-color: #e1e1e1; 
+        border: 1px solid #e1e1e1; 
+        border-radius: $border-radius $border-radius 0 0;
+        ul{
+            padding: 15px 20px;
+        }
+        li{
+            font-size: 15px;
+            &:not(:first-child){margin-left: 20px;}
+            &{
+                color: $blue;
+                .circle{background-color: $blue;}
+                cursor: pointer;
+
+            }
+            &.active{
+                color: $orange;
+                font-weight: 800;
+                text-decoration: underline;
+                .circle{background-color: $orange;}
+            }
+            &.active ~ li {
+                color: black;
+                cursor: default;
+                .circle{background-color: #acacac;}
+            }
+        }
+        .circle{color: white; font-weight: 600; text-align: center; margin-right: 10px; span{line-height:25px;}}
+    }
+    .step-body{
+        padding: 20px 40px;
+        border: 1px solid #e1e1e1;
+        border-radius: 0 0 $border-radius $border-radius;
+        overflow: hidden;
+    }
+    .form{margin: 0;}
+    .separator-line{
+        margin: 30px -40px;;
+    }
+}

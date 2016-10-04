@@ -486,9 +486,10 @@
         .input-group{
             display:table;
             width: 100%;
-            &>label, &>input, &>.input{display: table-cell; vertical-align: middle; width: auto;}
+            &.sub-input{ label{padding-left: 10px;}}
+            &>label, &>input,&>select, &>.input{display: table-cell; vertical-align: middle; width: auto;}
             &>label{padding-right: 10px; width: 40%;}
-            &>input, &>.input{width: 100%;}
+            &>input, &>select, &>.input{width: 100%;}
             &.multiple-lines{
                 label{vertical-align: top;}
             }

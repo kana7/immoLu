@@ -2620,6 +2620,10 @@ h2 {
 .extra-bold {
   font-weight: 800; }
 
+.separator-line {
+  border-bottom: 1px solid #e1e1e1;
+  height: 1px; }
+
 section {
   padding: 30px 0; }
 
@@ -2695,6 +2699,13 @@ section {
     display: inline-block;
     font-size: 0.55em;
     padding-right: 5px; }
+
+.circle {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px; }
 
 #siteWrap {
   position: relative;
@@ -3170,7 +3181,7 @@ footer .footer-links {
     background-color: #004994;
     color: #fff; }
 
-.btn-grey {
+.btn-grey, .btn-grey:focus, .btn-grey:active {
   color: #808080;
   border-color: #d6d6d6;
   text-shadow: 0 2px #d6d6d6;
@@ -3186,20 +3197,19 @@ footer .footer-links {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#d6d6d6',GradientType=0 );
   /* IE6-9 */
   font-weight: 800;
-  font-size: 1.05em;
   text-transform: capitalize; }
-  .btn-grey:hover {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
-    background: #d6d6d6;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #d6d6d6 8%, #d6d6d6 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 );
-    /* IE6-9 */ }
+.btn-grey:hover {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
+  background: #d6d6d6;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d6d6d6 8%, #d6d6d6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 );
+  /* IE6-9 */ }
 
 .btn-o-blue {
   color: #004994;
@@ -4497,13 +4507,34 @@ form.form {
     border: none;
     margin: 0;
     padding: 0; }
+    form.form fieldset legend {
+      color: #004994;
+      font-size: 21px;
+      font-weight: 600;
+      margin-left: -20px;
+      margin-bottom: 10px; }
   form.form textarea {
     resize: vertical;
     height: 250px;
     padding: 10px 0 0 10px;
     line-height: 20px; }
-  form.form input[type="text"], form.form input[type="password"], form.form .jscolor {
+  form.form input[type="text"], form.form input[type="password"], form.form select, form.form .jscolor {
     line-height: 35px; }
+  form.form .input[data-unit]:after {
+    content: attr(data-unit);
+    right: -55px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 15px; }
+  form.form .input > *:not(.switch) {
+    width: 100%; }
+  form.form select {
+    height: 39px; }
   form.form input:not([type="submit"]), form.form textarea {
     color: #07040D; }
   form.form .input-group {
@@ -4522,6 +4553,9 @@ form.form {
     color: #676767;
     font-weight: 400;
     font-style: italic; }
+
+p {
+  font-size: 16px; }
 
 .foot-note {
   font-size: 14px;
@@ -5151,6 +5185,55 @@ table.dataTable > tbody > tr.child ul li:first-child {
 table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr-column > tbody > tr > th.control:before {
   line-height: 16px; }
 
+/*-------------------------------ADD ANNONCE----------------------------------*/
+/*----------------------------------------------------------------------------*/
+#add-entry {
+  padding: 0;
+  margin-bottom: 20px; }
+  #add-entry #step-list {
+    position: relative;
+    background-color: #e1e1e1;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px 4px 0 0; }
+    #add-entry #step-list ul {
+      padding: 15px 20px; }
+    #add-entry #step-list li {
+      font-size: 15px; }
+      #add-entry #step-list li:not(:first-child) {
+        margin-left: 20px; }
+      #add-entry #step-list li {
+        color: #004994;
+        cursor: pointer; }
+        #add-entry #step-list li .circle {
+          background-color: #004994; }
+      #add-entry #step-list li.active {
+        color: #e75e0a;
+        font-weight: 800;
+        text-decoration: underline; }
+        #add-entry #step-list li.active .circle {
+          background-color: #e75e0a; }
+      #add-entry #step-list li.active ~ li {
+        color: black;
+        cursor: default; }
+        #add-entry #step-list li.active ~ li .circle {
+          background-color: #acacac; }
+    #add-entry #step-list .circle {
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      margin-right: 10px; }
+      #add-entry #step-list .circle span {
+        line-height: 25px; }
+  #add-entry .step-body {
+    padding: 20px 40px;
+    border: 1px solid #e1e1e1;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden; }
+  #add-entry .form {
+    margin: 0; }
+  #add-entry .separator-line {
+    margin: 30px -40px; }
+
 @media screen and (max-width: 671px) {
   .annonce-title .annonce-price {
     font-size: 1.2em; }
@@ -5605,14 +5688,16 @@ table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr
   form.form .input-group {
     display: table;
     width: 100%; }
-    form.form .input-group > label, form.form .input-group > input, form.form .input-group > .input {
+    form.form .input-group.sub-input label {
+      padding-left: 10px; }
+    form.form .input-group > label, form.form .input-group > input, form.form .input-group > select, form.form .input-group > .input {
       display: table-cell;
       vertical-align: middle;
       width: auto; }
     form.form .input-group > label {
       padding-right: 10px;
       width: 40%; }
-    form.form .input-group > input, form.form .input-group > .input {
+    form.form .input-group > input, form.form .input-group > select, form.form .input-group > .input {
       width: 100%; }
     form.form .input-group.multiple-lines label {
       vertical-align: top; } }

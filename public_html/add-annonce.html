@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Immo.lu</title>
+        <meta charset="UTF-8">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/css/vendor/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+    </head>
+    <body>
+        <nav class="mobile-side-menu">
+            <ul class="menu">
+                <li class="menu-item link"><a href="#">Accueil</a></li>
+                <li class="menu-item link"><a href="#">Acheter</a></li>
+                <li class="menu-item link"><a href="#">Louer</a></li>
+                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href="#">Agences</a></li>
+                <li class="menu-item link"><a href="#">Commerces</a></li>
+                <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
+            </ul>
+        </nav>
+        <div id="siteWrap">
+            <header>
+                <div class="header-upper">
+                    <div class="container">
+                        <div style="height: 100%;" class="row">
+                            <nav id="language-selection" class="header-upper-nav right phone-6">
+                                <ul>
+                                    <li class="active"><a href="#">FR</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">EN</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">DE</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">PT</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom mobile display-phone display-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="phone-6">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                            </div>
+                            <div class="phone-6">
+                                <div class="clearfix pull-right header-mobile-button">
+                                    <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
+                                    <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom display-desk display-lgdesk">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="pull-right login-nav phone-6">
+                                <ul>
+                                    <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                    <li><a href="#">S'inscrire gratuitement</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="header-bottom-main" class="row">
+                            <div style="height: 100%;" class="pull-left">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li class="active"><a href="#">Annonces</a></li>
+                                        <li><a href="#">Profil</a></li>
+                                        <li><a href="#">Messages</a></li>
+                                        <li><a href="#">Aide</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
+                                <a class="btn-blue">Publier une annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="pro" class="content">
+                <div class="container">
+                    <div class="row table phone-mb-15">
+                        <h1 class="table-cell">Ajouter une annonce</h1>
+                    </div>
+                    <div class="row" id="step-transition">
+                        <section id="add-entry">
+                            <div id="step-list">
+                                <ul>
+                                    <li class="active"><div class="circle"><span>1</span></div>Général</li><!--
+                                    --><li><div class="circle"><span>2</span></div>Détails</li><!--
+                                    --><li><div class="circle"><span>3</span></div>Photos</li><!--
+                                    --><li><div class="circle"><span>4</span></div>Options</li><!--
+                                    --><li><div class="circle"><span>5</span></div>Validation</li>
+                                </ul>
+                            </div>
+                            <form class="form" name=""  action="/Scripts/sql.exe" method="get">
+                                <input type="hidden" name="SqlDB" value="">
+                                <input type="hidden" name="Sql" value="">
+                                <div id="steps">
+                                    <div id="general" class="step" data-step="0">
+                                        <div class="step-body">
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-6">
+                                                    <fieldset>
+                                                        <legend>Info</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Type de bien</label>
+                                                            <select name="" id="">
+                                                                <option value="">Appartement</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Type d'annonce</label>
+                                                            <select name="" id="">
+                                                                <option value="">Vente</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Localité</label>
+                                                            <select name="" id="">
+                                                                <option value="">Junglinster</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Pays</label>
+                                                            <select name="" id="">
+                                                                <option value="">Luxembourg</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Adresse</label>
+                                                            <select name="" id="">
+                                                                <option value="">Rue Jean-pierre Ries</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Code postal</label>
+                                                            <input type="text" />
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">État</label>
+                                                            <select name="" id="">
+                                                                <option value="">Ancien</option>
+                                                                <option value="">Neuf</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Prix</label>
+                                                            <div class="input" data-unit='€'>
+                                                                <input type="text"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label></label>
+                                                            <div class="radioboxes">
+                                                                <div class="radiobox">
+                                                                    <input id="negotiate" type="checkbox" name="_negoPrice"><label for="negotiate">à discuter</label>
+                                                                </div>
+                                                                <div class="radiobox">
+                                                                    <input id="hidePrice" type="checkbox" name="_hidePrice"><label for="hidePrice">ne pas afficher</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group multiple-lines">
+                                                            <label for="">Description</label>
+                                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-6">
+                                                    <fieldset>
+                                                        <legend>Caractéristiques principales</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Année de construction</label>
+                                                            <input type="text" />
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Surface d'habitation</label>
+                                                            <div class="input" data-unit="m&#178;">
+                                                                <input type="text"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Surface du terrain</label>
+                                                            <div class="input" data-unit="ares">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Etages</label>
+                                                            <input type="text" />
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Nombres de pièces</label>
+                                                            <input type="text" />
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Classe énergétique</label>
+                                                            <input type="text" />
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Indice isolation</label>
+                                                            <div class="input" data-unit="€/mois">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Charges</label>
+                                                            <div class="input" data-unit="€/mois">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Disponibilité</label>
+                                                            <input type="text" placeholder="dd/mm/yyyy"/>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="details" class="step" data-step="1">
+                                        <div class="step-body">
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend>Intérieur</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Cuisine équipée</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Surface de la cuisine</label>
+                                                            <div class="input" data-unit="m&#178;">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Cuisine ouverte</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Living</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Surface du living</label>
+                                                            <div class="input" data-unit="m&#178;">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Salle à manger</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Salle de bain</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Salle de douche</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Nombre de salles</label>
+                                                            <div class="input">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">WC séparé</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Nombre de WC</label>
+                                                            <div class="input">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Cave</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Grenier</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Ascenseur</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend>Extérieur</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Terrasse</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Surface de terrasse</label>
+                                                            <div class="input" data-unit="m&#178;">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Balcon</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Jardin</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Surface du jardin</label>
+                                                            <div class="input" data-unit="m&#178;">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Piscine</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend>Emplacement parking</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Garage</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Nombre de place</label>
+                                                            <div class="input">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Parking ouvert</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Parking souterrain</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group sub-input">
+                                                            <label for="">Nombre de place</label>
+                                                            <div class="input">
+                                                                <input type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Parking collectif</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend>Chauffage</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Chauffage gaz</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Chauffage mazout</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Chauffage électrique</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Chauffage au sol</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Chauffage central</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend>Chauffage</legend>
+                                                        <div class="input-group">
+                                                            <label for="">Vidéophone</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Parlophone</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Satellite</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Feu ouvert</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Panneaux solaires</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <label for="">Accès internet</label>
+                                                            <div class="input">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider"></div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="photos" class="step" data-step="2">
+                                        <div class="step-body"></div>
+                                    </div>
+                                    <div id="options" class="step" data-step="3">
+                                        <div class="step-body"></div>
+                                    </div>
+                                    <div id="validation" class="step" data-step="4">
+                                        <div class="step-body">
+                                            <div class="clearfix phone-mb-10">
+                                                <p class="phone-mt-0">Avant de valider l'annonce, vous avez la possibilité de la prévisualiser :</p>
+                                                <a href="#" class="btn-blue">Prévisualiser l'annonce</a>
+                                            </div>
+                                            <div class="clearfix phone-mb-10">
+                                                <p>Vous pouvez sauvergarder l'annonce en tant que brouillon :</p>
+                                                <a href="#" class="btn-blue">Enregistrer en tant que brouillon</a>
+                                            </div>
+                                            <div class="clearfix">
+                                                <p>Vousp pouvez sauvergarder l'annonce en tant que brouillon :</p>
+                                                <input type="submit" class="btn-orange" value="Enregistrer et valider"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row display-flex-align-middle">
+                            <div class="footer-links desk-4">
+                                <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                                <img src="images/Img/Mockup.png" alt="" />
+                                <p>Accessible sur desktop et mobile !</p>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en vente</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en location</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/inscriptionModule.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                StepTransition.init();
+            });
+        </script>
+    </body>
+</html>
