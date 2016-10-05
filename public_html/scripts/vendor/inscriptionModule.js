@@ -12,16 +12,15 @@ var StepTransition = (function () {
             '</div>';
 
     var StepsContainer = $('#steps');
+    var form = $('#step-transition form');
     var headerStepList = $('#step-list ul');
-    var currentStep = 0;
+    var currentStep = 3;
     var stepList = StepsContainer.find('.step');
     //Prend l'ensemble des articles sélectionnables pour cette offre
     function init() {
         //recupération du panier
         _render();
         _bindEvents();
-        //RECOVERY
-
         _showSlider(currentStep);
     }
 
@@ -29,6 +28,9 @@ var StepTransition = (function () {
     function _render() {
         stepList.each(function () {
             $(this).append(tplbtn); //TO DO PRINT BUTTONS FOR NEXT STEP
+            /*if ($(this).is('[data-required]')){
+                $(this).find('button.next').addClass('disabled');
+            }*/
         });
         stepList.first().find('button.previous').parent().remove();
         stepList.last().find('button.next').parent().remove();
@@ -47,7 +49,7 @@ var StepTransition = (function () {
             _next();
             _collectDataForm($(this).parents('.step').find('.step-form'));
         });
-        $('body').on('keyup', function (event) {
+        $(document).on('keyup', function (event) {
             switch (event.which) {
                 case 37:
                     _previous();
@@ -60,9 +62,9 @@ var StepTransition = (function () {
                     return; // exit this handler for other keys
             }
         });
-        StepsContainer.find('input[required]').on('blur click', function () {
+        /*StepsContainer.find('input[required]').on('blur click', function () {
             _checkInput();
-        });
+        });*/
         /*$(window).on("beforeunload", function () { //SAVE IN COOKIES IF LEAVING
          _saveCart();
          });*/
@@ -92,11 +94,11 @@ var StepTransition = (function () {
 
 //slide suivant
     function _next() {
-        if (_checkInput()) {
+        //if (_checkInput()) {
             if (currentStep != stepList.length - 1) {
                 _showSlider(++currentStep);
             }
-        }
+        //}
     }
 //slide précédent
     function _previous() {

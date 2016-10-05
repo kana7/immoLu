@@ -367,6 +367,25 @@ var ellipsizeTextBox = function (element) {
     }
 };
 
+var hideShow = function (element){
+    var $element = element;
+    var $toggle = $element.find('*[data-toggle]');
+    var $container = $toggle.next();
+    this.init = function(){
+        $element.addClass('hideShow');
+        _bindEvents();
+        _toggleHideShow();
+    };
+    var _bindEvents = function(){
+        $toggle.on('click', _toggleHideShow.bind(this));
+    };
+    var _toggleHideShow = function(){
+        var isHidden = $container.hasClass('hide');
+        $element[isHidden ? "removeClass" : "addClass"]('is-hidden');
+        $container[isHidden ? "removeClass" : "addClass"]('hide');
+    };
+};
+
 //size of viewport
 function viewport() {
     var e = window, a = 'inner';

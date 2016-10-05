@@ -106,7 +106,7 @@
                                     --><li><div class="circle"><span>5</span></div>Validation</li>
                                 </ul>
                             </div>
-                            <form class="form" name=""  action="/Scripts/sql.exe" method="get">
+                            <form class="form" name="registration"  action="/Scripts/sql.exe" method="get">
                                 <input type="hidden" name="SqlDB" value="">
                                 <input type="hidden" name="Sql" value="">
                                 <div id="steps">
@@ -117,66 +117,67 @@
                                                     <fieldset>
                                                         <legend>Info</legend>
                                                         <div class="input-group">
-                                                            <label for="">Type de bien</label>
-                                                            <select name="" id="">
+                                                            <label for="buildType">Type de bien<span class="red">*</span></label>
+                                                            <select name="buildType" id="buildType" >
                                                                 <option value="">Appartement</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Type d'annonce</label>
-                                                            <select name="" id="">
+                                                            <label for="sellType">Type d'annonce<span class="red">*</span></label>
+                                                            <select name="sellType" id="sellType" >
                                                                 <option value="">Vente</option>
+                                                                <option value="">Location</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Localité</label>
-                                                            <select name="" id="">
+                                                            <label for="city">Localité<span class="red">*</span></label>
+                                                            <select name="city" id="city" >
                                                                 <option value="">Junglinster</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Pays</label>
-                                                            <select name="" id="">
+                                                            <label for="country">Pays<span class="red">*</span></label>
+                                                            <select name="country" id="country" >
                                                                 <option value="">Luxembourg</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Adresse</label>
-                                                            <select name="" id="">
+                                                            <label for="address">Adresse</label>
+                                                            <select name="address" id="address">
                                                                 <option value="">Rue Jean-pierre Ries</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Code postal</label>
-                                                            <input type="text" />
+                                                            <label for="zipCode">Code postal<span class="red">*</span></label>
+                                                            <input id="zipCode" type="number" name="zipCode" step="1" />
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">État</label>
-                                                            <select name="" id="">
+                                                            <label for="condition">État<span class="red">*</span></label>
+                                                            <select name="condition" id="condition" >
                                                                 <option value="">Ancien</option>
                                                                 <option value="">Neuf</option>
                                                             </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Prix</label>
+                                                            <label for="price">Prix<span class="red">*</span></label>
                                                             <div class="input" data-unit='€'>
-                                                                <input type="text"/>
+                                                                <input id="price" type="number" name="price" step="any" />
                                                             </div>
                                                         </div>
                                                         <div class="input-group">
                                                             <label></label>
                                                             <div class="radioboxes">
                                                                 <div class="radiobox">
-                                                                    <input id="negotiate" type="checkbox" name="_negoPrice"><label for="negotiate">à discuter</label>
+                                                                    <input id="negotiate" type="checkbox" name="negoPrice"><label for="negotiate">à discuter</label>
                                                                 </div>
                                                                 <div class="radiobox">
-                                                                    <input id="hidePrice" type="checkbox" name="_hidePrice"><label for="hidePrice">ne pas afficher</label>
+                                                                    <input id="hidePrice" type="checkbox" name="hidePrice"><label for="hidePrice">ne pas afficher</label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="input-group multiple-lines">
-                                                            <label for="">Description</label>
-                                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                                            <label for="description">Description<span class="red">*</span></label>
+                                                            <textarea name="description" id="description" cols="30" rows="10" ></textarea>
                                                         </div>
                                                     </fieldset>
                                                 </div>
@@ -187,228 +188,231 @@
                                                     <fieldset>
                                                         <legend>Caractéristiques principales</legend>
                                                         <div class="input-group">
-                                                            <label for="">Année de construction</label>
-                                                            <input type="text" />
+                                                            <label for="buildYear">Année de construction<span class="red">*</span></label>
+                                                            <select name="buildYear" id="buildYear">
+                                                                <option value="">2016</option>
+                                                                <option value="">1800</option>
+                                                            </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Surface d'habitation</label>
+                                                            <label for="livingArea">Surface d'habitation<span class="red">*</span></label>
                                                             <div class="input" data-unit="m&#178;">
-                                                                <input type="text"/>
+                                                                <input id="livingArea" name="livingArea" type="number" step="1" min="0" />
                                                             </div>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Surface du terrain</label>
+                                                            <label for="landSurface">Surface du terrain</label>
                                                             <div class="input" data-unit="ares">
-                                                                <input type="text" />
+                                                                <input id="landSurface" name="landSurface" type="number" step="any" min="0"/>
                                                             </div>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Etages</label>
-                                                            <input type="text" />
+                                                            <label for="floorNumber">Etages</label>
+                                                            <input id="floorNumber" name="floorNumber" type="number" step="any" min="0" max="20"/>
                                                         </div>
                                                         <div class="input-group">
                                                             <label for="">Nombres de pièces</label>
-                                                            <input type="text" />
+                                                            <input type="number" step="any" min="0"/>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Classe énergétique</label>
-                                                            <input type="text" />
+                                                            <label for="ernergyClass">Classe énergétique<span class="red">*</span></label>
+                                                            <select name="ernergyClass" id="ernergyClass" >
+                                                                <option value="">A</option>
+                                                                <option value="">B</option>
+                                                                <option value="">C</option>
+                                                                <option value="">D</option>
+                                                                <option value="">E</option>
+                                                                <option value="">F</option>
+                                                                <option value="">G</option>
+                                                            </select>
                                                         </div>
                                                         <div class="input-group">
-                                                            <label for="">Indice isolation</label>
-                                                            <div class="input" data-unit="€/mois">
-                                                                <input type="text" />
-                                                            </div>
+                                                            <label for="insulationIndex">Indice isolation</label>
+                                                            <select name="insulationIndex" id="insulationIndex">
+                                                                <option value="">A</option>
+                                                                <option value="">B</option>
+                                                                <option value="">C</option>
+                                                                <option value="">D</option>
+                                                                <option value="">E</option>
+                                                                <option value="">F</option>
+                                                                <option value="">G</option>
+                                                            </select>
                                                         </div>
                                                         <div class="input-group">
                                                             <label for="">Charges</label>
                                                             <div class="input" data-unit="€/mois">
-                                                                <input type="text" />
+                                                                <input type="number" step="any" />
                                                             </div>
                                                         </div>
                                                         <div class="input-group">
                                                             <label for="">Disponibilité</label>
-                                                            <input type="text" placeholder="dd/mm/yyyy"/>
+                                                            <input type="date" placeholder="dd/mm/yyyy"/>
                                                         </div>
                                                     </fieldset>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="details" class="step" data-step="1">
+                                    <div id="details" class="step" data-step="1" style="display: none;">
                                         <div class="step-body">
                                             <div class="clearfix">
                                                 <div class="phone-12 tab-4">
                                                     <fieldset>
-                                                        <legend>Intérieur</legend>
-                                                        <div class="input-group">
-                                                            <label for="">Cuisine équipée</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                        <legend data-toggle>Intérieur</legend>
+                                                        <div>
+                                                            <div class="input-group">
+                                                                <label for="">Cuisine équipée</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="kitchen_left" name="kitchen" value="1"/>
+                                                                        <label for="kitchen_left">Oui</label>
+                                                                        <input type="radio" id="kitchen_center" name="kitchen" value="0" />
+                                                                        <label for="kitchen_center">Non</label>
+                                                                        <input type="radio" id="kitchen_right" name="kitchen" value="-1" checked/>
+                                                                        <label for="kitchen_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Surface de la cuisine</label>
-                                                            <div class="input" data-unit="m&#178;">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Surface de la cuisine</label>
+                                                                <div class="input" data-unit="m&#178;">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Cuisine ouverte</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Cuisine ouverte</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="openKitchen_left" name="openKitchen" value="1"/>
+                                                                        <label for="openKitchen_left">Oui</label>
+                                                                        <input type="radio" id="openKitchen_center" name="openKitchen" value="0" />
+                                                                        <label for="openKitchen_center">Non</label>
+                                                                        <input type="radio" id="openKitchen_right" name="openKitchen" value="-1" checked/>
+                                                                        <label for="openKitchen_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Living</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Living</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="living_left" name="living" value="1"/>
+                                                                        <label for="living_left">Oui</label>
+                                                                        <input type="radio" id="living_center" name="living" value="0" />
+                                                                        <label for="living_center">Non</label>
+                                                                        <input type="radio" id="living_right" name="living" value="-1" checked/>
+                                                                        <label for="living_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Surface du living</label>
-                                                            <div class="input" data-unit="m&#178;">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Surface du living</label>
+                                                                <div class="input" data-unit="m&#178;">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Salle à manger</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Salle à manger</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="dining_left" name="dining" value="1"/>
+                                                                        <label for="dining_left">Oui</label>
+                                                                        <input type="radio" id="dining_center" name="dining" value="0" />
+                                                                        <label for="dining_center">Non</label>
+                                                                        <input type="radio" id="dining_right" name="dining" value="-1" checked/>
+                                                                        <label for="dining_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Salle de bain</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Salle de bain</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="bath_left" name="bath" value="1"/>
+                                                                        <label for="bath_left">Oui</label>
+                                                                        <input type="radio" id="bath_center" name="bath" value="0" />
+                                                                        <label for="bath_center">Non</label>
+                                                                        <input type="radio" id="bath_right" name="bath" value="-1" checked/>
+                                                                        <label for="bath_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Salle de douche</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Salle de douche</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="shower_left" name="shower" value="1"/>
+                                                                        <label for="shower_left">Oui</label>
+                                                                        <input type="radio" id="shower_center" name="shower" value="0" />
+                                                                        <label for="shower_center">Non</label>
+                                                                        <input type="radio" id="shower_right" name="shower" value="-1" checked/>
+                                                                        <label for="shower_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Nombre de salles</label>
-                                                            <div class="input">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Nombre de salles</label>
+                                                                <div class="input">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">WC séparé</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">WC séparé</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="wc_left" name="wc" value="1"/>
+                                                                        <label for="wc_left">Oui</label>
+                                                                        <input type="radio" id="wc_center" name="wc" value="0" />
+                                                                        <label for="wc_center">Non</label>
+                                                                        <input type="radio" id="wc_right" name="wc" value="-1" checked/>
+                                                                        <label for="wc_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Nombre de WC</label>
-                                                            <div class="input">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Nombre de WC</label>
+                                                                <div class="input">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Cave</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Cave</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="cellar_left" name="cellar" value="1"/>
+                                                                        <label for="cellar_left">Oui</label>
+                                                                        <input type="radio" id="cellar_center" name="cellar" value="0" />
+                                                                        <label for="cellar_center">Non</label>
+                                                                        <input type="radio" id="cellar_right" name="cellar" value="-1" checked/>
+                                                                        <label for="cellar_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Grenier</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Grenier</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="attic_left" name="attic" value="1"/>
+                                                                        <label for="attic_left">Oui</label>
+                                                                        <input type="radio" id="attic_center" name="attic" value="0" />
+                                                                        <label for="attic_center">Non</label>
+                                                                        <input type="radio" id="attic_right" name="attic" value="-1" checked/>
+                                                                        <label for="attic_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Ascenseur</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                            </div>
-                                            <div class="separator-line"></div>
-                                            <div class="clearfix">
-                                                <div class="phone-12 tab-4">
-                                                    <fieldset>
-                                                        <legend>Extérieur</legend>
-                                                        <div class="input-group">
-                                                            <label for="">Terrasse</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Surface de terrasse</label>
-                                                            <div class="input" data-unit="m&#178;">
-                                                                <input type="text" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Balcon</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Jardin</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Surface du jardin</label>
-                                                            <div class="input" data-unit="m&#178;">
-                                                                <input type="text" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Piscine</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Ascenseur</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="elevator_left" name="elevator" value="1"/>
+                                                                        <label for="elevator_left">Oui</label>
+                                                                        <input type="radio" id="elevator_center" name="elevator" value="0" />
+                                                                        <label for="elevator_center">Non</label>
+                                                                        <input type="radio" id="elevator_right" name="elevator" value="-1" checked/>
+                                                                        <label for="elevator_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </fieldset>
@@ -418,106 +422,71 @@
                                             <div class="clearfix">
                                                 <div class="phone-12 tab-4">
                                                     <fieldset>
-                                                        <legend>Emplacement parking</legend>
-                                                        <div class="input-group">
-                                                            <label for="">Garage</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                        <legend data-toggle>Extérieur</legend>
+                                                        <div>
+                                                            <div class="input-group">
+                                                                <label for="">Terrasse</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="terrace_left" name="terrace" value="1"/>
+                                                                        <label for="terrace_left">Oui</label>
+                                                                        <input type="radio" id="terrace_center" name="terrace" value="0" />
+                                                                        <label for="terrace_center">Non</label>
+                                                                        <input type="radio" id="terrace_right" name="terrace" value="-1" checked/>
+                                                                        <label for="terrace_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Nombre de place</label>
-                                                            <div class="input">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Surface de terrasse</label>
+                                                                <div class="input" data-unit="m&#178;">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Parking ouvert</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Balcon</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="balcony_left" name="balcony" value="1"/>
+                                                                        <label for="balcony_left">Oui</label>
+                                                                        <input type="radio" id="balcony_center" name="balcony" value="0" />
+                                                                        <label for="balcony_center">Non</label>
+                                                                        <input type="radio" id="balcony_right" name="balcony" value="-1" checked/>
+                                                                        <label for="balcony_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Parking souterrain</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Jardin</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="garden_left" name="garden" value="1"/>
+                                                                        <label for="garden_left">Oui</label>
+                                                                        <input type="radio" id="garden_center" name="garden" value="0" />
+                                                                        <label for="garden_center">Non</label>
+                                                                        <input type="radio" id="garden_right" name="garden" value="-1" checked/>
+                                                                        <label for="garden_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group sub-input">
-                                                            <label for="">Nombre de place</label>
-                                                            <div class="input">
-                                                                <input type="text" />
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Surface du jardin</label>
+                                                                <div class="input" data-unit="m&#178;">
+                                                                    <input type="text" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Parking collectif</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                            </div>
-                                            <div class="separator-line"></div>
-                                            <div class="clearfix">
-                                                <div class="phone-12 tab-4">
-                                                    <fieldset>
-                                                        <legend>Chauffage</legend>
-                                                        <div class="input-group">
-                                                            <label for="">Chauffage gaz</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Chauffage mazout</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Chauffage électrique</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Chauffage au sol</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Chauffage central</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Piscine</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="pool_left" name="pool" value="1"/>
+                                                                        <label for="pool_left">Oui</label>
+                                                                        <input type="radio" id="pool_center" name="pool" value="0" />
+                                                                        <label for="pool_center">Non</label>
+                                                                        <input type="radio" id="pool_right" name="pool" value="-1" checked/>
+                                                                        <label for="pool_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </fieldset>
@@ -527,59 +496,234 @@
                                             <div class="clearfix">
                                                 <div class="phone-12 tab-4">
                                                     <fieldset>
-                                                        <legend>Chauffage</legend>
-                                                        <div class="input-group">
-                                                            <label for="">Vidéophone</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                        <legend data-toggle>Emplacement parking</legend>
+                                                        <div>
+                                                            <div class="input-group">
+                                                                <label for="">Garage</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="garage_left" name="garage" value="1"/>
+                                                                        <label for="garage_left">Oui</label>
+                                                                        <input type="radio" id="garage_center" name="garage" value="0" />
+                                                                        <label for="garage_center">Non</label>
+                                                                        <input type="radio" id="garage_right" name="garage" value="-1" checked/>
+                                                                        <label for="garage_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Nombre de place</label>
+                                                                <div class="input">
+                                                                    <input type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Parking ouvert</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="openParking_left" name="openParking" value="1"/>
+                                                                        <label for="openParking_left">Oui</label>
+                                                                        <input type="radio" id="openParking_center" name="openParking" value="0" />
+                                                                        <label for="openParking_center">Non</label>
+                                                                        <input type="radio" id="openParking_right" name="openParking" value="-1" checked/>
+                                                                        <label for="openParking_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Parking souterrain</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="closeParking_left" name="closeParking" value="1"/>
+                                                                        <label for="closeParking_left">Oui</label>
+                                                                        <input type="radio" id="closeParking_center" name="closeParking" value="0" />
+                                                                        <label for="closeParking_center">Non</label>
+                                                                        <input type="radio" id="closeParking_right" name="closeParking" value="-1" checked/>
+                                                                        <label for="closeParking_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group sub-input">
+                                                                <label for="">Nombre de place</label>
+                                                                <div class="input">
+                                                                    <input type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Parking collectif</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="Parking_left" name="Parking" value="1"/>
+                                                                        <label for="Parking_left">Oui</label>
+                                                                        <input type="radio" id="Parking_center" name="Parking" value="0" />
+                                                                        <label for="Parking_center">Non</label>
+                                                                        <input type="radio" id="Parking_right" name="Parking" value="-1" checked/>
+                                                                        <label for="Parking_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="input-group">
-                                                            <label for="">Parlophone</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend data-toggle>Chauffage</legend>
+                                                        <div>
+                                                            <div class="input-group">
+                                                                <label for="">Chauffage gaz</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="gaz_left" name="gaz" value="1"/>
+                                                                        <label for="gaz_left">Oui</label>
+                                                                        <input type="radio" id="gaz_center" name="gaz" value="0" />
+                                                                        <label for="gaz_center">Non</label>
+                                                                        <input type="radio" id="gaz_right" name="gaz" value="-1" checked/>
+                                                                        <label for="gaz_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Chauffage mazout</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="fuel_left" name="fuel" value="1"/>
+                                                                        <label for="fuel_left">Oui</label>
+                                                                        <input type="radio" id="fuel_center" name="fuel" value="0" />
+                                                                        <label for="fuel_center">Non</label>
+                                                                        <input type="radio" id="fuel_right" name="fuel" value="-1" checked/>
+                                                                        <label for="fuel_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Chauffage électrique</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="electHeater_left" name="electHeater" value="1"/>
+                                                                        <label for="electHeater_left">Oui</label>
+                                                                        <input type="radio" id="electHeater_center" name="electHeater" value="0" />
+                                                                        <label for="electHeater_center">Non</label>
+                                                                        <input type="radio" id="electHeater_right" name="electHeater" value="-1" checked/>
+                                                                        <label for="electHeater_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Chauffage au sol</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="floorHeater_left" name="floorHeater" value="1" />
+                                                                        <label for="floorHeater_left">Oui</label>
+                                                                        <input type="radio" id="floorHeater_center" name="floorHeater" value="0" />
+                                                                        <label for="floorHeater_center">Non</label>
+                                                                        <input type="radio" id="floorHeater_right" name="floorHeater" value="-1" checked/>
+                                                                        <label for="floorHeater_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Chauffage central</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="centralHeater_left" name="centralHeater" value="1" />
+                                                                        <label for="centralHeater_left">Oui</label>
+                                                                        <input type="radio" id="centralHeater_center" name="centralHeater" value="0" />
+                                                                        <label for="centralHeater_center">Non</label>
+                                                                        <input type="radio" id="centralHeater_right" name="centralHeater" value="-1" checked/>
+                                                                        <label for="centralHeater_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="input-group">
-                                                            <label for="">Satellite</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="phone-12 tab-4">
+                                                    <fieldset>
+                                                        <legend data-toggle>Autre</legend>
+                                                        <div>
+                                                            <div class="input-group">
+                                                                <label for="">Vidéophone</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="videophone_left" name="videophone" value="1" />
+                                                                        <label for="videophone_left">Oui</label>
+                                                                        <input type="radio" id="videophone_center" name="videophone" value="0" />
+                                                                        <label for="videophone_center">Non</label>
+                                                                        <input type="radio" id="videophone_right" name="videophone" value="-1" checked/>
+                                                                        <label for="videophone_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Feu ouvert</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Parlophone</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="parlophone_left" name="parlophone" value="1" />
+                                                                        <label for="parlophone_left">Oui</label>
+                                                                        <input type="radio" id="parlophone_center" name="parlophone" value="0" />
+                                                                        <label for="parlophone_center">Non</label>
+                                                                        <input type="radio" id="parlophone_right" name="parlophone" value="-1" checked/>
+                                                                        <label for="parlophone_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Panneaux solaires</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Satellite</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="Satellite_left" name="Satellite" value="1"/>
+                                                                        <label for="Satellite_left">Oui</label>
+                                                                        <input type="radio" id="Satellite_center" name="Satellite" value="0" />
+                                                                        <label for="Satellite_center">Non</label>
+                                                                        <input type="radio" id="Satellite_right" name="Satellite" value="-1" checked/>
+                                                                        <label for="Satellite_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <label for="">Accès internet</label>
-                                                            <div class="input">
-                                                                <label class="switch">
-                                                                    <input type="checkbox">
-                                                                    <div class="slider"></div>
-                                                                </label>
+                                                            <div class="input-group">
+                                                                <label for="">Feu ouvert</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="fire_left" name="fire" value="1"/>
+                                                                        <label for="fire_left">Oui</label>
+                                                                        <input type="radio" id="fire_center" name="fire" value="0" />
+                                                                        <label for="fire_center">Non</label>
+                                                                        <input type="radio" id="fire_right" name="fire" value="-1" checked/>
+                                                                        <label for="fire_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Panneaux solaires</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="solarPanel_left" name="solarPanel" value="1"/>
+                                                                        <label for="solarPanel_left">Oui</label>
+                                                                        <input type="radio" id="solarPanel_center" name="solarPanel" value="0" />
+                                                                        <label for="solarPanel_center">Non</label>
+                                                                        <input type="radio" id="solarPanel_right" name="solarPanel" value="-1" checked/>
+                                                                        <label for="solarPanel_right">NC</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <label for="">Accès internet</label>
+                                                                <div class="input">
+                                                                    <div class="radio-switch">
+                                                                        <input type="radio" id="internet_left" name="internet" value="1"/>
+                                                                        <label for="internet_left">Oui</label>
+                                                                        <input type="radio" id="internet_center" name="internet" value="0" />
+                                                                        <label for="internet_center">Non</label>
+                                                                        <input type="radio" id="internet_right" name="internet" value="-1" checked/>
+                                                                        <label for="internet_right">NC</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </fieldset>
@@ -587,13 +731,146 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="photos" class="step" data-step="2">
-                                        <div class="step-body"></div>
+                                    <div id="photos" class="step" data-step="2" style="display: none;">
+                                        <div class="step-body">
+                                            <div class="clearfix">
+                                                <div class="btn-blue">Ajouter des photos</div>
+                                            </div>
+                                            <div class="separator-line"></div>
+                                        </div>
                                     </div>
-                                    <div id="options" class="step" data-step="3">
-                                        <div class="step-body"></div>
+                                    <div id="options" class="step" data-step="3" style="display: none;">
+                                        <div class="step-body">
+                                            <div class="clearfix">
+                                                <div class="phone-12 desk-9">
+                                                    <div class="search-result-entry minimized">
+                                                        <div class="menu-container dropdown">
+                                                            <button><span class="icon-menu-icone"></span></button>
+                                                            <ul class="dropdown-links">
+                                                                <li>
+                                                                    <a href="#1">Ajouter au favoris</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#1">Contact</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#2">Téléphone</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#3">Toutes les annonces</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="entry-body">
+                                                            <div class="entry-body-row">
+                                                                <div class="image-container">
+                                                                    <div class="image-container-frame">
+                                                                        <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="infos-container">
+                                                                    <div class="price">699 900 €</div>
+                                                                    <h2 class="title"><span class="title">Maison 4 Chambres</span> <span class="location"> - Pétange</span></h2>
+                                                                    <ul class="mobile-details">
+                                                                        <li class="location">Pétange</li>
+                                                                        <li>150m²</li>
+                                                                    </ul>
+                                                                    <ul class="icons">
+                                                                        <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                                    </ul>
+                                                                    <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                                    <p class="description">
+                                                                        Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                                </div>
+                                                                <div class="agency-container">
+                                                                    <ul class="links">
+                                                                        <li>
+                                                                            <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="agency-container-frame">
+                                                                        <a href="#">
+                                                                            <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="search-result-entry">
+                                                        <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                                            <h2 class="title">
+                                                                <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                                <span class="location"> - Appartement Last test</span>
+                                                            </h2>
+                                                            <div class="menu-container dropdown">
+                                                                <button><span class="icon-menu-icone"></span></button>
+                                                                <ul class="dropdown-links">
+                                                                    <li><a href="#1">Ajouter au favoris</a></li>
+                                                                    <li><a onclick="contactUserOffline(15724);">Contact</a></li>
+                                                                    <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
+                                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="entry-body">
+                                                            <div class="entry-body-row">
+                                                                <div class="image-container">
+                                                                    <div class="image-container-frame">
+                                                                        <img src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906153239_21235.png" alt="Appartement Last test">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="infos-container">
+                                                                    <div class="infos-container-frame">
+                                                                        <div class="price">350000&nbsp;€</div>
+                                                                        <ul class="mobile-details">
+                                                                            <li class="location">Appartement Last test</li>
+                                                                            <li>101m²</li>
+                                                                        </ul>
+                                                                        <ul class="icons">
+                                                                            <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                                            <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                                            <li class="garages">2&nbsp;<span class="icon-car"></span></li>
+                                                                        </ul>
+                                                                        <ul class="details">
+                                                                            <li>Surface: +/- 101&nbsp;m²</li>
+                                                                            <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                                            <li>terrasse: 125.00m²</li>
+                                                                        </ul>
+                                                                        <p class="description">
+                                                                            Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724" class="entry-annonce-link">Plus de détails</a></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="agency-container">
+                                                                    <ul class="links ">
+                                                                        <li>
+                                                                            <a onclick="contactUserOffline(15724);"><span class="icon-email"></span> Contact</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a id="telephone_15724" onclick="showPhoneNumber(15724);"><span class="icon-phone"></span><span id="numero_15724">Téléphone</span></a>
+                                                                        </li>
+                                                                        <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                                    </ul>
+                                                                    <div class="agency-container-frame">
+                                                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                                            <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div id="validation" class="step" data-step="4">
+                                    <div id="validation" class="step" data-step="4" style="display: none;">
                                         <div class="step-body">
                                             <div class="clearfix phone-mb-10">
                                                 <p class="phone-mt-0">Avant de valider l'annonce, vous avez la possibilité de la prévisualiser :</p>
@@ -660,12 +937,39 @@
             </footer>
         </div>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/jquery.validate.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/inscriptionModule.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript">
-            $(function(){
-                StepTransition.init();
-            });
+                                                                                var temp;
+                                                                                $(function () {
+                                                                                    StepTransition.init();
+                                                                                    $('#details fieldset').each(function () {
+                                                                                        temp = new hideShow($(this));
+                                                                                        temp.init();
+                                                                                    });
+                                                                                    $('#details fieldset').first().find('[data-toggle]').click();
+                                                                                    $("form").validate({
+                                                                                        rules: {
+                                                                                            buildType: "required",
+                                                                                            sellType: "required",
+                                                                                            city: "required",
+                                                                                            country: "required",
+                                                                                            address: "required",
+                                                                                            zipCode: "required",
+                                                                                            condition: "required",
+                                                                                            price: "required",
+                                                                                            description: "required",
+                                                                                            buildYear: "required",
+                                                                                            livingArea: "required",
+                                                                                            ernergyClass: "required",
+                                                                                            insulationIndex: "required"
+                                                                                        },
+                                                                                        submitHandler: function (form) {
+                                                                                            form.submit();
+                                                                                        }
+                                                                                    });
+                                                                                });
         </script>
     </body>
 </html>

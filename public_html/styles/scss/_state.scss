@@ -66,6 +66,20 @@
             margin: 10px auto 15px;
         }
     }
+    #add-entry #step-list li{
+        margin-left: 0 !important;
+        &:not(.active){
+            display: none;
+        }
+    }
+    #add-entry .step-body {
+        padding: 20px 10px;
+    }
+    form.form fieldset legend{margin-left: 0;}
+    form.form .input[data-unit]:after{display: none;}
+    button.previous, button.previous, button.next, button.next{
+        &,&:focus, &:active{padding: 0 15px;}
+    }
 }
 @include viewport(min, $min: 500){
     .search-result-entry{
@@ -131,6 +145,47 @@
         }
         .clearfix .clearfix:last-child{
             .input-group:nth-child(n+2){margin-bottom: 0;}
+        }
+    }
+    .search-result-entry.pro{
+        .image-container{
+            width: 50% !important;
+        }
+        .aside-container{
+            display: table-cell !important;
+            position: relative;
+            vertical-align: middle;
+            height: 100%;
+            width: 50%;
+            .infos-container, .agency-container{
+                display: block !important;
+                height: auto; 
+                width: 100% !important;
+                float: left !important; 
+            }
+            .infos-container{
+                .agency-container-frame{
+                    height: 80px;
+                    max-width: 50%;
+                    a{height: 100%; text-align: right;}
+                    img{max-width: 100%; max-height: 100%;}
+                }
+            }
+            .agency-container{
+                padding: 0;
+                .links{
+                    position: relative;
+                    @include clearfix;
+                    li{
+                        float: left; width: 33.33333333%;
+                        height: 100%;
+                        text-align: center;
+                        &:not(:first-child){
+                            border-left: 1px solid rgba(218, 218, 218, 0.6);
+                        }
+                    }
+                }
+            }
         }
     }
     .search-result-entry{
@@ -487,11 +542,11 @@
             display:table;
             width: 100%;
             &.sub-input{ label{padding-left: 10px;}}
-            &>label, &>input,&>select, &>.input{display: table-cell; vertical-align: middle; width: auto;}
-            &>label{padding-right: 10px; width: 40%;}
+            &>label:not(.error), &>input,&>select, &>.input{display: table-cell; vertical-align: middle; width: auto;}
+            &>label:not(.error){padding-right: 10px; width: 40%;}
             &>input, &>select, &>.input{width: 100%;}
             &.multiple-lines{
-                label{vertical-align: top;}
+                label:not(.error){vertical-align: top;}
             }
         }
     }

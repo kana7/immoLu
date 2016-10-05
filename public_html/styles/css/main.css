@@ -3102,6 +3102,18 @@ footer .footer-links {
   user-select: none;
   outline: 0;
   text-decoration: none; }
+  .btn-blue.disabled, .btn-blue:focus.disabled, .btn-blue:active.disabled,
+  .btn-orange.disabled,
+  .btn-orange:focus.disabled,
+  .btn-orange:active.disabled,
+  .btn-grey.disabled,
+  .btn-grey:focus.disabled,
+  .btn-grey:active.disabled,
+  .btn-white.disabled,
+  .btn-white:focus.disabled,
+  .btn-white:active.disabled {
+    cursor: default;
+    opacity: 0.5; }
 .btn-blue *[class^="icon-"],
 .btn-orange *[class^="icon-"],
 .btn-grey *[class^="icon-"],
@@ -3133,7 +3145,7 @@ footer .footer-links {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a49', endColorstr='#e75e0a',GradientType=0 );
   /* IE6-9 */ }
-.btn-orange:hover:not([disabled]) {
+.btn-orange:hover:not([disabled]):not(.disabled) {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e75e0a+0,e75e0a+100 */
   background: #e75e0a;
   /* Old browsers */
@@ -3161,7 +3173,7 @@ footer .footer-links {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1974d1', endColorstr='#004994',GradientType=0 );
   /* IE6-9 */ }
-.btn-blue:hover:not([disabled]) {
+.btn-blue:hover:not([disabled]):not(.disabled) {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004994+0,004994+100 */
   background: #004994;
   /* Old browsers */
@@ -3198,7 +3210,7 @@ footer .footer-links {
   /* IE6-9 */
   font-weight: 800;
   text-transform: capitalize; }
-.btn-grey:hover {
+.btn-grey:hover:not([disabled]):not(.disabled) {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
   background: #d6d6d6;
   /* Old browsers */
@@ -3241,6 +3253,9 @@ footer .footer-links {
     user-select: none;
     outline: 0;
     text-decoration: none; }
+    .btn-o-blue.disabled, .btn-o-blue:focus.disabled, .btn-o-blue:active.disabled {
+      cursor: default;
+      opacity: 0.5; }
   .btn-o-blue *[class^="icon-"] {
     display: inline-block;
     margin-right: 7px;
@@ -3367,7 +3382,7 @@ select {
   font-size: 1.1em;
   padding-right: 15px; }
 
-input[type="text"], input[type="password"], textarea, .dropDownListResultBox, .jscolor {
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), textarea, .dropDownListResultBox, .jscolor {
   display: block;
   border-radius: 4px;
   border: 1px solid #c0c0c0;
@@ -3376,6 +3391,16 @@ input[type="text"], input[type="password"], textarea, .dropDownListResultBox, .j
   color: #818181;
   font-weight: 600;
   font-size: 1.1em; }
+  input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]).error, textarea.error, .dropDownListResultBox.error, .jscolor.error {
+    border-color: #e03f3f; }
+    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]).error ~ label.error, textarea.error ~ label.error, .dropDownListResultBox.error ~ label.error, .jscolor.error ~ label.error {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      padding: 0;
+      width: 100%;
+      font-weight: 600;
+      color: #e03f3f; }
 
 input[type="text"], input[type="password"] {
   line-height: 43px; }
@@ -4509,7 +4534,7 @@ form.form {
     padding: 0; }
     form.form fieldset legend {
       color: #004994;
-      font-size: 21px;
+      font-size: 19px;
       font-weight: 600;
       margin-left: -20px;
       margin-bottom: 10px; }
@@ -4518,7 +4543,7 @@ form.form {
     height: 250px;
     padding: 10px 0 0 10px;
     line-height: 20px; }
-  form.form input[type="text"], form.form input[type="password"], form.form select, form.form .jscolor {
+  form.form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), form.form select, form.form .jscolor {
     line-height: 35px; }
   form.form .input[data-unit]:after {
     content: attr(data-unit);
@@ -4531,7 +4556,7 @@ form.form {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 15px; }
-  form.form .input > *:not(.switch) {
+  form.form .input > *:not(.switch):not(.radio-switch) {
     width: 100%; }
   form.form select {
     height: 39px; }
@@ -4549,10 +4574,9 @@ form.form {
       height: auto;
       padding: 0 25px;
       text-transform: capitalize; }
-  form.form .input-group > label {
+  form.form .input-group > label:not(.error) {
     color: #676767;
-    font-weight: 400;
-    font-style: italic; }
+    font-weight: 400; }
 
 p {
   font-size: 16px; }
@@ -4607,6 +4631,37 @@ p {
     display: none !important; }
     .dropdown ul.open {
       display: block !important; }
+
+.hideShow *[data-toggle] {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .hideShow *[data-toggle]:before {
+    font-family: "immo-icons" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\76";
+    position: relative;
+    top: 10px;
+    margin-right: 5px; }
+.hideShow.is-hidden *[data-toggle] {
+  margin-bottom: 0; }
+  .hideShow.is-hidden *[data-toggle]:before {
+    content: "\77";
+    top: 0; }
+.hideShow .hide {
+  display: none; }
 
 /*----------------------------SPECIAL INPUTS----------------------------------*/
 /*----------------------------------------------------------------------------*/
@@ -4750,6 +4805,70 @@ input:checked + .slider:before {
     display: none; }
   .file-upload.not-fileReader + .uploaded-img .delete-button {
     top: -8px; }
+
+.radio-switch {
+  display: inline-block;
+  overflow: hidden;
+  height: 35px;
+  border: 1px solid #c0c0c0;
+  background: #f4f4f4;
+  background: -moz-linear-gradient(top, #f4f4f4 41%, #e5e5e5 100%);
+  background: -webkit-linear-gradient(top, #f4f4f4 41%, #e5e5e5 100%);
+  background: linear-gradient(to bottom, #f4f4f4 41%, #e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e5e5e5',GradientType=0 );
+  border-radius: 4px; }
+
+.radio-switch input {
+  display: none; }
+
+.radio-switch label {
+  float: left; }
+
+.radio-switch label {
+  display: inline-block;
+  width: 48px;
+  height: 100%;
+  font-size: 12px !important;
+  color: #c0c0c0 !important;
+  line-height: 33px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 0;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin: 0 !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.radio-switch label:hover {
+  cursor: pointer; }
+
+.radio-switch input:checked + label {
+  background-color: #26c019 !important;
+  color: white !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 4px; }
+  .radio-switch input:checked + label:first-of-type {
+    background-color: #26c019 !important; }
+  .radio-switch input:checked + label:not(:first-of-type):not(:last-of-type) {
+    background-color: #e03f3f !important; }
+  .radio-switch input:checked + label:last-of-type {
+    background-color: #c0c0c0 !important; }
+
+.radio-switch label:first-of-type {
+  border-radius: 4px 0 0 4px; }
+
+.radio-switch label:last-of-type {
+  border-radius: 0 4px 4px 0; }
 
 /*--------------------------------TOOLTIPS------------------------------------*/
 /*----------------------------------------------------------------------------*/
@@ -5232,7 +5351,7 @@ table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr
   #add-entry .form {
     margin: 0; }
   #add-entry .separator-line {
-    margin: 30px -40px; }
+    margin: 20px -40px; }
 
 @media screen and (max-width: 671px) {
   .annonce-title .annonce-price {
@@ -5300,7 +5419,24 @@ table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr
   .agency-entry:not(.minimized) .logo-frame {
     width: 150px;
     height: 150px;
-    margin: 10px auto 15px; } }
+    margin: 10px auto 15px; }
+
+  #add-entry #step-list li {
+    margin-left: 0 !important; }
+    #add-entry #step-list li:not(.active) {
+      display: none; }
+
+  #add-entry .step-body {
+    padding: 20px 10px; }
+
+  form.form fieldset legend {
+    margin-left: 0; }
+
+  form.form .input[data-unit]:after {
+    display: none; }
+
+  button.previous, button.previous:focus, button.previous:active, button.previous, button.previous:focus, button.previous:active, button.next, button.next:focus, button.next:active, button.next, button.next:focus, button.next:active {
+    padding: 0 15px; } }
 @media screen and (min-width: 500px) {
   .search-result-entry .icons {
     font-size: 1.3em; }
@@ -5359,6 +5495,47 @@ table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr
     top: 25px; }
   .search-banner-box .clearfix .clearfix:last-child .input-group:nth-child(n+2) {
     margin-bottom: 0; }
+
+  .search-result-entry.pro .image-container {
+    width: 50% !important; }
+  .search-result-entry.pro .aside-container {
+    display: table-cell !important;
+    position: relative;
+    vertical-align: middle;
+    height: 100%;
+    width: 50%; }
+    .search-result-entry.pro .aside-container .infos-container, .search-result-entry.pro .aside-container .agency-container {
+      display: block !important;
+      height: auto;
+      width: 100% !important;
+      float: left !important; }
+    .search-result-entry.pro .aside-container .infos-container .agency-container-frame {
+      height: 80px;
+      max-width: 50%; }
+      .search-result-entry.pro .aside-container .infos-container .agency-container-frame a {
+        height: 100%;
+        text-align: right; }
+      .search-result-entry.pro .aside-container .infos-container .agency-container-frame img {
+        max-width: 100%;
+        max-height: 100%; }
+    .search-result-entry.pro .aside-container .agency-container {
+      padding: 0; }
+      .search-result-entry.pro .aside-container .agency-container .links {
+        position: relative; }
+        .search-result-entry.pro .aside-container .agency-container .links:before {
+          content: "";
+          display: table; }
+        .search-result-entry.pro .aside-container .agency-container .links:after {
+          content: "";
+          display: table;
+          clear: both; }
+        .search-result-entry.pro .aside-container .agency-container .links li {
+          float: left;
+          width: 33.33333333%;
+          height: 100%;
+          text-align: center; }
+          .search-result-entry.pro .aside-container .agency-container .links li:not(:first-child) {
+            border-left: 1px solid rgba(218, 218, 218, 0.6); }
 
   .search-result-entry .entry-header {
     padding-left: 15px; }
@@ -5690,16 +5867,16 @@ table.dataTable.dtr-column > tbody > tr > td.control:before, table.dataTable.dtr
     width: 100%; }
     form.form .input-group.sub-input label {
       padding-left: 10px; }
-    form.form .input-group > label, form.form .input-group > input, form.form .input-group > select, form.form .input-group > .input {
+    form.form .input-group > label:not(.error), form.form .input-group > input, form.form .input-group > select, form.form .input-group > .input {
       display: table-cell;
       vertical-align: middle;
       width: auto; }
-    form.form .input-group > label {
+    form.form .input-group > label:not(.error) {
       padding-right: 10px;
       width: 40%; }
     form.form .input-group > input, form.form .input-group > select, form.form .input-group > .input {
       width: 100%; }
-    form.form .input-group.multiple-lines label {
+    form.form .input-group.multiple-lines label:not(.error) {
       vertical-align: top; } }
 @media screen and (min-width: 1302px) {
   .main-nav {
