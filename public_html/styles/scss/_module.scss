@@ -26,6 +26,9 @@ svg:not(:root) {
 .red{
     color: #DC0000 !important;
 }
+.black{
+    color: #000 !important;
+}
 
 // FONT STYLE
 //------------------------------------------------------------------------------
@@ -725,7 +728,7 @@ footer .footer-links{
 //INPUT
 //------------------------------------------------------------------------------
 
-label:not(.switch):not(.file-upload), .input-group h4{
+label:not(.switch):not(.file-upload):not(.option-input), .input-group h4{
     color: $blue;
     font-size: 1.1em;
     font-weight: 600;
@@ -817,7 +820,7 @@ input[type="text"], input[type="password"]{
 .radioboxes{
     line-height: 43px;
     .radiobox{
-        label{color: $dark-grey;}
+        label{color: $dark-grey !important;}
         display: inline-block;
         input{
             margin-right: 7px;
@@ -888,6 +891,7 @@ input[type="text"], input[type="password"]{
         animation-duration: 0.5s;
         &.open{display: block;}
         label{
+            display: block;
             font-size: 0.95em;
             font-weight: 400;
             margin-bottom: 5px;
@@ -1081,16 +1085,23 @@ input[type="text"], input[type="password"]{
     margin-bottom: 15px;
 }
 #annonce-details-left, #annonce-details-right{
-    border: 1px solid rgba(218, 218, 218, 0.6);
+    border: $border;
 }
 
 #annonce-details-left{
     .annonce-details-images-container{
-        display: table;
-        position: relative;
         position: relative;
         width: 100%;
         z-index: 1;
+        @include clearfix;
+        background-color: $grey-bg;
+        .lSSlideOuter .lSPager.lSpg{
+            margin: 5px 0;
+            width: 100%;
+        }
+        .lSSlideOuter .lSPager.lSpg>li.active a, .lSSlideOuter .lSPager.lSpg>li:hover a {
+            background-color: $orange;
+        }
     }
     .annonce-details-image-main, .annonce-details-thumbnails-container{
         display: block;
@@ -1115,8 +1126,7 @@ input[type="text"], input[type="password"]{
 }
 .pannel, #annonce-details-right{
     padding: 20px 5px;
-    &:not(#annonce-details-right){padding-bottom: 0;}
-    border: 1px solid rgba(218, 218, 218, 0.6);
+    &:not(#annonce-details-right){padding-bottom: 0; border: 1px solid rgba(218,218,218,1);}
     .annonce-details-user-container{
         display: block;
         max-width: 80%;
@@ -1128,16 +1138,16 @@ input[type="text"], input[type="password"]{
         }
     }
     .logo{
+        height: 95px;
         img{
-            height: auto;
-            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
     .address{
         margin: 10px 0;
     }
     .btn-blue{
-        text-transform: uppercase;
         line-height: 40px;
         padding: 0;
         *[class^="icon-"]{
@@ -1189,8 +1199,8 @@ input[type="text"], input[type="password"]{
     line-height: 20px;
 }
 .annonce-description{
-    border-top: 1px solid #dadada;
-    border-bottom: 1px solid #dadada;
+    border-top: $border;
+    border-bottom: $border;
     margin: 20px 0;
     p{margin: 20px 0}
 }
@@ -1198,7 +1208,7 @@ input[type="text"], input[type="password"]{
 .infos-attributs{
     position: relative;
     margin-bottom: 20px;
-    border-bottom: 1px solid #dadada;
+    border-bottom: $border;
     div[class^="phone-"], .pull-left{
         margin-bottom: 5px;
     }
@@ -1227,6 +1237,52 @@ input[type="text"], input[type="password"]{
             height: auto;
             margin-top: 10px;
         }
+    }
+}
+
+#image-gallery{
+    border: $border;
+}
+#image-gallery li {
+    text-align: center;
+    background-color: $grey-bg;
+    a{width: 100%;height: 100%;}
+    img{
+        display: inline-block;
+        max-width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+}
+.lg-logo .lg:before{
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 200px;
+    height: 50px;
+    background-image: url(../../images/Img/Logo_Immo.lu_White1.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left center;
+}
+.lSSlideOuter .lSPager.lSGallery li, .lSSlideOuter .lSPager.lSGallery li {
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    &:not(.active):after{
+        background-color: rgba(0,0,0,0.4);
+        cursor: pointer;
     }
 }
 
@@ -1320,7 +1376,7 @@ input[type="text"], input[type="password"]{
         display: block;
         position: relative;
         width: 100%;
-        border: 1px solid rgba(218,218,218,0.6);
+        border: 1px solid rgba(218,218,218,1);
         border-top: transparent;
         border-radius: 0 0 4px 4px;
         @include clearfix;
@@ -1328,7 +1384,7 @@ input[type="text"], input[type="password"]{
     &:not(.minimized) .entry-body-row{display: block; width: 100%;}
     &.minimized{
         .entry-body{
-            border-radius: 4px !important; border: 1px solid rgba(218,218,218,0.6);
+            border-radius: 4px !important; border: 1px solid rgba(218,218,218,1);
         }
         .infos-container{
             .title{display: block; font-size: 1.15em; &>.title, &>.location{display: inline;}}
@@ -1373,7 +1429,7 @@ input[type="text"], input[type="password"]{
     &:not(.minimized){
         .infos-container, .agency-container{
             height: 125px;
-            padding: 10px 15px;
+            padding: 10px 10px;
         }
         .infos-container{
             display: inline-block;
@@ -1382,7 +1438,7 @@ input[type="text"], input[type="password"]{
         }
     }
     .infos-container{
-        .title{font-size: 18px; margin: 0; .location{font-size: inherit;}}
+        .title{font-size: 18px; margin: 0; text-align: left; .location{font-size: inherit;}}
     }
     .price, .details, .icons{
         font-weight: 600;
@@ -1433,7 +1489,6 @@ input[type="text"], input[type="password"]{
             float: left;
             width: 50%;
             background-color: #F8F8F8;
-            border-left: 1px solid rgba(218,218,218,0.6);
         } 
         .links-container{
             display: block;
@@ -1449,7 +1504,7 @@ input[type="text"], input[type="password"]{
         .btn-dropdown{display: block;}
         .links{display: block;}
         background-color: #FFF;
-        border-left: 1px solid rgba(218,218,218,0);
+        border-left: 1px solid rgba(218,218,218,1);
         .agency-container-frame{
             display: block;
             position: relative;
@@ -1466,6 +1521,7 @@ input[type="text"], input[type="password"]{
                 display: block;
                 height: 100%;
                 text-align: center;
+                padding: 5px;
             }
         }
         img{
@@ -1483,7 +1539,7 @@ input[type="text"], input[type="password"]{
             right: 0;    
             width: 100%;
             li{
-                border-top: 1px solid rgba(218, 218, 218, 0.6);
+                border-top: 1px solid rgba(218,218,218,1);
                 display: block;
                 a{
                     line-height: 20px;
@@ -1510,10 +1566,10 @@ input[type="text"], input[type="password"]{
             .links{
                 bottom: auto;
                 top: 0;
-                border-bottom: 1px solid rgba(218, 218, 218, 0.6);
+                border-bottom: 1px solid rgba(218, 218, 218, 1);
                 li{border-top: none;}
                 li:not(:first-child){
-                    border-top: 1px solid rgba(218, 218, 218, 0.6);
+                    border-top: 1px solid rgba(218, 218, 218, 1);
                 }
             }
         }
@@ -2103,7 +2159,7 @@ input:checked + .slider:before {
 }
 .file-upload{
     display: block;
-    input, &:not(.uploaded)+.uploaded-img{display: none;}
+    input, &:not(.uploaded)+.uploaded-img{display: none !important;}
     &+.uploaded-img{
         display: block;
         position: relative;
@@ -2667,13 +2723,13 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
     #step-list{
         position: relative;
         background-color: #e1e1e1; 
-        border: 1px solid #e1e1e1; 
         border-radius: $border-radius $border-radius 0 0;
         ul{
-            padding: 15px 20px;
+            padding: 15px 20px 13px;
         }
         li{
             font-size: 15px;
+            span{line-height: 29px;}
             &:not(:first-child){margin-left: 20px;}
             &{
                 color: $blue;
@@ -2701,8 +2757,73 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
         border-radius: 0 0 $border-radius $border-radius;
         overflow: hidden;
     }
+    #options .step-body{padding: 0;}
     .form{margin: 0;}
     .separator-line{
         margin: 20px -40px;;
+    }
+    #options{
+        .table{padding: 15px 20px; .search-result-entry{margin: 0;}}
+        .table:nth-child(even){
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .table-cell{
+            display: block;
+            width: 100%;
+        }
+        .table.selected{background-color: $light-blue !important;}
+        .option-infos{
+            text-align: center;
+            margin-bottom: 10px;
+            .title{
+                color: $blue;
+                font-weight: 800;
+                font-size: 19px;
+            }
+            p{font-size: 16px;
+              line-height: 1.35;}
+            .option-input{
+                input{display: none;}
+                input+label{
+                    @extend .btn-blue;
+                }
+                input:checked+label{
+                    @extend .btn-orange;
+                }
+            }
+        }
+    }
+    .uploadFile_container{
+        @include pannel;
+        display: inline-block;
+        float: left;
+        border: 1px solid $grey;
+        border-radius: $border-radius;
+        width: 250px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        .add_annonce_image_container{
+            background-color: #e5e5e5;
+            height: 200px;
+            width: 100%;
+            @include thumbnail;
+        }
+        .image_buttons{
+            display: block;
+            padding: 7px 0;
+            text-align: center;
+            .modify_image_button, .deleteImage{
+                display: inline-block;
+                cursor: pointer;
+                padding: 0 5px;
+                img{height: 30px; width: 30px;}
+                &, &:focus, &:active{
+                    border: none;
+                    background: none;
+                    outline: 0;
+                }
+            }
+        }
     }
 }

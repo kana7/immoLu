@@ -6,11 +6,10 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/css/vendor/photoswipe.css" />
-        <link rel="stylesheet" href="styles/css/vendor/default-skin/default-skin.css" />
-        <link rel="stylesheet" href="styles/css/vendor/pgwslider.min.css" />
         <link rel="stylesheet" href="styles/css/main.css" />
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+        <link rel="stylesheet" href="styles/css/vendor/lightslider.min.css" />
+        <link rel="stylesheet" href="styles/css/vendor/lightgallery.min.css" />
     </head>
     <body>
         <nav class="mobile-side-menu">
@@ -87,7 +86,7 @@
                                 </nav>
                             </div>
                             <div style="position: absolute; right: 0; bottom: -9px;" class="pull-right">
-                                <a class="btn-orange">Publier une annonce</a>
+                                <a class="btn-blue">Publier une annonce</a>
                             </div>
                         </div>
                     </div>
@@ -104,21 +103,36 @@
                         <div class="phone-12 desk-9 desk-pr-10">
                             <article id="annonce-details-left">
                                 <div class="annonce-details-images-container">
-                                    <ul class="pgwSlider">
-                                        <li>
-                                            <a href="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/50b74d23f5652ecb95561a4afa0f5af0b430de1e.jpg"> <img src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/50b74d23f5652ecb95561a4afa0f5af0b430de1e_167x114.jpg?bg=gray90" data-large-src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/50b74d23f5652ecb95561a4afa0f5af0b430de1e_749x564.jpg?bg=gray90"/></a>
+                                    <ul id="image-gallery">
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-2089018456.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-2089018456.jpg?bg=gray90" title="Praesent eget felis ut metus pulvinar faucibus tempor eu orci. Nam gravida arcu enim, non volutpat dolor condimentum semper. Nulla ipsum magna, posuere nec porta vitae, vestibulum et dolor. Vivamus vitae varius quam. Sed luctus molestie lectus quis pharetra. Proin tincidunt mauris ante, a sodales lacus rhoncus at. Donec sed arcu ac leo dictum laoreet.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-2089018456.jpg?bg=gray90"/>
                                         </li>
-                                        <li>
-                                            <a href="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/547118d40d06adeeee16866f93370291489217f4.jpg"><img src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/547118d40d06adeeee16866f93370291489217f4_167x114.jpg?bg=gray90"  data-large-src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/547118d40d06adeeee16866f93370291489217f4_749x564.jpg?bg=gray90"/></a>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-628175011.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-628175011.jpg?bg=gray90" title="Aenean id aliquet ante. Praesent dictum, leo eu pulvinar finibus, eros tellus dictum metus, eget ultrices lorem ligula sit amet urna. Nulla eu metus non metus porttitor euismod et quis lorem. Donec vel elit leo. Integer lacinia tellus ligula, nec feugiat ipsum efficitur vitae. Nulla venenatis pharetra diam, quis malesuada ante auctor ut. Sed scelerisque porta nibh, a dictum lorem malesuada id. Duis placerat nunc turpis, eget convallis magna convallis in. Cras a velit nunc. In molestie ex metus, malesuada suscipit leo vestibulum dapibus. Sed scelerisque lectus massa, quis congue erat rutrum vitae.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-628175011.jpg?bg=gray90"/>
                                         </li>
-                                        <li>
-                                            <a href="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d046a795c2943ffabf9a0f35c68b9a2a5626179f.jpg"><img src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d046a795c2943ffabf9a0f35c68b9a2a5626179f_167x114.jpg?bg=gray90" data-large-src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d046a795c2943ffabf9a0f35c68b9a2a5626179f_749x564.jpg?bg=gray90"/></a>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1656478042.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1656478042.jpg?bg=gray90" title="Nulla ipsum magna, posuere nec porta vitae, vestibulum et dolor. Vivamus vitae varius quam. Sed luctus molestie lectus quis pharetra. Proin tincidunt mauris ante, a sodales lacus rhoncus at. Donec sed arcu ac leo dictum laoreet.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1656478042.jpg?bg=gray90"/>
                                         </li>
-                                        <li>
-                                            <a href="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d102334f6dc2bd21f5caae9b62c5a5eb99512888.jpg"><img src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d102334f6dc2bd21f5caae9b62c5a5eb99512888_167x114.jpg?bg=gray90" data-large-src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/d102334f6dc2bd21f5caae9b62c5a5eb99512888_749x564.jpg?bg=gray90"/></a>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1131176229.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1131176229.jpg?bg=gray90">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1131176229.jpg?bg=gray90"/>
                                         </li>
-                                        <li>
-                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/485bf944e77e63bce04a307be53aaf1ed48ab258_167x114.jpg?bg=gray90" data-large-src="http://i1.static.athome.eu/images/annonces2/image_/f8/23/e3/485bf944e77e63bce04a307be53aaf1ed48ab258_749x564.jpg?bg=gray90"/>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1653377373.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1653377373.jpg?bg=gray90" title="nteger felis leo, efficitur sit amet ex et, congue lacinia purus. Sed non diam at odio consequat semper a a erat. Quisque a enim nec dui ultricies ultricies sit amet id mauris. Ut consequat mi id nisi gravida, at lacinia velit luctus. Nullam nec vehicula risus. Sed molestie risus non ">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1653377373.jpg?bg=gray90"/>
+                                        </li>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-859484421.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-859484421.jpg?bg=gray90" title="turpis, eget convallis magna convallis in. Cras a velit nunc. In molestie ex metus, malesuada suscipit leo vestibulum dapibus. Sed scelerisque lectus massa, quis congue erat rutrum vitae.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-859484421.jpg?bg=gray90"/>
+                                        </li>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1914544919.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1914544919.jpg?bg=gray90" title="Donec volutpat purus a accumsan feugiat. Morbi tristique fringilla metus eget sodales. Vestibulum lectus sem, interdum eget faucibus elementum, pretium vel tortor. Donec vulputate risus eu commodo venenatis. Mauris in tincidunt sapien, sed hendrerit purus. Sed id enim at ipsum volutpat varius sit amet ut ligula. Donec dapibus dictum porttitor.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1914544919.jpg?bg=gray90"/>
+                                        </li>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-608413784.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-608413784.jpg?bg=gray90" title="Integer at sem quis arcu posuere luctus in non lacus. Phasellus quis ipsum libero. In vestibulum accumsan dictum. Nunc dictum ornare semper.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-608413784.jpg?bg=gray90"/>
+                                        </li>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-756898537.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-756898537.jpg?bg=gray90" title="Nulla eu metus non metus porttitor euismod et quis lorem. ">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-756898537.jpg?bg=gray90"/>
+                                        </li>
+                                        <li data-thumb="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1734575198.jpg?bg=gray90" data-src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1734575198.jpg?bg=gray90" title=" Donec volutpat purus a accumsan feugiat. Morbi tristique fringilla metus eget sodales. Vestibulum lectus sem, interdum eget faucibus elementum, pretium vel tortor. Donec vulputate risus eu commodo venenatis.">
+                                            <img src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-1734575198.jpg?bg=gray90"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -458,7 +472,7 @@
                                             <p class="orange phone-mt-5 phone-mb-0">(* Requis)</p>
                                         </div>
                                         <div class="clearfix">
-                                            <button style="width: 100%; padding: 12px 15px;" class="btn-orange submit">Envoyer</button>
+                                            <button class="btn-orange submit">Envoyer</button>
                                         </div>
                                     </form>
                                 </div>
@@ -511,250 +525,70 @@
                 </div>
             </footer>
         </div>
-        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/vendor/photoswipe.js"></script>
-        <script type="text/javascript" src="scripts/vendor/photoswipe-ui-default.js" ></script>
-        <script type="text/javascript" src="scripts/vendor/pgwslider.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lightslider.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lightgallery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lg/lg-fullscreen.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lg/lg-thumbnail.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lg/lg-share.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/lg/lg-zoom.min.js"></script>
         <script type="text/javascript">
-            $(document).ready(function () {
-                var pgwSlider = $('.pgwSlider').pgwSlider({
-                    selectionMode: 'mouseOver',
-                    verticalCentering: true,
-                    touchControls: true,
-                    autoSlide: false,
-                    displayList: true,
-                    listPosition: 'right',
-                    adaptiveHeight: true
+            $(function () {
+                $("#image-gallery").lightSlider({
+                    gallery: true,
+                    item: 1,
+                    easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+                    speed: 600,
+                    currentPagerPosition: 'middle',
+                    keyPress: true,
+                    enableTouch: true,
+                    enableDrag: true,
+                    vertical: true,
+                    verticalHeight: 500,
+                    vThumbWidth: 200,
+                    thumbItem: 4,
+                    thumbMargin: 5,
+                    slideMargin: 0,
+                    onSliderLoad: function (el) {
+                        el.lightGallery({
+                            selector: '#image-gallery .lslide',
+                            thumbnail: true,
+                            closable: true,
+                            getCaptionFromTitleOrAlt: true,
+                            toogleThumb: true,
+                            download: false
+                        });
+                    },
+                    responsive: [
+                        {
+                            breakpoint: 1302,
+                            settings: {
+                                thumbItem: 6,
+                                verticalHeight: 500,
+                                vThumbWidth: 100
+                            }
+                        },
+                        {
+                            breakpoint: 1056,
+                            settings: {
+                                gallery: true,
+                                thumbItem: 6,
+                                verticalHeight: 400,
+                                vThumbWidth: 90
+                            }
+                        },
+                        {
+                            breakpoint: 672,
+                            settings: {
+                                gallery: false,
+                                verticalHeight: 230,
+                                vThumbWidth: 0
+                            }
+                        }
+                    ]
                 });
             });
         </script>
-        <script type="text/javascript" src="scripts/main.js"></script>
-        <!--<script>
-            var initPhotoSwipeFromDOM = function (gallerySelector) {
-                var isMoving = false;
-                var isDown = false;
-                // parse slide data (url, title, size ...) from DOM elements 
-                // (children of gallerySelector)
-                var parseThumbnailElements = function (el) {
-                    var thumbElements = el.getElementsByTagName("figure"),
-                            numNodes = thumbElements.length,
-                            items = [],
-                            figureEl,
-                            linkEl,
-                            size,
-                            item;
-                    for (var i = 0; i < numNodes; i++) {
-                        figureEl = thumbElements[i]; // <figure> element
-                        // include only element nodes 
-                        if (figureEl.nodeType !== 1) {
-                            continue;
-                        }
-                        linkEl = figureEl.children[0]; // <a> element
-                        size = linkEl.getAttribute('data-size').split('x');
-                        // create slide object
-                        item = {
-                            src: linkEl.getAttribute('href'),
-                            w: parseInt(size[0], 10),
-                            h: parseInt(size[1], 10)
-                        };
-                        if (figureEl.children.length > 1) {
-                            // <figcaption> content
-                            item.title = figureEl.children[1].innerHTML;
-                        }
-                        if (linkEl.children.length > 0) {
-                            // <img> thumbnail element, retrieving thumbnail url
-                            item.msrc = linkEl.children[0].getAttribute('src');
-                        }
-                        item.el = figureEl; // save link to element for getThumbBoundsFn
-                        items.push(item);
-                    }
-                    return items;
-                };
-                // find nearest parent element
-                var closest = function closest(el, fn) {
-                    return el && (fn(el) ? el : closest(el.parentNode, fn));
-                };
-                // triggers when user clicks on thumbnail
-                var onThumbnailsClick = function (e) {
-                    e = e || window.event;
-                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
-                    var eTarget = e.target || e.srcElement;
-                    // find root element of slide
-                    var clickedListItem = closest(eTarget, function (el) {
-                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-                    });
-                    if (!clickedListItem) {
-                        return;
-                    }
-                    /* get main gallery and clicked item index */
-                    var clickedGallery = $(gallerySelector)[0];
-                    if (clickedListItem.dataset.index >= 0) {
-                        // open PhotoSwipe if valid index foundif
-                        //only open if no swipe (isMoving == false)
-                        if (isMoving == true)
-                            return false;
-                        else
-                            openPhotoSwipe(clickedListItem.dataset.index, clickedGallery);
-                    }
-                    return false;
-                };
-                // parse picture index and gallery index from URL (#&pid=1&gid=2)
-                var photoswipeParseHash = function () {
-                    var hash = window.location.hash.substring(1),
-                            params = {};
-                    if (hash.length < 5) {
-                        return params;
-                    }
-                    var vars = hash.split('&');
-                    for (var i = 0; i < vars.length; i++) {
-                        if (!vars[i]) {
-                            continue;
-                        }
-                        var pair = vars[i].split('=');
-                        if (pair.length < 2) {
-                            continue;
-                        }
-                        params[pair[0]] = pair[1];
-                    }
-                    if (params.gid) {
-                        params.gid = parseInt(params.gid, 10);
-                    }
-                    return params;
-                };
-                var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
-                    var pswpElement = document.querySelectorAll('.pswp')[0],
-                            gallery,
-                            options,
-                            items;
-                    items = parseThumbnailElements(galleryElement);
-                    // define options (if needed)
-                    options = {
-                        // define gallery index (for URL)
-                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-                        getThumbBoundsFn: function (index) {
-                            // See Options -> getThumbBoundsFn section of documentation for more info
-                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                                    rect = thumbnail.getBoundingClientRect();
-                            return {x: rect.left, y: rect.top + pageYScroll, w: rect.width};
-                        }
-                    };
-                    // PhotoSwipe opened from URL
-                    if (fromURL) {
-                        if (options.galleryPIDs) {
-                            // parse real index when custom PIDs are used 
-                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                            for (var j = 0; j < items.length; j++) {
-                                if (items[j].pid == index) {
-                                    options.index = j;
-                                    break;
-                                }
-                            }
-                        } else {
-                            // in URL indexes start from 1
-                            options.index = parseInt(index, 10) - 1;
-                        }
-                    } else {
-                        options.index = parseInt(index, 10);
-                    }
-                    // exit if index not found
-                    if (isNaN(options.index)) {
-                        return;
-                    }
-                    if (disableAnimation) {
-                        options.showAnimationDuration = 0;
-                    }
-                    //Hide close animation
-                    options.hideAnimationDuration = 0;
-                    // Pass data to PhotoSwipe and initialize it
-                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-                    gallery.init();
-                };
-                // loop through all gallery elements and bind events
-                var galleryElements = document.querySelectorAll(gallerySelector);
-                var counter = 0;
-                for (var i = 0, l = galleryElements.length; i < l; i++) {
-                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-                    galleryElements[i].onclick = onThumbnailsClick;
-                    //dont open gallery after swipe
-                    galleryElements[i].onmousedown = function () {
-                        isDown = true;
-                        counter = 0;
-                    };
-                    galleryElements[i].onmouseup = function () {
-                        isDown = false;
-                    };
-                    galleryElements[i].onmousemove = function () {
-                        counter = counter + 1;
-                        if (isDown == true && counter > 10)
-                            isMoving = true;
-                        else
-                            isMoving = false;
-                    };
-                }
-                // Parse URL and open gallery if it contains #&pid=3&gid=1
-                var hashData = photoswipeParseHash();
-                if (hashData.pid && hashData.gid) {
-                    openPhotoSwipe(hashData.pid, galleryElements[ hashData.gid - 1 ], true, true);
-                }
-            };
-            // execute above function
-            initPhotoSwipeFromDOM('.my-gallery');
-        </script>
-        <!-- Root element of PhotoSwipe. Must have class pswp. -->
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-            <!-- Background of PhotoSwipe. 
-                 It's a separate element as animating opacity is faster than rgba(). -->
-            <div class="pswp__bg"></div>
-
-            <!-- Slides wrapper with overflow:hidden. -->
-            <div class="pswp__scroll-wrap">
-
-                <!-- Container that holds slides. 
-                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                    Don't modify these 3 pswp__item elements, data is added later on. -->
-                <div class="pswp__container">
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                </div>
-
-                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                <div class="pswp__ui pswp__ui--hidden">
-
-                    <div class="pswp__top-bar">
-                        <div class="pswp__counter">1 / 12</div>
-                        <button class="pswp__button pswp__button--close" title="Close (Esc)" style="color:white;"></button>
-                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                        <img class="pswp__image" src="images/Img/Logo_Immo.lu_White1.png" alt="">
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div> 
-                    </div>
-
-                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                    </button>
-
-                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                    </button>
-
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
     </body>
 </html>

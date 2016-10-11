@@ -37,7 +37,7 @@
             display: block;
             height: 75px;
             padding: 5px;
-            border-top: 1px solid #e5e5e5;
+            border-top: 1px solid rgba(218,218,218,1);
             background-color: #f8f8f8;
             .agency-container-frame{width: 85%;}
         }
@@ -181,7 +181,7 @@
                         height: 100%;
                         text-align: center;
                         &:not(:first-child){
-                            border-left: 1px solid rgba(218, 218, 218, 0.6);
+                            border-left: 1px solid rgba(218,218,218,1);
                         }
                     }
                 }
@@ -246,7 +246,7 @@
             position: relative !important;
             float: none !important;
             background-color: #F8F8F8;
-            border-left: 1px solid rgba(218, 218, 218, 0.6);
+            border-left: 1px solid rgba(218,218,218,1);
             .agency-container-frame{position: absolute; height: calc(100% - 117px);}
             .links{display: block; position: absolute;}
         }
@@ -293,6 +293,9 @@
                 }
             }
         }
+    }
+    .search-result-entry.pro .agency-container{
+        border-left: none;
     }
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
         height: 207px;
@@ -357,6 +360,9 @@
         .search-banner-box .input-group{
             min-height: 70px;
         }
+    }
+    .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container{
+        padding: 10px 15px;
     }
 }
 @include media-exclusive(tab){
@@ -457,7 +463,7 @@
             margin-bottom: 5px;
             li{margin-bottom: 5px;}
         }
-        .image-container{width: 257px !important;}
+        .image-container{width: 257px !important; border-right: 1px solid rgba(218,218,218,1);}
         .infos-container{
             width: calc(100% - 257px - 175px) !important;
         }
@@ -548,6 +554,20 @@
             &.multiple-lines{
                 label:not(.error){vertical-align: top;}
             }
+        }
+    }
+    #add-entry #options .table-cell{
+        display: table-cell;
+        width: auto;
+    }
+    #add-entry #options{
+        .table .table-cell:first-child{
+            width: 30%;
+        }
+        .option-infos{
+            text-align: left;
+            padding-right: 20px;
+            margin-bottom: 0;
         }
     }
 }

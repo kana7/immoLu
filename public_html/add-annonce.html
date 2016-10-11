@@ -17,7 +17,7 @@
                 <li class="menu-item link"><a href="#">Accueil</a></li>
                 <li class="menu-item link"><a href="#">Acheter</a></li>
                 <li class="menu-item link"><a href="#">Louer</a></li>
-                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href=>"#">Neuf</a></li>
                 <li class="menu-item link"><a href="#">Agences</a></li>
                 <li class="menu-item link"><a href="#">Commerces</a></li>
                 <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
@@ -99,11 +99,11 @@
                         <section id="add-entry">
                             <div id="step-list">
                                 <ul>
-                                    <li class="active"><div class="circle"><span>1</span></div>Général</li><!--
-                                    --><li><div class="circle"><span>2</span></div>Détails</li><!--
-                                    --><li><div class="circle"><span>3</span></div>Photos</li><!--
-                                    --><li><div class="circle"><span>4</span></div>Options</li><!--
-                                    --><li><div class="circle"><span>5</span></div>Validation</li>
+                                    <li class="active"><div class="circle"><span>1</span></div><span>Général</span></li><!--
+                                    --><li><div class="circle"><span>2</span></div><span>Détails</span></li><!--
+                                    --><li><div class="circle"><span>3</span></div><span>Photos</span></li><!--
+                                    --><li><div class="circle"><span>4</span></div><span>Options</span></li><!--
+                                    --><li><div class="circle"><span>5</span></div><span>Validation</span></li>
                                 </ul>
                             </div>
                             <form class="form" name="registration"  action="/Scripts/sql.exe" method="get">
@@ -737,130 +737,386 @@
                                                 <div class="btn-blue">Ajouter des photos</div>
                                             </div>
                                             <div class="separator-line"></div>
+                                            <div class="clearfix">
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="images/Img/homepage/first-annonce.jpg" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/0b/35/94/af654c0114d201ea3315338409aa4e82_1_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/d2/75/94/edc10460f4b177ff7bf1478926aa068e_1_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/ac/dc/84/a0e6bc6c2a174f4438bf874081c59813b35b9d2a_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/46/a1/94/10174c5f9ad5aad67309b0d6ce60d6d3_1_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/fd/31/94/e83962327b7254f75401f0a0a67a6aca5f2b1aa2_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/f9/8d/84/f468150d192fa5a898ca2398f795919f8e6e66e3_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                                <div class="uploadFile_container">
+                                                    <div class="add_annonce_image_container">
+                                                        <div class="upload_status hidden"><div class="fa fa-picture-o"></div><p class="image_path">landscape.jpg</p></div>
+                                                        <img class="add_annonce_image_pic" src="http://i1.static.athome.eu/images/annonces2/image_/b8/31/94/04df1206e7e75c921942427e9d900d90_1_248x186.jpg?bg=gray90" alt="">
+                                                        <input type="hidden" name="item_photo_1" value="notEmpty">
+                                                    </div>
+                                                    <div class="image_buttons">
+                                                        <div class="modify_image_button" onclick="rotateImage('container_1')">
+                                                            <img class="modify_rotate" src="http://bazar.lu/images/rotate.png" alt="">
+                                                        </div>
+                                                        <button type="button" class="deleteImage">
+                                                            <img src="http://bazar.lu/images/delete.png" alt="">
+                                                        </button>
+                                                    </div>
+                                                    <input id="filename_1" type="hidden" name="filename_1" value="">
+                                                    <input id="image_rotation_container_1" type="hidden" name="item_rotation_1" value="">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="options" class="step" data-step="3" style="display: none;">
                                         <div class="step-body">
                                             <div class="clearfix">
-                                                <div class="phone-12 desk-9">
-                                                    <div class="search-result-entry minimized">
-                                                        <div class="menu-container dropdown">
-                                                            <button><span class="icon-menu-icone"></span></button>
-                                                            <ul class="dropdown-links">
-                                                                <li>
-                                                                    <a href="#1">Ajouter au favoris</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#1">Contact</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#2">Téléphone</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#3">Toutes les annonces</a>
-                                                                </li>
-                                                            </ul>
+                                                <div class="table selected">
+                                                    <div class="table-cell">
+                                                        <div class="option-infos">
+                                                            <div class="title">Standard</div>
+                                                            <p>Actuellement, votre annonce se présente de la façon suivante dans la recherche du site.</p>
+                                                            <p>N’hésitez pas de mettre en valeur l’annonce en optant pour une des options de mise en valeur  Pro+.</p>
+                                                            <div class="option-input">
+                                                                <input type="radio" id="options-1" name="options" value="standard" checked />
+                                                                <label for="options-1">Sélectionnée</label>
+                                                            </div>
                                                         </div>
-                                                        <div class="entry-body">
-                                                            <div class="entry-body-row">
-                                                                <div class="image-container">
-                                                                    <div class="image-container-frame">
-                                                                        <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                    </div>
+                                                    <div class="table-cell">
+                                                        <div class="search-result-entry minimized">
+                                                            <div class="menu-container dropdown">
+                                                                <button type="button"><span class="icon-menu-icone"></span></button>
+                                                                <ul class="dropdown-links">
+                                                                    <li>
+                                                                        <a href="#1">Ajouter au favoris</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#1">Contact</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#2">Téléphone</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#3">Toutes les annonces</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="entry-body">
+                                                                <div class="entry-body-row">
+                                                                    <div class="image-container">
+                                                                        <div class="image-container-frame">
+                                                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="infos-container">
-                                                                    <div class="price">699 900 €</div>
-                                                                    <h2 class="title"><span class="title">Maison 4 Chambres</span> <span class="location"> - Pétange</span></h2>
-                                                                    <ul class="mobile-details">
-                                                                        <li class="location">Pétange</li>
-                                                                        <li>150m²</li>
-                                                                    </ul>
-                                                                    <ul class="icons">
-                                                                        <li class="bedrooms">4 <span class="icon-bed"></span></li>
-                                                                    </ul>
-                                                                    <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
-                                                                    <p class="description">
-                                                                        Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
-                                                                </div>
-                                                                <div class="agency-container">
-                                                                    <ul class="links">
-                                                                        <li>
-                                                                            <a href="#1"><span class="icon-email"></span> Contact</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#2"><span class="icon-phone"></span> Téléphone</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                    <div class="agency-container-frame">
-                                                                        <a href="#">
-                                                                            <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
-                                                                        </a>
+                                                                    <div class="infos-container">
+                                                                        <div class="price">699 900 €</div>
+                                                                        <h2 class="title"><span class="title">Maison 4 Chambres</span> <span class="location"> - Pétange</span></h2>
+                                                                        <ul class="mobile-details">
+                                                                            <li class="location">Pétange</li>
+                                                                            <li>150m²</li>
+                                                                        </ul>
+                                                                        <ul class="icons">
+                                                                            <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                                        </ul>
+                                                                        <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                                        <p class="description">
+                                                                            Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                                    </div>
+                                                                    <div class="agency-container">
+                                                                        <ul class="links">
+                                                                            <li>
+                                                                                <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <div class="agency-container-frame">
+                                                                            <a href="#">
+                                                                                <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="search-result-entry">
-                                                        <div style="background-color: #0D863F; color: white;" class="entry-header">
-                                                            <h2 class="title">
-                                                                <span class="title">Appartement&nbsp;6 Chambres</span>
-                                                                <span class="location"> - Appartement Last test</span>
-                                                            </h2>
-                                                            <div class="menu-container dropdown">
-                                                                <button><span class="icon-menu-icone"></span></button>
-                                                                <ul class="dropdown-links">
-                                                                    <li><a href="#1">Ajouter au favoris</a></li>
-                                                                    <li><a onclick="contactUserOffline(15724);">Contact</a></li>
-                                                                    <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
-                                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
-                                                                </ul>
+                                                </div>
+                                                <div class="table">
+                                                    <div class="table-cell">
+                                                        <div class="option-infos">
+                                                            <div class="title">Pro+</div>
+                                                            <p>Ajoute une barre dans votre couleur au-dessus de l’annonce</p>
+                                                            <p>Valable pour <span class="extra-bold black">1 mois</span></p>
+                                                            <p>Tarif : <span class="orange extra-bold">105 €/mois</span></p>
+                                                            <div class="option-input">
+                                                                <input type="radio" id="options-2" name="options" value="pro+"/>
+                                                                <label for="options-2">Choisir cette option</label>
                                                             </div>
                                                         </div>
-                                                        <div class="entry-body">
-                                                            <div class="entry-body-row">
-                                                                <div class="image-container">
-                                                                    <div class="image-container-frame">
-                                                                        <img src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906153239_21235.png" alt="Appartement Last test">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="infos-container">
-                                                                    <div class="infos-container-frame">
-                                                                        <div class="price">350000&nbsp;€</div>
-                                                                        <ul class="mobile-details">
-                                                                            <li class="location">Appartement Last test</li>
-                                                                            <li>101m²</li>
-                                                                        </ul>
-                                                                        <ul class="icons">
-                                                                            <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
-                                                                            <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
-                                                                            <li class="garages">2&nbsp;<span class="icon-car"></span></li>
-                                                                        </ul>
-                                                                        <ul class="details">
-                                                                            <li>Surface: +/- 101&nbsp;m²</li>
-                                                                            <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
-                                                                            <li>terrasse: 125.00m²</li>
-                                                                        </ul>
-                                                                        <p class="description">
-                                                                            Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724" class="entry-annonce-link">Plus de détails</a></p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="agency-container">
-                                                                    <ul class="links ">
-                                                                        <li>
-                                                                            <a onclick="contactUserOffline(15724);"><span class="icon-email"></span> Contact</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a id="telephone_15724" onclick="showPhoneNumber(15724);"><span class="icon-phone"></span><span id="numero_15724">Téléphone</span></a>
-                                                                        </li>
-                                                                        <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                    </div>
+                                                    <div class="table-cell">
+                                                        <div class="search-result-entry">
+                                                            <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                                                <h2 class="title">
+                                                                    <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                                    <span class="location"> - Appartement Last test</span>
+                                                                </h2>
+                                                                <div class="menu-container dropdown">
+                                                                    <button><span class="icon-menu-icone"></span></button>
+                                                                    <ul class="dropdown-links">
+                                                                        <li><a href="#1">Ajouter au favoris</a></li>
+                                                                        <li><a onclick="contactUserOffline(15724);">Contact</a></li>
+                                                                        <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
+                                                                        <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
                                                                     </ul>
-                                                                    <div class="agency-container-frame">
-                                                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
-                                                                            <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
-                                                                        </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="entry-body">
+                                                                <div class="entry-body-row">
+                                                                    <div class="image-container">
+                                                                        <div class="image-container-frame">
+                                                                            <img src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906153239_21235.png" alt="Appartement Last test">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="infos-container">
+                                                                        <div class="infos-container-frame">
+                                                                            <div class="price">350000&nbsp;€</div>
+                                                                            <ul class="mobile-details">
+                                                                                <li class="location">Appartement Last test</li>
+                                                                                <li>101m²</li>
+                                                                            </ul>
+                                                                            <ul class="icons">
+                                                                                <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                                                <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                                                <li class="garages">2&nbsp;<span class="icon-car"></span></li>
+                                                                            </ul>
+                                                                            <ul class="details">
+                                                                                <li>Surface: +/- 101&nbsp;m²</li>
+                                                                                <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                                                <li>terrasse: 125.00m²</li>
+                                                                            </ul>
+                                                                            <p class="description">
+                                                                                Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI...<a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724" class="entry-annonce-link">Plus de détails</a></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="agency-container">
+                                                                        <ul class="links ">
+                                                                            <li>
+                                                                                <a onclick="contactUserOffline(15724);"><span class="icon-email"></span> Contact</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a id="telephone_15724" onclick="showPhoneNumber(15724);"><span class="icon-phone"></span><span id="numero_15724">Téléphone</span></a>
+                                                                            </li>
+                                                                            <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                                        </ul>
+                                                                        <div class="agency-container-frame">
+                                                                            <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                                                <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="table">
+                                                    <div class="table-cell">
+                                                        <div class="option-infos">
+                                                            <div class="title">Pro++</div>
+                                                            <p>Ajoute une barre dans votre couleur au-dessus de l’annonce tout en agrandissant la photo principale.</p>
+                                                            <p>valable pour <span class="extra-bold black">1 mois</span></p>
+                                                            <p>tarif : <span class="orange extra-bold">150 €/mois</span></p>
+                                                            <div class="option-input">
+                                                                <input type="radio" id="options-3" name="options" value="pro+"/>
+                                                                <label for="options-3" >Choisir cette option</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-cell">
+                                                        <div class="search-result-entry pro">
+                                                            <div style="background-color:#fa8005; color: white;" class="entry-header">
+                                                                <h2 class="title"><span class="title">Maison 4 Chambres</span><span class="location"> - Pétange</span></h2>
+                                                                <div class="menu-container dropdown">
+                                                                    <button type="button"><span class="icon-menu-icone"></span></button>
+                                                                    <ul class="dropdown-links">
+                                                                        <li>
+                                                                            <a href="#1">Ajouter au favoris</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#1">Contact</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#2">Téléphone</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#3">Toutes les annonces</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="entry-body">
+                                                                <div class="entry-body-row">
+                                                                    <div class="image-container">
+                                                                        <div class="image-container-frame">
+                                                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="aside-container">
+                                                                        <div class="infos-container">
+                                                                            <div class="clearfix">
+                                                                                <div class="phone-12 tab-6">
+                                                                                    <div class="price">699 900 €</div>
+                                                                                    <ul class="mobile-details">
+                                                                                        <li class="location">Pétange</li>
+                                                                                        <li>150m²</li>
+                                                                                    </ul>
+                                                                                    <ul class="icons">
+                                                                                        <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                                                    </ul>
+                                                                                    <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                                                </div>
+                                                                                <div class="agency-container-frame pull-right hidden-phone">
+                                                                                    <a href="#">
+                                                                                        <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p class="description">
+                                                                                Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                                        </div>
+                                                                        <div class="agency-container">
+                                                                            <ul class="links">
+                                                                                <li>
+                                                                                    <a href="#1">Contact</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#2">Téléphone</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="#3">Annonces</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <div class="agency-container-frame hidden display-phone">
+                                                                                <a href="#">
+                                                                                    <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -938,38 +1194,36 @@
         </div>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="scripts/vendor/inscriptionModule.js"></script>
+        <script type="text/javascript" src="scripts/vendor/StepTransition.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript">
-                                                                                var temp;
-                                                                                $(function () {
-                                                                                    StepTransition.init();
-                                                                                    $('#details fieldset').each(function () {
-                                                                                        temp = new hideShow($(this));
-                                                                                        temp.init();
+                                                                                    var temp;
+                                                                                    $(function () {
+                                                                                        //init
+                                                                                        StepTransition.init();
+                                                                                        $('#details fieldset').each(function () {
+                                                                                            temp = new hideShow($(this));
+                                                                                            temp.init();
+                                                                                        });
+                                                                                        $('#details fieldset').first().find('[data-toggle]').click();
+                                                                                        $("form").validate({
+                                                                                            rules: {
+                                                                                                buildType: "required",
+                                                                                                sellType: "required",
+                                                                                                city: "required",
+                                                                                                country: "required",
+                                                                                                address: "required",
+                                                                                                zipCode: "required",
+                                                                                                condition: "required",
+                                                                                                price: "required",
+                                                                                                description: "required",
+                                                                                                buildYear: "required",
+                                                                                                livingArea: "required",
+                                                                                                ernergyClass: "required",
+                                                                                                insulationIndex: "required"
+                                                                                            }
+                                                                                        });
                                                                                     });
-                                                                                    $('#details fieldset').first().find('[data-toggle]').click();
-                                                                                    $("form").validate({
-                                                                                        rules: {
-                                                                                            buildType: "required",
-                                                                                            sellType: "required",
-                                                                                            city: "required",
-                                                                                            country: "required",
-                                                                                            address: "required",
-                                                                                            zipCode: "required",
-                                                                                            condition: "required",
-                                                                                            price: "required",
-                                                                                            description: "required",
-                                                                                            buildYear: "required",
-                                                                                            livingArea: "required",
-                                                                                            ernergyClass: "required",
-                                                                                            insulationIndex: "required"
-                                                                                        },
-                                                                                        submitHandler: function (form) {
-                                                                                            form.submit();
-                                                                                        }
-                                                                                    });
-                                                                                });
         </script>
     </body>
 </html>

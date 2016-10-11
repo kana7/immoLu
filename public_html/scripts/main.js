@@ -9,13 +9,10 @@ $(function () {
         $(window).resize(resizeImageDetail());
     }
 
-    if ($('.main-gallery').length > 0 && jQuery().flickity) {
+    if ($('.immo-main-gallery').length > 0 && jQuery().flickity) {
         $('.immo-main-gallery').flickity({
             // options
             cellAlign: 'left',
-            pageDots: false,
-            freeScroll: false,
-            wrapAround: false,
             contain: true
         });
         /*
@@ -367,19 +364,19 @@ var ellipsizeTextBox = function (element) {
     }
 };
 
-var hideShow = function (element){
+var hideShow = function (element) {
     var $element = element;
     var $toggle = $element.find('*[data-toggle]');
     var $container = $toggle.next();
-    this.init = function(){
+    this.init = function () {
         $element.addClass('hideShow');
         _bindEvents();
         _toggleHideShow();
     };
-    var _bindEvents = function(){
+    var _bindEvents = function () {
         $toggle.on('click', _toggleHideShow.bind(this));
     };
-    var _toggleHideShow = function(){
+    var _toggleHideShow = function () {
         var isHidden = $container.hasClass('hide');
         $element[isHidden ? "removeClass" : "addClass"]('is-hidden');
         $container[isHidden ? "removeClass" : "addClass"]('hide');

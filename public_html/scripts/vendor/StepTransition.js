@@ -14,7 +14,7 @@ var StepTransition = (function () {
     var StepsContainer = $('#steps');
     var form = $('#step-transition form');
     var headerStepList = $('#step-list ul');
-    var currentStep = 3;
+    var currentStep = 0;
     var stepList = StepsContainer.find('.step');
     //Prend l'ensemble des articles sélectionnables pour cette offre
     function init() {
@@ -28,9 +28,6 @@ var StepTransition = (function () {
     function _render() {
         stepList.each(function () {
             $(this).append(tplbtn); //TO DO PRINT BUTTONS FOR NEXT STEP
-            /*if ($(this).is('[data-required]')){
-                $(this).find('button.next').addClass('disabled');
-            }*/
         });
         stepList.first().find('button.previous').parent().remove();
         stepList.last().find('button.next').parent().remove();
@@ -45,9 +42,18 @@ var StepTransition = (function () {
         StepsContainer.on('click', 'button.previous', function () {
             _previous();
         });
+        StepsContainer.on('click', '.option-input label', function () {
+            var isChecked = $(this).parent().find('input').is(':checked');
+            $('.option-input').not($(this).parent()).find('label').empty().text('Choisir cette option');
+            $('.option-input').not($(this).parent()).find('input').prop('checked', false);
+            $('.option-input').not($(this).parent()).parents('.table').removeClass('selected');
+            if (!isChecked) {
+                $(this).parents('.table').addClass('selected');
+                $(this).empty().text('Sélectionnée');
+            }
+        });
         StepsContainer.on('click', 'button.next', function () {
             _next();
-            _collectDataForm($(this).parents('.step').find('.step-form'));
         });
         $(document).on('keyup', function (event) {
             switch (event.which) {
@@ -63,10 +69,7 @@ var StepTransition = (function () {
             }
         });
         /*StepsContainer.find('input[required]').on('blur click', function () {
-            _checkInput();
-        });*/
-        /*$(window).on("beforeunload", function () { //SAVE IN COOKIES IF LEAVING
-         _saveCart();
+         _checkInput();
          });*/
     }
 //Amène à un slide en fonction d'un paramètre dans le lien
@@ -95,9 +98,9 @@ var StepTransition = (function () {
 //slide suivant
     function _next() {
         //if (_checkInput()) {
-            if (currentStep != stepList.length - 1) {
-                _showSlider(++currentStep);
-            }
+        if (currentStep != stepList.length - 1) {
+            _showSlider(++currentStep);
+        }
         //}
     }
 //slide précédent
@@ -110,7 +113,7 @@ var StepTransition = (function () {
 //Récupère les données des formulaires et les ajoute dans le panier
     function _collectDataForm($form) {
         if ($form.length > 0) {
-            var id = $form.attr('data-form');
+            var id = form.attr('name');
             var object = {};
             $form.find('input').each(function () {
                 console.log($(this).attr('name'));
@@ -123,7 +126,7 @@ var StepTransition = (function () {
                 }
             });
             console.log(object);
-            events.emit('addForm', {id: id, object: object});
+            _addForm({'id': id, 'object': object});
         } else {
             console.log('pas de formulaire à collecter');
         }
