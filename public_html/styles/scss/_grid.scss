@@ -146,38 +146,39 @@ $breakpoints : $grid-breakpoints;
 }
 
 /*Telephone*/
+@media screen{
+    @for $i from $gridColumns through 0 {
+        .phone-#{$i}{ width:  getColumnWidth($i);}
+    }
+    .phone-auto{
+        width: auto;
+    }
 
-@for $i from $gridColumns through 0 {
-    .phone-#{$i}{ width:  getColumnWidth($i);}
-}
-.phone-auto{
-    width: auto;
-}
+    /*Deplacement vers la gauche: telephone*/
+    @for $i from $gridColumns through 1 {
+        .phone-pull-#{$i}{ right:  getColumnWidth($i);}
+    }
+    .phone-pull-0 {
+        right: auto !important;
+    }
 
-/*Deplacement vers la gauche: telephone*/
-@for $i from $gridColumns through 1 {
-    .phone-pull-#{$i}{ right:  getColumnWidth($i);}
-}
-.phone-pull-0 {
-    right: auto !important;
-}
+    /*Deplacement vers la droite: telephone*/
+    @for $i from $gridColumns through 1 {
+        .phone-push-#{$i}{ left:  getColumnWidth($i);}
+    }
+    .phone-pull-0 {
+        right: auto !important;
+    }
 
-/*Deplacement vers la droite: telephone*/
-@for $i from $gridColumns through 1 {
-    .phone-push-#{$i}{ left:  getColumnWidth($i);}
-}
-.phone-pull-0 {
-    right: auto !important;
-}
+    /*marge vers la gauche telephone*/
+    @for $i from $gridColumns through 0 {
+        .phone-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+    }
 
-/*marge vers la gauche telephone*/
-@for $i from $gridColumns through 0 {
-    .phone-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
-}
-
-/*marge vers la droite telephone*/
-@for $i from $gridColumns through 0 {
-    .phone-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+    /*marge vers la droite telephone*/
+    @for $i from $gridColumns through 0 {
+        .phone-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
+    }
 }
 
 /*Colonnes pour tablette*/
@@ -503,6 +504,40 @@ $breakpoints : $grid-breakpoints;
 @media print {
     .hidden-print {
         display: none !important;
+    }
+}
+@media print{
+    @for $i from $gridColumns through 0 {
+        .print-#{$i}{ width:  getColumnWidth($i) !important;}
+    }
+    .print-auto{
+        width: auto !important;
+    }
+
+    /*Deplacement vers la gauche: telephone*/
+    @for $i from $gridColumns through 1 {
+        .print-pull-#{$i}{ right:  getColumnWidth($i) !important;}
+    }
+    .phone-pull-0 {
+        right: auto !important;
+    }
+
+    /*Deplacement vers la droite: telephone*/
+    @for $i from $gridColumns through 1 {
+        .print-push-#{$i}{ left:  getColumnWidth($i) !important;}
+    }
+    .print-pull-0 {
+        right: auto !important;
+    }
+
+    /*marge vers la gauche telephone*/
+    @for $i from $gridColumns through 0 {
+        .print-offset-#{$i}{ margin-left:  getColumnWidth($i) !important;}
+    }
+
+    /*marge vers la droite telephone*/
+    @for $i from $gridColumns through 0 {
+        .print-offset-right-#{$i}{ margin-right:  getColumnWidth($i) !important;}
     }
 }
 

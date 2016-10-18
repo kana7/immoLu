@@ -63,6 +63,16 @@ $(function () {
 
 });
 
+var DoOnClickAway = function (event, element, callback) {
+    if (typeof callback === "function") {
+        if (!$(event.target).closest(element).length) {
+            callback(event);
+        }
+    } else {
+        console.log('callback is not a function.');
+    }
+};
+
 var resizeSlider = function () {
     $('.main-gallery').each(function () {
         //$(this).find('.img-annonce').parent().css('height', ($(this).find('.gallery-cell').innerWidth() / 4) * 3);
@@ -179,8 +189,6 @@ var CheckboxList = function ($element) {
     this.$dropdownList = this.$element.find('.dropDownList');
     this.$labels = this.$dropdownList.find('label');
     this.$checkboxes = this.$dropdownList.find('input[type="checkbox"]');
-    this.$items = this.$element.find('.item');
-    this.$closeIcons = this.$items.find('span.icon-x-icone');
 };
 
 CheckboxList.prototype = {
@@ -189,14 +197,14 @@ CheckboxList.prototype = {
     },
     bindEvents: function () {
         var element = this;
-        element.$dropdownListResultBox.on('click', function (event) {
-            event.stopPropagation();
+        element.$element.on('click', function (event) {
             element.toggleDropdownList.call(element);
         });
         element.$checkboxes.on('click', function () {
             element.updateResultBox.call(element, $(this));
         });
-        element.$items.on('click', function () {
+        element.$element.on('click','.item',function (event) {
+            event.stopPropagation();
             element.deleteItem.call(element, $(this));
         });
     },
@@ -204,7 +212,7 @@ CheckboxList.prototype = {
         if ($checkbox.is(":checked")) {//if checked
             this.printItem.call(this, $checkbox.attr('name'), $checkbox.parent().text());
         } else {
-            this.deleteItem.call(this, this.$items.filter('[data-inputName="' + $checkbox.attr('name') + '"]'));
+            this.deleteItem.call(this, this.$element.find('.item').filter('[data-inputName="' + $checkbox.attr('name') + '"]'));
         }
 
     },

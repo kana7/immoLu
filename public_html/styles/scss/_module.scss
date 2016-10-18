@@ -37,9 +37,6 @@ h1{
     margin-top: 0;
     font-size: 1.6em;
     font-weight: 600;
-    &+.btn-blue{
-        margin-left: 20px;
-    }
 }
 h2{
     margin: 0 0 20px;
@@ -127,6 +124,53 @@ section{
     height: 25px;
 }
 
+.page-title{
+    display: table;
+    table-layout:fixed;
+    margin-bottom: 20px;
+    h1, .page-options{
+        display: table-cell; 
+        vertical-align: middle;
+        width:1px; 
+        white-space:nowrap;
+    }
+    .page-options .btn-blue{
+        margin-left: 20px;
+    }
+}
+
+#pages {
+    margin-bottom: 19px;
+    text-align: right;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .page_link {
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 3px;
+        margin: 0 2px !important;
+        &.page_button {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+        }
+        &.selectedPage {
+            border: 1px solid #e0e0e0;
+            color: #555;
+            cursor: default;
+        }
+        .page_element {
+            color: #555;
+            display: inline-block;
+            line-height: 15px;
+            padding: 9px 14px;
+        }
+    }
+}
 // MENU MOBILE
 //------------------------------------------------------------------------------
 #siteWrap{
@@ -300,15 +344,16 @@ header{
         position: relative;
     }
     .header-bottom{
-        background-color: $white;
         color: $blue;
     }
     .header-bottom.mobile .header-mobile-button{
         .btn-blue, .btn-orange{
-            font-size: 13px;
+            font-size: 21px;
+            line-height: 32px;
         }
         .btn-white{
-            font-size: 16px;
+            font-size: 25px;
+            line-height: 34px;
         }
         a:not(:last-child){
             margin-right: 10px;
@@ -574,13 +619,14 @@ footer .footer-links{
             opacity: 0.5;
         }
     }
+    &:hover{text-decoration: none !important;}
     *[class^="icon-"]{
         display: inline-block;
         margin-right: 7px;
         font-size: 1em;
         position: relative;
         line-height: 0;
-        top: 2px;
+        top: 3px;
         &[class="icon-phone"]{
             transform: rotate(16deg);
         }
@@ -595,8 +641,8 @@ footer .footer-links{
 }
 .btn-orange{
     &,&:focus, &:active{
-        color: $white;
-        border-color: #E75E0A;
+        color: $white !important;
+        border-color: #E75E0A !important;
         text-shadow: 0 2px #E75E0A;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eb9a49+0,e75e0a+100 */
         background: #eb9a49; /* Old browsers */
@@ -613,13 +659,12 @@ footer .footer-links{
         background: -webkit-linear-gradient(top,  #e75e0a 0%,#e75e0a 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  #e75e0a 0%,#e75e0a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e75e0a', endColorstr='#e75e0a',GradientType=0 ); /* IE6-9 */
-
     }
 }
 .btn-blue{
     &,&:focus, &:active{
-        color: $white;
-        border-color: #004994;
+        color: $white !important;
+        border-color: #004994 !important;
         text-shadow: 0 2px #004994;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1974d1+0,004994+100 */
         background: #1974d1; /* Old browsers */
@@ -659,8 +704,8 @@ footer .footer-links{
 }
 .btn-grey{
     &,&:focus, &:active{
-        color: #808080;
-        border-color: #d6d6d6;
+        color: #808080 !important;
+        border-color: #d6d6d6 !important;
         text-shadow: 0 2px #d6d6d6;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,d6d6d6+100 */
         background: #e8e8e8; /* Old browsers */
@@ -733,7 +778,7 @@ label:not(.switch):not(.file-upload):not(.option-input), .input-group h4{
     font-size: 1.1em;
     font-weight: 600;
     margin: 0;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .input-group{
     display: block;
@@ -758,6 +803,11 @@ label:not(.switch):not(.file-upload):not(.option-input), .input-group h4{
             display: table-cell;
             vertical-align: middle;
             height: 100%;
+            input[type="text"]{
+                height: 40px;
+                border-radius: 0 4px 4px 0;
+                margin-left: -1px;
+            }
             input[placeholder] { text-overflow: ellipsis; }
             ::-moz-placeholder { text-overflow: ellipsis; } /* firefox 19+ */
             input:-moz-placeholder { text-overflow: ellipsis; }
@@ -837,7 +887,7 @@ input[type="text"], input[type="password"]{
     &:before{
         content: '';
         position: absolute;
-        top: 14px;
+        top: 16px;
         right: 6px;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
@@ -855,7 +905,7 @@ input[type="text"], input[type="password"]{
         float: left;
         overflow: hidden;
         text-align: left;
-        margin: 0px 1px 2px 2px;
+        margin: 0px 1px 3px 2px;
         padding: 0 5px;
         a{
             display: inline-block; 
@@ -870,7 +920,7 @@ input[type="text"], input[type="password"]{
     }
     .dropDownListResultBox{
         position: relative;
-        padding: 5px;
+        padding: 7px;
         @include clearfix;
     }
     .dropDownList{
@@ -1333,8 +1383,8 @@ input[type="text"], input[type="password"]{
     .pannel-body{
         margin-top: 10px;
         padding: 0 15px 15px;
-        input[type="text"], select{height: 35px;}
-        .dropDownListResultBox{min-height: 35px;}
+        input[type="text"], select{height: 40px;}
+        .dropDownListResultBox{min-height: 40px;}
         .input-group{min-height: auto; margin-bottom: 11px; &:last-child{margin-bottom: 0px;}}
         label{margin-bottom: 9px;}
     }
@@ -1541,6 +1591,7 @@ input[type="text"], input[type="password"]{
             li{
                 border-top: 1px solid rgba(218,218,218,1);
                 display: block;
+                cursor: pointer;
                 a{
                     line-height: 20px;
                     font-size: 0.99em;
@@ -2176,9 +2227,10 @@ input:checked + .slider:before {
             top: 0px;
             outline: 0;
             background: 0;
-            font-size: 12px;
+            font-size: 13px;
             width: 28px;
             height: 28px;
+            line-height: 28px;
             padding: 0;
             border: 3px solid $blue;
             border-radius: 3px;
@@ -2316,7 +2368,7 @@ input:checked + .slider:before {
         }
     }
     &.bottom{
-        bottom: 28px;
+        bottom: 40px;
         >.arrow{
             border-left: 10px solid rgba(0, 0, 0, 0);
             border-right: 10px solid rgba(0, 0, 0, 0);
@@ -2325,7 +2377,7 @@ input:checked + .slider:before {
         }
     }
     &.left{
-        left: -10px;
+        left: -8px;
         &>.arrow{left: 7px;}
     }
     &.right{
