@@ -10,14 +10,10 @@
         <link rel="stylesheet" href="styles/css/annonce-print.css"/>
     </head>
     <body>
-        <style type="text/css">
-            @media print{@page {size: landscape;}}
-        </style>
-        <div class="shape-grey"></div>
         <div id="siteWrap" class="landscape">
             <div id="content" class="content">
                 <article class="annonce-print">
-                    <div class="clearfix phone-pt-10 phone-mb-10 phone-pt-10">
+                    <div class="clearfix phone-mb-10">
                         <div class="annonce-print-title pull-left">
                             <h1>
                                 <span class="location">Résidence "SENIOR ORCHIDEE / BELVAL"</span>
@@ -37,10 +33,10 @@
                                 <div class="annonce-details-images-container">
                                     <ul id="image-gallery"><!--
                                         --><li>
-                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/bf/b6/84/7bd4ba560eb29c059d18cb34473c31fda3d8c8e5_764x564.jpg?bg=gray90"/>
+                                            <img src="images/Img/img_1.jpg"/>
                                         </li><!--
                                         --><li>
-                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/bf/b6/84/3d4627ce660b3ada4c09f691260588d9b22a3f23_764x564.jpg?bg=gray90"/>
+                                            <img src="images/Img/img_2.jpg"/>
                                         </li><!--
                                         --></ul>
                                 </div>
@@ -96,63 +92,52 @@
                                         <br>
                                         Sa conception favorise le maintien à domicile et l‘indépendance de nos aînés, notamment grâce :<br>
                                         -       Accès de plain-pied, en pentes douces ou par ascenseurs suffisamment larges pour fauteuils et brancards<br>
-                                        -       Accès aux communs et parkings par portes motorisées<br>
-                                        -       Parkings accessibles aux personnes à mobilité réduite<br>
-                                        -       Portes de l‘appartement suffisamment larges<br>
-                                        -       Salle d‘eau sans marche ni rebord de douche<br>
-                                        -       Boîtier personnel d‘appel d‘urgence</p>
+                                        -       Accès aux communs et parkings par portes motorisées</p>
                                 </div>
                             </div>
                         </div>
                         <aside id="annonce-details-right">
                             <div class="ref">Réf. 4542158</div>
-                            <div class="annonce-details-user-container">
-                                <div class="logo">
-                                    <img src="http://static.immotop.lu/files/logotypes/3440692606d860e1933dda9527ee5ad0.jpg" alt="Immobelle"/>
+                            <div class="annonce-details-user-container-bg">
+                                <div class="annonce-details-user-container">
+                                    <div class="logo">
+                                        <img src="images/Img/langlais.png"/>
+                                    </div>
+                                    <ul class="address">
+                                        <li class="extra-bold">Ismael SA</li>
+                                        <li>14, avenue de X Septembre</li>
+                                        <li>2550 Luxembourg</li>
+                                        <li>Luxembourg</li>
+                                    </ul>
+                                    <ul class="contact">
+                                        <li>M. Ismael Alves</li>
+                                        <li class="extra-bold">Tél.: 27 99 00 00</li>
+                                        <li class="extra-bold">GSM: 621 123 456</li>
+                                        <li>ismaelsa@internet.lu</li>
+                                        <li>www.ismaelsa.lu</li>
+                                    </ul>
                                 </div>
-                                <ul class="address">
-                                    <li class="extra-bold">Ismael SA</li>
-                                    <li>14, avenue de X Septembre</li>
-                                    <li>2550 Luxembourg</li>
-                                    <li>Luxembourg</li>
-                                </ul>
-                                <ul class="contact">
-                                    <li>M. Ismael Alves</li>
-                                    <li class="extra-bold">Tél.: 27 99 00 00</li>
-                                    <li class="extra-bold">GSM: 621 123 456</li>
-                                    <li>ismaelsa@internet.lu</li>
-                                    <li>www.ismaelsa.lu</li>
-                                </ul>
                             </div>
-                            <div class="annonce-details-user-container phone-mt-20">
-                                <form>
-                                    <div class="clearfix">
-                                        <div class="group-input">
-                                            <input type="text" id="contact_name" name="contact_name" placeholder="Nom*" required="">
-                                        </div>
-                                        <div class="group-input">
-                                            <input type="text" id="contact_email" name="contact_email" placeholder="Email*" required="">
-                                        </div>
-                                        <div class="group-input">
-                                            <input type="text" id="contact_phone" class="numeric" name="contact_phone" placeholder="Téléphone" required="">
-                                        </div>
-                                    </div>
-                                    <div class="clearfix phone-mt-15 phone-mb-15">
-                                        <div class="group-input">
-                                            <textarea name="contact_message" id="contact_message" placeholder="Message" required=""></textarea>
-                                        </div>
-                                        <p class="orange phone-mt-5 phone-mb-0">(* Requis)</p>
-                                    </div>
-                                    <div class="clearfix">
-                                        <button class="btn-orange submit">Envoyer</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <img src="images/Img/logo_immo_print.png" alt="" />
+                            <img src="images/Img/logo_immo_print_300dpi.png" alt="" />
                         </aside>
                     </div>
                 </article>
             </div>
         </div>
+        <script src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/jspdf.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/es6-promise.js"></script>
+        <script type="text/javascript" src="scripts/vendor/html2canvas.min.js"></script>
+        <script type="text/javascript" src="scripts/HtmlToPdf.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('.content').htmlToPdf({
+                    title: "hello",
+                    onComplete: null,
+                    format: 'a4',
+                    orientation: 'l'
+                });
+            });
+        </script>
     </body>
 </html>
