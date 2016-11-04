@@ -35,7 +35,7 @@ svg:not(:root) {
 h1{
     display: inline-block;
     margin-top: 0;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 600;
 }
 h2{
@@ -89,7 +89,6 @@ section{
 .item-spread{
     @include spread-element();
 }
-
 .annonce-img{
     .fill-height{
         width: auto;
@@ -104,8 +103,8 @@ section{
 }
 .return, .result{
     display: block;
-    font-size: 1.15em;
-    margin-bottom: 15px;
+    font-size: 1em;
+    margin-bottom: 11px;
 }
 .return{
     color: #004994;
@@ -120,8 +119,8 @@ section{
     display: inline-block;
     position: relative;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
 }
 
 .page-title{
@@ -223,7 +222,7 @@ section{
             display: block;
             position: relative;
             color: #004994;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             /* text-transform: uppercase; */
             border-bottom: 1px solid #F3F3F3;
@@ -242,7 +241,7 @@ section{
                 padding: 0;
                 a{
                     display: block;
-                    padding: 16px 20px;
+                    padding: 14px 18px;
                 }
             }
         }
@@ -317,22 +316,21 @@ header{
     .header-upper{
         background-color: $blue;
         color: $white;
-        height: 35px;
+        height: 30px;
     }
     .header-bottom{
-        padding: 15px 0;
+        padding: 12px 0;
         &.mobile{
             .btn-blue, .btn-orange, .btn-white{
                 display: inline;
-                width: 35px;
-                height: 35px;
-                line-height: 37px;
+                width: 32px;
+                line-height: 32px;
                 float: left;
                 padding: 0;
                 margin: 0;
                 text-align: center;
                 border-radius: 5px;
-                font-size: 14px;
+                font-size: $font-size;
                 span{
                     margin: 0;
                 }
@@ -348,12 +346,12 @@ header{
     }
     .header-bottom.mobile .header-mobile-button{
         .btn-blue, .btn-orange{
-            font-size: 21px;
-            line-height: 32px;
+            font-size: 19px;
+            line-height: 29px;
         }
         .btn-white{
             font-size: 25px;
-            line-height: 34px;
+            line-height: 30px;
         }
         a:not(:last-child){
             margin-right: 10px;
@@ -363,7 +361,7 @@ header{
         li{
             color: $white;
             opacity: 0.7;
-            font-size: 1.075em;
+            font-size: 0.95em;
             &.active, &:hover{
                 opacity: 1;
             }
@@ -388,7 +386,7 @@ header{
         li{
             display: inline-block;
             text-align: center;
-            line-height: 35px; 
+            line-height: 30px; 
             &:hover{
                 text-decoration: underline;
             }
@@ -402,7 +400,7 @@ header{
         ul{
             display: block;
             color: $blue;
-            font-size: 1.05em;
+            font-size: 0.95em;
             font-weight: 400;
         }
         li{
@@ -430,7 +428,7 @@ header{
     }
     .main-nav{
         position: relative;
-        font-size: 1.35em;
+        font-size: 1.2em;
         font-weight: 600;
         li{
             display: inline-block;
@@ -453,7 +451,7 @@ header{
 .search-banner{
     position: relative;
     display: block;
-    margin-top: -30px; 
+    margin-top: -20px; 
     background-image: url(../../images/Img/homepage/search-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -470,8 +468,8 @@ header{
     h2{
         position: absolute;
         display: block;
-        margin: 0;
         top: -35px;
+        margin: 0 -34px;
         color: $white;
     }
     input[type="submit"]{
@@ -513,6 +511,7 @@ header{
     .login-link{
         color: $blue;
         line-height: 15px;
+        font-size: 13px;
         &:hover{
             text-decoration: underline;
         }
@@ -522,12 +521,11 @@ header{
 // HOMEPAGE
 //------------------------------------------------------------------------------
 .about-section{
-    h2{font-size: 1.6em;}
     p{
         text-align: justify;
         text-align-last: center;
-        line-height: 20px;
-        font-size: 1.05em;
+        line-height: 19px;
+        font-size: 0.95em;
     }
 }
 
@@ -538,13 +536,13 @@ header{
     display: block;
 }
 footer, .content:after{
-    height: 300px;
+    height: 275px;
 }
 footer{
     position: absolute;
     left: 0;
     bottom: 0;
-    padding: 30px 0;
+    padding: 15px 0;
     background-color: $blue;
     background-image: url(../../images/Img/BG_Ville.png);
     background-repeat: no-repeat;
@@ -587,7 +585,7 @@ footer .footer-links{
 
 @mixin btn{
     &,&:focus, &:active{
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 600;
 
         position: relative;
@@ -595,8 +593,8 @@ footer .footer-links{
         display: inline-block;
 
         margin: 3px 0;
-        padding: 0 25px;
-        line-height: 40px;
+        padding: 0px 22px;
+        line-height: 36px;
 
         cursor: pointer;
         -webkit-transition: $transitionUi;
@@ -737,7 +735,7 @@ footer .footer-links{
     color: $dark-grey;
     text-decoration: underline;
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 0.95em;
     span{color: $orange; text-decoration: underline;}
 }
 
@@ -752,7 +750,7 @@ footer .footer-links{
     a{
         @include clearfix;
         padding: 0 20px;
-        line-height: 52px;
+        line-height: 48px;
     }
     li{
         &:hover{background-color: $light-blue;}
@@ -775,10 +773,10 @@ footer .footer-links{
 
 label:not(.switch):not(.file-upload):not(.option-input), .input-group h4{
     color: $blue;
-    font-size: 1.1em;
+    font-size: 0.95em;
     font-weight: 600;
     margin: 0;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 .input-group{
     display: block;
@@ -792,7 +790,7 @@ label:not(.switch):not(.file-upload):not(.option-input), .input-group h4{
     }
     &.search-bar{
         display: table;
-        height: 43px;
+        height: 42px;
         width: 100%;
         border-collapse: collapse;
         table-layout: auto;
@@ -833,12 +831,12 @@ input, select{padding-left: 10px;}
 select{
     border-radius: 4px;
     border: 1px solid $grey;
-    height: 43px;
+    height: 40px;
     background-color: $light-grey;
     cursor: pointer;
     color: $dark-grey;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1em;
     padding-right: 15px;
 }
 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), textarea, .dropDownListResultBox, .jscolor {
@@ -849,7 +847,7 @@ input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), textarea,
     cursor: pointer;
     color: $dark-grey;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 0.95em;
     &.error{
         border-color: $red;
         &~label.error{
@@ -864,11 +862,11 @@ input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), textarea,
     }
 }
 input[type="text"], input[type="password"]{
-    line-height: 43px;
+    line-height: 40px;
 }
-.dropDownListResultBox{min-height: 43px;}
+.dropDownListResultBox{min-height: 40px;}
 .radioboxes{
-    line-height: 43px;
+    line-height: 36px;
     .radiobox{
         label{color: $dark-grey !important;}
         display: inline-block;
@@ -992,7 +990,7 @@ input[type="text"], input[type="password"]{
     }
 }
 
-.gallery-cell{width: 100%; padding: 0 20px;}
+.gallery-cell{width: 100%; padding: 0 12px;}
 .immo-main-annonce{
     display: block;
     width: 100%;
@@ -1015,7 +1013,7 @@ input[type="text"], input[type="password"]{
         position: relative;
         background-color: #f5f5f5;
         vertical-align: top;
-        padding: 25px 20px;
+        padding: 20px 15px;
         .meta-links{display: none;}
         .menu-container{
             position: absolute;
@@ -1056,12 +1054,10 @@ input[type="text"], input[type="password"]{
     }
     .btn-grey{
         width: 100%;
-        padding: 0 15px;
-        *[class^="icon-"]{
-        }
+        padding: 0 10px;
     }
     .logo-container-frame{
-        height: 100px;
+        height: 85px;
         max-width: 100%;
         margin: 0 auto;
     }
@@ -1084,7 +1080,7 @@ input[type="text"], input[type="password"]{
 .image-container {
     display: inline-block;
     position: relative;
-    height: 265px;
+    height: 235px;
     width: 100%;
     overflow: hidden;
 }
@@ -1097,14 +1093,15 @@ input[type="text"], input[type="password"]{
     margin: auto;
 }
 .info-container{
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 23px;
     margin: 5px 0;
-    padding: 0 10px;
     .label{
         span{display: block;}
         span:first-child{
             width: 100%;
+            max-width: 214px;
+            margin: 0 auto;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -1123,7 +1120,7 @@ input[type="text"], input[type="password"]{
 }
 .address{
     margin: 20px 0 0;
-    p{margin: 0;line-height: 23px; font-size: 1.1em; text-align: center !important;}
+    p{margin: 0;line-height: 20px; font-size: 0.95em; text-align: center !important;}
 }
 
 
@@ -1132,7 +1129,7 @@ input[type="text"], input[type="password"]{
 
 #annonce-details-left, #annonce-details-right, .pannel{
     @include pannel;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 #annonce-details-left, #annonce-details-right{
     border: $border;
@@ -1145,6 +1142,7 @@ input[type="text"], input[type="password"]{
         z-index: 1;
         @include clearfix;
         background-color: $grey-bg;
+        text-align: center;
         .lSSlideOuter .lSPager.lSpg{
             margin: 5px 0;
             width: 100%;
@@ -1251,8 +1249,8 @@ input[type="text"], input[type="password"]{
 .annonce-description{
     border-top: $border;
     border-bottom: $border;
-    margin: 20px 0;
-    p{margin: 20px 0}
+    margin: 15px 0;
+    p{margin: 15px 0; font-size: 14px;}
 }
 
 .infos-attributs{
@@ -1270,7 +1268,7 @@ input[type="text"], input[type="password"]{
         padding: 5px 15px;
         &+.list{margin-top: 10px;}
         h2{
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 600;
             margin:0;
             margin-bottom: 5px;
@@ -1278,7 +1276,7 @@ input[type="text"], input[type="password"]{
         li, ul{
             display: block;
         }
-        li{@include clearfix; line-height: 21px;}
+        li{@include clearfix; line-height: 18px; font-size: 0.9em;}
         .attr{float: left;}
         .value{float: right; font-weight: 600;}
         img{
@@ -1330,10 +1328,12 @@ input[type="text"], input[type="password"]{
         right: 0;
         z-index: 1;
     }
+    &:hover{cursor: pointer;}
     &:not(.active):after{
         background-color: rgba(0,0,0,0.4);
         cursor: pointer;
     }
+    a{@include thumbnail; img{height: auto;} position: initial;}
 }
 
 /*-------------------------------ANNONCES LISTS-------------------------------*/
@@ -1351,7 +1351,7 @@ input[type="text"], input[type="password"]{
         h3{
             color: $white;
             font-weight: 600;
-            font-size: 1.12em;
+            font-size: 0.95em;
             margin: 0;
             padding: 10px 0;
             padding-left: 10px;
@@ -1368,8 +1368,8 @@ input[type="text"], input[type="password"]{
             padding: 0;
             border: none;
             color: white;
-            width: 34px;
-            font-size: 1.2em;
+            width: 33px;
+            font-size: 1.1em;
             border-left: 1px solid darken($blue, 3%);
             @include transition($transitionUi);
             &:hover{
@@ -1383,9 +1383,9 @@ input[type="text"], input[type="password"]{
     .pannel-body{
         margin-top: 10px;
         padding: 0 15px 15px;
-        input[type="text"], select{height: 40px;}
-        .dropDownListResultBox{min-height: 40px;}
-        .input-group{min-height: auto; margin-bottom: 11px; &:last-child{margin-bottom: 0px;}}
+        input[type="text"], select{height: 36px;}
+        .dropDownListResultBox{min-height: 36px;}
+        .input-group{min-height: auto; margin-bottom: 9px; &:last-child{margin-bottom: 0px;}}
         label{margin-bottom: 9px;}
     }
 }
@@ -1421,7 +1421,7 @@ input[type="text"], input[type="password"]{
             text-transform: capitalize;
         }
     }
-    .entry-body{font-size: 12px; overflow: hidden; width: 100%;}
+    .entry-body{font-size: 12px; overflow: hidden; width: 100%; height: 100%;}
     &:not(.minimized) .entry-body{
         display: block;
         position: relative;
@@ -1527,7 +1527,7 @@ input[type="text"], input[type="password"]{
         display: none;
         word-break: keep-all;
         word-wrap: break-word;
-        font-size: 1.1em;
+        font-size: 1em;
         line-height: 20px;
         text-align: justify;
         text-align-last: left;
@@ -1563,7 +1563,7 @@ input[type="text"], input[type="password"]{
             right: 0;
             left: 0px;
             width: 100%;
-            max-width: 200px;
+            max-width: 120px;
             height: 100%;
             padding: 0;
             overflow: hidden;
@@ -1786,7 +1786,7 @@ input[type="text"], input[type="password"]{
     display: block;
     position: relative;
     border: 1px solid;
-    font-size: 16px;
+    font-size: $font-size;
     margin: 0 auto;
     margin-bottom: 15px;
     overflow: hidden;
@@ -1851,7 +1851,7 @@ input[type="text"], input[type="password"]{
     .agency-color{
         display: block;
         position: absolute;
-        height: 35px;
+        height: 30px;
         width: 100%;
         z-index: 0;
         top: 0;
@@ -1898,7 +1898,7 @@ input[type="text"], input[type="password"]{
     .btn-blue{
         display: block;
         text-transform: uppercase;
-        line-height: 40px;
+        line-height: 38px;
         padding: 0px 5px;
         font-size: 0.85em;
         *[class^="icon-"]{font-size: 1.05em; position: relative; top: 2px; margin-right: 10px;}
@@ -1991,14 +1991,14 @@ form.form{
         padding: 0;
         legend{
             color: $blue;
-            font-size: 19px;
+            font-size: 16px;
             font-weight: 600;
             margin-left: -20px;
             margin-bottom: 10px; 
         }
     }
     textarea{resize: vertical; height: 250px; padding: 10px 0 0 10px; line-height: 20px;}
-    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, .jscolor{line-height: 35px;}
+    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, .jscolor{line-height: 32px;}
     .input[data-unit]:after{
         content: attr(data-unit);
         right: -55px;
@@ -2006,8 +2006,8 @@ form.form{
         @include vertical-align-middle(absolute);
         font-size: 15px;
     }
-    .input>*:not(.switch):not(.radio-switch){width: 100%;}
-    select{height: 39px;}
+    .input>*:not(.switch):not(.radio-switch):not(.uploaded-img){width: 100%;}
+    select{height: 36px;}
     input:not([type="submit"]), textarea{color: $section-black;}
     .input-group{
         min-height: auto;
@@ -2118,7 +2118,7 @@ p{font-size: 16px;}
     position: relative;
     display: inline-block;
     width: 97px;
-    height: 35px;
+    height: 36px;
 }
 
 /* Hide default HTML checkbox */
@@ -2148,8 +2148,8 @@ p{font-size: 16px;}
 }
 .slider:after, .slider:before{
     font-weight: 600;
-    line-height: 33px;
-    font-size: 12px;
+    line-height: 35px;
+    font-size: 11px;
 }
 .slider:after{
     position: absolute;
@@ -2195,7 +2195,7 @@ input:checked + .slider:before {
         position: relative;
         margin: 0;
         width: 45px;
-        height: 39px;
+        height: 36px;
         border-radius: $border-radius;
         border: 1px solid $grey;
         padding: 3px 4px;
@@ -2228,18 +2228,18 @@ input:checked + .slider:before {
             outline: 0;
             background: 0;
             font-size: 13px;
-            width: 28px;
-            height: 28px;
+            width: 27px;
+            height: 27px;
             line-height: 28px;
             padding: 0;
-            border: 3px solid $blue;
+            border: 2px solid $blue;
             border-radius: 3px;
             color: $blue;
             background-color: white;
             text-align: center;
             span[class^=icon-]{
                 position: relative;
-                top: 1px;
+                top: -1px;
                 left: -0.5px;
             }
         }
@@ -2263,7 +2263,7 @@ input:checked + .slider:before {
 .radio-switch {
     display: inline-block;
     overflow: hidden;
-    height: 35px;
+    height: 32px;
     border: 1px solid $grey;
     background: #f4f4f4;
     background: -moz-linear-gradient(top, #f4f4f4 41%, #e5e5e5 100%);
@@ -2283,11 +2283,11 @@ input:checked + .slider:before {
 
 .radio-switch label {
     display: inline-block;
-    width: 48px;
+    width: 42px;
     height: 100%;
-    font-size: 12px !important;
+    font-size: 11px !important;
     color: $grey !important;
-    line-height: 33px;
+    line-height: 32px;
     text-transform: uppercase;
     font-weight: normal;
     text-align: center;
@@ -2353,13 +2353,13 @@ input:checked + .slider:before {
     position: absolute;
     z-index: 10;
     background-color: $light-grey;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     color: $footer-grey;
     text-align: left;
     @include box-shadow(0 3px 12px rgba(180, 180, 180, 0.23), 0 3px 12px rgba(180, 180, 180, 0.16));
     &.up{
-        top: 28px;
+        top: 25px;
         &>.arrow{
             border-left: 10px solid rgba(0, 0, 0, 0);
             border-right: 10px solid rgba(0, 0, 0, 0);
@@ -2368,7 +2368,7 @@ input:checked + .slider:before {
         }
     }
     &.bottom{
-        bottom: 40px;
+        bottom: 28px;
         >.arrow{
             border-left: 10px solid rgba(0, 0, 0, 0);
             border-right: 10px solid rgba(0, 0, 0, 0);
@@ -2377,7 +2377,7 @@ input:checked + .slider:before {
         }
     }
     &.left{
-        left: -8px;
+        left: -10px;
         &>.arrow{left: 7px;}
     }
     &.right{
@@ -2464,9 +2464,9 @@ input:checked + .slider:before {
 .search-banner-box{
     @include pannel;
     border: 1px solid $grey;
-    padding: 15px 30px 5px;
+    padding: 15px 30px 9px;
     input[type="text"], input[type="password"]{
-        line-height: 39px;
+        line-height: 36px;
     }
     input[type="submit"]{width: 100%;}
 }
@@ -2512,7 +2512,7 @@ input:checked + .slider:before {
     th, td {
         padding: 4px 10px;
         line-height: 20px;
-        font-size: 15px;
+        font-size: 14px;
         color: $footer-grey;
         vertical-align: middle;
         text-align: center;
@@ -2521,7 +2521,7 @@ input:checked + .slider:before {
             outline: 0;
         }
         .img-container{
-            height: 70px;
+            height: 60px;
             img{max-height: 100%; max-width: 100%; @include vertical-align-middle;}
         }
         input[type="checkbox"]{transform: scale(1.2);}
@@ -2544,7 +2544,7 @@ input:checked + .slider:before {
         border-top: 1px solid $grey;
         border-bottom: 1px solid $grey !important;
         background-color: $grey-bg !important;
-        line-height: 35px;
+        line-height: 30px;
     }
     tbody tr{
         td{
@@ -2555,7 +2555,7 @@ input:checked + .slider:before {
 table:not(.not-annonce) tbody tr td:nth-child(5){    
     color: $orange;
     font-weight: 800;
-    font-size: 1.4em;
+    font-size: 1.2em;
     white-space: nowrap;
 }
 table.dataTable tbody th, table.dataTable tbody td {
@@ -2603,7 +2603,7 @@ table.dataTable{
         @include clearfix;
         margin-bottom: 10px;
         position: relative;
-        .dataTables_info{padding: 0; font-size: 16px;}
+        .dataTables_info{padding: 0; font-size: 14px;}
         .select-info{
             color: $blue;
             display: block;
@@ -2614,7 +2614,6 @@ table.dataTable{
         .dataTables_length{
             float: right;
             font-size: 14px;
-            padding-top: 10px;
             select{
                 border-radius: $border-radius;
                 border: 1px solid $grey;
@@ -2777,12 +2776,13 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
         background-color: #e1e1e1; 
         border-radius: $border-radius $border-radius 0 0;
         ul{
-            padding: 15px 20px 13px;
+            display: block;
+            padding: 10px 18px 8px;
         }
         li{
-            font-size: 15px;
+            font-size: 14px;
             span{line-height: 29px;}
-            &:not(:first-child){margin-left: 20px;}
+            &:not(:first-child){margin-left: 15px;}
             &{
                 color: $blue;
                 .circle{background-color: $blue;}
@@ -2801,10 +2801,10 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
                 .circle{background-color: #acacac;}
             }
         }
-        .circle{color: white; font-weight: 600; text-align: center; margin-right: 10px; span{line-height:25px;}}
+        .circle{color: white; font-weight: 600; text-align: center; margin-right: 10px; span{line-height:23px;}}
     }
     .step-body{
-        padding: 20px 40px;
+        padding: 18px 32px;
         border: 1px solid #e1e1e1;
         border-radius: 0 0 $border-radius $border-radius;
         overflow: hidden;
@@ -2812,7 +2812,7 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
     #options .step-body{padding: 0;}
     .form{margin: 0;}
     .separator-line{
-        margin: 20px -40px;;
+        margin: 15px -40px;;
     }
     #options{
         .table{padding: 15px 20px; .search-result-entry{margin: 0;}}
@@ -2831,10 +2831,10 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
             .title{
                 color: $blue;
                 font-weight: 800;
-                font-size: 19px;
+                font-size: 18px;
             }
-            p{font-size: 16px;
-              line-height: 1.35;}
+            p{font-size: 14px;
+              line-height: 1.3;}
             .option-input{
                 input{display: none;}
                 input+label{
@@ -2852,18 +2852,18 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
         float: left;
         border: 1px solid $grey;
         border-radius: $border-radius;
-        width: 250px;
+        width: 235px;
         margin-right: 20px;
         margin-bottom: 10px;
         .add_annonce_image_container{
             background-color: #e5e5e5;
-            height: 200px;
+            height: 176px;
             width: 100%;
             @include thumbnail;
         }
         .image_buttons{
             display: block;
-            padding: 7px 0;
+            padding: 5px 0;
             text-align: center;
             .modify_image_button, .deleteImage{
                 display: inline-block;

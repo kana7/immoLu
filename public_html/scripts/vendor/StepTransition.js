@@ -27,7 +27,7 @@ var StepTransition = (function () {
 //génére le html de tous les sliders
     function _render() {
         stepList.each(function () {
-            $(this).append(tplbtn); //TO DO PRINT BUTTONS FOR NEXT STEP
+            $(this).append(tplbtn);
         });
         stepList.first().find('button.previous').parent().remove();
         stepList.last().find('button.next').parent().remove();
@@ -68,9 +68,6 @@ var StepTransition = (function () {
                     return; // exit this handler for other keys
             }
         });
-        /*StepsContainer.find('input[required]').on('blur click', function () {
-         _checkInput();
-         });*/
     }
 //Amène à un slide en fonction d'un paramètre dans le lien
     function _goToSlider(position) {

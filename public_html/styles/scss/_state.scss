@@ -97,8 +97,10 @@
     }
 }
 @include media(tab){
+    .info-container .label span:first-child{
+        max-width: 299px;
+    }
     h2{
-        font-size: 1.6em;
         text-align: left;
     }
     .immo-main-annonce{
@@ -114,7 +116,7 @@
             .meta-links{
                 display: block;
                 position: absolute;
-                width: 70%;
+                width: 75%;
                 margin: 0 auto;
                 left: 0;
                 right: 0;
@@ -141,7 +143,7 @@
     }
     .search-banner-box{
         input[type="submit"]{
-            top: 25px;
+            top: 22px;
         }
         .clearfix .clearfix:last-child{
             .input-group:nth-child(n+2){margin-bottom: 0;}
@@ -192,8 +194,8 @@
         .entry-header{
             padding-left: 15px;
             .title{
-                font-size: 18px;
-                line-height: 25px;
+                font-size: 16px;
+                line-height: 24px;
             }
             .location{display: inline;}
         }
@@ -216,7 +218,7 @@
             li{margin-bottom: 5px;}
         }
         .description{display: block;}
-        .image-container{width: 257px !important; float: none !important;}
+        .image-container{width: 225px !important; float: none !important;}
         .agency-container{
             width: 166px !important;
             .agency-container-frame{width: 85%;}
@@ -224,10 +226,6 @@
         }
         .icons{
             margin-bottom: 15px;
-        }
-        .image-container{
-            width: 200px !important;
-            height: auto;
         }
         .image-container-frame{
             display: block;
@@ -268,7 +266,6 @@
             .infos-container{
                 .title{
                     font-size: 1.25em;
-                    @include ellipsis();
                     line-height: 20px;
                 }
             }
@@ -328,8 +325,8 @@
         }
         .logo-container{position: relative; width: 150px; min-width: 150px;}
         .logo-frame{
-            height: 150px;
-            width: 150px;
+            height: 140px;
+            width: 140px;
         }
         .agency-color{
             display: block;
@@ -355,10 +352,11 @@
     }
     #pro{
         .search-banner-box{
-            input[type="submit"]{top: 22px;}
+            margin-bottom: 10px;
+            input[type="submit"]{top: 18px;}
         }
         .search-banner-box .input-group{
-            min-height: 70px;
+            min-height: 65px;
         }
     }
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container{
@@ -372,7 +370,7 @@
         }
     }
     .agency-entry .infos-container {
-        padding: 10px 15px;
+        padding: 8px 15px;
     }
 }
 @include viewport(range, $max: 1055, $min: 855){
@@ -418,22 +416,27 @@
     }
 }
 @include media(desk){
+    .info-container .label span:first-child{max-width: 255px;}
     .gallery-cell{width: 50%;}
     header{
         .header-bottom{
-            padding: 25px 0;
+            padding: 20px 0 15px;
+            .header-bottom-buttons{
+                position: relative;
+                top: 18px;
+            }
         }
         .logo{
-            height: 100%;
-            width: auto;
+            height: auto;
+            width: 220px;
             max-width: 100%;
-            img{height: 100%; width: auto;}
+            img{max-width: 100%; max-height: 100%;}
         }
     }
     .main-nav{
-        margin-left: 25px;
+        margin-left: 20px;
         li{
-            padding: 0 15px;
+            padding: 0 12px;
         }
     }
     .search-banner{
@@ -445,7 +448,7 @@
     .search-banner .search-banner-box{@include vertical-align-middle(absolute);}
     .search-banner-box{
         input[type="submit"]{
-            top: 25px;
+            top: 22px;
         }
         .clearfix .clearfix:last-child{
             .input-group{margin-bottom: 0;}
@@ -453,10 +456,7 @@
     }
     .annonce-title{
         margin: 10px 0;
-        font-size: 26px;
-        h1{
-            line-height: 30px;
-        }
+        font-size: 24px;
     }
     .search-result-entry{
         .details{
@@ -488,8 +488,8 @@
     }
     .agency-entry{
         &:not(.minimized){
-            height: 225px;
-            max-height: 225px;
+            height: 210px;
+            max-height: 210px;
             .logo-frame{
                 height: 150px;
                 width: 150px;
@@ -536,7 +536,7 @@
     }
     .agency-header-container{padding: 5px;}
     #annonce-details-left, #annonce-details-right, .pannel, .agency-header, .agency-entry{
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
         height: 226px;
@@ -548,8 +548,9 @@
             display:table;
             width: 100%;
             &.sub-input{ label{padding-left: 10px;}}
-            &>label:not(.error), &>input,&>select, &>.input{display: table-cell; vertical-align: middle; width: auto;}
-            &>label:not(.error){padding-right: 10px; width: 40%;}
+            &>label:not(.error), &>input,&>select, &>.input, &>div{display: table-cell !important; vertical-align: middle; width: auto;}
+            &>div{line-height: 25px;}
+            &>label:not(.error){padding-right: 10px; width: 40%; padding-bottom: 0;}
             &>input, &>select, &>.input{width: 100%;}
             &.multiple-lines{
                 label:not(.error){vertical-align: top;}
@@ -572,6 +573,9 @@
     }
 }
 @include media(lgdesk){
+    .info-container .label span:first-child{
+        max-width: 313px;
+    }
     .main-nav{
         margin-left: 65px;
         li{
@@ -590,15 +594,15 @@
         .infos-container{width: calc(100% - 245px - 200px) !important;}
         .agency-container{
             width: 200px !important;
-            .agency-container-frame{height: calc(100% - 111px); }
-            .links li a {padding: 8px 16px;}
+            .agency-container-frame{height: calc(100% - 105px); }
+            .links li a {padding: 7px 15px;}
         }
         .details, .icons{
             margin-bottom: 8px;
         }
     }
     .agency-header{
-        padding: 50px 0 0 185px;
+        padding: 30px 0 0 135px;
     }
     .agency-entry{
         h2 {
@@ -623,7 +627,6 @@
     .agency-logo {
         top: 10px;
         left: 20px;
-        width: 200px;
     }
-    .search-result-entry .agency-container .links li a{font-size: 1.2em;}
+    .search-result-entry .agency-container .links li a{font-size: 1.15em;}
 }

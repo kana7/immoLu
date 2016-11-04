@@ -13,7 +13,8 @@ $(function () {
         $('.immo-main-gallery').flickity({
             // options
             cellAlign: 'left',
-            contain: true
+            contain: false,
+            pageDots: false
         });
         /*
          resizeSlider();
@@ -59,9 +60,45 @@ $(function () {
             $('.pannel.expand').find('.exp-btn').removeClass('icon-compress').addClass('icon-expand');
         }
     }
-    ;
-
+    $(".annonce-details-images-container").on('mouseover', '.lSPager.lSGallery li', function () {
+        $(this).click();
+    });
+    
+    if ($.fn.lightSlider){
+        console.log($.fn.lightSlider.$pager);
+    }
 });
+
+var form = $('.form'), cache_width = form.width(), a4 = [595.28, 841.89]; // for a4 size paper width and height
+
+$('#create_pdf').on('click', function () {
+    $('body').scrollTop(0);
+    createPDF();
+});
+//create pdf
+var createPDF = function() {
+    getCanvas().then(function (canvas) {
+        var
+                img = canvas.toDataURL("image/png"),
+                doc = new jsPDF({
+                    unit: 'px',
+                    format: 'a4'
+                });
+        doc.addImage(img, 'JPEG', 20, 20);
+        doc.save('techumber-html-to-pdf.pdf');
+        form.width(cache_width);
+    });
+};
+
+// create canvas object
+var getCanvas = function() {
+    form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+    return html2canvas(form, {
+        imageTimeout: 2000,
+        removeContainer: true
+    });
+};
+
 
 var DoOnClickAway = function (event, element, callback) {
     if (typeof callback === "function") {
@@ -203,7 +240,7 @@ CheckboxList.prototype = {
         element.$checkboxes.on('click', function () {
             element.updateResultBox.call(element, $(this));
         });
-        element.$element.on('click','.item',function (event) {
+        element.$element.on('click', '.item', function (event) {
             event.stopPropagation();
             element.deleteItem.call(element, $(this));
         });
@@ -389,6 +426,12 @@ var hideShow = function (element) {
         $element[isHidden ? "removeClass" : "addClass"]('is-hidden');
         $container[isHidden ? "removeClass" : "addClass"]('hide');
     };
+};
+
+Math.getRandomInt = function(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 };
 
 //size of viewport

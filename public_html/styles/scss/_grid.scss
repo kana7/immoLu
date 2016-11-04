@@ -89,30 +89,30 @@ $breakpoints : $grid-breakpoints;
 }
 @include media(phone){
     .container{
-        width: 320px;
+        width: 260px;
         padding: 0 15px;
     }
 }
 @include media(tab){
     .container{
-        width: 640px;
+        width: 542px;
     }
 }
 @include media(desk){
     .container{
-        width: 1024px;
+        width: 904px;
     }
 }
 @include media(lgdesk){
     .container{
-        width: 1280px;
+        width: 1130px;
     }
 }
-@include viewport(min, $min: 1400){
+/*@include viewport(min, $min: 1400){
     .container{
         width: 1344px;
     }
-}
+}*/
 
 *{
     box-sizing: border-box;

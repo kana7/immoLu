@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Immo.lu</title>
+        <meta charset="UTF-8">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
+        <link rel="stylesheet" href="styles/css/main.css" />
+        <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
+    </head>
+    <body>
+        <nav class="mobile-side-menu">
+            <ul class="menu">
+                <li class="menu-item link"><a href="#">Accueil</a></li>
+                <li class="menu-item link"><a href="#">Acheter</a></li>
+                <li class="menu-item link"><a href="#">Louer</a></li>
+                <li class="menu-item link"><a href="#">Neuf</a></li>
+                <li class="menu-item link"><a href="#">Agences</a></li>
+                <li class="menu-item focus link"><a href="#">Ajouter une annonce</a></li>
+            </ul>
+        </nav>
+        <div id="siteWrap">
+            <header>
+                <div class="header-upper">
+                    <div class="container">
+                        <div style="height: 100%;" class="row">
+                            <nav id="language-selection" class="header-upper-nav right phone-6">
+                                <ul>
+                                    <li class="active"><a href="#">FR</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">EN</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">DE</a></li>
+                                    <li class="separator">|</li>
+                                    <li><a href="#">PT</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom mobile display-phone display-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="phone-6">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                            </div>
+                            <div class="phone-6">
+                                <div class="clearfix pull-right header-mobile-button">
+                                    <a href="#" class="btn-blue"><span class="icon-account-icone"></span></a>
+                                    <a href="#" class="btn-white mobile-button-white"><span class="icon-menu-icone"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom display-desk display-lgdesk">
+                    <div class="container">
+                        <div class="row">
+                            <nav class="pull-right login-nav phone-6">
+                                <ul>
+                                    <li><a href="#"><span class="icon-lock phone-pr-10"></span>Se connecter</a></li>
+                                    <li><a href="#">S'inscrire gratuitement</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="header-bottom-main" class="row">
+                            <div style="height: 100%;" class="pull-left">
+                                <div class="logo">
+                                    <img src="images/Img/Logo_Immo.lu.png" alt="logo immo.lu" />
+                                </div>
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li><a href="#">Acheter</a></li>
+                                        <li><a href="#">Louer</a></li>
+                                        <li><a href="#">Neuf</a></li>
+                                        <li><a href="#">Agences</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="pull-right header-bottom-buttons">
+                                <a class="btn-blue">Publier une annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="content" class="content list">
+                <div class="container">
+                    <div class="row">
+                        <div class="phone-12 desk-3 desk-pr-10">
+                            <div class="clearfix">
+                                <div class="phone-12">
+                                    <a class="return" href="javascript:history.back(-1);"><span class="icon-left-arrow"></span>Retour vers l'accueil</a>
+                                </div>
+                            </div>
+                            <div id="content" class="search-container">
+                                <div class="pannel expand">
+                                    <div class="pannel-header">
+                                        <h3>Votre Recherche</h3>
+                                        <button class="exp-btn icon-compress"></button>
+                                    </div>
+                                    <div class="pannel-body">
+                                        <div class="input-group">
+                                            <label for="">Type(s) de bien</label>
+                                            <select name="" id="">
+                                                <option value="tous">Tous</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="">Localisation(s)</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Option(s)</label>
+                                            <div class="input-group-container">
+                                                <div class="checkbox-list">
+                                                    <ul class="dropDownListResultBox"></ul>
+                                                    <div class="dropDownList">
+                                                        <label>
+                                                            <input type="checkbox" name="test1" value="h"/>Maison
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" name="test2" value="f">Appartement
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" name="test3" value="r">Résidence
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" name="test4" value="g">Terrain
+                                                        </label>
+                                                        <label>
+                                                            <input type="checkbox" name="test5" value="10">Garage - Parking
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Budget</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Surface</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table">
+                                            <label for="">Chambres</label>
+                                            <div class="input-group-container">
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Min</option>
+                                                    </select>
+                                                </div>
+                                                <div class="container-cell">à</div>
+                                                <div class="container-cell">
+                                                    <select name="" id="">
+                                                        <option value="default">Max</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button class="btn-orange">Rechercher</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pannel expand">
+                                    <div class="pannel-header">
+                                        <h3>Recherche détaillée</h3>
+                                        <button class="exp-btn icon-compress"></button>
+                                    </div>
+                                    <div class="pannel-body">
+                                        <div class="input-group table checkbox">
+                                            <h4>Etat</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="new" type="checkbox"/><label for="new">neuf</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(12)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="old" type="checkbox"/><label for="old">ancien</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(112)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table checkbox">
+                                            <h4>Option(s)</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="terrasse" type="checkbox"/><label for="terrasse">Terrasse/Balcon</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(11)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="jardin" type="checkbox"/><label for="jardin">Jardin</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(41)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="garage" type="checkbox"/><label for="garage">Garage</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(56)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="cave" type="checkbox"/><label for="cave">Cave</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(7)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="ce" type="checkbox"/><label for="ce">Cuisine équipée</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="cg" type="checkbox"/><label for="cg">Chauffage à gaz</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(22)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="sb" type="checkbox" /><label for="sb">Salle de bain</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group table checkbox">
+                                            <h4>Classe(s) énergétique(s)</h4>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="a" type="checkbox" name="" /><label for="a">A</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(11)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="b" type="checkbox" name="" /><label for="b">B</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(41)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="c" type="checkbox" name="" /><label for="c">C</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(56)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="d" type="checkbox" name="" /><label for="d">D</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(7)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="e" type="checkbox" /><label for="e">E</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="f" type="checkbox" /><label for="f">F</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(22)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="g" type="checkbox" /><label for="g">G</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(1)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="h" type="checkbox" /><label for="h">H</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(3)</span>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-container">
+                                                <div class="container-cell align-left">
+                                                    <input id="i" type="checkbox" /><label for="i">I</label>
+                                                </div>
+                                                <div class="container-cell">
+                                                    <span>(4)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .search-result-entry .description{
+                                height: 60px;
+                                overflow: hidden;
+                            }
+                        </style>
+                        <div id="annonce-list" class="phone-12 desk-9 desk-pl-10">
+                            <div class="clearfix">
+                                <div class="phone-12">
+                                    <span class="result">Résultats: <span class="orange bold">192 annonce(s)</span></span>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="search-result-entry ">
+                                    <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15725">
+                                            <h2 class="title">
+                                                <span class="title">Maison&nbsp;6 Chambres</span>
+                                                <span class="location"> - Hollerich</span>
+                                            </h2>
+                                        </a>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li><a onclick="contactUser(15725);">Contact</a></li>
+                                                <li><a id="telephone_15725" onclick="showPhoneNumber(15725);"><span id="numero_15725">Téléphone</span></a></li>
+                                                <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906154007_22495.png" alt="Maison jumelée à Luxembourg-Hollerich">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">289000&nbsp;€</div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Hollerich</li>
+                                                        <li>98.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">1&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 98.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Maison jumelée<br>prix à discuter<br>vente urgente!!!</p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15725" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(15725);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_15725" onclick="showPhoneNumber(15725);"><span class="icon-phone"></span><span id="numero_15725">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry pro">
+                                    <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724">
+                                            <h2 class="title">
+                                                <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                <span class="location"> - Appartement Last test</span>
+                                            </h2>
+                                        </a>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li><a onclick="contactUser(15724);">Contact</a></li>
+                                                <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
+                                                <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906153239_21235.png" alt="Appartement Last test">
+                                                </div>
+                                            </div>
+                                            <div class="aside-container">
+                                                <div class="infos-container">
+                                                    <div class="infos-container-frame">
+                                                        <div class="price">350000&nbsp;€</div>
+                                                        <ul class="mobile-details">
+                                                            <li class="location">Appartement Last test</li>
+                                                            <li>101.00m²</li>
+                                                        </ul>
+                                                        <ul class="icons">
+                                                            <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                            <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                            <li class="garages">2&nbsp;<span class="icon-car"></span></li>
+                                                        </ul>
+                                                        <ul class="details">
+                                                            <li>Surface: +/- 101.00&nbsp;m²</li>
+                                                            <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                            <li>terrasse: 125.00m²</li>
+                                                        </ul>
+                                                        <p class="description">
+                                                            Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test<br>Appartement Last test</p>
+                                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724" class="entry-annonce-link">Plus de détails</a>
+                                                    </div>
+                                                </div>
+                                                <div class="agency-container">
+                                                    <ul class="links">
+                                                        <li><a onclick="contactUser(15724);">Contact</a></li>
+                                                        <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
+                                                        <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Annonces</a></li>
+                                                    </ul>
+                                                    <div class="agency-container-frame">
+                                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                            <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry ">
+                                    <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                        <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15723">
+                                            <h2 class="title">
+                                                <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                <span class="location"> - Ettelbrück</span>
+                                            </h2>
+                                        </a>
+                                        <div class="menu-container dropdown">
+                                            <button><span class="icon-menu-icone"></span></button>
+                                            <ul class="dropdown-links">
+                                                <li><a onclick="contactUser(15723);">Contact</a></li>
+                                                <li><a id="telephone_15723" onclick="showPhoneNumber(15723);"><span id="numero_15723">Téléphone</span></a></li>
+                                                <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/9/7/medium_bazar_20160906152734_20477.png" alt="Appartement test attributs">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">350000&nbsp;€</div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Ettelbrück</li>
+                                                        <li>60.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">1&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 60.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Appartement test attributs</p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15723" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(15723);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_15723" onclick="showPhoneNumber(15723);"><span class="icon-phone"></span><span id="numero_15723">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/9/7/medium_bazar_20160906103039_14779.png" alt="test">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">1&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;6 Chambres</span>
+                                                        <span class="location"> - Mersch</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Mersch</li>
+                                                        <li>120.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">2&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 120.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 10.00m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        test</p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15722" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(15722);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_15722" onclick="showPhoneNumber(15722);"><span class="icon-phone"></span><span id="numero_15722">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized no-agency">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/9/7/medium_bazar_20160905151829_2694.png" alt="ImmoTest">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">450000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                        <span class="location"> - Ville</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Ville</li>
+                                                        <li>87.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">1&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 87.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Appartement 2 chambres à Belair<br>Charges: 250€<br><br>disponibilité: à partir de décembre</p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15696" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(15696);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_15696" onclick="showPhoneNumber(15696);"><span class="icon-phone"></span><span id="numero_15696">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135633-2089018456.jpg" alt="rtement - Wiltz">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">229000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Appartement&nbsp;2 Chambres</span>
+                                                        <span class="location"> - Wiltz</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Wiltz</li>
+                                                        <li>73.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">2&nbsp;<span class="icon-bed"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 73.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 852011<br>Description: *** Sous Compromis ****<br>Laforêt Wiltz vous propose un appartement Duplex lumineux avec vue dégagée sur Wiltz de +/- 73 m² au 2 ième étage d'une résidence de 2003 avec ascenseur.<br>Ce Duplex ce compose comme suit; 2 chambres, 1 salle de douche, débarras, cuisine équipée ouvert sur le salon/séjour avec accés vers sa loggia ( balcon ), 1 WC séparée, cave, 1 emplacement intérieur.<br><br>Pour tous renseignements : 26 95 37 09 / 661 41 71 31<br>Nous sommes toujours à la recherche de nouveaux biens immobilier à proposer à nos clients, contactez nous.<br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14791" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14791);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14791" onclick="showPhoneNumber(14791);"><span class="icon-phone"></span><span id="numero_14791">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=15178"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=15178">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20150710102401_16718.jpeg" alt="Laforêt Wiltz                                 ">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135636-2089018456.jpg" alt="on - Sandweiler">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">998000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;4 Chambres</span>
+                                                        <span class="location"> - Sandweiler</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Sandweiler</li>
+                                                        <li>225.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">4&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">3&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 225.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 35.00m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 852243<br>Description: ***A Découvrir très vite***<br>Cette magnifique ferme, entièrement rénovée située dans une rue sans issue, saura vous séduire par son charme, ses proportions idéales, son calme, sa luminosité  et ses prestations hauts de gammes.<br>Vous serez conquis par son jardin, arboré sans vis à vis,  et son exposition idéale  plein SUD.<br><br>La maison se compose de 225m²env habitables et 395m²env utiles :<br>Entrée avec un hall spacieux.<br>Un grand salon salle à manger de 55m² env, avec un poêle à bois, et chauffage au sol, est ouvert sur la terrasse plein SUD de 35m² env.<br>Une mezzanine ouverte sur le séjour de 23m² env.<br>La cuisine équipée de 20m² env s'ouvre également sur la terrasse plein SUD.<br>Toilettes séparés.<br><br>Au 1er étage vous trouverez : <br>3 chambres de 16m² environ, une grande salle de bains avec baignoire douche toilettes et une fenêtre.<br>Le grenier de plus de 88m² env est facilement aménageable avec ses 3 fenêtres, et 3 velux, tous les branchements (eau, électricité, chauffage) sont installés. <br>Vous disposez également d'un grand garage 3 voitures, une grande cave à vin, un bel atelier, une grande buanderie.<br>Le chauffage est au gaz par condensation, l'eau chaude est produite par des panneaux solaires.<br>A voir absolument !!!<br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14792" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14792);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14792" onclick="showPhoneNumber(14792);"><span class="icon-phone"></span><span id="numero_14792">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135637-2089018456.jpg" alt="on - Contern">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">998000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;4 Chambres</span>
+                                                        <span class="location"> - Contern</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Contern</li>
+                                                        <li>225.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">4&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">3&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 225.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 35.00m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 852242<br>Description: ***A Découvrir très vite***<br>Cette magnifique ferme, entièrement rénovée située dans une rue sans issue, saura vous séduire par son charme, ses proportions idéales, son calme, sa luminosité  et ses prestations hauts de gammes.<br>Vous serez conquis par son jardin, arboré sans vis à vis,  et son exposition idéale  plein SUD.<br><br>La maison se compose de 225m²env habitables et 395m²env utiles :<br>Entrée avec un hall spacieux.<br>Un grand salon salle à manger de 55m² env, avec un poêle à bois, et chauffage au sol, est ouvert sur la terrasse plein SUD de 35m² env.<br>Une mezzanine ouverte sur le séjour de 23m² env.<br>La cuisine équipée de 20m² env s'ouvre également sur la terrasse plein SUD.<br>Toilettes séparés.<br><br>Au 1er étage vous trouverez : <br>3 chambres de 16m² environ, une grande salle de bains avec baignoire douche toilettes et une fenêtre.<br>Le grenier de plus de 88m² env est facilement aménageable avec ses 3 fenêtres, et 3 velux, tous les branchements (eau, électricité, chauffage) sont installés. <br>Vous disposez également d'un grand garage 3 voitures, une grande cave à vin, un bel atelier, une grande buanderie.<br>Le chauffage est au gaz par condensation, l'eau chaude est produite par des panneaux solaires.<br>A voir absolument !!!<br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14793" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14793);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14793" onclick="showPhoneNumber(14793);"><span class="icon-phone"></span><span id="numero_14793">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135645-2089018456.jpg" alt="on - Contern">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">998000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;4 Chambres</span>
+                                                        <span class="location"> - Contern</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Contern</li>
+                                                        <li>225.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">4&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">3&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 225.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 35.00m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 852242<br>Description: ***A Découvrir très vite***<br>Cette magnifique ferme, entièrement rénovée située dans une rue sans issue, saura vous séduire par son charme, ses proportions idéales, son calme, sa luminosité  et ses prestations hauts de gammes.<br>Vous serez conquis par son jardin, arboré sans vis à vis,  et son exposition idéale  plein SUD.<br><br>La maison se compose de 225m²env habitables et 395m²env utiles :<br>Entrée avec un hall spacieux.<br>Un grand salon salle à manger de 55m² env, avec un poêle à bois, et chauffage au sol, est ouvert sur la terrasse plein SUD de 35m² env.<br>Une mezzanine ouverte sur le séjour de 23m² env.<br>La cuisine équipée de 20m² env s'ouvre également sur la terrasse plein SUD.<br>Toilettes séparés.<br><br>Au 1er étage vous trouverez : <br>3 chambres de 16m² environ, une grande salle de bains avec baignoire douche toilettes et une fenêtre.<br>Le grenier de plus de 88m² env est facilement aménageable avec ses 3 fenêtres, et 3 velux, tous les branchements (eau, électricité, chauffage) sont installés. <br>Vous disposez également d'un grand garage 3 voitures, une grande cave à vin, un bel atelier, une grande buanderie.<br>Le chauffage est au gaz par condensation, l'eau chaude est produite par des panneaux solaires.<br>A voir absolument !!!<br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14798" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14798);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14798" onclick="showPhoneNumber(14798);"><span class="icon-phone"></span><span id="numero_14798">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135623-1649760492.jpg" alt="rtement - Luxembourg-Muhlenbach">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">349942&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Appartement&nbsp;1 Chambre</span>
+                                                        <span class="location"> - Luxembourg-Muhlenbach</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Luxembourg-Muhlenbach</li>
+                                                        <li>56.44m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">1&nbsp;<span class="icon-bed"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 56.44&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 728545<br>Description: *** EN FUTURE CONSTRUCTION  - NOUVELLE RESIDENCE VELASQUEZ - AAA***<br><br>Les prix affichés sont cave, buanderie et 3% TVA inclus.<br><br>Nous vous proposons un appartement (Lot 4) au rez-de-chaussée d'environ 56.442 m², disposant d'un hall d'entrée d'une cuisine ouverte, un living avec accès direct sur un balcon (+/-3.00m2), une chambre à coucher (+/-13.19m2) une salle de douche avec un WC séparée, une cave.<br><br>Magnifique résidence Vélasquez en future construction sis à 89/89A, rue de Muhlenbach - Luxembourg,  est un projet immobilier au coeur de Luxembourg, alliant confort, architecture moderne et respect de l‘environnement CPE : AAA, composée de 18 appartements, de 18 parkings intérieur, du studio +/- 44,51m2 au penthouse 2 chambres à coucher +/- 84,86m2,<br><br>Les prix des appartements + caves sont à partir de 293 311 € TVA3% inclus<br>Les emplacements intérieurs sont à partir de 29 000 € TVA3% inclus<br><br>Le taux de TVA sera appliqué en fonction du type d'acquisition (Résidence principale ou investissement).<br><br>Un descriptif détaillé ainsi que les plans sont à votre disposition sur demande à notre agence ou téléchargeable sur notre site www.dpi.lu<br><br>Les finitions intérieures seront de haut standing et des plus complètes :<br>- Couverture en Zinc ;<br>- Le revêtement au sol sera choisi par le client, à concurrence de 40,00 € hors taxes/m² ;<br>- Châssis des fenêtres et portes-fenêtres en P.V.C. bi-couleur (blanc intérieur<br>et gris) ;<br>- Triple vitrage isolant ;<br>- Volets extérieurs en ALUMINIUM à commande électrique ;<br>- Fibre de verre 'SCANDATEX de type standard et deux couches de latex, teintes claires au choix de l'acquéreur ;<br>- Appareils sanitaire de marque VILLEROY , BOCH type O'NOVO ;<br>- Chauffage au sol ;<br>- Une ventilation mécanique contrôlée avec centrale de production d'air pour les locaux chauffés, de type Zehnder  ;<br><br>Situation idéale, à proximité de place d'argent et du boulevard Royal, <br><br><br>L'acquéreur peut après avis du promoteur, et avec son accord, apporter des modifications aux plans de son appartement ou demander d'autres prestations que celles prévues à ce descriptif. Les frais afférents relatif aux différentes modifications des plans sont à charge des acquéreurs.<br>Ces altérations peuvent se faire seulement aux conditions suivantes:<br>- Ne pas modifier la structure de l'immeuble<br>- Ne pas altérer les parties communes, les façades, le cadastre vertical ni le C.P.E.<br>- Supporter d'éventuelles plus values<br>- Co-signer<br><br>Nous recherchons actuellement pour notre clientèle des maisons et appartement en vente à Luxembourg-ville et environ.<br><br>N'hésiter pas à nous contacter pour une estimation gratuite et la mise en vente de votre bien immobilier dans nos 2 agences Immobilières (33, Avenue Monterey - Luxembourg et Auchan au Kirchberg)<br><br><br><br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14785" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14785);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14785" onclick="showPhoneNumber(14785);"><span class="icon-phone"></span><span id="numero_14785">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=314016"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=314016">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20161012112450_21040.png" alt="loltest">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135555-1633108117.jpg" alt="on - Guadix">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">0&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;3 Chambres</span>
+                                                        <span class="location"> - Guadix</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Guadix</li>
+                                                        <li>378.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">3&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                        <li class="garages">1&nbsp;<span class="icon-car"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 378.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 0.00m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 162441<br>Description: Maison de caractère sur 3 étages, d'une surface de 378m2 avec un terrain de 30 ares, se compose comme suit :<br><br>Hall d'entrée, cuisine équipée, salle à manger, grand séjour, 3 grandes chambres à coucher, salle de bains, spacieux grenier aménageable, garage, terrasse, jardin arboré avec un joli gazon.<br><br>La maison se trouve dans la ville de Guadix en province de Grenade, au sud de l'Espagne.<br>La ville de Guadix est connue pour ses grottes troglodytiques et entouré des parcs naturels.<br>Au sud de Guadix se trouve Almeria, les environs de la cité andalouse qui a la particularité de présenter un paysage, aride et ensoleillé, qui rappelle étrangement le Far West américain. Des films bien connus comme Le Bon, la brute et le truand ou Il était une fois dans l'Ouest de Sergio Leone, comme la plupart des westerns dits ' spaghettis ', ont été tournés dans cette région.<br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14781" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14781);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14781" onclick="showPhoneNumber(14781);"><span class="icon-phone"></span><span id="numero_14781">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=19318"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=19318">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20150721161343_4000.jpeg " alt="Fermagest sàrl                                ">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/27/medium_Bazar20160727135625-1303455736.jpg" alt="on - Hobscheid">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">780000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Maison&nbsp;4 Chambres</span>
+                                                        <span class="location"> - Hobscheid</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Hobscheid</li>
+                                                        <li>150.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">4&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 150.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                        <li>terrasse: 13.50m²</li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 852093<br>Description: A vendre, superbe maison 4 chambres, construite en 2008, de classe énergétique FF et d'une surface de 150 m².<br>La maison se trouve sur un terrain de 3,50 ares et est située dans un endroit calme et agréable. <br>Garage 2 voitures, chaufferie et buanderie au sous-sol.  Séjour de 38 m², cuisine équipée avec un accès à la terrasse, bureau et toilette. A l'étage 3 chambres, une lingerie et une salle de bain (douche et baignoire).  Un escalier escamotable donne accès à un grenier. <br>Châssis PVC avec moustiquaires intégrés et volets roulants (électrique au rez-de-chaussée).  Revêtement des sols en carrelage.<br><br>Nous sommes toujours à la recherche de nouveaux biens immobilier à proposer à nos clients, contactez nous. <br><br><br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=14787" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(14787);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_14787" onclick="showPhoneNumber(14787);"><span class="icon-phone"></span><span id="numero_14787">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=12373"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=12373">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20150701140815_29684.jpeg" alt="conrath immobilier                             ">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry minimized">
+                                    <div class="entry-body">
+                                        <div class="entry-body-row">
+                                            <div class="image-container">
+                                                <div class="image-container-frame">
+                                                    <img class="annonce-img" src="http://www.immo.lu/BazarImg/2016/7/26/medium_Bazar20160726161107-1102520059.jpg" alt="Appartement duplex 2 chambres">
+                                                </div>
+                                            </div>
+                                            <div class="infos-container">
+                                                <div class="infos-container-frame">
+                                                    <div class="price">390000&nbsp;€</div>
+                                                    <div class="title">
+                                                        <span class="title">Appartement&nbsp;2 Chambres</span>
+                                                        <span class="location"> - Luxembourg-Dommeldange</span>
+                                                    </div>
+                                                    <ul class="mobile-details">
+                                                        <li class="location">Luxembourg-Dommeldange</li>
+                                                        <li>90.00m²</li>
+                                                    </ul>
+                                                    <ul class="icons">
+                                                        <li class="bedrooms">2&nbsp;<span class="icon-bed"></span></li>
+                                                        <li class="bathrooms">1&nbsp;<span class="icon-bath"></span></li>
+                                                    </ul>
+                                                    <ul class="details">
+                                                        <li>Surface: +/- 90.00&nbsp;m²</li>
+                                                        <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                    </ul>
+                                                    <p class="description">
+                                                        Réference: 728522<br>Description: *******SOUS COMPROMIS********<br><br>Exclusivité Immo Dpi<br><br>En cours de transformation (rénovation complète à prévoir), nous vous proposons cet appartement en duplex composé de deux chambres et d'un bureau. Situé à Dommeldange-village cet appartement est proche de toutes les commodités et des transports en commun. Vendu dans l'état, il a été pensé avec l'agencement suivant: au rez de chaussé buanderie - chaufferie, au premier étage grand salon de 23 m² (avec balcon) et cuisine ouverte et au étage deux chambres, un bureau et salle de bain. <br></p>
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=13940" class="entry-annonce-link">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                            <div class="agency-container">
+                                                <ul class="links">
+                                                    <li><a onclick="contactUser(13940);"><span class="icon-email"></span> Contact</a></li>
+                                                    <li><a id="telephone_13940" onclick="showPhoneNumber(13940);"><span class="icon-phone"></span><span id="numero_13940">Téléphone</span></a></li>
+                                                    <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=314016"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                </ul>
+                                                <div class="agency-container-frame">
+                                                    <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=314016">
+                                                        <img src="http://www.immo.lu/BazarLogos/bazar_20161012112450_21040.png" alt="loltest">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-result-entry">
+                                    <span style="color:red; font-weight:bold;">ToDo</span> Résidences
+                                </div>
+                            </div>
+                            <div id="pages" class="phone-12 pull-right align right">
+                                <div class="page_link page_button page_button_disabled"><div class="page_element"><img src="/images/page_left.svg" alt=""></div></div>
+                                <div class="page_link selectedPage"><div class="page_element">1</div></div>
+                                <div class="page_link " onclick="goTo(2);
+        return false;"><div class="page_element">2</div></div>
+                                <div class="page_link " onclick="goTo(3);
+        return false;"><div class="page_element">3</div></div>
+                                <div class="page_link " onclick="goTo(4);
+        return false;"><div class="page_element">4</div></div>
+                                <div class="page_link " onclick="goTo(5);
+        return false;"><div class="page_element">5</div></div>
+                                <div class="page_link page_ellipsis"><div class="page_element">...</div></div>
+                                <div class="page_link page_button " onclick="goTo(2)"><div class="page_element"><img src="/images/page_right.svg" alt=""></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row display-flex-align-middle">
+                            <div class="footer-links desk-4">
+                                <img class="phone-mb-20" src="images/Img/Logo_Immo.lu_Baseline.png" alt="" />
+                                <img src="images/Img/Mockup.png" alt="" />
+                                <p>Accessible sur desktop et mobile !</p>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en vente</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="footer-links desk-4 hidden-tab hidden-phone">
+                                <h3>Recherche d'immobilier en location</h3>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Appartement au Luxembourg</a></li>
+                                        <li><a href="#">Maisons au Luxembourg</a></li>
+                                        <li><a href="#">Maisons à Kirchberg</a></li>
+                                        <li><a href="#">Maisons à Strassen</a></li>
+                                        <li><a href="#">Maisons à Leudelange</a></li>
+                                        <li><a href="#">Maisons à Hollerich</a></li>
+                                        <li><a href="#">Maisons à Esch-sur-Alzette</a></li>
+                                        <li><a href="#">Maisons à Basharage</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+    </body>
+</html>
