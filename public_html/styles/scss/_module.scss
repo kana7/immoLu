@@ -128,13 +128,10 @@ section{
     table-layout:fixed;
     margin-bottom: 20px;
     h1, .page-options{
-        display: table-cell; 
+        display: block; 
         vertical-align: middle;
         width:1px; 
         white-space:nowrap;
-    }
-    .page-options .btn-blue{
-        margin-left: 20px;
     }
 }
 
@@ -465,7 +462,7 @@ header{
     background-color: $white;
     border-radius: $border-radius - 2;
     @include clearfix;
-    h2{
+    &__title{
         position: absolute;
         display: block;
         top: -35px;
@@ -476,7 +473,9 @@ header{
         position: relative;
     }
 }
-
+.map{
+    max-width: 100%;
+}
 // LOGIN
 // -----------------------------------------------------------------------------
 
@@ -617,7 +616,7 @@ footer .footer-links{
             opacity: 0.5;
         }
     }
-    &:hover{text-decoration: none !important;}
+    &:hover{text-decoration: none !important; font-weight: 600;}
     *[class^="icon-"]{
         display: inline-block;
         margin-right: 7px;
@@ -741,11 +740,8 @@ footer .footer-links{
 
 //NAV-LIST
 //------------------------------------------------------------------------------
-.nav-list{
+.nav-list, .search-banner-tabs ul{
     display: block;
-    @include pannel;
-    overflow: hidden;
-    border: 1px solid $grey;
     li, a{display: block;}
     a{
         @include clearfix;
@@ -755,7 +751,6 @@ footer .footer-links{
     li{
         &:hover{background-color: $light-blue;}
         &.active{background-color: $grey-bg; font-weight: 800;}
-        &:not(:last-child){border-bottom: 1px solid $grey;}
         font-size: 14px;
         span:first-child{
             color: $blue;
@@ -765,6 +760,37 @@ footer .footer-links{
             color: $orange;
             font-weight: 800;
             float: right;
+        }
+    }
+}
+.nav-list{
+    @include pannel;
+    border: 1px solid $grey;
+}
+.search-banner-tabs{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    ul{
+        @include clearfix;
+        min-width: 608px;
+        width: 100%;
+        li{
+            display: inline-block; 
+            float: left;
+            border: 1px solid $grey;
+            border-radius: $border-radius $border-radius 0 0;
+            &:not(:first-child){
+                border-width: 1px 1px 0px 0px;
+            }
+            border-bottom-width: 0;
+        }
+        a{
+            width: 150px;
+            height: 100%;
+            @include clearfix;
+            padding: 0 8px;
+            line-height: 35px;
+            height: 36px;
         }
     }
 }
@@ -2460,20 +2486,44 @@ input:checked + .slider:before {
 
 /*------------------------------ESPACE PRO------------------------------------*/
 /*----------------------------------------------------------------------------*/
-
 .search-banner-box{
     @include pannel;
+    border-radius: 0 0 $border-radius $border-radius;
     border: 1px solid $grey;
     padding: 15px 30px 9px;
-    input[type="text"], input[type="password"]{
+    input[type="text"], input[type="password"], input[type="submit"]{
         line-height: 36px;
+        height: 40px;
     }
     input[type="submit"]{width: 100%;}
+}
+#map1{
+    float: right;
 }
 #pro{
     .search-banner-box{
         input[type="submit"]{top: 0;}
         .input-group{min-height: auto; margin-bottom: 10px;}
+        .hideShow{
+            [data-toggle]:before{
+                top: 3px;
+                content: "\7a";
+            }
+            &.is-hidden [data-toggle]:before{
+                top: 3px;
+                content: "\72";
+            }
+            &>div:not([data-toggle]){
+                padding-top: 10px;
+                hr{
+                    border-color: #d4d4d4;
+                    border: none;
+                    border-top: 1px solid #c0c0c0;
+                    margin: 0 -30px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
     }
 }
 
@@ -2500,7 +2550,8 @@ input:checked + .slider:before {
     }
 }
 .entry-table{
-    width: 100%;
+    border-collapse: collapse !important;
+    width: 100% !important;
     thead tr:first-child{
         th:first-child{border-radius: $border-radius 0 0 0;}
         th:last-child{border-radius: 0 $border-radius 0 0;}
@@ -2531,28 +2582,56 @@ input:checked + .slider:before {
         a{
             word-wrap:break-word;
         }
+        .option-container{
+            text-align: center;
+            font-size: 14px;
+            .option-container-icons{
+                color: #FFC107;
+                text-shadow: 0 1px 0 $orange;
+                span:not([class^="icon-"]){font-size: 16px;}
+            }
+            &>span{color: $orange; text-transform: uppercase; font-weight: 800;}
+        }
+    }
+
+    tr{
+        &.pending, &.online, &.offline{
+            td:nth-child(3):before{
+                display: block;
+                content: " ";
+                top: 50%;
+                left: 50%;
+                width: 18px;
+                height: 18px;
+                border: 1px solid $grey;
+                border-radius: 50%;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+        }
+        &.pending td:nth-child(3):before{background-color: $orange;}
+        &.online td:nth-child(3):before{background-color: $green;}
+        &.offline td:nth-child(3):before{background-color: $red;}
     }
     thead th, tbody td{
-        &:first-child{border-left: 1px solid $grey;}
-        &:last-child{border-right: 1px solid $grey;}
-        &:nth-child(1){padding: 0 10px; border-right: 1px solid $grey; background-color: white !important;}
+        border: solid $grey;
+        border-width: 1px 0px 1px 0px;
+        &:last-child{border-right-width: 1px !important;}
+        &:first-child{border-left-width: 1px !important;}
+        &:nth-child(1){padding: 0 10px;}
+        &.select-checkbox{border-right-width: 1px;}
     }
     thead th{
         white-space: nowrap;
         color: $footer-grey !important;
         font-weight: 800 !important;
-        border-top: 1px solid $grey;
-        border-bottom: 1px solid $grey !important;
         background-color: $grey-bg !important;
         line-height: 30px;
+        &:nth-child(1){background-color: white !important;}
     }
-    tbody tr{
-        td{
-            border-bottom: 1px solid $grey;
-        }
-    }
+    .btn-orange{line-height: 30px;}
 }
-table:not(.not-annonce) tbody tr td:nth-child(5){    
+table:not(.not-annonce) tbody tr td:nth-child(8){    
     color: $orange;
     font-weight: 800;
     font-size: 1.2em;
@@ -2603,7 +2682,7 @@ table.dataTable{
         @include clearfix;
         margin-bottom: 10px;
         position: relative;
-        .dataTables_info{padding: 0; font-size: 14px;}
+        .dataTables_info{padding: 0; font-size: 14px; margin-bottom: 10px;}
         .select-info{
             color: $blue;
             display: block;
@@ -2704,7 +2783,7 @@ table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:af
     top: 50%;
     left: 50%;
     width: 15px;
-    height: 14px;
+    height: 15px;
     box-sizing: border-box;
 }
 table.dataTable tr.selected{
@@ -2720,13 +2799,13 @@ table.dataTable tr.selected{
         content: "\79";
         margin-top: -8px;
         margin-left: -8px;
-        font-size: 10px;
+        font-size: 11px;
         text-align: center;
         text-shadow: none;
         color: #7b7b7b;
     }
     th.select-checkbox:after{
-        margin-top: -17px;
+        margin-top: -14px;
     }
 }
 table.dataTable{
@@ -2763,6 +2842,34 @@ table.dataTable>tbody>tr.child ul li:first-child {
     padding-top: 0.5em;
 }
 table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before{line-height: 16px;}
+
+table.dataTable.dtr-column>tbody>tr, table.dataTable.dtr-column>tbody>tr{
+    th.control:before, td.control:before{
+        font-family: "immo-icons" !important;
+        content: attr(data-icon);
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\42";
+        background: none !important;
+        color: $footer-grey;
+        border: none !important;
+        border-radius: 0;
+        box-shadow: none;
+        width: 18px;
+        line-height: 18px;
+    }
+    &.parent{
+        th.control:before, td.control:before{
+            content: "\43";
+        }
+    }
+} 
 
 
 /*-------------------------------ADD ANNONCE----------------------------------*/
@@ -2824,7 +2931,7 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
             display: block;
             width: 100%;
         }
-        .table.selected{background-color: $light-blue !important;}
+        .table.selected{background-color: $light-blue !important; border-top: 7px solid $orange;}
         .option-infos{
             text-align: center;
             margin-bottom: 10px;
@@ -2878,4 +2985,46 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
             }
         }
     }
+}
+
+.ui-widget{font-family: $font-stack;}
+.ui-dialog {
+    position: absolute;
+    top: 30px !important;
+    left: 0;
+    padding: 0;
+    outline: 0;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid $blue;
+    border-radius: $border-radius;
+    max-width: 90%;
+    width: 100% !important;
+    margin: 0 auto;
+}
+.ui-widget-content, .ui-widget-content a{
+    color: inherit;
+    
+}
+.ui-widget-content{
+    border: 1px solid $grey;
+}
+.ui-dialog .ui-dialog-titlebar {
+    background-color: $blue;
+}
+.ui-dialog .ui-dialog-title {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+.ui-dialog .ui-dialog-buttonpane {
+background-color: $light-grey;
+}
+.ui-widget-overlay{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
 }

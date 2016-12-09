@@ -7,6 +7,8 @@
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/css/vendor/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+        <link rel="stylesheet" href="scripts/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" />
         <link rel="stylesheet" href="styles/css/vendor/animate.min.css" />
         <link rel="stylesheet" href="styles/css/main.css" />
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
@@ -22,6 +24,259 @@
             </ul>
         </nav>
         <div id="siteWrap">
+            <div id="dialog" title="Ajouter une option">
+                <div id="add-entry">
+                    <div id="options" class="step">
+                        <div class="step-body">
+                            <div class="clearfix">
+                                <div class="table selected">
+                                    <div class="table-cell">
+                                        <div class="option-infos">
+                                            <div class="title">Standard</div>
+                                            <p>Actuellement, votre annonce se présente de la façon suivante dans la recherche du site.</p>
+                                            <p>N’hésitez pas de mettre en valeur l’annonce en optant pour une des options de mise en valeur  Pro+.</p>
+                                            <div class="option-input">
+                                                <input type="radio" id="options-1" name="options" value="standard" checked />
+                                                <label for="options-1">Sélectionnée</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-cell">
+                                        <div class="search-result-entry minimized">
+                                            <div class="menu-container dropdown">
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
+                                                <ul class="dropdown-links">
+                                                    <li>
+                                                        <a href="#1">Ajouter au favoris</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#1">Contact</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#2">Téléphone</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#3">Toutes les annonces</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="entry-body">
+                                                <div class="entry-body-row">
+                                                    <div class="image-container">
+                                                        <div class="image-container-frame">
+                                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                        </div>
+                                                    </div>
+                                                    <div class="infos-container">
+                                                        <div class="price">699 900 €</div>
+                                                        <h2 class="title"><span class="title">Maison 4 Chambres</span> <span class="location"> - Pétange</span></h2>
+                                                        <ul class="mobile-details">
+                                                            <li class="location">Pétange</li>
+                                                            <li>150m²</li>
+                                                        </ul>
+                                                        <ul class="icons">
+                                                            <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                        </ul>
+                                                        <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                        <p class="description">
+                                                            Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                    </div>
+                                                    <div class="agency-container">
+                                                        <ul class="links">
+                                                            <li>
+                                                                <a href="#1"><span class="icon-email"></span> Contact</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#2"><span class="icon-phone"></span> Téléphone</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#3"><span class="icon-menu-icone"></span> Toutes les annonces</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="agency-container-frame">
+                                                            <a href="#">
+                                                                <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <div class="option-infos">
+                                            <div class="title">Pro+</div>
+                                            <p>Ajoute une barre dans votre couleur au-dessus de l’annonce</p>
+                                            <p>Valable pour <span class="extra-bold black">1 mois</span></p>
+                                            <p>Tarif : <span class="orange extra-bold">105 €/mois</span></p>
+                                            <div class="option-input">
+                                                <input type="radio" id="options-2" name="options" value="pro+"/>
+                                                <label for="options-2">Choisir cette option</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-cell">
+                                        <div class="search-result-entry">
+                                            <div style="background-color: #0D863F; color: white;" class="entry-header">
+                                                <h2 class="title">
+                                                    <span class="title">Appartement&nbsp;6 Chambres</span>
+                                                    <span class="location"> - Appartement Last test</span>
+                                                </h2>
+                                                <div class="menu-container dropdown">
+                                                    <button><span class="icon-menu-icone"></span></button>
+                                                    <ul class="dropdown-links">
+                                                        <li><a href="#1">Ajouter au favoris</a></li>
+                                                        <li><a onclick="contactUserOffline(15724);">Contact</a></li>
+                                                        <li><a id="telephone_15724" onclick="showPhoneNumber(15724);"><span id="numero_15724">Téléphone</span></a></li>
+                                                        <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">Toutes les annonces</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="entry-body">
+                                                <div class="entry-body-row">
+                                                    <div class="image-container">
+                                                        <div class="image-container-frame">
+                                                            <img src="http://www.immo.lu/BazarImg/2016/9/6/medium_bazar_20160906153239_21235.png" alt="Appartement Last test">
+                                                        </div>
+                                                    </div>
+                                                    <div class="infos-container">
+                                                        <div class="infos-container-frame">
+                                                            <div class="price">350000&nbsp;€</div>
+                                                            <ul class="mobile-details">
+                                                                <li class="location">Appartement Last test</li>
+                                                                <li>101m²</li>
+                                                            </ul>
+                                                            <ul class="icons">
+                                                                <li class="bedrooms">6&nbsp;<span class="icon-bed"></span></li>
+                                                                <li class="bathrooms">2&nbsp;<span class="icon-bath"></span></li>
+                                                                <li class="garages">2&nbsp;<span class="icon-car"></span></li>
+                                                            </ul>
+                                                            <ul class="details">
+                                                                <li>Surface: +/- 101&nbsp;m²</li>
+                                                                <li>terrain: <span style="color:red; font-weight:bold;">ToDo</span></li>
+                                                                <li>terrasse: 125.00m²</li>
+                                                            </ul>
+                                                            <p class="description">
+                                                                Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI...<a href="sql.exe?SqlDB=immo00&amp;Sql=Details.phs&amp;item=15724" class="entry-annonce-link">Plus de détails</a></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="agency-container">
+                                                        <ul class="links ">
+                                                            <li>
+                                                                <a onclick="contactUserOffline(15724);"><span class="icon-email"></span> Contact</a>
+                                                            </li>
+                                                            <li>
+                                                                <a id="telephone_15724" onclick="showPhoneNumber(15724);"><span class="icon-phone"></span><span id="numero_15724">Téléphone</span></a>
+                                                            </li>
+                                                            <li><a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493"><span class="icon-menu-icone"></span> Toutes les annonces</a></li>
+                                                        </ul>
+                                                        <div class="agency-container-frame">
+                                                            <a href="sql.exe?SqlDB=immo00&amp;Sql=Agence.phs&amp;agence=493">
+                                                                <img src="http://www.immo.lu/BazarLogos/bazar_20160906160411_25645.png" alt="Ismael SA">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <div class="option-infos">
+                                            <div class="title">Pro++</div>
+                                            <p>Ajoute une barre dans votre couleur au-dessus de l’annonce tout en agrandissant la photo principale.</p>
+                                            <p>valable pour <span class="extra-bold black">1 mois</span></p>
+                                            <p>tarif : <span class="orange extra-bold">150 €/mois</span></p>
+                                            <div class="option-input">
+                                                <input type="radio" id="options-3" name="options" value="pro+"/>
+                                                <label for="options-3" >Choisir cette option</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-cell">
+                                        <div class="search-result-entry pro">
+                                            <div style="background-color:#fa8005; color: white;" class="entry-header">
+                                                <h2 class="title"><span class="title">Maison 4 Chambres</span><span class="location"> - Pétange</span></h2>
+                                                <div class="menu-container dropdown">
+                                                    <button type="button"><span class="icon-menu-icone"></span></button>
+                                                    <ul class="dropdown-links">
+                                                        <li>
+                                                            <a href="#1">Ajouter au favoris</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#1">Contact</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#2">Téléphone</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#3">Toutes les annonces</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="entry-body">
+                                                <div class="entry-body-row">
+                                                    <div class="image-container">
+                                                        <div class="image-container-frame">
+                                                            <img src="http://i1.static.athome.eu/images/annonces2/image_/13/2d/44/8a4abe88717cb03e71fc4eb2f8a0663706aa5a88_248x186.jpg?bg=gray90" alt="Maison à vendre 6 Chambres à Sandweiler - Réf. 4111327">
+                                                        </div>
+                                                    </div>
+                                                    <div class="aside-container">
+                                                        <div class="infos-container">
+                                                            <div class="clearfix">
+                                                                <div class="phone-12 tab-6">
+                                                                    <div class="price">699 900 €</div>
+                                                                    <ul class="mobile-details">
+                                                                        <li class="location">Pétange</li>
+                                                                        <li>150m²</li>
+                                                                    </ul>
+                                                                    <ul class="icons">
+                                                                        <li class="bedrooms">4 <span class="icon-bed"></span></li>
+                                                                    </ul>
+                                                                    <ul class="details"><li>Surface: +/- 150 m²</li><li>terrain: 8.45 ares</li></ul>
+                                                                </div>
+                                                                <div class="agency-container-frame pull-right hidden-phone">
+                                                                    <a href="#">
+                                                                        <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <p class="description">
+                                                                Exceptionnel et assez rare à Pétange. Programme neuf de maisons unifamiliales avec terrain dans un écrin de verdure isolé des axes pricnipaux. RESTE UNE SEULE ET DERNIERE future maison unifamiliales, construtions traditionnelles en BASSE ENERGI... <a href="#" class="entry-annonce-link">Plus de détails</a></p>
+                                                        </div>
+                                                        <div class="agency-container">
+                                                            <ul class="links">
+                                                                <li>
+                                                                    <a href="#1">Contact</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#2">Téléphone</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#3">Annonces</a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="agency-container-frame hidden display-phone">
+                                                                <a href="#">
+                                                                    <img src="http://www.georges-beaumont.lu/images/logo-print.jpg" alt="Luxembourg-Centre-ville">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <header>
                 <div class="header-upper">
                     <div class="container">
@@ -90,30 +345,29 @@
             </header>
             <div id="pro" class="content">
                 <div class="container">
-                   <div class="row">
-                         <div class="page-title">
-                            <h1>Annonces</h1>
+                    <div class="row">
+                        <div class="page-title">
+                            <h1>Mes annonces (137)</h1>
                             <div class="page-options">
                                 <a href="#" class="btn-blue">Ajouter</a>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="phone-12 phone-mb-20 desk-3 desk-pr-10">
-                            <ul class="nav-list">
-                                <li class="active"><a href="#"><span>Annonces en ligne</span><span>(14)</span></a></li>
-                                <li><a href="#"><span>Annonces hors-ligne</span><span>(1)</span></a></li>
-                                <li><a href="#"><span>Annonces archivées</span><span>(134)</span></a></li>
-                                <li><a href="#"><span>Annonces refusées</span><span>(0)</span></a></li>
-                                <li><a href="#"><span>Brouillons</span><span>(1)</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="phone-12 desk-9 desk-pl-10 phone-mb-20 desk-mb-0">
+                        <div class="phone-12 phone-mb-20 desk-mb-0">
+                            <nav class="search-banner-tabs">
+                                <ul>
+                                    <li class="active"><a href="#"><span>Toutes</span><span>(14)</span></a></li><!--
+                                    --><li><a href="#"><span>En ligne</span><span>(1)</span></a></li><!--
+                                    --><li><a href="#"><span>Hors-ligne</span><span>(134)</span></a></li><!--
+                                    --><li><a href="#"><span>Archive</span><span>(0)</span></a></li>
+                                </ul>
+                            </nav>
                             <div class="search-banner-box">
                                 <div class="phone-12">
                                     <form action="">
                                         <div class="clearfix">
-                                            <div class="phone-12 tab-6 desk-4 tab-pr-10">
+                                            <div class="phone-12 tab-6 desk-3 tab-pr-10">
                                                 <div class="input-group">
                                                     <label for="">Type(s) d'annonce</label>
                                                     <select name="" id="">
@@ -121,7 +375,7 @@
                                                     </select>
                                                 </div>
                                             </div><!--
-                                            --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                            --><div class="phone-12 tab-6 desk-3 tab-pl-10 desk-pr-10">
                                                 <div class="input-group">
                                                     <label for="">Type(s) de bien</label>
                                                     <select name="" id="">
@@ -129,97 +383,106 @@
                                                     </select>
                                                 </div>
                                             </div><!--
-                                            --><div class="phone-12 desk-4 desk-pl-10">
-                                                <div class="input-group table">
-                                                    <label for="">Prix</label>
-                                                    <div class="input-group-container">
-                                                        <div class="container-cell">
-                                                            <select name="" id="">
-                                                                <option value="default">Min</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="container-cell">à</div>
-                                                        <div class="container-cell">
-                                                            <select name="" id="">
-                                                                <option value="default">Max</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"><div class="phone-12 tab-6 desk-4 tab-pr-10 desk-pl-0">
-                                                <div class="input-group">
-                                                    <label for="">État du bien</label>
-                                                    <select name="" id="">
-                                                        <option value="test">Type(s) de bien</option>
-                                                    </select>
-                                                </div>
-                                            </div><!--
-                                            --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                            --><div class="phone-12 desk-3 desk-pl-10 desk-pr-10">
                                                 <div class="input-group">
                                                     <label for="">Localisation(s)</label>
                                                     <input type="text" placeholder="Ville, Commune, Région"/>
                                                 </div>
                                             </div><!--
-                                            --><div class="phone-12 desk-4 desk-pl-10">
-                                                <div class="input-group table">
-                                                    <label for="">Surface</label>
-                                                    <div class="input-group-container">
-                                                        <div class="container-cell">
-                                                            <select name="" id="">
-                                                                <option value="default">Min</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="container-cell">à</div>
-                                                        <div class="container-cell">
-                                                            <select name="" id="">
-                                                                <option value="default">Max</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                            --><div class="phone-12 desk-3 desk-pl-10">
+                                                <div class="input-group">
+                                                    <input type="submit" class="btn-orange" Value="Rechercher"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="phone-12 tab-6 desk-4 tab-pr-10">
-                                            <div class="input-group table">
-                                                <label for="">Date d'insertion</label>
-                                                <div class="input-group-container">
-                                                    <div class="container-cell">
-                                                        <select name="" id="">
-                                                            <option value="default">Min</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="container-cell">à</div>
-                                                    <div class="container-cell">
-                                                        <select name="" id="">
-                                                            <option value="default">Max</option>
-                                                        </select>
+                                        <div class="hideShow is-hidden">
+                                            <div class="blue bold" data-toggle>plus d'options</div>
+                                            <div>
+                                                <div class="clearfix">
+                                                    <hr />
+                                                    <div class="phone-12 tab-6 desk-4 tab-pr-10 desk-pl-0">
+                                                        <div class="input-group">
+                                                            <label for="">État du bien</label>
+                                                            <select name="" id="">
+                                                                <option value="test">Type(s) de bien</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><!--
+                                                    --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                                        <div class="input-group table">
+                                                            <label for="">Prix</label>
+                                                            <div class="input-group-container">
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Min</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="container-cell">à</div>
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Max</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--
+                                                    --><div class="phone-12 desk-4 desk-pl-10">
+                                                        <div class="input-group table">
+                                                            <label for="">Surface</label>
+                                                            <div class="input-group-container">
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Min</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="container-cell">à</div>
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Max</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!--
-                                        --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
-                                            <div class="input-group table">
-                                                <label for="">Chambres</label>
-                                                <div class="input-group-container">
-                                                    <div class="container-cell">
-                                                        <select name="" id="">
-                                                            <option value="default">Min</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="container-cell">à</div>
-                                                    <div class="container-cell">
-                                                        <select name="" id="">
-                                                            <option value="default">Max</option>
-                                                        </select>
+                                                <div class="clearfix">
+                                                    <div class="phone-12 tab-6 desk-4 tab-pr-10">
+                                                        <div class="input-group table">
+                                                            <label for="">Date d'insertion</label>
+                                                            <div class="input-group-container">
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Min</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="container-cell">à</div>
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Max</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--
+                                                    --><div class="phone-12 tab-6 desk-4 tab-pl-10 desk-pr-10">
+                                                        <div class="input-group table">
+                                                            <label for="">Chambres</label>
+                                                            <div class="input-group-container">
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Min</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="container-cell">à</div>
+                                                                <div class="container-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="default">Max</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!--
-                                        --><div class="phone-12 tab-6 desk-4 desk-pl-10">
-                                            <div class="input-group">
-                                                <input type="submit" class="btn-orange" Value="Rechercher"/>
                                             </div>
                                         </div>
                                     </form>
@@ -232,29 +495,46 @@
                             <table class="entry-table">
                                 <thead>
                                     <tr>
-                                        <th id="select-all"></th>
-                                        <th>Photo</th>
-                                        <th>Localisation</th>
-                                        <th>Type</th>
-                                        <th>Prix</th>
-                                        <th>Surface</th>
-                                        <th>Chambres</th>
-                                        <th>Date d'insertion</th>
-                                        <th>Référence</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th id="select-all" data-priority="0"></th>
+                                        <th data-priority="3">Photo</th>
+                                        <th data-priority="0">Statut</th>
+                                        <th data-priority="0">Option</th>
+                                        <th data-priority="2">Bien</th>
+                                        <th data-priority="5">Type</th>
+                                        <th data-priority="1">Localisation</th>
+                                        <th data-priority="4">Prix</th>
+                                        <th data-priority="6">Surface</th>
+                                        <th data-priority="6">Chambres</th>
+                                        <th data-priority="6">Date d'insertion</th>
+                                        <th data-priority="6">Référence</th>
+                                        <th data-priority="0"></th>
+                                        <th data-priority="0"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="pending">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
-                                        <td>A</td>
+                                        <td title="En attente"></td>
+                                        <td>
+                                            <div class="option-container">
+                                                <div class="option-container-icons">
+                                                    <span class="icon-star"></span>
+                                                    <span class="icon-star"></span>
+                                                    <span class="icon-star"></span>
+                                                </div>
+                                                <span>
+                                                    Exclusive
+                                                </span>
+                                            </div>
+                                        </td>
                                         <td>Appartement</td>
+                                        <td>Vente</td>
+                                        <td>A</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -262,7 +542,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -274,15 +554,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="online">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/second-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En ligne"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>C</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -290,7 +573,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -302,15 +585,25 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="pending">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En attente"></td>
+                                        <td><div class="option-container">
+                                                <div class="option-container-icons">
+                                                    <span class="icon-star"></span>
+                                                </div>
+                                                <span>
+                                                    Premium
+                                                </span>
+                                            </div></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>D</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -318,7 +611,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -330,15 +623,28 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="online">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En ligne"></td>
+                                        <td>
+                                            <div class="option-container">
+                                                <div class="option-container-icons">
+                                                    <span class="icon-star"></span>
+                                                    <span class="icon-star"></span>
+                                                </div>
+                                                <span>
+                                                    Prestige
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>F</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -346,7 +652,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -358,15 +664,24 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="offline">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="Hors ligne"></td>
+                                        <td>
+                                            <div class="option-container">
+                                                <span>
+                                                    Top 1
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>Weiswampach</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -374,7 +689,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -386,15 +701,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="online">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En ligne"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>Weiswampach</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -402,7 +720,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -414,15 +732,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="online">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En ligne"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>Weiswampach</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -430,7 +751,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -442,15 +763,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="pending">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="En attente"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>A</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -458,7 +782,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -470,15 +794,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="offline">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="Hors ligne"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>C</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -486,7 +813,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -498,15 +825,18 @@
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="offline">
                                         <td></td>
                                         <td>
                                             <div class="img-container">
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td title="Hors ligne"></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Vente</td>
                                         <td>D</td>
-                                        <td>Appartement</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -514,7 +844,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -533,16 +863,19 @@
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
+                                        <td></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
+                                        <td>Appartement</td>
+                                        <td>Location</td>
                                         <td>F</td>
-                                        <td>Appartement</td>
-                                        <td>825 000 €</td>
+                                        <td>1000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
                                         <td>01/04/2016</td>
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -561,16 +894,19 @@
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
-                                        <td>Weiswampach</td>
+                                        <td></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
                                         <td>Appartement</td>
-                                        <td>825 000 €</td>
+                                        <td>Location</td>
+                                        <td>Weiswampach</td>
+                                        <td>600 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
                                         <td>01/04/2016</td>
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -589,16 +925,19 @@
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
-                                        <td>Weiswampach</td>
+                                        <td></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
                                         <td>Appartement</td>
-                                        <td>825 000 €</td>
+                                        <td>Location</td>
+                                        <td>Weiswampach</td>
+                                        <td>1200 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
                                         <td>01/04/2016</td>
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -617,8 +956,11 @@
                                                 <img src="images/Img/homepage/first-annonce.jpg" alt="" />
                                             </div>
                                         </td>
-                                        <td>Weiswampach</td>
+                                        <td></td>
+                                        <td><button type="button"  class="btn-orange insertOption">Ajouter</button></td>
                                         <td>Appartement</td>
+                                        <td>Vente</td>
+                                        <td>Weiswampach</td>
                                         <td>825 000 €</td>
                                         <td>180 m&sup2;</td>
                                         <td>3</td>
@@ -626,7 +968,7 @@
                                         <td>2016040100241</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button><span class="icon-menu-icone"></span></button>
+                                                <button type="button"><span class="icon-menu-icone"></span></button>
                                                 <ul class="dropdown-links">
                                                     <li><a href="#">Visualiser</a></li>
                                                     <li><a href="#">Modifier</a></li>
@@ -689,110 +1031,161 @@
             </footer>
         </div>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript">
-            $(function () {
-                var table = $('.entry-table').DataTable({
-                    responsive: {
-                        details: {
-                            type: 'column',
-                            target: 'tr td:last-child'
-                        },
-                        breakpoints: [
-                            {name: 'desktop', width: Infinity},
-                            {name: 'tablet', width: 1302},
-                            {name: 'fablet', width: 1056},
-                            {name: 'phone', width: 671}
-                        ]
-                    },
-                    columns: [
-                        {responsivePriority: 0},
-                        {responsivePriority: 4},
-                        {responsivePriority: 1},
-                        {responsivePriority: 2},
-                        {responsivePriority: 3},
-                        {responsivePriority: 6}, //surface
-                        {responsivePriority: 5}, //chambres
-                        {responsivePriority: 8}, //date
-                        {responsivePriority: 7}, //ref
-                        {responsivePriority: 0},
-                        {responsivePriority: 0}
-                    ],
-                    columnDefs: [
-                        {
-                            className: 'control',
-                            orderable: false,
-                            targets: [10]
-                        },
-                        {
-                            orderable: false,
-                            className: 'select-checkbox',
-                            targets: [0]
-                        },
-                        {
-                            orderable: false,
-                            targets: [9]
-                        }
-                    ],
-                    select: {
-                        style: 'os',
-                        selector: 'td:not(:last-child)'
-                    },
-                    order: [[1, 'asc']],
-                    sDom: '<<"top"il><t><"bottom"Bp>>',
-                    language: {
-                        "info": "Annonces en ligne : <span class='orange extra-bold'>_TOTAL_ annonces</span>",
-                        "infoEmpty": "Annonces en ligne : <span class='orange extra-bold'>Aucune annonce</span>",
-                        "paginate": {
-                            "first": "Premier",
-                            "last": "Dernier",
-                            "next": "Suivant",
-                            "previous": "Précédent"
-                        },
-                        "lengthMenu": "_MENU_ annonces par page",
-                        "select": {
-                            "rows": {
-                                "_": "<span class='extra-bold'>%d</span> lignes sélectionnées",
-                                0: "<span class='extra-bold'>Shift+click</span> pour sélectionner plusieurs lignes",
-                                1: "<span class='extra-bold'>1</span> ligne sélectionnée"
-                            }
-                        },
-                        "zeroRecords": "Aucune annonce"
-                    },
-                    buttons: [
-                        {
-                            text: 'Supprimer',
-                            className: 'btn-blue',
-                            action: function () {
-                                var rows = table.rows('.selected').data().length;
-                                if (rows > 0) {
-                                    table.rows('.selected').remove().draw(false);
-                                    alert(rows + ' annonce(s) supprimée(s)');
-                                } else {
-                                    alert('Aucune ligne sélectionnée');
-                                }
-                            }
-                        },
-                        {
-                            text: 'Exporter annonces',
-                            className: 'btn-blue',
-                            action: function () {
-                                alert('TODO: export annonces');
-                            }
-                        }
-                    ]
-                });
-                $('#select-all').on('click', function () {
-                    if (!$(this).parent().hasClass('selected')) {
-                        $(this).parent().addClass('selected');
-                        table.rows({page: 'current'}).select();
-                    } else {
-                        $(this).parent().removeClass('selected');
-                        table.rows({page: 'current'}).deselect()();
-                    }
-                });
-            });
+                                                                    $(function () {
+                                                                        var table = $('.entry-table').DataTable({
+                                                                            autoWidth: false,
+                                                                            responsive: {
+                                                                                details: {
+                                                                                    type: 'column',
+                                                                                    target: 'tr td:last-child'
+                                                                                },
+                                                                                breakpoints: [
+                                                                                    {name: 'desktop', width: Infinity},
+                                                                                    {name: 'tablet', width: 1302},
+                                                                                    {name: 'fablet', width: 1056},
+                                                                                    {name: 'phone', width: 671}
+                                                                                ]
+                                                                            },
+                                                                            columns: [
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                null,
+                                                                                {className: "none"},
+                                                                                {className: "none"},
+                                                                                {className: "none"},
+                                                                                {className: "none"},
+                                                                                null,
+                                                                                null
+                                                                            ],
+                                                                            columnDefs: [
+                                                                                {
+                                                                                    className: 'control',
+                                                                                    orderable: false,
+                                                                                    targets: [13]
+                                                                                },
+                                                                                {
+                                                                                    orderable: false,
+                                                                                    className: 'select-checkbox',
+                                                                                    targets: [0]
+                                                                                },
+                                                                                {
+                                                                                    orderable: false,
+                                                                                    targets: [2]
+                                                                                },
+                                                                                {
+                                                                                    orderable: false,
+                                                                                    targets: [3]
+                                                                                },
+                                                                                {
+                                                                                    orderable: false,
+                                                                                    targets: [12]
+                                                                                }
+                                                                            ],
+                                                                            select: {
+                                                                                style: 'multi',
+                                                                                selector: 'tr td:not(:last-child):not(:nth-last-child(2)):not(:nth-child(4))'
+                                                                            },
+                                                                            order: [[1, 'asc']],
+                                                                            sDom: '<<"top"il><t><"bottom"Bp>>',
+                                                                            language: {
+                                                                                "info": "Annonces en ligne : <span class='orange extra-bold'>_TOTAL_ annonces</span>",
+                                                                                "infoEmpty": "Annonces en ligne : <span class='orange extra-bold'>Aucune annonce</span>",
+                                                                                "paginate": {
+                                                                                    "first": "Premier",
+                                                                                    "last": "Dernier",
+                                                                                    "next": "Suivant",
+                                                                                    "previous": "Précédent"
+                                                                                },
+                                                                                "lengthMenu": "_MENU_ annonces par page",
+                                                                                "select": {
+                                                                                    "rows": {
+                                                                                        "_": "<span class='extra-bold'>%d</span> lignes sélectionnées",
+                                                                                        0: "",
+                                                                                        1: "<span class='extra-bold'>1</span> ligne sélectionnée"
+                                                                                    }
+                                                                                },
+                                                                                "zeroRecords": "Aucune annonce"
+                                                                            },
+                                                                            buttons: [
+                                                                                {
+                                                                                    text: 'Supprimer',
+                                                                                    className: 'btn-blue',
+                                                                                    action: function () {
+                                                                                        var rows = table.rows('.selected').data().length;
+                                                                                        if (rows > 0) {
+                                                                                            table.rows('.selected').remove().draw(false);
+                                                                                            alert(rows + ' annonce(s) supprimée(s)');
+                                                                                        } else {
+                                                                                            alert('Aucune ligne sélectionnée');
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    text: 'Exporter annonces',
+                                                                                    className: 'btn-blue',
+                                                                                    action: function () {
+                                                                                        alert('TODO: export annonces');
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        });
+                                                                        $('#select-all').on('click', function () {
+                                                                            if (!$(this).parent().hasClass('selected')) {
+                                                                                $(this).parent().addClass('selected');
+                                                                                table.rows({page: 'current'}).select();
+                                                                            } else {
+                                                                                $(this).parent().removeClass('selected');
+                                                                                table.rows({page: 'current'}).deselect()();
+                                                                            }
+                                                                        });
+
+                                                                        var dialog = $('#dialog').dialog({
+                                                                            autoOpen: false,
+                                                                            modal: true,
+                                                                            draggable: false,
+                                                                            closeOnEscape: true,
+                                                                            width: 'auto',
+                                                                            buttons: [
+                                                                                {
+                                                                                    text: "Annuler",
+                                                                                    class: "btn-blue",
+                                                                                    click: function () {
+                                                                                        $(this).dialog("close");
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    text: "Enregistrer",
+                                                                                    class: "btn-orange",
+                                                                                    click: function () {
+                                                                                        $(this).dialog("close");
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        });
+
+                                                                        $(".insertOption").click(function () {
+                                                                            $("#dialog").dialog("open");
+                                                                        });
+                                                                        $('.option-input label').on('click', function () {
+                                                                            var isChecked = $(this).parent().find('input').is(':checked');
+                                                                            $('.option-input').not($(this).parent()).find('label').empty().text('Choisir cette option');
+                                                                            $('.option-input').not($(this).parent()).find('input').prop('checked', false);
+                                                                            $('.option-input').not($(this).parent()).parents('.table').removeClass('selected');
+                                                                            if (!isChecked) {
+                                                                                $(this).parents('.table').addClass('selected');
+                                                                                $(this).empty().text('Sélectionnée');
+                                                                            }
+                                                                        });
+                                                                    });
         </script>
     </body>
 </html>

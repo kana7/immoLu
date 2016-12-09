@@ -23,6 +23,12 @@ $(function () {
          });
          */
     }
+    if ($('.hideShow').length > 0){
+        $('.hideShow').each(function(){
+            temp = new hideShow($(this));
+            temp.init();
+        });
+    }
 
     /* init modules pour uploader image */
     if ($('.add-annonce-image-container').length > 0 || $('.add-client-input-container-image').length > 0) {
@@ -68,37 +74,6 @@ $(function () {
         console.log($.fn.lightSlider.$pager);
     }
 });
-
-var form = $('.form'), cache_width = form.width(), a4 = [595.28, 841.89]; // for a4 size paper width and height
-
-$('#create_pdf').on('click', function () {
-    $('body').scrollTop(0);
-    createPDF();
-});
-//create pdf
-var createPDF = function() {
-    getCanvas().then(function (canvas) {
-        var
-                img = canvas.toDataURL("image/png"),
-                doc = new jsPDF({
-                    unit: 'px',
-                    format: 'a4'
-                });
-        doc.addImage(img, 'JPEG', 20, 20);
-        doc.save('techumber-html-to-pdf.pdf');
-        form.width(cache_width);
-    });
-};
-
-// create canvas object
-var getCanvas = function() {
-    form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
-    return html2canvas(form, {
-        imageTimeout: 2000,
-        removeContainer: true
-    });
-};
-
 
 var DoOnClickAway = function (event, element, callback) {
     if (typeof callback === "function") {

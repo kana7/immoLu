@@ -362,6 +362,21 @@
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container{
         padding: 10px 15px;
     }
+    .search-banner-tabs ul{
+        min-width: auto;
+        li{
+            width: 25%;
+            a{width: 100%;}
+        }
+    }
+    .page-title{
+        h1, .page-options{
+            display: table-cell; 
+        }
+        .page-options .btn-blue{
+            margin-left: 20px;
+        }
+    }
 }
 @include media-exclusive(tab){
     .infos-attributs{
@@ -571,6 +586,14 @@
             margin-bottom: 0;
         }
     }
+    .search-banner-tabs ul{
+        min-width: auto;
+        li{
+            width: auto;
+            a{width: 135px;}
+        }
+    }
+    #add-entry #options .table.selected{border-top: none; border-left: 7px solid $orange;}
 }
 @include media(lgdesk){
     .info-container .label span:first-child{
