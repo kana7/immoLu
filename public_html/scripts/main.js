@@ -1,3 +1,4 @@
+var loaderTemplate = '<div class="loading loading--overlay loading--absolute-position"><div class="loader loader--center loading__loader"></div></div>';
 $(function () {
     MenuMobile.init();
     resizeAllImages();
@@ -215,8 +216,10 @@ CheckboxList.prototype = {
         element.$checkboxes.on('click', function () {
             element.updateResultBox.call(element, $(this));
         });
-        element.$element.on('click', '.item', function (event) {
+        element.$element.on('click.deleteItem', '.item', function (event) {
             event.stopPropagation();
+            var event = $(this).attr('data-event');
+            if (typeof event !== typeof undefined && event !== false){$(this).trigger(event);}
             element.deleteItem.call(element, $(this));
         });
     },
