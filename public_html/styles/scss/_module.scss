@@ -1,3 +1,5 @@
+@import "modules/_loader";
+
 @-ms-viewport{ width: auto !important; }
 
 body, .mobile-side-menu, #offers-section, .menu-links-wrapper{
@@ -472,10 +474,74 @@ header{
     input[type="submit"]{
         position: relative;
     }
+    &--extended{
+        top: 10px;
+        z-index: 10;
+    }
+}
+.search-banner-box--extended{
+    &__input-list{
+        height: 100%;
+        padding-right: 30px;
+        border-right: 1px solid $grey-bg;
+        .input-group{
+            min-height: auto;
+            input[type="textarea"]{
+                min-height: 125px; 
+                overflow-y: auto;
+            }
+        }
+        &__dropDownListResultBox{
+            height: 110px;
+            overflow-y: auto;
+        }
+    }
+    &__immo-link{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &__btn-orange{
+        top: 0 !important;
+    }
+}
+.pannel--inset{
+    padding: 10px 10px;
+    overflow-y: auto;
+    height: 250px;
+    &__checkbox-list{
+        li{display: block; &:not(last-child){
+               margin-bottom: 5px;
+           }
+        }
+    }
+}
+.checkbox{
+    color: $dark-grey !important;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-size: 1em !important;
+    cursor: pointer;
+    input[type="checkbox"]{
+        margin-right: 5px;
+        position: relative;
+        top: 1px;
+    }
+    &--all{
+        padding-left: 10px;
+        font-weight: bold !important;
+    }
 }
 .map{
     max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat:no-repeat;
 }
+area{display: block; cursor: pointer;}
 // LOGIN
 // -----------------------------------------------------------------------------
 
@@ -628,6 +694,10 @@ footer .footer-links{
             transform: rotate(16deg);
         }
     }
+    &--large{
+        padding: 0 70px;
+        height: 42px !important;
+    }
 }
 .btn-blue,
 .btn-orange,
@@ -735,7 +805,19 @@ footer .footer-links{
     text-decoration: underline;
     font-style: italic;
     font-size: 0.95em;
+    background: none;
+    border: none;
+    outline: 0;
     span{color: $orange; text-decoration: underline;}
+    &--blue{
+        color: $blue;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 1em;
+        &:hover{
+            color: lighten($blue, 10%);
+        }
+    }
 }
 
 //NAV-LIST
@@ -908,7 +990,7 @@ input[type="text"], input[type="password"]{
 }
 .checkbox-list{
     position: relative;
-    &:before{
+    &:not(.search-banner-box--extended__checkbox-list):before{
         content: '';
         position: absolute;
         top: 16px;
@@ -927,6 +1009,7 @@ input[type="text"], input[type="password"]{
         line-height: 20px;
         font-weight: 400;
         float: left;
+        text-transform: capitalize;
         overflow: hidden;
         text-align: left;
         margin: 0px 1px 3px 2px;
@@ -940,6 +1023,7 @@ input[type="text"], input[type="password"]{
         span[class^="icon-"]{
             font-size: 0.65em;
             line-height: 18px;
+            padding-right: 5px;
         }
     }
     .dropDownListResultBox{
@@ -2495,7 +2579,9 @@ input:checked + .slider:before {
         line-height: 36px;
         height: 40px;
     }
-    input[type="submit"]{width: 100%;}
+    &:not(.search-banner-box--extended){
+        input[type="submit"]{width: 100%;}
+    }
 }
 #map1{
     float: right;
@@ -3004,7 +3090,7 @@ table.dataTable.dtr-column>tbody>tr, table.dataTable.dtr-column>tbody>tr{
 }
 .ui-widget-content, .ui-widget-content a{
     color: inherit;
-    
+
 }
 .ui-widget-content{
     border: 1px solid $grey;
@@ -3018,7 +3104,7 @@ table.dataTable.dtr-column>tbody>tr, table.dataTable.dtr-column>tbody>tr{
     font-weight: 600;
 }
 .ui-dialog .ui-dialog-buttonpane {
-background-color: $light-grey;
+    background-color: $light-grey;
 }
 .ui-widget-overlay{
     position: fixed;

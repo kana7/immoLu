@@ -43,6 +43,10 @@ input::-moz-focus-inner {
     margin-bottom: -2px; 
 }
 
+.disabled{
+    @include disabled;
+}
+
 @charset "UTF-8";
 
 @font-face {

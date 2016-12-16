@@ -460,7 +460,7 @@
             height: 100%;
         }
     }
-    .search-banner .search-banner-box{@include vertical-align-middle(absolute);}
+    .search-banner .search-banner-box:not(.search-banner-box--extended){@include vertical-align-middle(absolute);}
     .search-banner-box{
         input[type="submit"]{
             top: 22px;

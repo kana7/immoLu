@@ -95,24 +95,24 @@ $breakpoints : $grid-breakpoints;
 }
 @include media(tab){
     .container{
-        width: 542px;
+        width: 650px;
     }
 }
 @include media(desk){
     .container{
-        width: 904px;
+        width: 1034px;
     }
 }
 @include media(lgdesk){
     .container{
-        width: 1130px;
+        width: 1280px;
     }
 }
-/*@include viewport(min, $min: 1400){
+@include viewport(min, $min: 1400){
     .container{
-        width: 1344px;
+        width: 1378px;
     }
-}*/
+}
 
 *{
     box-sizing: border-box;

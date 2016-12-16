@@ -7,6 +7,7 @@
         <meta name="keywords" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/css/main.css" />
+        <link rel="stylesheet" href="styles/css/vendor/jquery.mCustomScrollbar.css" />
         <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.css" media="screen">
         <script type="text/javascript" src="scripts/vendor/modernizr.js"></script>
     </head>
@@ -92,130 +93,7 @@
                 <section class="search-banner">
                     <div class="container">
                         <div class="row">
-                            <div id="search" class="search-banner-box">
-                                <h2 class="search-banner-box__title">Quel est votre future bien ?</h2>
-                                <div class="desk-3 phone-pr-20">
-                                    <div class="pannel-body">
-                                        <div class="input-group">
-                                            <label for="">Localisation(s)</label>
-                                            <input type="text">
-                                        </div>
-                                        <div class="input-group">
-                                            <label for="">Type(s) de bien</label>
-                                            <select name="" id="">
-                                                <option value="tous">Tous</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-group table">
-                                            <label for="">Budget</label>
-                                            <div class="input-group-container">
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Min</option>
-                                                    </select>
-                                                </div>
-                                                <div class="container-cell">à</div>
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Max</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group table">
-                                            <label for="">Surface</label>
-                                            <div class="input-group-container">
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Min</option>
-                                                    </select>
-                                                </div>
-                                                <div class="container-cell">à</div>
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Max</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group table">
-                                            <label for="">Chambres</label>
-                                            <div class="input-group-container">
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Min</option>
-                                                    </select>
-                                                </div>
-                                                <div class="container-cell">à</div>
-                                                <div class="container-cell">
-                                                    <select name="" id="">
-                                                        <option value="default">Max</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="desk-4 phone-pr-20 phone-pl-20">
-                                    <img class="map" id="MapCentre2" title="" alt="" src="http://www.internet.lu/MAP_CENTRE.png" usemap="#mapcentre2" hidefocus="true">
-                                    <map name="mapcentre2">
-                                        <area shape="poly" onclick="showCities(109);" coords="167,473,185,432,195,425,192,414,196,412,203,417,205,408,213,402,211,390,216,389,221,395,228,393,233,392,240,402,243,424,290,428,288,440,240,439,239,448,231,449,213,466,195,466,183,468,182,478,171,478" title="Weiler-la-Tour" alt="Weiler-la-Tour" target="">
-                                        <area shape="poly" onclick="showCities(23);" coords="183,430,193,424,191,415,197,410,203,415,203,407,211,402,211,391,206,381,211,377,207,370,218,354,215,344,206,348,191,342,182,343,158,371,149,373,142,384,138,381,132,391,135,397,126,401,128,407,127,412" title="Hesperange" alt="Hesperange" target="">
-                                        <area shape="poly" onclick="showCities(80);" coords="213,387,209,381,214,377,210,369,221,352,227,349,246,347,248,339,264,346,285,347,284,353,291,349,296,349,304,355,312,378,296,373,278,376,274,386,268,385,265,398,258,403,252,402,242,399,232,390,222,392" title="Contern" alt="Contern" target="">
-                                        <area shape="poly" onclick="showCities(116);" coords="126,409,136,380,158,366,179,342,201,343,211,336,195,318,189,318,193,299,173,296,167,278,92,284,83,304,87,310,102,310,104,316,117,315,85,366,92,385" title="Luxembourg" alt="Luxembourg" target="">
-                                        <area shape="poly" onclick="showCities(54);" coords="81,368,23,379,14,361,8,345,20,346,25,336,43,337,57,311,94,341" title="Bertrange" alt="Bertrange" target="">
-                                        <area shape="poly" onclick="showCities(114);" coords="59,309,96,340,113,317,104,319,98,312,86,314,80,304,89,278,82,266,58,290,23,289,22,302" title="Strassen" alt="Strassen" target="">
-                                        <area shape="poly" onclick="showCities(102);" coords="203,343,213,335,197,317,215,306,227,317,246,319,246,343,222,347,216,341" title="Sandweiler" alt="Sandweiler" target="">
-                                        <area shape="poly" onclick="showCities(120);" coords="246,316,248,334,262,343,284,344,319,318,310,297,300,293,297,282,286,287,280,284,252,304" title="Schuttrange" alt="Schuttrange" target="">
-                                        <area shape="poly" onclick="showCities(95);" coords="173,291,184,266,191,257,207,248,213,236,224,225,266,223,277,237,286,237,287,254,294,256,293,265,288,266,289,274,296,279,288,284,278,283,248,306,243,315,231,316,215,304,201,312,193,312,195,298" title="Niederanven" alt="Niederanven" target="">
-                                        <area shape="poly" onclick="showCities(48);" coords="93,282,166,276,175,261,170,262,168,248,154,254,150,250,140,248,137,256,88,266" title="Walferdange" alt="Walferdange" target="">
-                                        <area shape="poly" onclick="showCities(111);" coords="172,287,169,276,177,258,169,246,154,251,142,245,134,252,114,260,95,240,102,225,131,215,144,219,145,229,170,231,177,223,225,221,211,233,206,248,191,253" title="Steinsel" alt="Steinsel" target="">
-                                        <area shape="poly" onclick="showCities(31);" coords="102,221,130,212,148,218,148,225,168,227,191,214,217,211,219,201,197,198,195,181,186,170,173,179,156,184,133,194,116,194,106,203" title="Lorentzweiler" alt="Lorentzweiler" target="">
-                                        <area shape="poly" onclick="showCities(104);" coords="118,193,117,179,111,172,116,144,124,147,130,163,142,160,148,148,167,138,183,138,188,152,195,161,185,169,138,191,126,193,122,192" title="Lintgen" alt="Lintgen" target="">
-                                        <area shape="poly" onclick="showCities(25);" coords="188,169,197,177,211,171,215,161,228,151,237,128,232,112,219,116,197,110,193,114,185,110,177,90,163,95,156,113,153,120,158,126,168,122,167,133,181,134,196,158,195,162" title="Fischbach" alt="Fischbach" target="">
-                                        <area shape="poly" onclick="showCities(52);" coords="132,160,122,140,112,142,110,172,116,180,117,192,104,203,88,211,85,205,98,179,88,176,81,163,73,167,71,160,58,151,53,138,60,126,58,108,67,99,79,97,90,102,94,94,114,82,110,76,120,67,121,71,132,67,133,71,144,69,161,95,152,120,158,131,165,125,167,134,150,144,144,157,138,158" title="Mersch" alt="Mersch" target="">
-                                        <area shape="poly" onclick="showCities(26);" coords="83,203,94,180,86,177,80,165,71,170,68,160,55,153,19,160,13,167,11,185,19,196,11,203,53,214" title="Tuntange" alt="Tuntange" target="">
-                                        <area shape="poly" onclick="showCities(59);" coords="19,157,56,150,51,136,58,126,58,106,51,103,55,90,49,79,39,82,29,72,18,71,11,76,2,112,3,129,5,138,13,140" title="Boevange-sur-Attert" alt="Boevange-sur-Attert" target="">
-                                        <area shape="poly" onclick="showCities(61);" coords="27,68,39,79,48,76,55,88,53,101,59,104,66,98,80,96,90,99,93,92,110,82,108,76,113,70,106,63,97,57,76,52,73,42,77,39,61,27,54,18,45,21,41,33,50,45,29,59" title="Bissen" alt="Bissen" target="">
-                                        <area shape="poly" onclick="showCities(50);" coords="51,13,79,38,75,47,96,55,113,67,118,64,123,53,128,49,122,45,122,36,108,29,108,21,130,23,132,10,88,7,77,1" title="Colmar-Berg" alt="Colmar-Berg" target="">
-                                        <area shape="poly" onclick="showCities(82);" coords="124,35,131,49,120,63,122,67,134,63,135,69,143,65,163,91,169,91,167,86,196,61,197,53,207,49,200,18,176,17,165,21,160,12" title="Nommern" alt="Nommern" target="">
-                                        <area shape="poly" onclick="showCities(96);" coords="171,87,199,61,199,53,207,52,227,67,239,55,242,63,232,72,230,94,236,101,229,110,219,113,196,108,190,110,179,88" title="Larochette" alt="Larochette" target="">
-                                        <area shape="poly" onclick="showCities(110);" coords="243,65,233,72,232,92,238,101,233,110,239,129,273,136,282,116,308,111,308,99,283,96,271,96,272,83,251,79,260,73,254,69,246,71" title="Heffingen" alt="Heffingen" target="">
-                                    </map>
-                                </div>
-                                <div class="desk-5 phone-pl-20">
-                                    <h2>Centre</h2>
-                                    <div class="clearfix">
-                                        <div class="phone-6 phone-pr-5">
-                                            <label for="townshipAll">
-                                                <input type="checkbox" id="townshipAll" name="townshipAll"/>
-                                                Toutes les communes
-                                            </label>
-                                            <div id="township" class="pannel--inset phone-mt-10"></div>
-                                        </div>
-                                        <div class="phone-6 phone-pl-5">
-                                            <label for="citiesAll">
-                                                <input type="checkbox" id="citiesAll" name="citiesAll"/>
-                                                Toutes les communes
-                                            </label>
-                                            <div id="cities" class="pannel--inset phone-mt-10">
-                                                <ul class="pannel--inset__checkbox-list">
-                                                    <li><label for="cities-80"><input id="cities-80" type="checkbox" value="80"/>BOFFERDANGE</label></li>
-                                                        <li><label for="cities-151"><input id="cities-151" type="checkbox" value="151"/>LORENTZWEILER</label></li>
-                                                        <li><label for="cities-294"><input id="cities-294" type="checkbox" value="294"/>HUNSDORF</label></li>
-                                                        <li><label for="cities-343"><input id="cities-343" type="checkbox" value="343"/>HELMDANGE</label></li>
-                                                        <li><a href="http://www.URL/484">BLASCHETTE</a></li>
-                                                        <li><a href="http://www.URL/499">ASSELSCHEUER</a></li>
-                                                        <li><a href="http://www.URL/562">KLINGELSCHEUER</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix">
-                                        <input style="width: 100%; margin: 0;" type="submit" class="btn-orange" value="Rechercher"/>
-                                    </div>
-                                </div>
-                            </div>
+                            <div id="search" class="search-banner-box search-banner-box--extended"></div>
                         </div>
                     </div>
                 </section>
@@ -519,6 +397,7 @@
             </footer>
         </div>
         <script type="text/javascript" src="scripts/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="scripts/vendor/flickity.pkgd.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/jquery.maphilight.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/imageMapResizer.min.js"></script>
