@@ -26,7 +26,7 @@ var mapManager = (function () {
             _getCities($(this).attr('data-id') || $(this).val()); //on charge la liste des villes
         });
         $SearchBox.on('click', '#simplified area[data-type="zone"]', function () { // au click sur carte du pays dans la recherche simplifiée
-            _loadTemplate('search-extended', function () { //on charge extended search, la map, le titre, et les checkboxes
+            _loadTemplate('search-extended', function () { //on charge extended search, la map, et les checkboxes
                 _loadMap('./images/MAP/MAP_CENTRE.png', $(this).attr('data-id')); //TODO: OBTENIR IMAGE CORRECTE DU PAYS POUR RECHERCHE ETENDUE
                 _updateLocation();
             });
@@ -61,19 +61,19 @@ var mapManager = (function () {
                 $('#citiesAll').prop('checked', true);
             }
         });
-        $SearchBox.on('change', '#township input[type="checkbox"], #cities input[type="checkbox"]', function (event) {
+        $SearchBox.on('change', '#township input[type="checkbox"], #cities input[type="checkbox"]', function (event) { //Ajoute la location quand on click sur une checkbox
             var fn = ($(this).prop('checked') ? _addLocation : _removeLocation);
             var param = $(this);
             if (typeof fn === "function") {
                 fn(param);
             }
         });
-        $SearchBox.on('removeLocation', '.dropDownListResultBox .item', function () {
+        $SearchBox.on('removeLocation', '.dropDownListResultBox .item', function () { //on retire la location quand on click sur une item de la checkbox
             var id = $(this).find('input').val();
             var cat = $(this).find('input').attr('data-cat');
             $('#' + cat + '-' + id).prop('checked', false).change();
         });
-        $SearchBox.on('click', '#back', function () {
+        $SearchBox.on('click', '#back', function () { //retour vers recherche simplifiée
             _loadTemplate();
         });
     };
