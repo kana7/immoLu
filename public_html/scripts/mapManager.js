@@ -12,6 +12,7 @@ var mapManager = (function () {
 
     var init = function () {
         _bindEvents();
+        _loadTemplate();
     };
 
     //Listes des event handlers
@@ -22,7 +23,17 @@ var mapManager = (function () {
              checkbox = $('#township input[value="'+$(this).attr('data-id')+'"]');
              checkbox.prop("checked", !checkbox.prop("checked"));
              }*/
-            _showCities($(this).attr('data-id') || $(this).val()); //on charge la liste des villes
+            _getCities($(this).attr('data-id') || $(this).val()); //on charge la liste des villes
+        });
+        $SearchBox.on('click', '#simplified area[data-type="zone"]', function () { // au click sur carte du pays dans la recherche simplifiée
+            _loadTemplate('search-extended', function () { //on charge extended search, la map, le titre, et les checkboxes
+                _loadMap('./images/MAP/MAP_CENTRE.png', $(this).attr('data-id')); //TODO: OBTENIR IMAGE CORRECTE DU PAYS POUR RECHERCHE ETENDUE
+                _updateLocation();
+            });
+        });
+        $SearchBox.on('click', '#loadCountry', function () {
+            _loadMap('./images/MAP/MAP_MAIN2.png', $(this).attr('data-id'));
+            _clearLists();
         });
         $SearchBox.on('change', '#townshipAll', function () { //Township check all checkboxes
             if ($('#townshipAll').prop('checked')) {
@@ -62,90 +73,72 @@ var mapManager = (function () {
             var cat = $(this).find('input').attr('data-cat');
             $('#' + cat + '-' + id).prop('checked', false).change();
         });
+        $SearchBox.on('click', '#back', function () {
+            _loadTemplate();
+        });
     };
 
     /*------------------------------METHODS-----------------------------------*/
-
-    var _loadContent = function () { //Charge l'interface dans la recherche
-
+    //Montre la recherche étendu, Retourne la map des communes (avec coordonnées) + charge les listes
+    var _showZone = function (id) {
+        _loadTemplate('search-extended', _loadMap('./images/MAP/MAP_CENTRE.png', id));
+        _updateLocation();
     };
-
     //Charge l'image de la map + balise map avec coordonnées
-    var _loadMap = function (id) {
-        $.ajax({
-            type: "GET",
-            //TODO: URL TO GET MAPIMAGE + COORDINATES
-            url: "http://shop.internet.lu/Scripts/sql.exe?SqlDB=LOLShop&Sql=#&_DivisionId=" + id, //Récupère l'image de la map (zone ou pays)
-            beforeSend: function () {
-                _clearLists();
-                $('#search').prepend(loaderTemplate);
-                setTimeout(function () {
-                    $('#map').addClass('is-loading');
+    var _loadMap = function (picURL, CoordinatesURL) {
+        //load l'image de la map;
+        var img = $('<img/>').attr('src', picURL).on('load', function () {
+            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                console.log("Erreur lors de la récupération de l'image de la map");
+            } else {
+                img.attr('usemap', '#map');
+                img.attr('hidefocus', true);
+                img.addClass('map');
+                $('.checkbox-list').each(function () {
+                    temp = new CheckboxList($(this));
+                    temp.init();
                 });
-            },
-            success: function (data) {
-                var obj = data.aData;
-                //TODO: GET RESPONSE AND PRINT MAP IN SEARCH BOX
-            },
-            complete: function () {
-                $('#map').removeClass('is-loading');
-                $(loaderTemplate).remove();
-                //TODO: afficher la liste des communes pour cette zone :  _showTownship();
+                $('#map>img').remove();
+                $('#map').prepend(img);
+                $('map').imageMapResize();
                 $SearchBox.find('.selection-list').removeClass('disabled');
+                _getRequest(CoordinatesURL, '', _getCoordinates); //TODO: DEFINIR URL POUR LES COORDONNEES
             }
         });
     };
+    //prend la réponse json de la requête ajax (dans _loadMap) pour ensuite le printer à coté de l'image.
+    var _getCoordinates = function (response) {
+        //TODO: DEFINIR CORRECTEMENT LE PRINT DES DONNEES DANS LA PAGE. 
+        var map = $('<map name="map" />');
+        var areas = '';
+        for (var area in response['areas']) {
+            //area.cat = city, township, zone;
+            areas += '<area shape="poly" data-type="' + area.cat + '" data-id="' + area.id + '" coords="' + area.coordinate + '" shapetitle="' + area.name + '" alt="' + area.name + '">';
+        }
+        map.append(areas);
+        $('#map').append(map);
+        $('map').imageMapResize();
+    };
+
     //Récupère la liste des villes d'une commune
-    var _showCities = function (id) {
-        $.ajax({
-            type: "GET",
-            url: "http://shop.internet.lu/Scripts/sql.exe?SqlDB=LOLShop&Sql=GetDivisionList.phs&_DivisionId=" + id,
-            dataType: "json",
-            beforeSend: function () {
-                $('#cities').prepend(loaderTemplate);
-                setTimeout(function () {
-                    $('#cities').addClass('is-loading');
-                });
-            },
-            success: function (data) {
-                var obj = data.aData;
-                $("#cities").html(_printList('city', obj));
-            },
-            complete: function () {
-                $('#cities').removeClass('is-loading');
-                $(loaderTemplate).remove();
-            }
-        });
+    var _getCities = function (id) {
+        var url = "http://shop.internet.lu/Scripts/sql.exe?SqlDB=LOLShop&Sql=GetDivisionList.phs&_DivisionId=";
+        _getRequest(url, id, _showCities);
+    };
+    //print la list des villes
+    var _showCities = function (reponse) {
+        var obj = reponse.aData;
+        $("#cities").html(_printList('city', obj));
     };
     //Récupère la liste des communes d'une zone
-    var _showTownship = function (id) {
-        console.log(id);
-        alert(id);
-        $.ajax({
-            type: "GET",
-            url: "http://shop.internet.lu/Scripts/sql.exe?SqlDB=LOLShop&Sql=#&_DivisionId=" + id, //obtenir la liste de toute les communes de la zone (aprés clic sur zone nord, est, ouest, sud, center)
-            dataType: "json",
-            beforeSend: function () {
-                $('#township').prepend(loaderTemplate);
-                setTimeout(function () {
-                    $('#township').addClass('is-loading');
-                });
-            },
-            success: function (data) {
-                var obj = data.aData;
-                $("#township").html(_printList('township', obj));
-            },
-            complete: function () {
-                $('#township').removeClass('is-loading');
-                $(loaderTemplate).remove();
-                //TODO: afficher la liste des villes pour la première commune de la liste :  _showCities();
-            }
-        });
+    var _getTownship = function (id) {
+        var url = ""; //TODO: DEFINIR URL POUR RECUPERER LISTE DES COMMUNES
+        _getRequest(url, id, _showTownship);
     };
-//Retourne la map du pays et clean les deux listes
-    var _showZone = function (id) {
-        console.log(zone);
-        //TODO: LOAD COUNTRY MAP IN EXTENDED VIEW ---> _loadMap(id)
+    //print la liste des communes
+    var _showTownship = function (reponse) {
+        var obj = reponse.aData;
+        $("#township").html(_printList('township', obj));
     };
 
     var _addLocation = function (checkbox) {
@@ -162,18 +155,16 @@ var mapManager = (function () {
         temp = '<li id="I-' + checkbox.attr('data-cat') + '-' + checkbox.attr('value') + '" class="item" data-event="removeLocation"><span class="icon-x-icone"></span>' + checkbox.attr('name') + '<input type="hidden" data-cat="' + checkbox.attr('data-cat') + '" name="' + checkbox.attr('name') + '" value ="' + checkbox.attr('value') + '"/></li>';
         $SearchBox.find('.dropDownListResultBox').prepend(temp);
     };
-
     var _removeLocation = function (checkbox) {
         //item = input OR item dans dropdownResultBox
-        //Supprimer de selected location
+        //Supprimer de l'objet selectedLocation
         var id = checkbox.attr('value');
         var cat = checkbox.attr('data-cat');
         delete selectedLocation[cat][id];
         //Enlever des deux listes
         $SearchBox.find('#I-' + cat + '-' + id).remove();
     };
-
-    var _renderLocation = function () {
+    var _updateLocation = function () {
         $.each(selectedLocation, function (key) {
             for (var id in selectedLocation[key]) {
                 $('#' + selectedLocation[key][id].cat + '-' + id).prop('checked', true).change();
@@ -194,12 +185,29 @@ var mapManager = (function () {
         $SearchBox.find('.pannel--inset__checkbox-list').empty().parents('.selection-list').addClass('disabled');
     };
     //Charge le template correspondant dans la searchBox
-    var _loadTemplate = function (link) {
+    var _loadTemplate = function (link, callback) {
+        console.log('load-temp');
         var link = link || "search-simplified"; //search-simplified OR search-extended
         $("#search").load("templates/" + link + ".html", function (response, status, xhr) {
             if (status == "error") {
                 var msg = "Oups, il y a une erreur: ";
                 console.log(msg + xhr.status + " " + xhr.statusText);
+            }
+            if (typeof callback === "function") {
+                callback();
+            }
+        });
+    };
+
+    //fait une requête ajax et execute une fonction callback
+    var _getRequest = function (url, id, callbackSuccess) {
+        $.ajax({
+            type: "GET",
+            url: url + id,
+            dataType: "json",
+            success: callbackSuccess,
+            error: function (request, status, error) {
+                console.log("Erreur lors de la requête ajax");
             }
         });
     };
@@ -212,8 +220,6 @@ var mapManager = (function () {
 $(document).ready(function () {
 
     mapManager.init();
-
-    $('map').imageMapResize();
     $('.map').maphilight({
         fill: true,
         fillColor: '000000',
