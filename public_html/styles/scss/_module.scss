@@ -1278,6 +1278,7 @@ input[type="text"], input[type="password"]{
         a, .annonce_entry_image_thumbnails_pic{height: 100%;}
     }
 }
+
 .search-container{
     display: block;
     position: relative;
@@ -1509,12 +1510,14 @@ input[type="text"], input[type="password"]{
     .entry-annonce-link{
         display: none;
         color: $blue;
-        font-size: 1.1em;
         font-weight: 600;
         margin-top: 10px;
         &:hover{
             text-decoration: underline;
             color: lighten($blue, 15%);
+        }
+        &:before{
+            content: " "
         }
     }
     .entry-header{
@@ -1523,7 +1526,7 @@ input[type="text"], input[type="password"]{
         padding: 5px 15px;
         padding-left: 40px;
         border-radius: 4px 4px 0 0;
-        .title{display: inline-block; margin: 0; font-size: 15px; line-height: 18px; color: white; text-decoration: inherit;}
+        h2.title{display: inline-block; margin: 0; font-size: 15px; line-height: 18px; color: white; text-decoration: inherit; font-weight: 400; }
         a:hover{&>.title{text-decoration: underline;}}
         text-transform: uppercase;
         .location{
@@ -1547,7 +1550,7 @@ input[type="text"], input[type="password"]{
             border-radius: 4px !important; border: 1px solid rgba(218,218,218,1);
         }
         .infos-container{
-            .title{display: block; font-size: 1.15em; &>.title, &>.location{display: inline;}}
+            h2.title{display: block; font-size: 1.15em; &>.title, &>.location{display: inline;}}
         }
         .menu-container{
             button{
@@ -1584,11 +1587,11 @@ input[type="text"], input[type="password"]{
         display: block;
         margin-top: 5px;
         .location{color: $blue;}
-        li{display: block; line-height: 20px;font-size: 1.15em; font-weight: 600;}
+        li{display: block; line-height: 20px;font-size: 1.15em;}
     }
     &:not(.minimized){
         .infos-container, .agency-container{
-            height: 125px;
+            height: 115px;
             padding: 10px 10px;
         }
         .infos-container{
@@ -1598,10 +1601,10 @@ input[type="text"], input[type="password"]{
         }
     }
     .infos-container{
-        .title{font-size: 18px; margin: 0; text-align: left; .location{font-size: inherit;}}
+        h2.title{font-size: 17px; margin: 0; text-align: left; font-weight: 400; .location{font-size: inherit;}}
     }
     .price, .details, .icons{
-        font-weight: 600;
+        font-weight: 400;
     }
     .price{
         font-size: 1.6em;
@@ -1638,7 +1641,7 @@ input[type="text"], input[type="password"]{
         word-break: keep-all;
         word-wrap: break-word;
         font-size: 1em;
-        line-height: 20px;
+        line-height: 14px;
         text-align: justify;
         text-align-last: left;
         margin: 0;

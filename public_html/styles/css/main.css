@@ -4521,12 +4521,13 @@ input[type="text"], input[type="password"] {
   .search-result-entry .entry-annonce-link {
     display: none;
     color: #004994;
-    font-size: 1.1em;
     font-weight: 600;
     margin-top: 10px; }
     .search-result-entry .entry-annonce-link:hover {
       text-decoration: underline;
       color: #006fe1; }
+    .search-result-entry .entry-annonce-link:before {
+      content: " "; }
   .search-result-entry .entry-header {
     display: block;
     position: relative;
@@ -4534,13 +4535,14 @@ input[type="text"], input[type="password"] {
     padding-left: 40px;
     border-radius: 4px 4px 0 0;
     text-transform: uppercase; }
-    .search-result-entry .entry-header .title {
+    .search-result-entry .entry-header h2.title {
       display: inline-block;
       margin: 0;
       font-size: 15px;
       line-height: 18px;
       color: white;
-      text-decoration: inherit; }
+      text-decoration: inherit;
+      font-weight: 400; }
     .search-result-entry .entry-header a:hover > .title {
       text-decoration: underline; }
     .search-result-entry .entry-header .location {
@@ -4571,10 +4573,10 @@ input[type="text"], input[type="password"] {
   .search-result-entry.minimized .entry-body {
     border-radius: 4px !important;
     border: 1px solid #dadada; }
-  .search-result-entry.minimized .infos-container .title {
+  .search-result-entry.minimized .infos-container h2.title {
     display: block;
     font-size: 1.15em; }
-    .search-result-entry.minimized .infos-container .title > .title, .search-result-entry.minimized .infos-container .title > .location {
+    .search-result-entry.minimized .infos-container h2.title > .title, .search-result-entry.minimized .infos-container h2.title > .location {
       display: inline; }
   .search-result-entry.minimized .menu-container button {
     background-color: rgba(255, 255, 255, 0.7); }
@@ -4608,23 +4610,23 @@ input[type="text"], input[type="password"] {
     .search-result-entry .mobile-details li {
       display: block;
       line-height: 20px;
-      font-size: 1.15em;
-      font-weight: 600; }
+      font-size: 1.15em; }
   .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
-    height: 125px;
+    height: 115px;
     padding: 10px 10px; }
   .search-result-entry:not(.minimized) .infos-container {
     display: inline-block;
     width: 50%;
     float: left; }
-  .search-result-entry .infos-container .title {
-    font-size: 18px;
+  .search-result-entry .infos-container h2.title {
+    font-size: 17px;
     margin: 0;
-    text-align: left; }
-    .search-result-entry .infos-container .title .location {
+    text-align: left;
+    font-weight: 400; }
+    .search-result-entry .infos-container h2.title .location {
       font-size: inherit; }
   .search-result-entry .price, .search-result-entry .details, .search-result-entry .icons {
-    font-weight: 600; }
+    font-weight: 400; }
   .search-result-entry .price {
     font-size: 1.6em;
     color: #e75e0a; }
@@ -4663,7 +4665,7 @@ input[type="text"], input[type="password"] {
     word-break: keep-all;
     word-wrap: break-word;
     font-size: 1em;
-    line-height: 20px;
+    line-height: 14px;
     text-align: justify;
     text-align-last: left;
     margin: 0; }
@@ -6387,13 +6389,13 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
 
   .search-result-entry .entry-header {
     padding-left: 15px; }
-    .search-result-entry .entry-header .title {
-      font-size: 16px;
+    .search-result-entry .entry-header h2.title {
+      font-size: 17px;
       line-height: 24px; }
     .search-result-entry .entry-header .location {
       display: inline; }
   .search-result-entry .entry-annonce-link {
-    display: block; }
+    display: inline; }
   .search-result-entry .menu-container {
     display: none; }
   .search-result-entry .entry-body {
@@ -6404,7 +6406,7 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   .search-result-entry .image-container, .search-result-entry .infos-container, .search-result-entry .agency-container {
     display: table-cell !important;
     position: relative;
-    vertical-align: middle;
+    vertical-align: top;
     height: 100%; }
   .search-result-entry .mobile-details {
     display: none; }
@@ -6463,8 +6465,8 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
       .search-result-entry .details li:not(:last-child) {
         margin-right: 14px;
         font-size: inherit; }
-  .search-result-entry.minimized .infos-container .title {
-    font-size: 1.25em;
+  .search-result-entry.minimized .infos-container h2.title {
+    font-size: 1.416666666666667em;
     line-height: 20px; }
   .search-result-entry.residence .details {
     display: block;
@@ -6637,7 +6639,7 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   .search-result-entry .details {
     margin-bottom: 5px; }
     .search-result-entry .details li {
-      margin-bottom: 5px; }
+      margin-bottom: 0; }
   .search-result-entry .image-container {
     width: 257px !important;
     border-right: 1px solid #dadada; }
@@ -6781,9 +6783,7 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
 
   .search-result-entry .price {
     font-size: 2.1em;
-    margin-bottom: 8px; }
-  .search-result-entry .icons {
-    font-size: 1.7em; }
+    margin-bottom: 5px; }
   .search-result-entry .image-container {
     width: 245px !important; }
   .search-result-entry .infos-container {
@@ -6794,8 +6794,8 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
       height: calc(100% - 105px); }
     .search-result-entry .agency-container .links li a {
       padding: 7px 15px; }
-  .search-result-entry .details, .search-result-entry .icons {
-    margin-bottom: 8px; }
+  .search-result-entry .icons {
+    margin-bottom: 5px; }
 
   .agency-header {
     padding: 30px 0 0 135px; }
@@ -6818,6 +6818,6 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
     left: 20px; }
 
   .search-result-entry .agency-container .links li a {
-    font-size: 1.15em; } }
+    font-size: 1.10em; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -193,13 +193,13 @@
     .search-result-entry{
         .entry-header{
             padding-left: 15px;
-            .title{
-                font-size: 16px;
+            h2.title{
+                font-size: 17px;
                 line-height: 24px;
             }
             .location{display: inline;}
         }
-        .entry-annonce-link{display: block;}
+        .entry-annonce-link{display: inline;}
         .menu-container{display: none;}
         .entry-body{
             display: table !important;
@@ -209,7 +209,7 @@
         .image-container, .infos-container, .agency-container{
             display: table-cell !important;
             position: relative;
-            vertical-align: middle;
+            vertical-align: top;
             height: 100%;
         }
         .mobile-details{display: none;}
@@ -264,8 +264,8 @@
         }
         &.minimized{
             .infos-container{
-                .title{
-                    font-size: 1.25em;
+                h2.title{
+                    font-size: 1.416666666666667em;
                     line-height: 20px;
                 }
             }
@@ -476,7 +476,7 @@
     .search-result-entry{
         .details{
             margin-bottom: 5px;
-            li{margin-bottom: 5px;}
+            li{margin-bottom: 0;}
         }
         .image-container{width: 257px !important; border-right: 1px solid rgba(218,218,218,1);}
         .infos-container{
@@ -608,10 +608,7 @@
     .search-result-entry{
         .price{
             font-size: 2.1em;
-            margin-bottom: 8px;
-        }
-        .icons{
-            font-size: 1.7em;
+            margin-bottom: 5px;
         }
         .image-container{width: 245px !important;}
         .infos-container{width: calc(100% - 245px - 200px) !important;}
@@ -620,12 +617,13 @@
             .agency-container-frame{height: calc(100% - 105px); }
             .links li a {padding: 7px 15px;}
         }
-        .details, .icons{
-            margin-bottom: 8px;
+        .icons{
+            margin-bottom: 5px;
         }
     }
     .agency-header{
         padding: 30px 0 0 135px;
+
     }
     .agency-entry{
         h2 {
@@ -651,5 +649,5 @@
         top: 10px;
         left: 20px;
     }
-    .search-result-entry .agency-container .links li a{font-size: 1.15em;}
+    .search-result-entry .agency-container .links li a{font-size: 1.10em;}
 }
