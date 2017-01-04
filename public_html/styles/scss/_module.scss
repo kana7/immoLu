@@ -1558,6 +1558,12 @@ input[type="text"], input[type="password"]{
             }
         }
     }
+    &.pro, &.pro-plus{
+        .description{
+            -webkit-line-clamp: 15; /* number of lines to show */
+            height: auto;
+        }
+    }
     .image-container{ 
         background-color: #E6E5E3;
         overflow: hidden;
