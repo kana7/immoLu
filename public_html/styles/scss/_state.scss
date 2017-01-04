@@ -151,7 +151,7 @@
     }
     .search-result-entry.pro{
         .image-container{
-            width: 50% !important;
+            width: 440px !important;
         }
         .aside-container{
             display: table-cell !important;
@@ -204,6 +204,7 @@
         .entry-body{
             display: table !important;
             border-collapse: separate;
+            min-height: 210px;
             .entry-body-row{display: table-row;}
         }
         .image-container, .infos-container, .agency-container{
@@ -217,8 +218,8 @@
             margin-bottom: 5px;
             li{margin-bottom: 5px;}
         }
-        .description{display: block;}
-        .image-container{width: 225px !important; float: none !important;}
+        .description{display: block; display: -webkit-box;}
+        .image-container{width: 240px !important; float: none !important;}
         .agency-container{
             width: 166px !important;
             .agency-container-frame{width: 85%;}
@@ -227,17 +228,9 @@
         .icons{
             margin-bottom: 15px;
         }
-        .image-container-frame{
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
         .infos-container, .agency-container{
-            height: 115px;
-            padding: 15px 20px;
+            /*height: 115px;*/
+            padding: 10px 20px;
         }
         .infos-container{float: none !important; width: calc(100% - 200px - 166px) !important;}
         .agency-container{
@@ -248,7 +241,6 @@
             .agency-container-frame{position: absolute; height: calc(100% - 117px);}
             .links{display: block; position: absolute;}
         }
-        .description{display: block;}
         .links{display: block;}
         .entry-annonce-link{text-align: right;}
         .details{
@@ -263,6 +255,7 @@
             }
         }
         &.minimized{
+            .entry-body{min-height: 180px;}
             .infos-container{
                 h2.title{
                     font-size: 1.416666666666667em;
@@ -295,7 +288,7 @@
         border-left: none;
     }
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
-        height: 207px;
+        /*height: 207px;*/
     }
     .agency-header{
         max-width: none;
@@ -554,7 +547,7 @@
         margin-bottom: 15px;
     }
     .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
-        height: 226px;
+        /*height: 226px;*/
     }
 
     form.form{
@@ -610,7 +603,9 @@
             font-size: 2.1em;
             margin-bottom: 5px;
         }
-        .image-container{width: 245px !important;}
+        .image-container{
+            width: 280px !important;
+        }
         .infos-container{width: calc(100% - 245px - 200px) !important;}
         .agency-container{
             width: 200px !important;
@@ -619,6 +614,11 @@
         }
         .icons{
             margin-bottom: 5px;
+        }
+    }
+    .search-result-entry.minimized{
+        .image-container{
+            width: 240px !important;
         }
     }
     .agency-header{
