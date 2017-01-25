@@ -32,7 +32,7 @@ var mapManager = (function () {
             });
         });
         $SearchBox.on('click', '#loadCountry', function () {
-            _loadMap('./images/MAP/MAP_MAIN2.png', $(this).attr('data-id'));
+            _loadMap('./images/MAP/MAP_MAIN.png', $(this).attr('data-id'));
             _clearLists();
         });
         $SearchBox.on('change', '#townshipAll', function () { //Township check all checkboxes

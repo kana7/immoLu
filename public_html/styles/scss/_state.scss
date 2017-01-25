@@ -1,3 +1,36 @@
+.rotate0{
+    img{
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+.rotate90{
+    img{
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        width: 100%;
+        height: auto;
+    }
+}
+.rotate180{
+    img{
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+.rotate270{
+    img{
+        -ms-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        width: 100%;
+        height: auto;   
+    }
+}
+
 @include media(phone){
     .annonce-title{
         .annonce-price{font-size: 1.2em;}
@@ -202,6 +235,7 @@
             display: table !important;
             border-collapse: separate;
             min-height: 210px;
+            height: 210px;
             .entry-body-row{display: table-row;}
         }
         .image-container, .infos-container, .agency-container{
@@ -217,7 +251,7 @@
         }
         .description{display: block; display: -webkit-box;}
         .image-container{width: 240px !important; float: none !important;}
-        .agency-container{
+        &:not(.pro-plus) .agency-container{
             width: 166px !important;
             .agency-container-frame{width: 85%;}
             .links li a {padding: 9px 8px;}
@@ -225,17 +259,23 @@
         .icons{
             margin-bottom: 15px;
         }
-        .infos-container, .agency-container{
+        .infos-container{
             padding: 10px 20px;
         }
-        .infos-container{float: none !important; width: calc(100% - 200px - 166px) !important;}
+        &:not(.pro-plus) .agency-container{
+            .agency-container-frame{
+                position: relative;
+                display: block;
+                height: 100%;
+                padding-bottom: 103px;
+            }
+            .links{display: block; position: absolute;}
+        }
         .agency-container{
-            position: relative !important;
+            position: relative;
             float: none !important;
             background-color: #F8F8F8;
             border-left: 1px solid rgba(218,218,218,1);
-            .agency-container-frame{position: absolute; height: calc(100% - 117px);}
-            .links{display: block; position: absolute;}
         }
         .links{display: block;}
         .entry-annonce-link{text-align: right;}
@@ -250,14 +290,42 @@
                 }
             }
         }
-        &.pro{
+        &:not(.pro-plus){.infos-container{float: none !important; width: calc(100% - 200px - 166px) !important;}}
+        &.pro,  &.pro-plus{
             .entry-body{
                 min-height: 330px;
+                height: 330px;
             }
         }
-        &.pro-plus{}
+        &.pro-plus{
+            .entry-body{background-color: $footer-grey;}
+            .infos-container, .agency-container{
+                display: inline-block !important;
+                height: auto;
+                width: 100%;
+                background-color: transparent;
+            }
+            .infos-container{color: white; margin-bottom: 117px;}
+            .agency-container{
+                display: block;
+                position: absolute;
+                bottom: 0;
+                top: auto;
+                padding: 0;
+                background-color: white;
+                .links, .agency-container-frame{
+                    display: inline-block;
+                    position: relative;
+                    width: 50%;
+                }
+                .links{float: right; border-left: 1px solid #dadada; a{padding: 9px 10px;}}
+                .agency-container-frame{float:left; max-width: none; height: 117px;}
+                img{margin: 0 auto; max-width: 90%;}
+            }
+
+        }
         &.minimized{
-            .entry-body{min-height: 180px;}
+            .entry-body{min-height: 180px; height: 180px;}
             .infos-container{
                 h2.title{
                     font-size: 1.416666666666667em;
@@ -286,7 +354,7 @@
             }
         }
     }
-    .search-result-entry .infos-container, .search-result-entry .agency-container {
+    .search-result-entry .infos-container{
         height: auto;
     }
     .agency-header{
@@ -351,7 +419,8 @@
             min-height: 65px;
         }
     }
-    .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container{
+    .search-result-entry:not(.minimized):not(.pro-plus) .infos-container, 
+        .search-result-entry:not(.minimized):not(.pro-plus) .agency-container{
         padding: 10px 15px;
     }
     .search-banner-tabs ul{
@@ -471,10 +540,10 @@
             li{margin-bottom: 0;}
         }
         .image-container{border-right: 1px solid rgba(218,218,218,1);}
-        .infos-container{
+        &:not(.pro-plus) .infos-container{
             width: calc(100% - 257px - 175px) !important;
         }
-        .agency-container{
+        &:not(.pro-plus) .agency-container{
             width: 175px !important;
             .links li a {padding: 9px 16px;}
         }
@@ -605,10 +674,8 @@
         .image-container{
             width: 280px !important;
         }
-        .infos-container{width: calc(100% - 245px - 200px) !important;}
-        .agency-container{
+        &:not(.pro-plus) .agency-container{
             width: 200px !important;
-            .agency-container-frame{height: calc(100% - 105px); }
             .links li a {padding: 7px 15px;}
         }
         .icons{
@@ -619,6 +686,18 @@
                 width: 440px !important;
             }
         }
+        &.pro-plus{
+            .entry-body{
+                height: 495px;
+                min-height: 495px;
+            }
+            .image-container{
+                width: 660px !important;
+            }
+        }
+    }
+    .search-result-entry:not(.pro-plus){
+        .infos-container{width: calc(100% - 245px - 200px) !important;}
     }
     .search-result-entry.minimized{
         .image-container{

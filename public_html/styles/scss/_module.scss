@@ -516,6 +516,7 @@ header{
         }
     }
 }
+#map{border-right: 1px solid $grey-bg;}
 .checkbox{
     color: $dark-grey !important;
     text-transform: uppercase;
@@ -649,7 +650,7 @@ footer .footer-links{
 // -----------------------------------------------------------------------------
 
 @mixin btn{
-    &,&:focus, &:active{
+    &{
         font-size: 14px;
         font-weight: 600;
 
@@ -707,7 +708,7 @@ footer .footer-links{
     @include btn;
 }
 .btn-orange{
-    &,&:focus, &:active{
+    &{
         color: $white !important;
         border-color: #E75E0A !important;
         text-shadow: 0 2px #E75E0A;
@@ -729,7 +730,7 @@ footer .footer-links{
     }
 }
 .btn-blue{
-    &,&:focus, &:active{
+    &{
         color: $white !important;
         border-color: #004994 !important;
         text-shadow: 0 2px #004994;
@@ -770,21 +771,19 @@ footer .footer-links{
     }
 }
 .btn-grey{
-    &,&:focus, &:active{
-        color: #808080 !important;
-        border-color: #d6d6d6 !important;
-        text-shadow: 0 2px #d6d6d6;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,d6d6d6+100 */
-        background: #e8e8e8; /* Old browsers */
-        background: -moz-linear-gradient(top,  #e8e8e8 0%, #d6d6d6 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  #e8e8e8 0%,#d6d6d6 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  #e8e8e8 0%,#d6d6d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
+    color: #808080 !important;
+    border-color: #d6d6d6 !important;
+    text-shadow: 0 2px #d6d6d6;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,d6d6d6+100 */
+    background: #e8e8e8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e8e8e8 0%, #d6d6d6 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #e8e8e8 0%,#d6d6d6 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #e8e8e8 0%,#d6d6d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
 
 
-        font-weight: 800;
-        text-transform: capitalize;
-    }
+    font-weight: 800;
+    text-transform: capitalize;
     &:hover:not([disabled]):not(.disabled){
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
         background: #d6d6d6; /* Old browsers */
@@ -848,6 +847,9 @@ footer .footer-links{
 .nav-list{
     @include pannel;
     border: 1px solid $grey;
+    li:not(:first-child){
+        border-top: 1px solid $grey;
+    }
 }
 .search-banner-tabs{
     overflow: auto;
@@ -1079,6 +1081,11 @@ input[type="text"], input[type="password"]{
         margin-top: 5px;
     }
     p{text-align: left;}
+}
+
+#add_client_logo > img {
+    width: auto;
+    max-height: 150px;
 }
 
 //GALLERY CELL
@@ -1401,17 +1408,14 @@ input[type="text"], input[type="password"]{
 
 #image-gallery{
     border: $border;
+    width: 100%;
 }
 #image-gallery li {
-    text-align: center;
     background-color: $grey-bg;
+    @include thumbnail;
+    img{height: auto;}
     a{width: 100%;height: 100%;}
-    img{
-        display: inline-block;
-        max-width: 100%;
-        height: 100%;
-        text-align: center;
-    }
+
 }
 .lg-logo .lg:before{
     content: '';
@@ -1685,16 +1689,14 @@ input[type="text"], input[type="password"]{
                 display: block;
                 height: 100%;
                 text-align: center;
-                padding: 5px;
+                padding: 10px 5px;
             }
         }
         img{
             display: inline-block;
-            width: auto;
+            width: 100%;
             height: auto;
-            max-width: 100%;
             max-height: 100%;
-            @include vertical-align-middle;
         }
         .links{
             display: none;

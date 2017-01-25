@@ -3378,6 +3378,9 @@ header {
     .pannel--inset__checkbox-list li:not(last-child) {
       margin-bottom: 5px; }
 
+#map {
+  border-right: 1px solid #e5e5e5; }
+
 .checkbox {
   color: #818181 !important;
   text-transform: uppercase;
@@ -3488,19 +3491,11 @@ footer .footer-links {
   footer .footer-links img {
     display: block; }
 
-.btn-blue, #add-entry #options .option-infos .option-input input + label, .btn-blue:focus, #add-entry #options .option-infos .option-input input + label:focus, .btn-blue:active, #add-entry #options .option-infos .option-input input + label:active,
+.btn-blue, #add-entry #options .option-infos .option-input input + label,
 .btn-orange,
 #add-entry #options .option-infos .option-input input:checked + label,
-.btn-orange:focus,
-#add-entry #options .option-infos .option-input input:checked + label:focus,
-.btn-orange:active,
-#add-entry #options .option-infos .option-input input:checked + label:active,
 .btn-grey,
-.btn-grey:focus,
-.btn-grey:active,
-.btn-white,
-.btn-white:focus,
-.btn-white:active {
+.btn-white {
   font-size: 14px;
   font-weight: 600;
   position: relative;
@@ -3526,19 +3521,11 @@ footer .footer-links {
   user-select: none;
   outline: 0;
   text-decoration: none; }
-  .btn-blue.disabled, #add-entry #options .option-infos .option-input input + label.disabled, .btn-blue:focus.disabled, #add-entry #options .option-infos .option-input input + label:focus.disabled, .btn-blue:active.disabled, #add-entry #options .option-infos .option-input input + label:active.disabled,
+  .btn-blue.disabled, #add-entry #options .option-infos .option-input input + label.disabled,
   .btn-orange.disabled,
   #add-entry #options .option-infos .option-input input:checked + label.disabled,
-  .btn-orange:focus.disabled,
-  #add-entry #options .option-infos .option-input input:checked + label:focus.disabled,
-  .btn-orange:active.disabled,
-  #add-entry #options .option-infos .option-input input:checked + label:active.disabled,
   .btn-grey.disabled,
-  .btn-grey:focus.disabled,
-  .btn-grey:active.disabled,
-  .btn-white.disabled,
-  .btn-white:focus.disabled,
-  .btn-white:active.disabled {
+  .btn-white.disabled {
     cursor: default;
     opacity: 0.5; }
 .btn-blue:hover, #add-entry #options .option-infos .option-input input + label:hover,
@@ -3572,7 +3559,7 @@ footer .footer-links {
   padding: 0 70px;
   height: 42px !important; }
 
-.btn-orange, #add-entry #options .option-infos .option-input input:checked + label, .btn-orange:focus, #add-entry #options .option-infos .option-input input:checked + label:focus, .btn-orange:active, #add-entry #options .option-infos .option-input input:checked + label:active {
+.btn-orange, #add-entry #options .option-infos .option-input input:checked + label {
   color: #fff !important;
   border-color: #E75E0A !important;
   text-shadow: 0 2px #E75E0A;
@@ -3600,7 +3587,7 @@ footer .footer-links {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e75e0a', endColorstr='#e75e0a',GradientType=0 );
   /* IE6-9 */ }
 
-.btn-blue, #add-entry #options .option-infos .option-input input + label, .btn-blue:focus, #add-entry #options .option-infos .option-input input + label:focus, .btn-blue:active, #add-entry #options .option-infos .option-input input + label:active {
+.btn-blue, #add-entry #options .option-infos .option-input input + label {
   color: #fff !important;
   border-color: #004994 !important;
   text-shadow: 0 2px #004994;
@@ -3635,7 +3622,7 @@ footer .footer-links {
     background-color: #004994;
     color: #fff; }
 
-.btn-grey, .btn-grey:focus, .btn-grey:active {
+.btn-grey {
   color: #808080 !important;
   border-color: #d6d6d6 !important;
   text-shadow: 0 2px #d6d6d6;
@@ -3652,24 +3639,24 @@ footer .footer-links {
   /* IE6-9 */
   font-weight: 800;
   text-transform: capitalize; }
-.btn-grey:hover:not([disabled]):not(.disabled) {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
-  background: #d6d6d6;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #d6d6d6 8%, #d6d6d6 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 );
-  /* IE6-9 */ }
+  .btn-grey:hover:not([disabled]):not(.disabled) {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+8,d6d6d6+100 */
+    background: #d6d6d6;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #d6d6d6 8%, #d6d6d6 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #d6d6d6 8%, #d6d6d6 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 );
+    /* IE6-9 */ }
 
 .btn-o-blue {
   color: #004994;
   background-color: #fff;
   border: 2px solid #004994; }
-  .btn-o-blue, .btn-o-blue:focus, .btn-o-blue:active {
+  .btn-o-blue {
     font-size: 14px;
     font-weight: 600;
     position: relative;
@@ -3695,7 +3682,7 @@ footer .footer-links {
     user-select: none;
     outline: 0;
     text-decoration: none; }
-    .btn-o-blue.disabled, .btn-o-blue:focus.disabled, .btn-o-blue:active.disabled {
+    .btn-o-blue.disabled {
       cursor: default;
       opacity: 0.5; }
   .btn-o-blue:hover {
@@ -3785,6 +3772,8 @@ footer .footer-links {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(0, 0, 0, 0.12);
     -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(0, 0, 0, 0.12);
     -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(0, 0, 0, 0.12); }
+  .nav-list li:not(:first-child) {
+    border-top: 1px solid #c0c0c0; }
 
 .search-banner-tabs {
   overflow: auto;
@@ -4013,6 +4002,10 @@ input[type="text"], input[type="password"] {
   margin-top: 5px; }
 #annonce-details-right p {
   text-align: left; }
+
+#add_client_logo > img {
+  width: auto;
+  max-height: 150px; }
 
 .immo-main-gallery .flickity-prev-next-button {
   margin: 0 -40px;
@@ -4372,19 +4365,29 @@ input[type="text"], input[type="password"] {
       margin-top: 10px; }
 
 #image-gallery {
-  border: 1px solid #e1e1e1; }
+  border: 1px solid #e1e1e1;
+  width: 100%; }
 
 #image-gallery li {
+  background-color: #e5e5e5;
+  position: relative;
   text-align: center;
-  background-color: #e5e5e5; }
+  overflow: hidden; }
+  #image-gallery li img {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto; }
+  #image-gallery li img {
+    height: auto; }
   #image-gallery li a {
     width: 100%;
     height: 100%; }
-  #image-gallery li img {
-    display: inline-block;
-    max-width: 100%;
-    height: 100%;
-    text-align: center; }
 
 .lg-logo .lg:before {
   content: '';
@@ -4698,19 +4701,12 @@ input[type="text"], input[type="password"] {
         display: block;
         height: 100%;
         text-align: center;
-        padding: 5px; }
+        padding: 10px 5px; }
     .search-result-entry .agency-container img {
       display: inline-block;
-      width: auto;
+      width: 100%;
       height: auto;
-      max-width: 100%;
-      max-height: 100%;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%); }
+      max-height: 100%; }
     .search-result-entry .agency-container .links {
       display: none;
       position: relative;
@@ -6194,6 +6190,30 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   opacity: 0.5;
   z-index: 1; }
 
+.rotate0 img {
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+.rotate90 img {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  width: 100%;
+  height: auto; }
+
+.rotate180 img {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.rotate270 img {
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  width: 100%;
+  height: auto; }
+
 @media screen and (max-width: 671px) {
   .annonce-title .annonce-price {
     font-size: 1.2em; }
@@ -6392,7 +6412,8 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   .search-result-entry .entry-body {
     display: table !important;
     border-collapse: separate;
-    min-height: 210px; }
+    min-height: 210px;
+    height: 210px; }
     .search-result-entry .entry-body .entry-body-row {
       display: table-row; }
   .search-result-entry .image-container, .search-result-entry .infos-container, .search-result-entry .agency-container {
@@ -6412,30 +6433,29 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   .search-result-entry .image-container {
     width: 240px !important;
     float: none !important; }
-  .search-result-entry .agency-container {
+  .search-result-entry:not(.pro-plus) .agency-container {
     width: 166px !important; }
-    .search-result-entry .agency-container .agency-container-frame {
+    .search-result-entry:not(.pro-plus) .agency-container .agency-container-frame {
       width: 85%; }
-    .search-result-entry .agency-container .links li a {
+    .search-result-entry:not(.pro-plus) .agency-container .links li a {
       padding: 9px 8px; }
   .search-result-entry .icons {
     margin-bottom: 15px; }
-  .search-result-entry .infos-container, .search-result-entry .agency-container {
-    padding: 10px 20px; }
   .search-result-entry .infos-container {
-    float: none !important;
-    width: calc(100% - 200px - 166px) !important; }
+    padding: 10px 20px; }
+  .search-result-entry:not(.pro-plus) .agency-container .agency-container-frame {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding-bottom: 103px; }
+  .search-result-entry:not(.pro-plus) .agency-container .links {
+    display: block;
+    position: absolute; }
   .search-result-entry .agency-container {
-    position: relative !important;
+    position: relative;
     float: none !important;
     background-color: #F8F8F8;
     border-left: 1px solid #dadada; }
-    .search-result-entry .agency-container .agency-container-frame {
-      position: absolute;
-      height: calc(100% - 117px); }
-    .search-result-entry .agency-container .links {
-      display: block;
-      position: absolute; }
   .search-result-entry .links {
     display: block; }
   .search-result-entry .entry-annonce-link {
@@ -6448,10 +6468,48 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
       .search-result-entry .details li:not(:last-child) {
         margin-right: 14px;
         font-size: inherit; }
-  .search-result-entry.pro .entry-body {
-    min-height: 330px; }
+  .search-result-entry:not(.pro-plus) .infos-container {
+    float: none !important;
+    width: calc(100% - 200px - 166px) !important; }
+  .search-result-entry.pro .entry-body, .search-result-entry.pro-plus .entry-body {
+    min-height: 330px;
+    height: 330px; }
+  .search-result-entry.pro-plus .entry-body {
+    background-color: #676767; }
+  .search-result-entry.pro-plus .infos-container, .search-result-entry.pro-plus .agency-container {
+    display: inline-block !important;
+    height: auto;
+    width: 100%;
+    background-color: transparent; }
+  .search-result-entry.pro-plus .infos-container {
+    color: white;
+    margin-bottom: 117px; }
+  .search-result-entry.pro-plus .agency-container {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    padding: 0;
+    background-color: white; }
+    .search-result-entry.pro-plus .agency-container .links, .search-result-entry.pro-plus .agency-container .agency-container-frame {
+      display: inline-block;
+      position: relative;
+      width: 50%; }
+    .search-result-entry.pro-plus .agency-container .links {
+      float: right;
+      border-left: 1px solid #dadada; }
+      .search-result-entry.pro-plus .agency-container .links a {
+        padding: 9px 10px; }
+    .search-result-entry.pro-plus .agency-container .agency-container-frame {
+      float: left;
+      max-width: none;
+      height: 117px; }
+    .search-result-entry.pro-plus .agency-container img {
+      margin: 0 auto;
+      max-width: 90%; }
   .search-result-entry.minimized .entry-body {
-    min-height: 180px; }
+    min-height: 180px;
+    height: 180px; }
   .search-result-entry.minimized .infos-container h2.title {
     font-size: 1.416666666666667em;
     line-height: 20px; }
@@ -6466,7 +6524,7 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
     font-size: 1.4em;
     margin: 0; }
 
-  .search-result-entry .infos-container, .search-result-entry .agency-container {
+  .search-result-entry .infos-container {
     height: auto; }
 
   .agency-header {
@@ -6522,7 +6580,8 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
   #pro .search-banner-box .input-group {
     min-height: 65px; }
 
-  .search-result-entry:not(.minimized) .infos-container, .search-result-entry:not(.minimized) .agency-container {
+  .search-result-entry:not(.minimized):not(.pro-plus) .infos-container,
+  .search-result-entry:not(.minimized):not(.pro-plus) .agency-container {
     padding: 10px 15px; }
 
   .search-banner-tabs ul {
@@ -6626,11 +6685,11 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
       margin-bottom: 0; }
   .search-result-entry .image-container {
     border-right: 1px solid #dadada; }
-  .search-result-entry .infos-container {
+  .search-result-entry:not(.pro-plus) .infos-container {
     width: calc(100% - 257px - 175px) !important; }
-  .search-result-entry .agency-container {
+  .search-result-entry:not(.pro-plus) .agency-container {
     width: 175px !important; }
-    .search-result-entry .agency-container .links li a {
+    .search-result-entry:not(.pro-plus) .agency-container .links li a {
       padding: 9px 16px; }
 
   .agency-logo {
@@ -6769,18 +6828,22 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before, table.dataTabl
     margin-bottom: 5px; }
   .search-result-entry .image-container {
     width: 280px !important; }
-  .search-result-entry .infos-container {
-    width: calc(100% - 245px - 200px) !important; }
-  .search-result-entry .agency-container {
+  .search-result-entry:not(.pro-plus) .agency-container {
     width: 200px !important; }
-    .search-result-entry .agency-container .agency-container-frame {
-      height: calc(100% - 105px); }
-    .search-result-entry .agency-container .links li a {
+    .search-result-entry:not(.pro-plus) .agency-container .links li a {
       padding: 7px 15px; }
   .search-result-entry .icons {
     margin-bottom: 5px; }
   .search-result-entry.pro .image-container {
     width: 440px !important; }
+  .search-result-entry.pro-plus .entry-body {
+    height: 495px;
+    min-height: 495px; }
+  .search-result-entry.pro-plus .image-container {
+    width: 660px !important; }
+
+  .search-result-entry:not(.pro-plus) .infos-container {
+    width: calc(100% - 245px - 200px) !important; }
 
   .search-result-entry.minimized .image-container {
     width: 240px !important; }
