@@ -31,6 +31,24 @@
     }
 }
 
+.lSPagerWrapper{
+    @include clearfix;
+    display: block;
+    overflow: hidden;
+}
+.vertical .lSPagerWrapper{
+    .lSAction>.lSPrev{
+        background-position: 0 -31px;
+        bottom: auto;
+        top: 10px;
+    }
+    .lSAction>.lSNext {
+        background-position: 31px -31px;
+        bottom: 10px;
+        top: auto;
+    }
+}
+
 @include media(phone){
     .annonce-title{
         .annonce-price{font-size: 1.2em;}
@@ -253,7 +271,7 @@
         .image-container{width: 240px !important; float: none !important;}
         &:not(.pro-plus) .agency-container{
             width: 166px !important;
-            .agency-container-frame{width: 85%;}
+            .agency-container-frame{width: 90%;}
             .links li a {padding: 9px 8px;}
         }
         .icons{
@@ -267,9 +285,20 @@
                 position: relative;
                 display: block;
                 height: 100%;
-                padding-bottom: 103px;
+                max-height: 105px;
+                z-index: 0;
             }
-            .links{display: block; position: absolute;}
+            .links{
+                display: block;
+                position: absolute; 
+                z-index: 1;
+                background-color: $light-grey;
+            }
+        }
+        &.minimized .agency-container{
+            .agency-container-frame{max-height: 75px; padding: 10px 0}
+            a{padding: 0;}
+            img{max-height: 55px;}
         }
         .agency-container{
             position: relative;
@@ -419,9 +448,11 @@
             min-height: 65px;
         }
     }
-    .search-result-entry:not(.minimized):not(.pro-plus) .infos-container, 
-        .search-result-entry:not(.minimized):not(.pro-plus) .agency-container{
+    .search-result-entry:not(.minimized):not(.pro-plus) .infos-container{
         padding: 10px 15px;
+    } 
+    .search-result-entry:not(.minimized):not(.pro-plus) .agency-container{
+        padding: 0;
     }
     .search-banner-tabs ul{
         min-width: auto;
@@ -688,11 +719,11 @@
         }
         &.pro-plus{
             .entry-body{
-                height: 495px;
-                min-height: 495px;
+                height: 450px;
+                min-height: 450px;
             }
             .image-container{
-                width: 660px !important;
+                width: 600px !important;
             }
         }
     }

@@ -541,6 +541,7 @@ header{
     margin-left: auto;
     margin-right: auto;
     background-repeat:no-repeat;
+    float: right;
 }
 area{display: block; cursor: pointer;}
 // LOGIN
@@ -698,6 +699,7 @@ footer .footer-links{
     &--large{
         padding: 0 70px;
         height: 42px !important;
+        line-height: 42px;
     }
 }
 .btn-blue,
@@ -791,7 +793,7 @@ footer .footer-links{
         background: -webkit-linear-gradient(top,  #d6d6d6 8%,#d6d6d6 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  #d6d6d6 8%,#d6d6d6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
-
+        font-weight: 800;
     }
 }
 
@@ -946,18 +948,18 @@ select{
     cursor: pointer;
     color: $dark-grey;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 0.9em;
     padding-right: 15px;
 }
 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), textarea, .dropDownListResultBox, .jscolor {
     display: block;
     border-radius: 4px;
     border: 1px solid $grey;
-    background-color: $light-grey;
+    background-color: white;
     cursor: pointer;
     color: $dark-grey;
     font-weight: 600;
-    font-size: 0.95em;
+    font-size: 0.9em;
     &.error{
         border-color: $red;
         &~label.error{
@@ -1363,6 +1365,7 @@ input[type="text"], input[type="password"]{
     color: darken($dark-grey, 17%);
     font-size: 1.02em;
     line-height: 20px;
+    word-break: break-word;
 }
 .annonce-description{
     border-top: $border;
@@ -1681,22 +1684,26 @@ input[type="text"], input[type="password"]{
             right: 0;
             left: 0px;
             width: 100%;
-            max-width: 120px;
+            max-height: 105px;
             height: 100%;
             padding: 0;
             overflow: hidden;
             a{
                 display: block;
-                height: 100%;
                 text-align: center;
-                padding: 10px 5px;
+                height: 100%;
+                padding: 10px 0;
             }
         }
         img{
             display: inline-block;
-            width: 100%;
+            width: auto;
             height: auto;
             max-height: 100%;
+            max-width: 100%;
+            position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
         }
         .links{
             display: none;
@@ -2856,7 +2863,10 @@ table.dataTable{
     color: $footer-grey;
 }
 table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected, table.dataTable tbody tr.selected {
-    background-color: $light-blue;
+    background-color: rgba(0, 73, 148, 0.15);
+}
+table.dataTable tbody>tr.new, table.dataTable tbody>tr>.new, table.dataTable tbody tr.new {
+    background-color: rgba(236, 100, 18, 0.15);
 }
 table.dataTable td.select-checkbox, table.dataTable th.select-checkbox{position: relative;}
 table.dataTable td.select-checkbox:before, table.dataTable th.select-checkbox:before {

@@ -67,13 +67,10 @@ $(function () {
             $('.pannel.expand').find('.exp-btn').removeClass('icon-compress').addClass('icon-expand');
         }
     }
-    $(".annonce-details-images-container").on('mouseover', '.lSPager.lSGallery li', function () {
+    /*$(".annonce-details-images-container").on('mouseover', '.lSPager.lSGallery li', function () {
         $(this).click();
-    });
+    });*/
 
-    if ($.fn.lightSlider) {
-        console.log($.fn.lightSlider.$pager);
-    }
 });
 
 var DoOnClickAway = function (event, element, callback) {
